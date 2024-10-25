@@ -45,12 +45,13 @@ Settings is a {{< reuse "docs/snippets/product-name.md" >}} custom resource that
 {{% info %}}
 Note that when you manually update values in the Settings resource, these values do not persist between Helm upgrades. To ensure that your values are still present even after you upgrade to a new {{< reuse "docs/snippets/product-name.md" >}} version, add the values to your Helm chart instead.
 {{% /info %}}
-{{% info %}}
+
+{{% warn %}}
 The Settings resource is shared between {{< reuse "docs/snippets/product-name.md" >}} proxies that are based on the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} and proxies that use the [{{< reuse "docs/snippets/product-name.md" >}} API](https://docs.solo.io/gloo-edge). However, some Settings fields can be set only for proxies that use the {{< reuse "docs/snippets/product-name.md" >}} API. If you run both types of proxies side-by-side in your cluster, follow these general steps: 
 1. Ensure that you want to apply the Settings values to all of your proxies. 
 2. Thoroughly test Settings changes for each proxy type to verify the expected behavior. 
 3. Proceed with the update by either manually changing the respective Settings fields or by setting these values in the Helm values file and upgrading your {{< reuse "docs/snippets/product-name.md" >}} installation. 
-{{% /info %}}
+{{% /warn %}}
 
 To view the default Settings resource, run the following command:
 ```sh
