@@ -1,0 +1,9 @@
+---
+title: AWS Lambda
+weight: 30
+description: Use Gloo Gateway to route traffic requests directly to an [Amazon Web Services (AWS) Lambda function](https://aws.amazon.com/lambda/resources/).
+---
+
+## About
+
+{{< reuse "conrefs/pages/gateway/traffic-management/lambda/get-started.md" >}}

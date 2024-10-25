@@ -1,0 +1,11 @@
+---
+title: Google Cloud Platform services
+weight: 30
+description: Route traffic requests directly to a Google Cloud Platform (GCP) service, such as Google Cloud Run. 
+---
+
+{{< reuse "conrefs/snippets/gateway/enterprise-only.md" >}}
+
+## Before you begin
+
+{{< reuse "conrefs/pages/gateway/traffic-management/destination-google-cloud-run.md" >}}

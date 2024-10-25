@@ -1,0 +1,9 @@
+---
+title: Configure cross-account Lambda access
+weight: 30
+description: Configure Gloo Gateway to route to AWS Lambda functions in different accounts than the AWS account that Gloo Gateway authenticates with.
+---
+
+## About
+
+{{< reuse "conrefs/pages/gateway/traffic-management/lambda/cross-account.md" >}}
