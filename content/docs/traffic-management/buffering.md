@@ -1,8 +1,7 @@
 ---
 linkTitle: "Buffering"
 title: Buffering
-weight: 60
-next: /docs/traffic-management/extproc
+weight: 70
 ---
 
 Fine-tune connection speeds for read and write operations. 
@@ -53,7 +52,7 @@ You can configure a maximum payload size on a gateway (`perConnectionBufferLimit
 
 ## Cleanup
 
-You can remove the resources that you created in this guide. 
+{{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
 kubectl delete listeneroption bufferlimits -n gloo-system
