@@ -14,9 +14,9 @@ You can set two following fault injection types in Gloo Gateway.
 
 Delays and aborts are independent of one another. When both values are set, your requests are either delayed only, delayed and aborted, or aborted only.
 
-{{% callout type="info" %}}
+{{< callout emoji="💡" >}}
 Faults can be configured for a route by using a RouteOption resource. Gateway-level faults are not supported.
-{{% /callout %}}
+{{< /callout >}}
 
 For more information, see the [Fault API](https://docs.solo.io/gloo-edge/latest/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/options/faultinjection/fault.proto.sk/).
 
