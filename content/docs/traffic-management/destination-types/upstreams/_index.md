@@ -16,6 +16,16 @@ For more information, see the [Upstream proto definition](https://docs.solo.io/g
 
 ## Types
 
+Check out the following guides for examples on how to use the supported Upstreams types with {{< reuse "docs/snippets/product-name.md" >}}. 
+
+{{< cards >}}
+  {{< card link="static" title="Static" >}}
+  {{< card link="kubernetes" title="Kubernetes Service" >}}
+  {{< card link="http2" title="HTTP/2" >}}
+{{< /cards >}}
+
+<!-- TODO supported upstreams
+
 You can create Upstreams of type `static`, `kube`, `aws`, and `gcp`. 
 
 {{% callout type="info" %}}
@@ -29,6 +39,7 @@ Check out the following guides for examples on how to use Upstreams with {{< reu
 * [AWS Lambda](/traffic-management/destination-types/upstreams/lambda/)
 * [HTTP/2](/traffic-management/destination-types/upstreams/http2/)
 
+-->
 
 <!--
 

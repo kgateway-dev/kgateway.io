@@ -8,7 +8,7 @@ In the following example, you combine multiple Inja functions to accomplish the 
 - Extract a base64-encoded value from a specific request header. 
 - Decode the base64-encoded value. 
 - Trim the decoded value and only capture everything starting from the 11th character. 
-- Add the captured string as reponse header. 
+- Add the captured string as a response header. 
 
 ## Before you begin
 
