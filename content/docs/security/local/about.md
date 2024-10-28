@@ -1,8 +1,9 @@
 ---
 title: About local rate limiting
 weight: 10
-description: Local rate limiting is a coarse-grained rate limiting capability that is primarily used as a first line of defense mechanism to limit the number of requests that are forwarded to your rate limit servers. 
 ---
+
+Local rate limiting is a coarse-grained rate limiting capability that is primarily used as a first line of defense mechanism to limit the number of requests that are forwarded to your rate limit servers. 
 
 Without local rate limiting, all requests are directly forwarded to the rate limit server where the request is either denied or allowed based on the [global rate limiting](/guides/security/rate_limiting/global) settings that you configured. However, during an attack, too many requests might be forwarded to your rate limit servers and can cause overload or even failure.
 

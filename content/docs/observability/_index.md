@@ -286,7 +286,7 @@ If you do not want to deploy an OpenTelemetry collector and Grafana, you can qui
    
 ## Cleanup
 
-Remove the resources that you created in this guide. 
+{{< reuse "docs/snippets/cleanup.md" >}}
 
 1. Remove the configmap for the Envoy dashboard. 
    ```sh

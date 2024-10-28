@@ -237,7 +237,8 @@ This example uses the Petstore app to demonstrate CORS policies. You cannot use 
    
 ## Cleanup
 
-Remove the resources that you created in this guide. 
+{{< reuse "docs/snippets/cleanup.md" >}}
+
 ```sh
 kubectl delete -f https://raw.githubusercontent.com/solo-io/gloo/v1.16.x/example/petstore/petstore.yaml
 kubectl delete virtualhostoption cors -n gloo-system

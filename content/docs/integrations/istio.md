@@ -379,7 +379,7 @@ You can exclude a service from requiring to communicate with the gateway proxy v
    
 ## Cleanup
 
-You can optionally remove the resources that you created. 
+{{< reuse "docs/snippets/cleanup.md" >}}
 
 1. Follow the [Uninstall guide in the Gloo Mesh Enterprise documentation](https://docs.solo.io/gloo-mesh-enterprise/main/setup/uninstall/) to remove Gloo Mesh Enterprise. 
    

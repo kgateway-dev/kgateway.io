@@ -145,7 +145,7 @@ To demonstrate weighted routing for multiple apps, deploy 3 versions of the Hell
    
 ## Cleanup
 
-You can optionally remove the resources that you created as part of this guide. 
+{{< reuse "docs/snippets/cleanup.md" >}}
 
 1. Remove the HTTP route resource. 
    ```sh

@@ -167,7 +167,7 @@ To learn more about what local rate limiting is and the differences between loca
 
 ## Cleanup
 
-You can optionally clean up the resources that you created as part of this guide.
+{{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
 kubectl delete httplisteneroption local-ratelimit -n gloo-system

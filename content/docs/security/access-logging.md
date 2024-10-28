@@ -128,7 +128,8 @@ When Envoy is used as an HTTP proxy, additional HTTP information is available fo
 
 ## Cleanup
 
-Remove the resources that you created in this guide. 
+{{< reuse "docs/snippets/cleanup.md" >}}
+
 ```sh
 kubectl delete listeneroption access-logs -n gloo-system
 ```

@@ -1,9 +1,0 @@
----
-title: Configure cross-account Lambda access
-weight: 30
-description: Configure {{< reuse "docs/snippets/product-name.md" >}} to route to AWS Lambda functions in different accounts than the AWS account that {{< reuse "docs/snippets/product-name.md" >}} authenticates with.
----
-
-## About
-
-{{< reuse "conrefs/pages/gateway/traffic-management/lambda/cross-account.md" >}}

@@ -205,7 +205,7 @@ To enable traffic shadowing, you must set up an [Upstream](/traffic-management/d
 
 ## Cleanup
 
-You can remove the resources that you created. 
+{{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
 kubectl delete httproutes httpbin-shadow -n httpbin 

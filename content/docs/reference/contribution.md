@@ -61,6 +61,6 @@ ginkgo -cover && go tool cover -html *.coverprofile
 
 ## Documentation
 
-The {{< reuse "docs/snippets/product-name.md" >}} (Kubernetes Gateway API) documentation is built from a private GitHub repository. Currently, only Solo.io team members can contribute to this repository.
+The {{< reuse "docs/snippets/product-name.md" >}} ({{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}) documentation is built from a private GitHub repository. Currently, only Solo.io team members can contribute to this repository.
 
 To request changes to the documentation or report an issue, follow the steps in [Filing issues](#filing-issues). 

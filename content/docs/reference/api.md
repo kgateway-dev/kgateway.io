@@ -14,6 +14,6 @@ Use the following links to review the specifications for the {{< reuse "docs/sni
 * [Settings](https://docs.solo.io/gloo-edge/main/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/settings.proto.sk/)
 * [Upstream](https://docs.solo.io/gloo-edge/main/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/upstream.proto.sk/)
 
-## Kubernetes Gateway API
+## {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}
 
-To view configuration options for Gateways, HTTPRoutes, and other resources, see the [Kubernetes Gateway API documentation](https://gateway-api.sigs.k8s.io/concepts/api-overview/).
+To view configuration options for Gateways, HTTPRoutes, and other resources, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} documentation](https://gateway-api.sigs.k8s.io/concepts/api-overview/).
