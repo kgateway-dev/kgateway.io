@@ -69,7 +69,7 @@ Remove the {{< reuse "docs/snippets/product-name.md" >}} control plane and gatew
    {{< /tabs >}}
 
 
-8. Remove the Kubernetes Gateway API CRDs. 
+8. Remove the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} CRDs. 
    ```sh
    kubectl delete -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.0.0/standard-install.yaml
    ```

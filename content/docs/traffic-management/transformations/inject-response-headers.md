@@ -37,15 +37,15 @@ The following example walks you through how to use an Inja template to extract a
    ```
 
 2. Send a request to the httpbin app and include the `x-solo-request` request header. Verify that you get back a 200 HTTP response code and that the value of the `x-solo-request` header was added to the `x-solo-response` response header. 
-    {{< tabs tabTotal="2" >}}
-   {{% tab tabName="LoadBalancer IP address or hostname" %}}
+   {{< tabs items="Cloud Provider LoadBalancer,Port-forward for local testing" >}}
+   {{% tab %}}
    ```sh
    curl -vik http://$INGRESS_GW_ADDRESS:8080/response-headers \
     -H "host: www.example.com:8080" \
     -H "x-solo-request: my custom request header" 
    ```
    {{% /tab %}}
-   {{% tab tabName="Port-forward for local testing" %}}
+   {{% tab %}}
    ```sh
    curl -vik localhost:8080/response-headers \
    -H "host: www.example.com" \

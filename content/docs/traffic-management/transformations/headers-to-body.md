@@ -51,8 +51,8 @@ The following example walks you through how to use extractors to extract request
    ```
 
 2. Send a request to the httpbin app and include the `root` and `nested` request headers. Verify that you get back a 200 HTTP response code and that the value of the `root` header is added to the body's root level, and that the `nested` header value is added under the `payload.nested` field in your response. 
-    {{< tabs tabTotal="2" >}}
-   {{% tab tabName="LoadBalancer IP address or hostname" %}}
+   {{< tabs items="Cloud Provider LoadBalancer,Port-forward for local testing" >}}
+   {{% tab %}}
    ```sh
    curl -X POST -H "host: www.example.com:8080" \
    -H "Content-Type: application/json" \
@@ -60,7 +60,7 @@ The following example walks you through how to use extractors to extract request
    -H "nested: nested-val" http://$INGRESS_GW_ADDRESS:8080/post -d @data.json | jq
    ```
    {{% /tab %}}
-   {{% tab tabName="Port-forward for local testing" %}}
+   {{% tab %}}
    ```sh
    curl -X POST localhost:8080/post \
    -H "host: www.example.com" \

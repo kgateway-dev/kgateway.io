@@ -4,7 +4,7 @@ weight: 5
 description: Learn more about the custom resources that you can use to apply policies in {{< reuse "docs/snippets/product-name.md" >}}. 
 ---
 
-While the Kubernetes Gateway API allows you to do simple routing, such as to match, redirect, or rewrite requests, you might want additional capabilities in your API gateway, such as fault injection, data loss prevention, or header control. Policies allow you to apply intelligent traffic management, resiliency, and security standards to individual routes or all the routes that the gateway serves. 
+While the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} allows you to do simple routing, such as to match, redirect, or rewrite requests, you might want additional capabilities in your API gateway, such as fault injection, data loss prevention, or header control. Policies allow you to apply intelligent traffic management, resiliency, and security standards to individual routes or all the routes that the gateway serves. 
 
 ## Policy CRDs
 

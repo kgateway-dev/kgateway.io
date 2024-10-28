@@ -55,14 +55,14 @@ The following example walks you through how to use an Inja template to find spec
    ```
 
 2. Send a request to the httpbin app and include the `foo` and `bar` query parameters. Verify that you get back a 200 HTTP response code and that the value of the `foo` and `bar` query parameters were added to the response headers `foo-response` and `bar-response`. 
-    {{< tabs tabTotal="2" >}}
-   {{% tab tabName="LoadBalancer IP address or hostname" %}}
+   {{< tabs items="Cloud Provider LoadBalancer,Port-forward for local testing" >}}
+   {{% tab %}}
    ```sh
    curl -vik http://$INGRESS_GW_ADDRESS:8080/anything?foo=foo-value&bar=bar-value \
     -H "host: www.example.com:8080" 
    ```
    {{% /tab %}}
-   {{% tab tabName="Port-forward for local testing" %}}
+   {{% tab %}}
    ```sh
    curl -vik localhost:8080/anything?foo=foo-value&bar=bar-value \
    -H "host: www.example.com" \
