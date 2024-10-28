@@ -62,7 +62,7 @@ Upgrade the [`glooctl` CLI](/setup/prepare/cli/#upgrade-the-cli) to the version 
    },
    ```
 
-## Step 3: Upgrade {{< reuse "docs/snippets/product-name.md" >}} 
+## Step 3: Upgrade k8sgateway
 
 1. Update the {{< reuse "docs/snippets/product-name.md" >}} Helm repositories.
    ```sh

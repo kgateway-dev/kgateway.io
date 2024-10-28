@@ -1,8 +1,9 @@
 ---
 title: Debug your setup
 weight: 5
-description: Use built-in tools to troubleshoot issues in your {{< reuse "docs/snippets/product-name.md" >}} setup.
 ---
+
+Use built-in tools to troubleshoot issues in your {{< reuse "docs/snippets/product-name.md" >}} setup.
 
 {{< reuse "docs/snippets/product-name.md" >}} is based on [Envoy proxy](https://www.envoyproxy.io). If you experience issues in your environment, such as policies that are not applied or traffic that is not routed correctly, in a lot of cases, these errors can be observed at the proxy. In this guide you learn how to use the {{< reuse "docs/snippets/product-name.md" >}} and Envoy debugging tools to troubleshoot misconfigurations on the gateway.  
 
@@ -18,7 +19,7 @@ export PATH=$HOME/.gloo/bin:$PATH
 Make sure to use the version of `glooctl` that matches your installed version.
 {{% /callout %}}
 
-## Debug your {{< reuse "docs/snippets/product-name.md" >}} setup
+## Debug your gateway setup
 
 1. Check the {{< reuse "docs/snippets/product-name.md" >}} installation. You can do that by using the `glooctl check` [command](/reference/cli/glooctl_check/) that quickly checks the health of {{< reuse "docs/snippets/product-name.md" >}} deployments, pods, and custom resources, and verifies Gloo resource configuration. Any issues that are found are reported back in the CLI output. 
    ```sh
