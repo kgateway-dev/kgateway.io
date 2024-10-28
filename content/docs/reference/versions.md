@@ -57,8 +57,6 @@ Development of a quality stable release on `main` typically follows this process
 5. The stable minor version is released.
 6. Feature development on `main` is resumed.
 
-## Additional support information
-
-### {{< reuse "docs/snippets/product-name.md" >}}
+## Additional release information
 
 New features are not developed on or backported to stable branches. However, critical patches, bug fixes, and documentation fixes are backported to all actively supported branches.
