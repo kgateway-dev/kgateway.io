@@ -4,7 +4,7 @@ weight: 50
 description: Review Open Source Attribution and Licenses. 
 ---
 
-## Third-party open source software provided by Solo.io in connection with Gloo Gateway
+## Third-party open source software provided by Solo.io in connection with {{< reuse "docs/snippets/product-name.md" >}}
 Name|Version|License
 ---|---|---
 [semver/v3](https://github.com/Masterminds/semver)|v3.2.1|MIT License
@@ -90,7 +90,7 @@ Name|Version|License
 [envoyproxy/protoc-gen-validate](https://github.com/envoyproxy/protoc-gen-validate)|latest|Apache License 2.0
 [paulvollmer/2gobytes](https://github.com/paulvollmer/2gobytes)|latest|MIT License
 
-## Free Software under GNU General Public License, and Mozilla Public License Software utilized by Gloo Gateway
+## Free Software under GNU General Public License, and Mozilla Public License Software utilized by {{< reuse "docs/snippets/product-name.md" >}}
 ---|---|---
 [consul/api](https://github.com/hashicorp/consul)|v1.14.0|Mozilla Public License 2.0
 [hashicorp/go-multierror](https://github.com/hashicorp/go-multierror)|v1.1.1|Mozilla Public License 2.0

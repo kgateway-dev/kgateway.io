@@ -1,7 +1,7 @@
 ---
 title: Istio service mesh
 weight: 530
-description: Use your Gloo Gateway proxy as the ingress gateway to control and secure traffic that enters your service mesh. 
+description: Use your {{< reuse "docs/snippets/product-name.md" >}} proxy as the ingress gateway to control and secure traffic that enters your service mesh. 
 ---
 
 ## About service mesh
@@ -18,9 +18,9 @@ The open source project Istio is the leading service mesh implementation that of
 * Fine-grained access control and quotas
 * Automatic logs, metrics, and traces for traffic in the service mesh
 
-### About the Gloo Gateway Istio integration
+### About the {{< reuse "docs/snippets/product-name.md" >}} Istio integration
 
-Gloo Gateway comes with an Istio integration that allows you to configure your gateway proxy with an Istio sidecar. The Istio sidecar uses mutual TLS (mTLS) to prove its identity and to secure the connection between your gateway and the services in your Istio service mesh. In addition, you can control and secure the traffic that enters the mesh by applying all the advanced routing, traffic management, security, resiliency, and AI capabilities that Gloo Gateway offers. For example, you can set up end-user authentication and authorization, per-user rate limiting quotas, web application filters, and access logging to help prevent malicious attacks and audit service mesh usage. 
+{{< reuse "docs/snippets/product-name.md" >}} comes with an Istio integration that allows you to configure your gateway proxy with an Istio sidecar. The Istio sidecar uses mutual TLS (mTLS) to prove its identity and to secure the connection between your gateway and the services in your Istio service mesh. In addition, you can control and secure the traffic that enters the mesh by applying all the advanced routing, traffic management, security, resiliency, and AI capabilities that {{< reuse "docs/snippets/product-name.md" >}} offers. For example, you can set up end-user authentication and authorization, per-user rate limiting quotas, web application filters, and access logging to help prevent malicious attacks and audit service mesh usage. 
 
 ## Before you begin
 
@@ -47,9 +47,9 @@ Set up Istio. Choose between the following options to set up Istio:
 {{% /tab %}}
 {{< /tabs >}}
 
-## Enable the Istio integration in Gloo Gateway
+## Enable the Istio integration in {{< reuse "docs/snippets/product-name.md" >}}
 
-Upgrade your Gloo Gateway installation to enable the Istio integration. 
+Upgrade your {{< reuse "docs/snippets/product-name.md" >}} installation to enable the Istio integration. 
 
 1. Get the name of the istiod service. Depending on how you set up Istio, you might see a revisionless service name (`istiod`) or a service name with a revision, such as `istiod-1-21`. 
    ```sh
@@ -64,7 +64,7 @@ Upgrade your Gloo Gateway installation to enable the Istio integration.
 
 2. Derive the Kubernetes service address for your istiod deployment. The service address uses the format `<service-name>.<namespace>.svc:15012`. For example, if your service name is `istiod-1-21`, the full service address is `istiod-1-21.istio-system.svc:15012`.
 
-3. Get the Helm values for your current Gloo Gateway installation. 
+3. Get the Helm values for your current {{< reuse "docs/snippets/product-name.md" >}} installation. 
    ```sh
    helm get values gloo-gateway -n gloo-system -o yaml > gloo-gateway.yaml
    open gloo-gateway.yaml
@@ -93,9 +93,9 @@ Upgrade your Gloo Gateway installation to enable the Istio integration.
    | Setting | Description |
    | -- | -- | 
    | `istioDiscoveryAddress` | The address of the istiod service. If omitted, `istiod.istio-system.svc:15012` is used. |
-   | `istioMetaClusterId` </br> `istioMetaMeshId` | The name of the cluster where Gloo Gateway is installed. |
+   | `istioMetaClusterId` </br> `istioMetaMeshId` | The name of the cluster where {{< reuse "docs/snippets/product-name.md" >}} is installed. |
    
-5. Upgrade your Gloo Gateway installation. 
+5. Upgrade your {{< reuse "docs/snippets/product-name.md" >}} installation. 
    ```sh
    helm upgrade -n gloo-system gloo-gateway gloo/gloo \
       -f gloo-gateway.yaml \
@@ -383,7 +383,7 @@ You can optionally remove the resources that you created.
 
 1. Follow the [Uninstall guide in the Gloo Mesh Enterprise documentation](https://docs.solo.io/gloo-mesh-enterprise/main/setup/uninstall/) to remove Gloo Mesh Enterprise. 
    
-2. Follow the [upgrade guide]/operations/upgrade/) to upgrade your Gloo Gateway Helm installation values. Remove the Helm values that you added as part of this guide. 
+2. Follow the [upgrade guide]/operations/upgrade/) to upgrade your {{< reuse "docs/snippets/product-name.md" >}} Helm installation values. Remove the Helm values that you added as part of this guide. 
 
 3. Remove the Istio sidecar from the httpbin app. 
    1. Remove the Istio label from the httpbin namespace. 

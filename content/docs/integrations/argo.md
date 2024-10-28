@@ -1,10 +1,10 @@
 ---
 title: Argo Rollouts
 weight: 510
-description: Use Gloo Gateway with Argo Rollouts. 
+description: Use {{< reuse "docs/snippets/product-name.md" >}} with Argo Rollouts. 
 ---
 
-[Argo Rollouts](https://argoproj.github.io/rollouts/) is a Kubernetes controller that provides advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, and progressive delivery features to Kubernetes. Because Argo Rollouts supports the Kubernetes Gateway API, you can use Argo Rollouts to control how traffic is split and forwarded from the proxies that Gloo Gateway v2 manages to the apps in your cluster. 
+[Argo Rollouts](https://argoproj.github.io/rollouts/) is a Kubernetes controller that provides advanced deployment capabilities such as blue-green, canary, canary analysis, experimentation, and progressive delivery features to Kubernetes. Because Argo Rollouts supports the Kubernetes Gateway API, you can use Argo Rollouts to control how traffic is split and forwarded from the proxies that {{< reuse "docs/snippets/product-name.md" >}} v2 manages to the apps in your cluster. 
 
 ## Before you begin 
 
@@ -289,7 +289,7 @@ description: Use Gloo Gateway with Argo Rollouts.
    {{% /tab %}}
    {{< /tabs >}}
 
-Congratulations, you successfully rolled out a new version of your app without downtime by using the HTTP gateway that is managed by Gloo Gateway v2. After a rollout, you typically perform tasks such as the following: 
+Congratulations, you successfully rolled out a new version of your app without downtime by using the HTTP gateway that is managed by {{< reuse "docs/snippets/product-name.md" >}} v2. After a rollout, you typically perform tasks such as the following: 
 
 - **Testing**: Conduct thorough testing of your app to ensure that it functions correctly after the rollout.
 - **Monitoring**: Monitor your application to detect any issues that may arise after the rollout. 

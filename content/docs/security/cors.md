@@ -4,6 +4,8 @@ weight: 10
 description: Enforce client-site access controls with cross-origin resource sharing (CORS).
 ---
 
+Enforce client-site access controls with cross-origin resource sharing (CORS).
+
 ## About CORS
 
 Cross-Origin Resource Sharing (CORS) is a security feature that is implemented by web browsers and that controls how web pages in one domain can request and interact with resources that are hosted on a different domain. By default, web browsers only allow requests to resources that are hosted on the same domain as the web page that served the original request. Access to web pages or resources that are hosted on a different domain is restricted to prevent potential security vulnerabilities, such as cross-site request forgery (CRSF).
@@ -35,7 +37,7 @@ For example, you might want to expose the CORS `origin` header for traffic that 
 For more information about the supported merge strategies, see the [API docs](https://docs.solo.io/gloo-edge/main/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/options/cors/cors.proto.sk/#corspolicymergesettings).
 
 {{% callout type="info" %}} 
-Some apps, such as `httpbin`, have built-in CORS policies that allow all origins. These policies take precedence over CORS policies that you might configure in Gloo Gateway. 
+Some apps, such as `httpbin`, have built-in CORS policies that allow all origins. These policies take precedence over CORS policies that you might configure in {{< reuse "docs/snippets/product-name.md" >}}. 
 {{% /callout %}}
 
 ## Before you begin
@@ -45,7 +47,7 @@ Some apps, such as `httpbin`, have built-in CORS policies that allow all origins
 ## Set up CORS policies
 
 {{% callout type="info" %}}
-This example uses the Petstore app to demonstrate CORS policies. You cannot use the httpbin app, because httpbin has built-in CORS policies that allow all origins. These policies take precedence over CORS policies that you configure in Gloo Gateway.
+This example uses the Petstore app to demonstrate CORS policies. You cannot use the httpbin app, because httpbin has built-in CORS policies that allow all origins. These policies take precedence over CORS policies that you configure in {{< reuse "docs/snippets/product-name.md" >}}.
 {{% /callout %}}
 
 1. Deploy the Petstore app. 

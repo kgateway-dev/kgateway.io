@@ -5,7 +5,7 @@ weight: 5
 ---
 ## glooctl install gateway
 
-install the Gloo Gateway on Kubernetes
+install the {{< reuse "docs/snippets/product-name.md" >}} on Kubernetes
 
 ### Synopsis
 

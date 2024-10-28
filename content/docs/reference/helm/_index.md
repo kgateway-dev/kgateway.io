@@ -4,12 +4,12 @@ weight: 25
 description: Section containing Helm chart values for Gloo Edge
 ---
 
-Review the Helm values for the open source Gloo Gateway Helm chart.
+Review the Helm values for the open source {{< reuse "docs/snippets/product-name.md" >}} Helm chart.
 
 |Option|Type|Default Value|Description|
 |------|----|-----------|-------------|
 |namespace.create|bool|false|create the installation namespace|
-|kubeGateway.enabled|bool|false|Enable the Gloo Gateway Kubernetes Gateway API controller.|
+|kubeGateway.enabled|bool|false|Enable the {{< reuse "docs/snippets/product-name.md" >}} Kubernetes Gateway API controller.|
 |kubeGateway.gatewayParameters.glooGateway.envoyContainer.image.tag|string|<release_version, ex: 1.2.3>|The image tag for the container.|
 |kubeGateway.gatewayParameters.glooGateway.envoyContainer.image.repository|string|gloo-envoy-wrapper|The image repository (name) for the container.|
 |kubeGateway.gatewayParameters.glooGateway.envoyContainer.image.digest|string||The container image's hash digest (e.g. 'sha256:12345...'), consumed when variant=standard.|
@@ -313,7 +313,7 @@ Review the Helm values for the open source Gloo Gateway Helm chart.
 |settings.singleNamespace|bool||Enable to use install namespace as WatchNamespace and WriteNamespace|
 |settings.invalidConfigPolicy.replaceInvalidRoutes|bool|false|Rather than pausing configuration updates, in the event of an invalid Route defined on a virtual service or route table, Gloo Edge will serve the route with a predefined direct response action. This allows valid routes to be updated when other routes are invalid.|
 |settings.invalidConfigPolicy.invalidRouteResponseCode|int64|404|the response code for the direct response|
-|settings.invalidConfigPolicy.invalidRouteResponseBody|string|Gloo Gateway has invalid configuration. Administrators should run `glooctl check` to find and fix config errors.|the response body for the direct response|
+|settings.invalidConfigPolicy.invalidRouteResponseBody|string|{{< reuse "docs/snippets/product-name.md" >}} has invalid configuration. Administrators should run `glooctl check` to find and fix config errors.|the response body for the direct response|
 |settings.linkerd|bool|false|Enable automatic Linkerd integration in Gloo Edge|
 |settings.disableProxyGarbageCollection|bool|false|Set this option to determine the state of an Envoy listener when the corresponding Proxy resource has no routes. If false (default), Gloo Edge will propagate the state of the Proxy to Envoy, resetting the listener to a clean slate with no routes. If true, Gloo Edge will keep serving the routes from the last applied valid configuration.|
 |settings.regexMaxProgramSize|uint32|1024|Set this field to specify the RE2 default max program size which is a rough estimate of how complex the compiled regex is to evaluate. If not specified, this defaults to 1024.|

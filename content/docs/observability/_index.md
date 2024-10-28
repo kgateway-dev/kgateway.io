@@ -10,7 +10,7 @@ Gain insight into the health and performance of your gateways.
 
 Metrics are essential to gain insight into the health and performance of your gateway proxies. [OpenTelemetry](https://opentelemetry.io/) is a flexible open source framework that provides a set of APIs, libraries, and instrumentation to help capture and export telemetry data, such as metrics. The framework can also be used to collect traces and logs from your apps. Then, you can use observability tools, such as Grafana or Prometheus, to visualize your metrics so that you can analyze the health of your gateway and troubleshoot issues more easily. 
 
-In this guide, you deploy an OpenTelemetry collector that scapes metrics from the Gloo Gateway proxies in the data plane, the Gloo Gateway pods in the control plane, and the external auth and rate limiting add-ons. The metrics that are collected by the OpenTelemetry collector are exposed in Prometheus format. To visualize these metrics, you also deploy a Grafana instance that scrapes the metrics from the OpenTelemetry collector.
+In this guide, you deploy an OpenTelemetry collector that scapes metrics from the {{< reuse "docs/snippets/product-name.md" >}} proxies in the data plane, the {{< reuse "docs/snippets/product-name.md" >}} pods in the control plane, and the external auth and rate limiting add-ons. The metrics that are collected by the OpenTelemetry collector are exposed in Prometheus format. To visualize these metrics, you also deploy a Grafana instance that scrapes the metrics from the OpenTelemetry collector.
 
 {{% callout type="info" %}}
 If you do not want to deploy an OpenTelemetry collector and Grafana, you can quickly see the raw Prometheus metrics that are automatically exposed on the gateway proxy by accessing the Prometheus metrics on your gateway. 
@@ -33,7 +33,7 @@ If you do not want to deploy an OpenTelemetry collector and Grafana, you can qui
    helm repo update
    ```
 
-2. Install the OpenTelemetry collector in your cluster. This command sets up pipelines that scrape metrics from the gateway proxies, Gloo Gateway control plane, and external auth and rate limiting add-ons, and exposes them in Prometheus format.
+2. Install the OpenTelemetry collector in your cluster. This command sets up pipelines that scrape metrics from the gateway proxies, {{< reuse "docs/snippets/product-name.md" >}} control plane, and external auth and rate limiting add-ons, and exposes them in Prometheus format.
    ```sh
    helm upgrade --install opentelemetry-collector open-telemetry/opentelemetry-collector \
    --version 0.97.1 \
@@ -66,7 +66,7 @@ If you do not want to deploy an OpenTelemetry collector and Grafana, you can qui
        prometheus/gloo-dataplane:
          config:
            scrape_configs:
-           # Scrape the Gloo Gateway proxies
+           # Scrape the {{< reuse "docs/snippets/product-name.md" >}} proxies
            - job_name: gloo-gateways
              honor_labels: true
              kubernetes_sd_configs:
@@ -100,7 +100,7 @@ If you do not want to deploy an OpenTelemetry collector and Grafana, you can qui
        prometheus/gloo-controlplane:
          config:
            scrape_configs:
-           # Scrape the Gloo Gateway control plane
+           # Scrape the {{< reuse "docs/snippets/product-name.md" >}} control plane
            - job_name: gloo-gateways
              honor_labels: true
              kubernetes_sd_configs:

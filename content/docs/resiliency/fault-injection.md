@@ -7,7 +7,7 @@ Test the resilience of your apps by injecting delays and connection failures int
 
 ## About fault injections
 
-You can set two following fault injection types in Gloo Gateway. 
+You can set two following fault injection types in {{< reuse "docs/snippets/product-name.md" >}}. 
 
 * **Delays**: Delays simulate timing failures, such as network latency or overloaded upstreams.
 * **Aborts**: Aborts simulate crash failures, such as HTTP error codes or TCP connection failures. 

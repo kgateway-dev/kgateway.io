@@ -1,10 +1,10 @@
 ---
 title: Retries
 weight: 10
-description: Specify the number of times and duration you want Gloo Gateway to try a connection to an unresponsive upstream service.
+description: Specify the number of times and duration you want {{< reuse "docs/snippets/product-name.md" >}} to try a connection to an unresponsive upstream service.
 ---
 
-Specify the number of times and duration you want Gloo Gateway to try a connection to an unresponsive upstream service.
+Specify the number of times and duration you want {{< reuse "docs/snippets/product-name.md" >}} to try a connection to an unresponsive upstream service.
 
 ## About retries
 
@@ -67,7 +67,7 @@ Use a RouteOption resource to specify retries for a specific route.
    EOF
    ```
 
-3. Send a request to the httpbin app on the `retry.example` domain. Verify that the request succeeds and that you see a `X-Envoy-Expected-Rq-Timeout-Ms` header. If the header is present, Gloo Gateway expects requests to the httpbin app to succeed within the set timeout. 
+3. Send a request to the httpbin app on the `retry.example` domain. Verify that the request succeeds and that you see a `X-Envoy-Expected-Rq-Timeout-Ms` header. If the header is present, {{< reuse "docs/snippets/product-name.md" >}} expects requests to the httpbin app to succeed within the set timeout. 
    {{< tabs items="LoadBalancer IP address or hostname,Port-forward for local testing" >}}
    {{% tab  %}}
    ```sh

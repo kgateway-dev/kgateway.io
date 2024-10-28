@@ -1,10 +1,10 @@
 ---
 title: Contribution guidelines
 weight: 50
-description: Contribute to the Gloo Gateway project.
+description: Contribute to the {{< reuse "docs/snippets/product-name.md" >}} project.
 ---
 
-Solo welcomes your contribution the [Gloo Gateway project](https://github.com/solo-io/gloo).
+Solo welcomes your contribution the [{{< reuse "docs/snippets/product-name.md" >}} project](https://github.com/solo-io/gloo).
 
 ## Ways to contribute
 
@@ -61,6 +61,6 @@ ginkgo -cover && go tool cover -html *.coverprofile
 
 ## Documentation
 
-The Gloo Gateway (Kubernetes Gateway API) documentation is built from a private GitHub repository. Currently, only Solo.io team members can contribute to this repository.
+The {{< reuse "docs/snippets/product-name.md" >}} (Kubernetes Gateway API) documentation is built from a private GitHub repository. Currently, only Solo.io team members can contribute to this repository.
 
 To request changes to the documentation or report an issue, follow the steps in [Filing issues](#filing-issues). 

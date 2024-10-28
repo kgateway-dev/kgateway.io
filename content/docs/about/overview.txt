@@ -1,0 +1,9 @@
+---
+title: {{< reuse "docs/snippets/product-name.md" >}} overview
+weight: 10
+description: Learn more about {{< reuse "docs/snippets/product-name.md" >}}, its architecture, and benefits. 
+---
+
+## About {{< reuse "docs/snippets/product-name.md" >}}
+
+{{< reuse "conrefs/pages/gateway/about/overview.md" >}}

@@ -1,7 +1,7 @@
 ---
 linkTitle: "Gateway setup"
 title: Default gateway proxy setup
-weight: 40
+weight: 300
 next: /docs/traffic-management
 ---
 

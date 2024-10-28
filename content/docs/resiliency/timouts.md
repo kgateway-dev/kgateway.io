@@ -5,7 +5,7 @@ description: Set a maximum time for the gateway to handle a request, including e
 ---
 
 ## About
-A timeout is the amount of time ([duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration)) that Gloo Gateway waits for replies from an upstream service before the service is considered unavailable. This setting can be useful to avoid your apps from hanging or fail if no response is returned in a specific timeframe. With timeouts, calls either succeed or fail within a predicatble timeframe.
+A timeout is the amount of time ([duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration)) that {{< reuse "docs/snippets/product-name.md" >}} waits for replies from an upstream service before the service is considered unavailable. This setting can be useful to avoid your apps from hanging or fail if no response is returned in a specific timeframe. With timeouts, calls either succeed or fail within a predicatble timeframe.
 
 The time an app needs to process a request can vary a lot which is why applying the same timeout across services can cause a variety of issues. For example, a timeout that is too long can result in excessive latency from waiting for replies from failing services. On the other hand, a timeout that is too short can result in calls failing unnecessarily while waiting for an operation that needs responses from multiple services.
 
@@ -62,7 +62,7 @@ Use a RouteOption resource to specify timeouts for a specific route.
    EOF
    ```
 
-3. Send a request to the httpbin app on the `timout.example` domain. Verify that the request succeeds and that you see a `X-Envoy-Expected-Rq-Timeout-Ms` header. If the header is present, Gloo Gateway expects requests to the httpbin app to succeed within the set timeout. 
+3. Send a request to the httpbin app on the `timout.example` domain. Verify that the request succeeds and that you see a `X-Envoy-Expected-Rq-Timeout-Ms` header. If the header is present, {{< reuse "docs/snippets/product-name.md" >}} expects requests to the httpbin app to succeed within the set timeout. 
    {{< tabs items="LoadBalancer IP address or hostname,Port-forward for local testing" >}}
    {{% tab  %}}
    ```sh

@@ -1,6 +1,6 @@
 ---
 title: Security posture
-description: Review the following information about the security posture of Solo's Gloo Gateway Envoy extensions.
+description: Review the following information about the security posture of Solo's {{< reuse "docs/snippets/product-name.md" >}} Envoy extensions.
 weight: 50
 ---
 

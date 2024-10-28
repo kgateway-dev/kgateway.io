@@ -22,7 +22,7 @@ To learn more about CSRF, you can try out the [CSRF sandbox](https://www.envoypr
 {{% /callout%}}
 
 {{% callout type="info"  %}}
-If you use Gloo Gateway Enterprise, you can also set up a Web Application Firewall that is based on Apache ModSecurity. The filter lets you define CSRF rules in the OWASP Core Rule Set.
+If you use {{< reuse "docs/snippets/product-name.md" >}} Enterprise, you can also set up a Web Application Firewall that is based on Apache ModSecurity. The filter lets you define CSRF rules in the OWASP Core Rule Set.
 {{% /callout %}}
 
 ## Set up CSRF 
