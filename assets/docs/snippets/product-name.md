@@ -1,1 +1,1 @@
-kgateway
+k8sgateway
