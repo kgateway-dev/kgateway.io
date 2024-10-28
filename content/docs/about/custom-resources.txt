@@ -1,9 +1,0 @@
----
-title: Custom resources
-weight: 30
-description: Learn how the {{< reuse "docs/snippets/product-name.md" >}} and Kubernetes Gateway API custom resources interact. 
----
-
-## Custom resource overview
-
-{{< reuse "conrefs/pages/gateway/about/custom-resources.md" >}}
