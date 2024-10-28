@@ -1,10 +1,9 @@
 ---
 title: Contribution guidelines
 weight: 50
-description: Contribute to the {{< reuse "docs/snippets/product-name.md" >}} project.
 ---
 
-Solo welcomes your contribution the [{{< reuse "docs/snippets/product-name.md" >}} project](https://github.com/solo-io/gloo).
+The {{< reuse "docs/snippets/product-name.md" >}} project welcomes your contribution.
 
 ## Ways to contribute
 
@@ -35,19 +34,19 @@ Sometimes, you might need to open a larger PR, such as for:
 For significant changes to the Gloo project, get input on the design before starting on the implementation.
 
 1. Refer to [Filing issues](#filing-issues) to find or open an issue with your idea.
-2. Message the [Solo team on Slack](https://slack.solo.io) to discuss your proposed changes and come up with an implementation plan.
-3. Refer to the [`devel` directory](https://github.com/solo-io/gloo/tree/main/devel) in the Gloo project for tools and helpful information to contribute, debug, and test your code.
+2. Message the [team on Slack](https://slack.solo.io) to discuss your proposed changes and come up with an implementation plan.
+3. Refer to the [`devel` directory](https://github.com/solo-io/gloo/tree/main/devel) in the {{< reuse "docs/snippets/product-name.md" >}} project for tools and helpful information to contribute, debug, and test your code.
 4. Open a draft PR with the `work in progress` label to get feedback on your work.
-5. Address any review comments that a Solo team member leaves.
+5. Address any review comments that a team member leaves.
 
-**The Solo team will merge and release your code changes!**
+**The {{< reuse "docs/snippets/product-name.md" >}} codeowners will merge and release your code changes!**
 
 ## Code review guidelines
 
-Every piece of code in Gloo is reviewed by at least one Solo team member familiar with that codebase.
+Every piece of code in Gloo is reviewed by at least one team member familiar with that codebase.
 
 1. **Changelog** Every PR in Gloo needs a changelog entry. For more information about changelogs, see the [readme](https://github.com/solo-io/go-utils/tree/main/changelogutils). 
-2. **CI check** A Solo team member needs to kick off the CI process by commenting `/test` on your PR.
+2. **CI check** A team member needs to kick off the CI process by commenting `/test` on your PR.
 3. **Testing** Please write tests for your changes. Bias towards fast / unit testing. 
 4. **Comments** The code reviewer may leave comments to discuss changes. Minor preferences are often called out with `nit`.
 
@@ -61,6 +60,6 @@ ginkgo -cover && go tool cover -html *.coverprofile
 
 ## Documentation
 
-The {{< reuse "docs/snippets/product-name.md" >}} ({{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}) documentation is built from a private GitHub repository. Currently, only Solo.io team members can contribute to this repository.
+The {{< reuse "docs/snippets/product-name.md" >}} ({{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}) documentation is built from a public GitHub repository that you are welcome to contribute to.
 
 To request changes to the documentation or report an issue, follow the steps in [Filing issues](#filing-issues). 
