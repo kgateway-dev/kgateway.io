@@ -18,7 +18,7 @@ The open source project Istio is the leading service mesh implementation that of
 * Fine-grained access control and quotas
 * Automatic logs, metrics, and traces for traffic in the service mesh
 
-### About the {{< reuse "docs/snippets/product-name.md" >}} Istio integration
+### About the Istio integration
 
 {{< reuse "docs/snippets/product-name.md" >}} comes with an Istio integration that allows you to configure your gateway proxy with an Istio sidecar. The Istio sidecar uses mutual TLS (mTLS) to prove its identity and to secure the connection between your gateway and the services in your Istio service mesh. In addition, you can control and secure the traffic that enters the mesh by applying all the advanced routing, traffic management, security, resiliency, and AI capabilities that {{< reuse "docs/snippets/product-name.md" >}} offers. For example, you can set up end-user authentication and authorization, per-user rate limiting quotas, web application filters, and access logging to help prevent malicious attacks and audit service mesh usage. 
 
@@ -47,7 +47,7 @@ Set up Istio. Choose between the following options to set up Istio:
 {{% /tab %}}
 {{< /tabs >}}
 
-## Enable the Istio integration in {{< reuse "docs/snippets/product-name.md" >}}
+## Enable the Istio integration
 
 Upgrade your {{< reuse "docs/snippets/product-name.md" >}} installation to enable the Istio integration. 
 
