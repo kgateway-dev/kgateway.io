@@ -7,7 +7,7 @@ icon: lightbulb
 {{< cards >}}
   {{< card link="overview" title="Overview" >}}
   {{< card link="architecture" title="Architecture" >}}
-  {{< card link="deployment-patters" title="Deployment patterns" >}}
+  {{< card link="deployment-patterns" title="Deployment patterns" >}}
   {{< card link="custom-resources" title="Custom resources" >}}
   {{< card link="resource-validation" title="Resource validation" >}}
 {{< /cards >}}
