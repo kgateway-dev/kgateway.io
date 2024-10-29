@@ -1,9 +1,0 @@
----
-title: Architecture
-weight: 15
-description: Learn more about the components that make up {{< reuse "docs/snippets/product-name.md" >}}. These components work together to provide traffic management, security, and resiliency. 
----
-
-## Component architecture
-
-{{< reuse "conrefs/pages/gateway/about/architecture.md" >}}
