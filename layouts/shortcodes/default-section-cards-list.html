@@ -1,0 +1,23 @@
+{{ $rows := .Get "rows" | default "3" }}
+
+<div class="hextra-cards mt-4 gap-4 grid not-prose" style="--rows: {{ $rows }};">
+    {{- $context := . -}}
+    {{ range .Page.Pages }}
+    {{- $link := .Permalink -}}
+    {{- $title := .Title -}}
+    {{- $icon := "document" -}}
+
+    {{- $href := cond (strings.HasPrefix $link "/") ($link | relURL) $link -}}
+
+    <a class="hextra-card group flex flex-col justify-start overflow-hidden rounded-lg border hx-border-gray-200 text-current no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:shadow-sm active:hx-shadow-gray-200 transition-all duration-200 hover:hx-border-gray-300 bg-transparent shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"
+        {{- if $link -}} href="{{ $href }}" {{- end -}}>
+        <span
+            class="flex font-semibold items-start gap-2 p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">
+            {{- with $icon }}{{ partial "utils/icon.html" (dict "name" $icon) -}}{{- end -}}
+            {{- $title -}}
+        </span>
+    </a>
+    {{- /* Strip trailing newline. */ -}}
+    {{ end }}
+
+</div>
