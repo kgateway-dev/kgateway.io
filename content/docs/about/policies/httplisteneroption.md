@@ -4,6 +4,8 @@ weight: 35
 description: You can use an HttpListenerOption resource to attach policies to one, multiple, or all HTTP or HTTPs listeners on the gateway. 
 ---
 
+You can use an HttpListenerOption resource to attach policies to one, multiple, or all HTTP or HTTPs listeners on the gateway.=]['/]
+
 ## Policy attachment {#policy-attachment-listeneroption}
 
 Learn more about how you can attach policies to HTTP or HTTPS listeners. 
@@ -94,6 +96,6 @@ If you create multiple HttpListenerOption resources and attach them to the same 
 You cannot attach multiple HttpListenerOption resources to the same listener, *even if* they define different top-level policies. To add multiple policies, define them in the same HttpListenerOption resource.
 {{% /callout %}}
 
-In the following image, you want to attach two HttpListenerOption resources to the HTTP listener. One configures caching and the other one configures traffic tapping. Because only one HttpListenerOption can be attached to a gateway listener via `targetRefs` at any given time, only the policy that is created first is enforced (policy 1). 
+In the following image, you want to attach two HttpListenerOption resources to the HTTP listener. One configures local rate limiting and the other one configures a CSRF policy. Because only one HttpListenerOption can be attached to a gateway listener via `targetRefs` at any given time, only the policy that is created first is enforced (policy 1). 
 
 {{< reuse-image src="img/policy-ov-multiple-httplisteneroption.svg" width="800" >}}

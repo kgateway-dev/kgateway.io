@@ -14,7 +14,7 @@ Keep in mind the following considerations when working with an ALB:
 ## Before you begin
 
 1. Create or use an existing AWS account. 
-2. Follow the [Get started guide](/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}} and deploy the httpbin sample app. You do not need to set up a Gateway as you create a custom Gateway as part of this guide. 
+2. Follow the [Get started guide](/docs/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}} and deploy the httpbin sample app. You do not need to set up a Gateway as you create a custom Gateway as part of this guide. 
 
 ## Step 1: Deploy the AWS Load Balancer controller
 

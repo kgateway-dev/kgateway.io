@@ -3,7 +3,7 @@ title: Self-managed gateways (BYO)
 weight: 30
 ---
 
-Follow the [Get started guide](/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}. You do not need to create a Gateway resource, because you create a self-managed Gateway as part of this guide. 
+Follow the [Get started guide](/docs/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}. You do not need to create a Gateway resource, because you create a self-managed Gateway as part of this guide. 
 
 ## Create a self-managed gateway proxy
 
