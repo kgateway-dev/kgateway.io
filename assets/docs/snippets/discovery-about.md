@@ -4,5 +4,4 @@ The following resources can be discovered automatically:
 
 * Kubernetes Services
 * AWS Lambda Functions
-* Google Cloud Functions
 * OpenAPI-based Functions

@@ -27,7 +27,7 @@ While this setup is great to split up and load balance traffic across apps, you 
 
 ## Sharded gateway with central ingress {#sharded-gatway-with-central-ingress}
 
-The following image shows a {{< reuse "docs/snippets/product-name.md" >}} proxy that serves as the main ingress endpoint for all traffic. The gateway proxy can be configured to apply common traffic management, resiliency, and security rules to all traffic that enters the cluster. For example, you can set global rate limits or header manipulation policies on that gateway before you forward traffic to a second layer of gateway proxies. This is useful if you need a central IP address and DNS name for the gateway that serves all your traffic. 
+The following image shows a {{< reuse "docs/snippets/product-name.md" >}} proxy that serves as the main ingress endpoint for all traffic. The gateway proxy can be configured to apply common traffic management, resiliency, and security rules to all traffic that enters the cluster. For example, you can set CORS or header manipulation policies on that gateway before you forward traffic to a second layer of gateway proxies. This is useful if you need a central IP address and DNS name for the gateway that serves all your traffic. 
 
 The second layer of gateway proxies can apply additional traffic management, resiliency, and security policies to incoming traffic for specific apps. You also shard the second layer of proxies to better account for high and low traffic services to avoid noisy neighbor problems. All gateway proxies are managed by the same {{< reuse "docs/snippets/product-name.md" >}} control plane.
 

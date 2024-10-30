@@ -3,7 +3,9 @@ linkTitle: "Documentation"
 title: Welcome
 ---
 
-Welcome to the documentation for the {{< reuse "docs/snippets/product-name.md" >}} open source project!
+Welcome to the documentation for the {{< reuse "docs/snippets/product-name.md" >}} open source project! 
+
+Explore the following sections to get started: 
 
 {{< cards >}}
   {{< card link="quickstart" title="Quickstart" >}}
