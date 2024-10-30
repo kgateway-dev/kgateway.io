@@ -15,5 +15,4 @@ Review reference docs for API, CLI, Helm, and more.
   {{< card link="ports" title="Reserved ports" >}}
   {{< card link="security-posture" title="Security posture" >}}
   {{< card link="versions" title="Version support" >}}
-  {{< card link="security-updates" title="CVE and security updates" >}}
 {{< /cards >}}
