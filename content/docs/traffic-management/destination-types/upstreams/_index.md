@@ -19,8 +19,9 @@ For more information, see the [Upstream proto definition](https://docs.solo.io/g
 Check out the following guides for examples on how to use the supported Upstreams types with {{< reuse "docs/snippets/product-name.md" >}}. 
 
 {{< cards >}}
-  {{< card link="static" title="Static" >}}
+  {{< card link="static" title="Static IP address or hostname" >}}
   {{< card link="kubernetes" title="Kubernetes Service" >}}
+  {{< card link="lambda" title="AWS Lambda" >}}
   {{< card link="http2" title="HTTP/2" >}}
 {{< /cards >}}
 

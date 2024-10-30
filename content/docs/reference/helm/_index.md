@@ -1,7 +1,6 @@
 ---
 title: Helm value reference
-weight: 25
-description: Section containing Helm chart values for Gloo Edge
+weight: 10
 ---
 
 Review the Helm values for the open source {{< reuse "docs/snippets/product-name.md" >}} Helm chart.

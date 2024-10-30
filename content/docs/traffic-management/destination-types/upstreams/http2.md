@@ -1,7 +1,6 @@
 ---
 title: HTTP/2
-weight: 30
-description:
+weight: 40
 ---
 
 You might have services in your Kubernetes cluster that use HTTP/2 for communication. Typically these are gRPC services, but it could apply to any service that uses HTTP/2 in its transport layer. To enable HTTP/2 communication, the `spec.useHttp2` value for the Upstream must be set to `true`. This setting instructs {{< reuse "docs/snippets/product-name.md" >}} to use HTTP/2 for communication with the destination. 
