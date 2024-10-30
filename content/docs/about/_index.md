@@ -4,6 +4,8 @@ weight: 200
 icon: lightbulb
 ---
 
+Learn about {{< reuse "docs/snippets/product-name.md" >}} architecture, features, and benefits.
+
 {{< cards >}}
   {{< card link="overview" title="Overview" >}}
   {{< card link="architecture" title="Architecture" >}}

@@ -1,8 +1,10 @@
 ---
 title: Custom resources
 weight: 30
-description: Learn how the k8sgatewya and Kubernetes Gateway API custom resources interact. 
+description: Learn how the k8sgateway and Kubernetes Gateway API custom resources interact. 
 ---
+
+Learn how the k8sgateway and Kubernetes Gateway API custom resources interact. 
 
 ## Custom resource overview
 
