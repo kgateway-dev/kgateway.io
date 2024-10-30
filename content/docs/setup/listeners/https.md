@@ -3,7 +3,7 @@ title: HTTPS listeners
 weight: 20
 ---
 
-1. Follow the [Get started guide](/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app.
+1. Follow the [Get started guide](/docs/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app.
 
 2. Make sure that you have the OpenSSL version of `openssl`, not LibreSSL. The `openssl` version must be at least 1.1.
    1. Check the `openssl` version that is installed. If you see LibreSSL in the output, continue to the next step.
@@ -55,7 +55,7 @@ weight: 20
 
    |Setting|Description|
    |--|--|
-   |`spec.gatewayClassName`|The name of the Kubernetes gateway class that you want to use to configure the gateway. When you set up {{< reuse "docs/snippets/product-name.md" >}}, a default gateway class is set up for you. To view the gateway class configuration, see [Gateway classes and types](/about/class-type/). |
+   |`spec.gatewayClassName`|The name of the Kubernetes gateway class that you want to use to configure the gateway. When you set up {{< reuse "docs/snippets/product-name.md" >}}, a default gateway class is set up for you. |
    |`spec.listeners`|Configure the listeners for this gateway. In this example, you configure an HTTPS gateway that listens for incoming traffic on port 443. |
    |`spec.listeners.tls.mode`|The TLS mode that you want to use for incoming requests. In this example, HTTPS requests are terminated at the gateway and the unecrypted request is forwarded to the service in the cluster. |
    |`spec.listeners.tls.certificateRefs`|The Kubernetes secret that holds the TLS certificate and key for the gateway. The gateway uses these credentials to establish the TLS connection with a client, and to decrypt incoming HTTPS requests.|

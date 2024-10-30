@@ -4,6 +4,8 @@ weight: 10
 description: Use a RouteOption resource to attach policies to one, multiple, or all routes in an HTTPRoute resource. 
 ---
 
+Use a RouteOption resource to attach policies to one, multiple, or all routes in an HTTPRoute resource. 
+
 ## Policy attachment {#policy-attachment-routeoption}
 
 You can apply RouteOption policies to all routes in an HTTPRoute resource or only to specific routes. 
@@ -180,5 +182,5 @@ Policies that are defined in a RouteOption resource and that are applied to a pa
 * Child HTTPRoutes can augment the inherited settings by defining RouteOption fields that were not already set on the parent HTTPRoute. 
 * Policies are inherited along the complete delegation chain, with parent policies having a higher priority than their respective children.
 
-For an example, see the [Policy inheritance](/traffic-management/route-delegation/policy-inheritance/) guide. 
+For an example, see the [Policy inheritance](/docs/traffic-management/route-delegation/policy-inheritance/) guide. 
 

@@ -17,7 +17,7 @@ Keep in mind the following considerations when working with an NLB:
 ## Before you begin
 
 1. Create or use an existing AWS account. 
-2. Follow the [Get started guide](/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app.
+2. Follow the [Get started guide](/docs/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app.
 
 ## Step 1: Deploy the AWS Load Balancer controller
 
@@ -91,7 +91,7 @@ Follow these steps to create a simple NLB that accepts HTTP traffic on port 80 a
    ```
    
    Example output: 
-   ```
+   ```console
    NAME                   TYPE           CLUSTER-IP      EXTERNAL-IP                                                                     PORT(S)        AGE
    gloo-proxy-aws-cloud   LoadBalancer   172.20.181.57   k8s-gloosyst-glooprox-e11111a111-111a1111aaaa1aa.elb.us-east-2.amazonaws.com   80:30557/TCP   12m
    ```
@@ -182,7 +182,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
    ```
    
    Example output: 
-   ```
+   ```console
    NAME                   TYPE           CLUSTER-IP      EXTERNAL-IP                                                                     PORT(S)        AGE
    gloo-proxy-aws-cloud   LoadBalancer   172.20.181.57   k8s-gloosyst-glooprox-e11111a111-111a1111aaaa1aa.elb.us-east-2.amazonaws.com   443:30557/TCP   12m
    ```
@@ -283,7 +283,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
    ```
    
    Example output: 
-   ```
+   ```console
    * Hostname https.example.com was found in DNS cache
    *   Trying 3.XX.XXX.XX:443...
    * Connected to https.example.com (3.XX.XXX.XX) port 443 (#0)

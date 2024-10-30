@@ -25,7 +25,7 @@ You can check whether strict or permissive validation is enabled in your {{< reu
 Configure the validating admission webhook to reject invalid {{< reuse "docs/snippets/product-name.md" >}} custom resources before they are applied in the cluster. 
 
 1. Enable strict resource validation. Resource validation is enabled by using the Settings resource in {{< reuse "docs/snippets/product-name.md" >}}. You can update the Settings resource by editing it directly or by enabling it in your {{< reuse "docs/snippets/product-name.md" >}} Helm installation. 
-   {{< tabs items="Update the Settings resource,Update your OSS installation" >}}
+   {{< tabs items="Update the Settings resource,Update your installation" >}}
    {{% tab %}}
    
    Edit the Settings resource directly. Note that manually editing the Settings resource does not change the resource validation setting in the Helm installation. Because of that, this setting gets overwritten when you upgrade your Helm installation. 
@@ -61,20 +61,22 @@ Configure the validating admission webhook to reject invalid {{< reuse "docs/sni
       ```
    2. In your Helm values file, enable strict resource validation.
       ```yaml
-      
       gateway:
         validation:
           enabled: true
           alwaysAcceptResources: false    
       ```
       
-      {{% callout type="info" text="To also reject Gloo custom resources that result in a `Warning` status, include `gateway.validation.allowWarnings: false`." /%}}
+      {{% callout type="info" %}}
+To also reject Gloo custom resources that result in a `Warning` status, include `gateway.validation.allowWarnings: false`.
+      {{% /callout %}}
     
    3. Upgrade your installation. 
       ```sh
-      helm upgrade -n gloo-system gloo-gateway glooe/gloo-ee \
+      helm upgrade -n gloo-system gloo-gateway gloo/gloo \
        --values gloo-gateway.yaml \
        --version {{< reuse "docs/versions/gloo_oss_patch.md" >}}
+      ```
    
    {{% /tab %}}
    

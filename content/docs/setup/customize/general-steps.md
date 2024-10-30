@@ -3,16 +3,16 @@ title: Customize gateway proxies
 weight: 10
 ---
 
-The configuration that is used to spin up a gateway proxy is stored in several custom resources, including GatewayParameters, Settings, and a gateway proxy template. By default, {{< reuse "docs/snippets/product-name.md" >}} creates these resources for you during the installation so that you can spin up gateway proxies with the [default proxy configuration](/setup/default/). You have the following options to change the default configuration for your gateway proxies: 
+The configuration that is used to spin up a gateway proxy is stored in several custom resources, including GatewayParameters, Settings, and a gateway proxy template. By default, {{< reuse "docs/snippets/product-name.md" >}} creates these resources for you during the installation so that you can spin up gateway proxies with the [default proxy configuration](/docs/setup/default/). You have the following options to change the default configuration for your gateway proxies: 
 
 | Option | Description | 
 | -- | -- | 
 | Change GatewayParameters and Settings | Adjust settings on the gateway proxy, such as additional labels, security contexts, annotations, and more, by using the GatewayParameters and Settings resources. {{< reuse "docs/snippets/product-name.md" >}} continues to manage the gateway for you. The values that you set in the GatewayParameters and Settings resources are automatically translated and applied to the gateway proxies.  |
-| Create self-managed gateways with custom proxy templates | If you want to change the [default gateway proxy template](/setup/default/#gateway-proxy-template) and provide your own Envoy configuration to bootstrap the proxy with, you must create a self-managed gateway. For more information, see [Self-managed gateways (BYO)](/setup/customize/selfmanaged). | 
+| Create self-managed gateways with custom proxy templates | If you want to change the [default gateway proxy template](/docs/setup/default/#gateway-proxy-template) and provide your own Envoy configuration to bootstrap the proxy with, you must create a self-managed gateway. For more information, see [Self-managed gateways (BYO)](/docs/setup/customize/selfmanaged). | 
 
 ## Customize the gateway proxy 
 
-The example in this guide uses the GatewayParameters resource to change settings on the gateway proxy. To find other customization examples, see the [Gateway customization guides](/setup/customize/).
+The example in this guide uses the GatewayParameters resource to change settings on the gateway proxy. To find other customization examples, see the [Gateway customization guides](/docs/setup/customize/).
 
 1. Optional: Review the default configuration for your gateway proxies. This configuration can help you identify the settings that you want to change or add. 
    ```sh
