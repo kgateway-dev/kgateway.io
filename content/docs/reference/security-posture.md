@@ -1,8 +1,9 @@
 ---
 title: Security posture
-description: Review the following information about the security posture of Solo's {{< reuse "docs/snippets/product-name.md" >}} Envoy extensions.
 weight: 50
 ---
+
+Review the following information about the security posture of the Envoy extensions in {{< reuse "docs/snippets/product-name.md" >}}.
 
 For more information, see the [Envoy threat model](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/security/threat_model).
 
