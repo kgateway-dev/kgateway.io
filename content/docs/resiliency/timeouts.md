@@ -4,6 +4,8 @@ weight: 10
 description: Set a maximum time for the gateway to handle a request, including error retries.
 ---
 
+Set a maximum time for the gateway to handle a request, including error retries.
+
 ## About
 A timeout is the amount of time ([duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration)) that {{< reuse "docs/snippets/product-name.md" >}} waits for replies from an upstream service before the service is considered unavailable. This setting can be useful to avoid your apps from hanging or fail if no response is returned in a specific timeframe. With timeouts, calls either succeed or fail within a predicatble timeframe.
 

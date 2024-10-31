@@ -4,6 +4,8 @@ weight: 20
 description: Set up route delegation for a child HTTPRoute resource that can receive traffic from one or more parent HTTPRoute resources. 
 ---
 
+Set up route delegation for a child HTTPRoute resource that can receive traffic from one or more parent HTTPRoute resources.
+
 ## Configuration overview
 
 In this guide you walk through a route delegation example that demonstrates route delegation between two parent HTTPRoute and two child HTTPRoute resources that forward traffic to an httpbin sample app. The following image illustrates the route delegation hierarchy:

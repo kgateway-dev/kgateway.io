@@ -250,7 +250,7 @@ If you do not want to deploy an OpenTelemetry collector and Grafana, you can qui
    EOF
    ```
    
-4. Save the [sample Grafana dashboard configuration](/observability/grafana.json") as `envoy.json`. 
+4. Save the [sample Grafana dashboard configuration](grafana.json) as `envoy.json`. 
 
 5. Import the Grafana dashboard. 
    ```sh

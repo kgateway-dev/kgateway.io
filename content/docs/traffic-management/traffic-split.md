@@ -8,7 +8,7 @@ Set up weight-based routing between multiple apps.
 
 ## Before you begin
 
-Follow the [Get started guide](/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app. 
+Follow the [Get started guide](/docs/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app. 
 
 ## Deploy the Helloworld sample app
 
@@ -83,7 +83,7 @@ To demonstrate weighted routing for multiple apps, deploy 3 versions of the Hell
 
    |Setting|Description|
    |--|--|
-   |`spec.parentRefs.name`|The name and namespace of the gateway resource that serves the route. In this example, you use the gateway that you installed as part of the [Get started guide](/quickstart/). |
+   |`spec.parentRefs.name`|The name and namespace of the gateway resource that serves the route. In this example, you use the gateway that you installed as part of the [Get started guide](/docs/quickstart/). |
    |`spec.hostnames`| The hostname for which you want to apply traffic splitting.|
    |`spec.rules.matches.path`|The path prefix to match on. In this example, `/` is used. |
    |`spec.rules.backendRefs`| A list of services you want to forward traffic to. Use the `weight` option to define the amount of traffic that you want to forward to each service. |

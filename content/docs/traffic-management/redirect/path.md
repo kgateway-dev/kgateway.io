@@ -4,6 +4,8 @@ weight: 443
 description: Redirect requests to a different path prefix. 
 ---
 
+Redirect requests to a different path prefix. 
+
 For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} documentation](https://gateway-api.sigs.k8s.io/api-types/httproute/#filters-optional).
 
 ## Before you begin
@@ -15,7 +17,7 @@ Path redirects use the HTTP path modifier to replace either an entire path or pa
 
 ### Replace prefix path
 
-1. Create an HTTP route for the httpbin app that you set up as part of the [Get started guide](/gloo-gateway/v2/quickstart/). In the following example, requests to the `/get` path are redirected to the `/status/200` path, and a 302 HTTP response code is returned to the user.
+1. Create an HTTP route for the httpbin app that you set up as part of the [Get started guide](/docs/quickstart/). In the following example, requests to the `/get` path are redirected to the `/status/200` path, and a 302 HTTP response code is returned to the user.
 
    Because the `ReplacePrefixPath` path modifier is used, only the path prefix is replaced during the redirect. For example, requests to `http://path.redirect.example/get` result in the `https://path.redirect.example/status/200` redirect location. However, for longer paths, such as in `http://path.redirect.example/get/headers`, only the prefix is replaced and a redirect location of `https://path.redirect.example/status/200/headers` is returned.
 
@@ -49,7 +51,7 @@ Path redirects use the HTTP path modifier to replace either an entire path or pa
 
    |Setting|Description|
    |--|--|
-   |`spec.parentRefs.name`|The name and namespace of the gateway resource that serves the route. In this example, you use the gateway that you installed as part of the [Get started guide](/gloo-gateway/v2/quickstart). |
+   |`spec.parentRefs.name`|The name and namespace of the gateway resource that serves the route. In this example, you use the gateway that you installed as part of the [Get started guide](/docs/quickstart). |
    |`spec.hostnames`| The hostname for which you want to apply the redirect.|
    |`spec.rules.matches.path`|The prefix path that you want to redirect. In this example, you want to redirect all requests to the `/get` path. |
    |`spec.rules.filters.type`|The type of filter that you want to apply to incoming requests. In this example, the `RequestRedirect` is used.|
@@ -117,7 +119,7 @@ Path redirects use the HTTP path modifier to replace either an entire path or pa
 
 ### Replace full path
 
-1. Create an HTTP route for the httpbin app that you set up as part of the [Get started guide](/gloo-gateway/v2/quickstart/). In the following example, requests to the `/get` path are redirected to the `/status/200` path, and a 302 HTTP response code is returned to the user.
+1. Create an HTTP route for the httpbin app that you set up as part of the [Get started guide](/docs/quickstart/). In the following example, requests to the `/get` path are redirected to the `/status/200` path, and a 302 HTTP response code is returned to the user.
 
    Because the `ReplaceFullPath` path modifier is used, requests to `http://path.redirect.example/get` and `http://path.redirect.example/get/headers` both receive `https://path.redirect.example/status/200` as the redirect location.
 
@@ -151,7 +153,7 @@ Path redirects use the HTTP path modifier to replace either an entire path or pa
 
    |Setting|Description|
    |--|--|
-   |`spec.parentRefs.name`|The name and namespace of the gateway resource that serves the route. In this example, you use the gateway that you installed as part of the [Get started guide](/gloo-gateway/v2/quickstart). |
+   |`spec.parentRefs.name`|The name and namespace of the gateway resource that serves the route. In this example, you use the gateway that you installed as part of the [Get started guide](/docs/quickstart). |
    |`spec.hostnames`| The hostname for which you want to apply the redirect.|
    |`spec.rules.matches.path`|The prefix path that you want to redirect. In this example, you want to redirect all requests to the `/get` path. |
    |`spec.rules.filters.type`|The type of filter that you want to apply to incoming requests. In this example, the `RequestRedirect` is used.|

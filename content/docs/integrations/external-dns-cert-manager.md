@@ -114,7 +114,7 @@ You can later use Cert Manager to create TLS certificates for this hostname so t
    ```
 
 ## Set up Cert Manager
-Cert Manager is a Kubernetes controller that helps you automate the process of obtaining and renewing certificates from various PKI providers, such as AWS Private CA, Gloo Cloud CA, or Vault. In this example, you learn how to install Cert Manager by using Helm and how to configure it to obtain TLS certificates for your domain from Let's Encrypt.
+Cert Manager is a Kubernetes controller that helps you automate the process of obtaining and renewing certificates from various PKI providers, such as AWS Private CA, Google Cloud CA, or Vault. In this example, you learn how to install Cert Manager by using Helm and how to configure it to obtain TLS certificates for your domain from Let's Encrypt.
 
 {{% callout type="info" %}}
 To allow Cert Manager to use the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}, you must set `--feature-gates=ExperimentalGatewayAPISupport=true` during the Helm installation.
@@ -182,7 +182,7 @@ To allow Cert Manager to use the {{< reuse "docs/snippets/k8s-gateway-api-name.m
 
 ## Configure an HTTPS listener on your gateway
 
-1. Add an HTTPS listener to the gateway that you set up as part of the [Get started guide](/gloo-gateway/v2/quickstart/). Replace `<my-domain.com>` with your domain.
+1. Add an HTTPS listener to the gateway that you set up as part of the [Get started guide](/docs/quickstart/). Replace `<my-domain.com>` with your domain.
    ```yaml
    kubectl apply -f- <<EOF
    apiVersion: gateway.networking.k8s.io/v1

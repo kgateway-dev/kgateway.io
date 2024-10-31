@@ -24,7 +24,7 @@ Install the latest version of `glooctl`. Make sure to add `glooctl` to your PATH
 
 You can download a specific version of `glooctl` directly from the GitHub releases page.
 
-1. In your browser, navigate to the [{{< reuse "docs/snippets/product-name.md" >}} project releases](https://github.com/solo-io/gloo/releases).
+1. In your browser, navigate to the [{{< reuse "docs/snippets/product-name.md" >}} project releases](https://github.com/k8sgateway/k8sgateway.io/releases).
 2. Choose the version of `glooctl` to install.
 3. Click the version of `glooctl` that you want to install.
 4. In the **Assets**, download the `glooctl` package that matches your operating system, and follow your operating system procedures for replacing your existing `glooctl` binary file with the upgraded version.
@@ -37,7 +37,7 @@ When it's time to upgrade {{< reuse "docs/snippets/product-name.md" >}}, make su
 You can use the `glooctl upgrade` command to upgrade or roll back the `glooctl` version. For example, you might change versions during an upgrade process, or when you have multiple versions of {{< reuse "docs/snippets/product-name.md" >}} across clusters that you manage from the same workstation. For more options, run `glooctl upgrade --help`.
 
 {{< callout type="info" >}}
-Upgrading the `glooctl` CLI does _not_ [upgrade the {{< reuse "docs/snippets/product-name.md" >}} version](/operations/upgrade/) that you run in your clusters.
+Upgrading the `glooctl` CLI does _not_ upgrade the {{< reuse "docs/snippets/product-name.md" >}} version that you run in your clusters.
 {{< /callout >}}
 
 1. Set the version to upgrade `glooctl` to in an environment variable. Include the patch version.
@@ -73,7 +73,7 @@ Use the same version of the `glooctl` CLI as the {{< reuse "docs/snippets/produc
 
 ## Reference documentation
 
-For more information about each `glooctl` command, see the [CLI documentation](/reference/cli/) or run the help flag for a command.
+For more information about each `glooctl` command, see the [CLI documentation](/docs/reference/cli/) or run the help flag for a command.
 
 ```shell
 glooctl --help

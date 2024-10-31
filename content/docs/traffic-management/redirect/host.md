@@ -4,6 +4,8 @@ weight: 442
 description: Redirect requests to a different host. 
 ---
 
+Redirect requests to a different host. 
+
 For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} documentation](https://gateway-api.sigs.k8s.io/api-types/httproute/#filters-optional).
 
 ## Before you begin
@@ -12,7 +14,7 @@ For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md"
 
 ## Set up host redirects
 
-1. Create an HTTP route for the httpbin app that you created as part of the [Get started guide](/gateway/v2/quickstart/). In the following example, requests for the `host.redirect.example` domain are redirected to the `www.example.com` hostname, and a 302 HTTP response code is returned to the user.
+1. Create an HTTP route for the httpbin app that you created as part of the [Get started guide](/docs/quickstart/). In the following example, requests for the `host.redirect.example` domain are redirected to the `www.example.com` hostname, and a 302 HTTP response code is returned to the user.
    ```yaml
    kubectl apply -f- <<EOF
    apiVersion: gateway.networking.k8s.io/v1beta1

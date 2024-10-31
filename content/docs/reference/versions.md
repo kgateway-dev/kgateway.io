@@ -12,10 +12,6 @@ Review the following information about supported release versions for {{< reuse 
 |--------------|------------|-------|------|---------|
 | 1.18.x | 1.25 - 1.29 | v3 xDS API | >= 3.12 | 1.16 - 1.22 |
 
-{{% callout type="info" %}}
-`†` **Istio versions**: {{< reuse "docs/snippets/product-name.md" >}} is tested on Istio 1.16 - 1.22. Istio must run on a compatible version of Kubernetes. For example, Istio 1.22 is tested, but not supported, on Kubernetes 1.26. For more information, see the [Istio docs](https://istio.io/latest/docs/releases/supported-releases/). If you want hardened `n-4` versions of Istio for particular requirements such as FIPS, consider using [Gloo Mesh Enterprise](https://www.solo.io/products/gloo-mesh/), which includes ingress gateway and service mesh components.
-{{% /callout %}}
-
 ## Image variants
 
 For some {{< reuse "docs/snippets/product-name.md" >}} component images, the following image variants are supported. 
@@ -35,11 +31,11 @@ For some {{< reuse "docs/snippets/product-name.md" >}} component images, the fol
 
 You have two options for specifying the variant for a {{< reuse "docs/snippets/product-name.md" >}} image in your Helm values:
 * Specify the image variant for all {{< reuse "docs/snippets/product-name.md" >}} components in the `global.image.variant` Helm field. Supported values include `standard`, and `distroless`. If unset, the default value is `standard`.
-* Specify images for individual components by using variant tags in the `gloo.<component>.deployment.image.tag` field of the component's Helm settings, such as `quay.io/solo-io/gloo-ee:v{{< reuse "docs/versions/gloo_oss_patch.md" >}}-distroless`.
+* Specify images for individual components by using variant tags in the `gloo.<component>.deployment.image.tag` field of the component's Helm settings, such as `quay.io/solo-io/gloo:v{{< reuse "docs/versions/gloo_oss_patch.md" >}}-distroless`.
 
 ## Release cadence
 
-Stable builds for {{< reuse "docs/snippets/product-name.md" >}} are released as minor versions approximately every three months. A stable branch for a minor version, such as {{< reuse "docs/versions/gloo_short.md" >}}, is tagged from `main`, and stable builds for OSS are supported from that branch.
+Stable builds for {{< reuse "docs/snippets/product-name.md" >}} are released as minor versions approximately every three months. A stable branch for a minor version, such as {{< reuse "docs/versions/gloo_short.md" >}}, is tagged from `main`, and stable builds are supported from that branch.
 
 ## Release development
 

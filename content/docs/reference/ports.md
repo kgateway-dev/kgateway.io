@@ -3,7 +3,7 @@ title: Port reference
 weight: 50
 ---
 
-Review the ports that are used by {{< reuse "docs/snippets/product-name.md" >}} open source.
+Review the ports that are used by {{< reuse "docs/snippets/product-name.md" >}}.
 
 {{< reuse "docs/snippets/product-name.md" >}} deploys containers that listen on certain ports for incoming traffic. In the following sections, you can review the pods and services that make up {{< reuse "docs/snippets/product-name.md" >}}, and the ports that these pods and services listen on. Note that if you choose to set up mutual TLS (mTLS) for communication between {{< reuse "docs/snippets/product-name.md" >}} components, alternate ports and traffic flows are used.
 
@@ -12,7 +12,7 @@ This list of ports reflects the default values that are included in an unmodifie
 {{% /callout %}}
 
 
-## k8sgateway open source
+## k8sgateway 
 
 {{< reuse "docs/snippets/product-name.md" >}} open source software is the free, open source version of {{< reuse "docs/snippets/product-name.md" >}}. The installation process uses a Helm chart to create the necessary custom resource definitions (CRDs), deployments, services, pods, etc. The services and pods listen on specific ports to enable communication between the components that make up {{< reuse "docs/snippets/product-name.md" >}} and outside sources that will consume Upstream resources through {{< reuse "docs/snippets/product-name.md" >}}.
 
@@ -78,11 +78,9 @@ The following table lists the services backed by the deployed pods.
 The following pods are updated to support mTLS:
 * **{{< reuse "docs/snippets/product-name.md" >}} pod**: Envoy and SDS sidecars are added.
 * **Gateway proxies**: SDS sidecars are added and the ConfigMap is updated for mTLS.
-* **ExtAuth**: Envoy and SDS sidecars are added.
-* **Rate-limit**: Envoy and SDS sidecars are added.
 
 The additional Envoy sidecar has an admin port listening on 8081 for each pod.
 
 ### Updated traffic flow
 
-The Envoy sidecar on the {{< reuse "docs/snippets/product-name.md" >}}, extauth, and rate-limit pods intercepts the inbound traffic for each pod and performs the TLS decryption before passing the traffic to the main container. This process does not alter the ports that are used by the pods and services, but it does create additional ports that are used for internal communication within the pod. For instance, the {{< reuse "docs/snippets/product-name.md" >}} pod continues to listen on 9977 as the xDS server. Internally, the {{< reuse "docs/snippets/product-name.md" >}} container listens on 127.0.0.1:9999 for xDS requests. The Envoy sidecar in the pod accepts requests on 9977, decrypts the request, and sends it to port 9999 on the localhost for processing.
+The Envoy sidecar on the {{< reuse "docs/snippets/product-name.md" >}} intercepts the inbound traffic for each pod and performs the TLS decryption before passing the traffic to the main container. This process does not alter the ports that are used by the pods and services, but it does create additional ports that are used for internal communication within the pod. For instance, the {{< reuse "docs/snippets/product-name.md" >}} pod continues to listen on 9977 as the xDS server. Internally, the {{< reuse "docs/snippets/product-name.md" >}} container listens on 127.0.0.1:9999 for xDS requests. The Envoy sidecar in the pod accepts requests on 9977, decrypts the request, and sends it to port 9999 on the localhost for processing.
