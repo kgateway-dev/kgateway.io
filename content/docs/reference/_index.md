@@ -14,5 +14,6 @@ Review reference docs for API, CLI, Helm, and more.
   {{< card link="osa" title="Open source attribution" >}}
   {{< card link="ports" title="Reserved ports" >}}
   {{< card link="security-posture" title="Security posture" >}}
+  {{< card link="vulnerabilities" title="Security vulnerabilities" >}}
   {{< card link="versions" title="Version support" >}}
 {{< /cards >}}
