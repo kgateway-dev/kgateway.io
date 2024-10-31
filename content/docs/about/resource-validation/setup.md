@@ -68,7 +68,7 @@ Configure the validating admission webhook to reject invalid {{< reuse "docs/sni
       ```
       
       {{% callout type="info" %}}
-To also reject Gloo custom resources that result in a `Warning` status, include `gateway.validation.allowWarnings: false`.
+To also reject {{< reuse "docs/snippets/product-name.md" >}} custom resources that result in a `Warning` status, include `gateway.validation.allowWarnings: false`.
       {{% /callout %}}
     
    3. Upgrade your installation. 
