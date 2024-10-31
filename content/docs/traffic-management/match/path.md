@@ -4,6 +4,8 @@ weight: 421
 description: Match the targeted path of an incoming request against specific path criteria. 
 ---
 
+Match the targeted path of an incoming request against specific path criteria. 
+
 For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} documentation](https://gateway-api.sigs.k8s.io/api-types/httproute/#matches).
 
 ## Before you begin

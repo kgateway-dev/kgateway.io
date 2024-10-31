@@ -12,7 +12,7 @@ Upstreams allow you to add additional configuration to instruct {{< reuse "docs/
 
 You can manually create Upstreams or enable Upstream discovery in {{< reuse "docs/snippets/product-name.md" >}} to automatically create Upstreams for any Kubernetes service that is created and discovered in the cluster. 
 
-For more information, see the [Upstream proto definition](https://docs.solo.io/gloo-edge/latest/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/upstream.proto.sk/). 
+For more information, see the [Upstream API reference](/docs/reference/api/upstream). 
 
 ## Types
 
@@ -64,7 +64,6 @@ To enable service discovery:
 
 2. In your Helm values file, enable service discovery. 
    ```yaml
-   
    gloo:
      discovery:
        enabled: true
@@ -72,7 +71,7 @@ To enable service discovery:
 
 3. Upgrade your {{< reuse "docs/snippets/product-name.md" >}} installation to enable service discovery. 
    ```sh
-   helm upgrade -n gloo-system gloo-gateway glooe/gloo-ee \
+   helm upgrade -n gloo-system gloo-gateway gloo/gloo\
    --values gloo-gateway.yaml \
    --version {{< reuse "docs/versions/n-patch.md" >}} 
    ```
@@ -115,4 +114,4 @@ spec:
           name: rewrite
 ```
 
-For an example, see the [Static](/traffic-management/destination-types/upstreams/static/}) Upstream guide. 
+For an example, see the [Static](/docs/traffic-management/destination-types/upstreams/static/) Upstream guide. 

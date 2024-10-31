@@ -6,8 +6,6 @@ weight: 50
 
 For more information, see the [Envoy threat model](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/security/threat_model).
 
-## About the security posture {#about}
-
 ```yaml
 # ---OPEN SOURCE--
 extensions:

@@ -19,19 +19,19 @@ During the upgrade, pods that run the new version of the control plane and proxi
 - You can skip patch versions within the same minor release. For example, you can upgrade from version {{< reuse "docs/versions/gloo_short.md" >}}.0 to {{< reuse "docs/versions/gloo_oss_patch.md" >}} directly, and skip the patch versions in between.
 
 **Minor version upgrades**: </br>
-- Before you upgrade the minor version, always upgrade your _current_ minor version to the latest patch. For example, if you currently run {{< reuse "docs/snippets/product-name.md" >}} open source version {{< reuse "docs/versions/gloo_short.md" >}}.0, first upgrade your installation to {{< reuse "docs/versions/gloo_oss_patch.md" >}} before you upgrade to {{< reuse "docs/versions/gloo_oss_patch_n+1.md" >}}. This ensures that your current environment is up-to-date with any bug fixes or security patches before you begin the minor version upgrade process.
-- Always upgrade to the latest patch version of the target minor release. For example, if you want to upgrade from open source version {{< reuse "docs/versions/gloo_oss_patch_n-1.md" >}} to {{< reuse "docs/versions/gloo_short.md" >}}.x, and {{< reuse "docs/versions/gloo_oss_patch.md" >}} is the latest patch version, upgrade directly to {{< reuse "docs/versions/gloo_oss_patch.md" >}} and skip any previous patch versions. Do not upgrade to a lower patch version, such as {{< reuse "docs/versions/gloo_short.md" >}}.0, {{< reuse "docs/versions/gloo_short.md" >}}.1, and so on.
+- Before you upgrade the minor version, always upgrade your _current_ minor version to the latest patch. This ensures that your current environment is up-to-date with any bug fixes or security patches before you begin the minor version upgrade process.
+- Always upgrade to the latest patch version of the target minor release. Do not upgrade to a lower patch version, such as {{< reuse "docs/versions/gloo_short.md" >}}.0, {{< reuse "docs/versions/gloo_short.md" >}}.1, and so on.
 - Do not skip minor versions during your upgrade. Upgrade minor release versions one at a time. 
 
 ## Step 1: Prepare to upgrade
 
 1. **Minor version upgrades**: Before you upgrade to a new minor version, first upgrade your _current_ minor version to the latest patch.
-   1. Find the latest patch of your minor version by checking the [changelog](/reference/changelog/open_source/).
+   1. Find the latest patch of your minor version by checking the [release changelog](https://github.com/k8sgateway/k8sgateway.io/releases).
    2. Follow this upgrade guide to upgrade to the latest patch for your current minor version.
    3. Then, you can repeat the steps in this guide to upgrade to the latest patch of the next minor version.
 
 2. Check that your underlying infrastructure platform, such as Kubernetes, and other dependencies run supported versions for the {{< reuse "docs/snippets/product-name.md" >}} version that you want to upgrade to.
-   1. Review the [supported versions](/reference/version/versions/) for dependencies such as Kubernetes, Istio, Helm, and more.
+   1. Review the [supported versions](/docs/reference/versions/) for dependencies such as Kubernetes, Istio, Helm, and more.
    2. Compare the supported version against the versions that you currently use. 
    3. If necessary, upgrade your dependencies, such as consulting your cluster infrastructure provider to upgrade the version of Kubernetes that your cluster runs.
 
@@ -41,8 +41,6 @@ During the upgrade, pods that run the new version of the control plane and proxi
    ```
 
 ## Step 2: Upgrade the `glooctl` CLI
-
-Upgrade the [`glooctl` CLI](/setup/prepare/cli/#upgrade-the-cli) to the version of {{< reuse "docs/snippets/product-name.md" >}} you want to upgrade to.
 
 1. Upgrade `glooctl` to the new version. Note that this command only updates the CLI binary version, and does not upgrade your {{< reuse "docs/snippets/product-name.md" >}} installation.
    ```shell
@@ -71,16 +69,10 @@ Upgrade the [`glooctl` CLI](/setup/prepare/cli/#upgrade-the-cli) to the version 
    
 2. Apply the Gloo custom resource definitions (CRDs) for the upgrade version.
    1. Download and apply the new CRDs.
-      * Open source:
-        ```sh
-        helm pull gloo/gloo --version $NEW_VERSION --untar
-        kubectl apply -f gloo/crds
-        ```
-      * Enterprise edition:
-        ```sh
-        helm pull glooe/gloo-ee --version $NEW_VERSION --untar
-        kubectl apply -f gloo-ee/charts/gloo/crds
-        ```
+      ```sh
+      helm pull gloo/gloo --version $NEW_VERSION --untar
+      kubectl apply -f gloo/crds
+      ```
    2. Check the deployed CRDs to ensure that none of them are out of date.
       ```sh
       glooctl check-crds
@@ -94,15 +86,10 @@ Upgrade the [`glooctl` CLI](/setup/prepare/cli/#upgrade-the-cli) to the version 
       ```
 
    2. Compare your current Helm chart values with the version that you want to upgrade to. You can get a values file for the upgrade version with the `helm show values` command.
-      * Open source:
-        ```sh
-        helm show values gloo/gloo --version $NEW_VERSION > all-values.yaml
-        open all-values.yaml
-        ```
-      * Enterprise edition:
-        ```sh
-        helm show values glooe/gloo-ee --version $NEW_VERSION > all-values.yaml
-        ```
+      ```sh
+      helm show values gloo/gloo --version $NEW_VERSION > all-values.yaml
+      open all-values.yaml
+      ```
 
    3. Make any changes that you want by editing your `gloo-gateway.yaml` Helm values file or preparing the `--set` flags.
 

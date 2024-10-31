@@ -4,6 +4,8 @@ weight: 462
 description: Rewrite path prefixes in requests. 
 ---
 
+Rewrite path prefixes in requests. 
+
 For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} documentation](https://gateway-api.sigs.k8s.io/api-types/httproute/#filters-optional).
 
 ## Before you begin

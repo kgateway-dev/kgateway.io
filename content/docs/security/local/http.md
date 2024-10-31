@@ -4,7 +4,7 @@ weight: 20
 description: Limit the number of requests that are allowed to enter the cluster before global rate limiting and external auth policies are applied.  
 ---
 
-To learn more about what local rate limiting is and the differences between local and global rate limiting, see [About local rate limiting](/security/ratelimit/local/overview/).
+To learn more about what local rate limiting is and the differences between local and global rate limiting, see [About local rate limiting](/docs/security/ratelimit/local/).
 
 ## Before you begin
 

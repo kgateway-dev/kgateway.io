@@ -5,7 +5,7 @@ weight: 20
 
 Use the {{< reuse "docs/snippets/product-name.md" >}} VirtualHostOption or RouteOption resources to add or remove response headers for a specific route or all routes that the gateway serves. 
 
-For more information, see the [Header manipulation API](https://docs.solo.io/gloo-edge/latest/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/options/headers/headers.proto.sk/).
+For more information, see the [Header manipulation API](/docs/reference/api/headers).
 
 ## Before you begin
 
@@ -245,7 +245,7 @@ Remove specific headers from all responses from the routes that the gateway serv
      ```
    
    Example output: 
-   ```
+   ```console
    * Mark bundle as not supporting multiuse
    < HTTP/1.1 200 OK
    HTTP/1.1 200 OK
@@ -362,7 +362,7 @@ You can remove HTTP headers from a response of a specific route before the respo
      ```
 
    Example output: 
-   ```
+   ```console
    * Mark bundle as not supporting multiuse
    < HTTP/1.1 200 OK
    HTTP/1.1 200 OK

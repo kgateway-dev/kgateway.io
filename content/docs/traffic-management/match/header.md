@@ -4,6 +4,8 @@ weight: 422
 description: Specify a set of headers which incoming requests must match in entirety.
 ---
 
+Specify a set of headers which incoming requests must match in entirety.
+
 For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} documentation](https://gateway-api.sigs.k8s.io/api-types/httproute/#matches).
 
 ## Before you begin
@@ -65,7 +67,7 @@ For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md"
    content-length: 0
    ```
 
-3. Send another request to the httpbin app on the `match.example` domain. This time, add the `version: v2` header that you configured in the HTTP route. Verify that your request now succeeds and you get back a 200 HTTP response code. 
+3. Send another request to the httpbin app on the `match.example` domain. This time, add the `version: v2` header that you configured in the HTTPRoute. Verify that your request now succeeds and you get back a 200 HTTP response code. 
    {{< tabs items="Cloud Provider LoadBalancer,Port-forward for local testing" >}}
    {{% tab %}}
    ```sh

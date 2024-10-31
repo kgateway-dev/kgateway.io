@@ -21,7 +21,7 @@ Make sure to use the version of `glooctl` that matches your installed version.
 
 ## Debug your gateway setup
 
-1. Check the {{< reuse "docs/snippets/product-name.md" >}} installation. You can do that by using the `glooctl check` [command](/reference/cli/glooctl_check/) that quickly checks the health of {{< reuse "docs/snippets/product-name.md" >}} deployments, pods, and custom resources, and verifies Gloo resource configuration. Any issues that are found are reported back in the CLI output. 
+1. Check the {{< reuse "docs/snippets/product-name.md" >}} installation. You can do that by using the `glooctl check` [command](/docs/reference/cli/glooctl_check/) that quickly checks the health of {{< reuse "docs/snippets/product-name.md" >}} deployments, pods, and custom resources, and verifies Gloo resource configuration. Any issues that are found are reported back in the CLI output. 
    ```sh
    glooctl check
    ```
@@ -104,7 +104,7 @@ Make sure to use the version of `glooctl` that matches your installed version.
    | Component | Command |
    | ------------- | ------------- |
    | Gloo control plane | `kubectl logs -f -n gloo-system -l gloo=gloo` |
-   | Gloo gateway proxy {{< callout type="info" >}}To view logs for incoming requests to your gateway proxy, be sure to <a href="/security/access-logging/" >enable access logging</a> first.{{< /callout >}}| `kubectl logs -f -n gloo-system -l gloo=kube-gateway` |
+   | Gloo gateway proxy {{< callout type="info" >}}To view logs for incoming requests to your gateway proxy, be sure to <a href="/docs/security/access-logging/" >enable access logging</a> first.{{< /callout >}}| `kubectl logs -f -n gloo-system -l gloo=kube-gateway` |
    | Redis | `kubectl logs -f -n gloo-system -l gloo=redis` |
 
 8. If you still cannot troubleshoot the issue, capture the logs and the state of {{< reuse "docs/snippets/product-name.md" >}} in a file. 

@@ -7,13 +7,13 @@ Automatically monitor the status of upstreams by configuring health checks.
 
 ## About
 
-When you configure a {{< reuse "docs/snippets/product-name.md" >}} [Upstream](/traffic-management/destination-types/upstreams/) resource, you can add both health checks and outlier detection, which are important elements of building resilient apps.
+When you configure a {{< reuse "docs/snippets/product-name.md" >}} [Upstream](/docs/traffic-management/destination-types/upstreams/) resource, you can add both health checks and outlier detection, which are important elements of building resilient apps.
 
 ### Health checks
 
 Health checks periodically and automatically assess the readiness of the Upstream to receive requests. You can configure several settings, such as health thresholds and check intervals, that {{< reuse "docs/snippets/product-name.md" >}} uses to determine whether a service is marked as healthy or unhealthy. For more information, see the Envoy [health checking](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/health_checking#arch-overview-health-checking) documentation.
 
-In the `healthChecks` section of an Upstream resource, specify settings for how you want the health check to perform. For more information about all of the settings that you can configure, see the [reference documentation](https://docs.solo.io/gloo-edge/latest/reference/api/github.com/solo-io/gloo/projects/gloo/api/external/envoy/api/v2/core/health_check.proto.sk/#healthcheck).
+In the `healthChecks` section of an Upstream resource, specify settings for how you want the health check to perform. For more information about all of the settings that you can configure, see the [reference documentation](/docs/reference/api/health_check).
 
 | Setting | Description |
 | ------- | ----------- |
@@ -28,7 +28,7 @@ In the `healthChecks` section of an Upstream resource, specify settings for how 
 
 Outlier detection defines how {{< reuse "docs/snippets/product-name.md" >}} removes (ejects) any unhealthy services from the pool of healthy destinations to send traffic to. Your apps then have time to recover before they are added back to the load-balancing pool and checked again for consecutive errors. For more information, see the Envoy [outlier detection](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/outlier) documentation.
 
-In the `outlierDetection` section of an Upstream resource, specify settings for how you want {{< reuse "docs/snippets/product-name.md" >}} to handle Upstreams that fail healthchecks. For more information about all of the settings that you can configure, see the [reference documentation](https://docs.solo.io/gloo-edge/latest/reference/api/github.com/solo-io/gloo/projects/gloo/api/external/envoy/api/v2/cluster/outlier_detection.proto.sk/).
+In the `outlierDetection` section of an Upstream resource, specify settings for how you want {{< reuse "docs/snippets/product-name.md" >}} to handle Upstreams that fail healthchecks. For more information about all of the settings that you can configure, see the [reference documentation](/docs/reference/api/outlier_detection/).
 
 | Setting | Description |
 | ------- | ----------- |

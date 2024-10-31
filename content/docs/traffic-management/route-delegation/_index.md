@@ -22,7 +22,7 @@ Each set of routing rules is defined in a dedicated HTTPRoute resource. These HT
 |Grandchild|HTTPRoute|A grandchild HTTPRoute resource receives traffic from a child HTTPRoute resource and can either bind to a specific child by using the `parentRef` section or be selected by all child HTTPRoute resources that want to delegate traffic to this grandchild. To receive traffic from a child, the grandchild must match on a path that contains the path prefix for which the child delegated traffic for. For example, if the child delegates traffic for `/route/a`, the grandchild must define a route that includes this prefix, such as `/route/a/myservice`. If traffic is further delegated to a great-grandchild HTTPRoute resource, a `PathPrefix` matcher must be used. Note that great-grandchild or great-great-grandchild behave similar to a grandchild HTTPRoute resource. |
 
 {{< callout type="info" >}}
-For an example route delegation setup with a parent, child, and grandchild HTTPRoute resource, see [Multi-level delegation](/traffic-management/route-delegation/multi-level-delegation/). 
+For an example route delegation setup with a parent, child, and grandchild HTTPRoute resource, see [Multi-level delegation](/docs/traffic-management/route-delegation/multi-level-delegation/). 
 {{< /callout >}}
 
 ## Benefits and use cases
@@ -43,7 +43,7 @@ Review some of the benefits that you can achieve with route delegation:
 
 {{< reuse "docs/snippets/policy-inheritance.md" >}}
 
-For an example, see the [Policy inheritance](/traffic-management/route-delegation/policy-inheritance/) guide. 
+For an example, see the [Policy inheritance](/docs/traffic-management/route-delegation/policy-inheritance/) guide. 
 
 ## Limitations
 
@@ -88,7 +88,7 @@ Child HTTPRoute resources can use prefix, exact, or regex path matchers in their
 ```
 
 {{< callout type="info" >}}
-Keep in mind that if a child HTTPRoute delegates routing decisions to a grandchild or great-grandchild HTTPRoute, a `PathPrefix` matcher must be used for that route. Check out the [Multi-level delegation](/traffic-management/route-delegation/multi-level-delegation/) guide for an example of how to set up route delegation between a parent, child, and grandchild HTTPRoute. 
+Keep in mind that if a child HTTPRoute delegates routing decisions to a grandchild or great-grandchild HTTPRoute, a `PathPrefix` matcher must be used for that route. Check out the [Multi-level delegation](/docs/traffic-management/route-delegation/multi-level-delegation/) guide for an example of how to set up route delegation between a parent, child, and grandchild HTTPRoute. 
 {{< /callout >}}
 
 
@@ -104,7 +104,7 @@ For example, let's say you define the following parent and child HTTPRoute resou
 |<ul><li>parent<ul><li>match on <code>/anything/team1</code> and delegate traffic to the <code>child</code> HTTPRoute</li><li>header1: val1</li><li>query1=val1</li></ul></li><li>child<ul><li>match on <code>/anything/team1/foo</code> and route traffic to the httpbin app </li><li>headerX: valX</li><li>queryX=valX</li></ul></li></ul> | ❌ </br></br> The headers and query parameters that are specified on the child HTTPRoute do not include the header and query parameters that are specified on the parent.  |
 
 {{< callout type="info" >}}
-For an example route delegation setup that uses header and query parameters, see [Header and query match](/traffic-management/route-delegation/header-query/). 
+For an example route delegation setup that uses header and query parameters, see [Header and query match](/docs/traffic-management/route-delegation/header-query/). 
 {{< /callout >}}
 
 ### Cyclic delegation
