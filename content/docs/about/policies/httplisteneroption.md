@@ -4,7 +4,7 @@ weight: 35
 description: You can use an HttpListenerOption resource to attach policies to one, multiple, or all HTTP or HTTPs listeners on the gateway. 
 ---
 
-You can use an HttpListenerOption resource to attach policies to one, multiple, or all HTTP or HTTPs listeners on the gateway.=]['/]
+You can use an HttpListenerOption resource to attach policies to one, multiple, or all HTTP or HTTPs listeners on the gateway.
 
 ## Policy attachment {#policy-attachment-listeneroption}
 
