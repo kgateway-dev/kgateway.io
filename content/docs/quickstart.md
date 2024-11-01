@@ -208,19 +208,34 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
    ```
 {{% /tab %}}
 {{% tab %}}
-1. Port-forward the Argo CD server on port 9999.
+1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}. 
+   
+   ```sh
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.0.0/standard-install.yaml
+   ```
+   
+   Example output: 
+   
+   ```txt
+   customresourcedefinition.apiextensions.k8s.io/gatewayclasses.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/gateways.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/httproutes.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/referencegrants.gateway.networking.k8s.io created
+   ```
+   
+2. Port-forward the Argo CD server on port 9999.
    
    ```sh
    kubectl port-forward svc/argocd-server -n argocd 9999:443
    ```
 
-2. Open the [Argo CD UI](https://localhost:9999/).
+3. Open the [Argo CD UI](https://localhost:9999/).
 
-3. Log in with the `admin` username and `k8sgateway` password.
+4. Log in with the `admin` username and `k8sgateway` password.
    
    {{< reuse-image src="img/argocd-welcome.png" >}}
 
-4. Create an Argo CD application to install the {{% reuse "docs/snippets/product-name.md" %}} Helm chart. 
+5. Create an Argo CD application to install the {{% reuse "docs/snippets/product-name.md" %}} Helm chart. 
    
    ```yaml
    kubectl apply -f- <<EOF
@@ -264,7 +279,7 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
    EOF
    ```
    
-5. Verify that the `gloo` control plane is up and running.
+6. Verify that the `gloo` control plane is up and running.
    
    ```sh
    kubectl get pods -n gloo-system 
@@ -281,13 +296,13 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
    gloo-resource-rollout-cleanup-nj4t8   0/1     Completed   0          39s
    ```
 
-6. Verify that the `gloo-gateway` GatewayClass is created. You can optionally take a look at how the gateway class is configured by adding the `-o yaml` option to your command.
+7. Verify that the `gloo-gateway` GatewayClass is created. You can optionally take a look at how the gateway class is configured by adding the `-o yaml` option to your command.
    
    ```sh
    kubectl get gatewayclass gloo-gateway
    ```
 
-7. Open the Argo CD UI and verify that you see the Argo CD application with a `Healthy` and `Synced` status.
+8. Open the Argo CD UI and verify that you see the Argo CD application with a `Healthy` and `Synced` status.
    
    {{< reuse-image src="/img/argo-gg-oss.png" >}}
 
