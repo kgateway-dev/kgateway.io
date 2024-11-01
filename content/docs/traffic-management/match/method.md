@@ -3,6 +3,7 @@ title: HTTP method
 weight: 423
 description: Specify an HTTP method, such as POST, GET, PUT, PATCH, or DELETE, to match requests against.
 ---
+Specify an HTTP method, such as POST, GET, PUT, PATCH, or DELETE, to match requests against.
 
 For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} documentation](https://gateway-api.sigs.k8s.io/api-types/httproute/#matches).
 

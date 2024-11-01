@@ -1,4 +1,4 @@
-1. Follow the [Get started guide](/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app.
+1. Follow the [Get started guide](/docs/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app.
 
 2. Get the external address of the gateway and save it in an environment variable.
    {{< tabs items="Cloud Provider LoadBalancer,Port-forward for local testing" >}}

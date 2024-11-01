@@ -5,7 +5,7 @@ weight: 10
 
 
 {{< callout type="info" >}}
-If you followed the [Get started guide](/quickstart/), you already have a gateway named `http` in the `gloo-system` namespace of your cluster. This gateway can be used as the main ingress for the apps in your cluster. HTTPRoutes can refer to this gateway independent of the namespace they are in. To create more gateways, use the instructions in this guide. 
+If you followed the [Get started guide](/docs/quickstart/), you already have a gateway named `http` in the `gloo-system` namespace of your cluster. This gateway can be used as the main ingress for the apps in your cluster. HTTPRoutes can refer to this gateway independent of the namespace they are in. To create more gateways, use the instructions in this guide. 
 {{< /callout >}}
 
 1. Create a gateway resource with an HTTP listener. 
@@ -33,7 +33,7 @@ If you followed the [Get started guide](/quickstart/), you already have a gatewa
 
    |Setting|Description|
    |--|--|
-   |`spec.gatewayClassName`|The name of the Kubernetes gateway class that you want to use to configure the gateway. When you set up {{< reuse "docs/snippets/product-name.md" >}}, a default gateway class is set up for you. To view the gateway class configuration, see [Gateway classes and types](/about/class-type/). |
+   |`spec.gatewayClassName`|The name of the Kubernetes gateway class that you want to use to configure the gateway. When you set up {{< reuse "docs/snippets/product-name.md" >}}, a default gateway class is set up for you.  |
    |`spec.listeners`|Configure the listeners for this gateway. In this example, you configure an HTTP gateway that listens for incoming traffic for the `mydomain.com` domain on port 8080. The gateway can serve HTTP routes from any namespace. |
 
 2. Check the status of the gateway to make sure that your configuration is accepted and no conflicts exist in your cluster. 
@@ -98,7 +98,7 @@ If you followed the [Get started guide](/quickstart/), you already have a gatewa
    
 
    Example output: 
-   ```
+   ```console
    * Mark bundle as not supporting multiuse
    < HTTP/1.1 200 OK
    HTTP/1.1 200 OK

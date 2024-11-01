@@ -1,8 +1,10 @@
 ---
 title: Istio service mesh
 weight: 530
-description: Use your {{< reuse "docs/snippets/product-name.md" >}} proxy as the ingress gateway to control and secure traffic that enters your service mesh. 
+description: Use your k8sgateway proxy as the ingress gateway to control and secure traffic that enters your service mesh. 
 ---
+
+Use your {{< reuse "docs/snippets/product-name.md" >}} proxy as the ingress gateway to control and secure traffic that enters your service mesh.
 
 ## About service mesh
 
@@ -20,7 +22,7 @@ The open source project Istio is the leading service mesh implementation that of
 
 ### About the Istio integration
 
-{{< reuse "docs/snippets/product-name.md" >}} comes with an Istio integration that allows you to configure your gateway proxy with an Istio sidecar. The Istio sidecar uses mutual TLS (mTLS) to prove its identity and to secure the connection between your gateway and the services in your Istio service mesh. In addition, you can control and secure the traffic that enters the mesh by applying all the advanced routing, traffic management, security, resiliency, and AI capabilities that {{< reuse "docs/snippets/product-name.md" >}} offers. For example, you can set up end-user authentication and authorization, per-user rate limiting quotas, web application filters, and access logging to help prevent malicious attacks and audit service mesh usage. 
+{{< reuse "docs/snippets/product-name.md" >}} comes with an Istio integration that allows you to configure your gateway proxy with an Istio sidecar. The Istio sidecar uses mutual TLS (mTLS) to prove its identity and to secure the connection between your gateway and the services in your Istio service mesh. In addition, you can control and secure the traffic that enters the mesh by applying all the advanced routing, traffic management, security, and resiliency capabilities that {{< reuse "docs/snippets/product-name.md" >}} offers.  
 
 ## Before you begin
 
@@ -383,7 +385,7 @@ You can exclude a service from requiring to communicate with the gateway proxy v
 
 1. Follow the [Uninstall guide in the Gloo Mesh Enterprise documentation](https://docs.solo.io/gloo-mesh-enterprise/main/setup/uninstall/) to remove Gloo Mesh Enterprise. 
    
-2. Follow the [upgrade guide]/operations/upgrade/) to upgrade your {{< reuse "docs/snippets/product-name.md" >}} Helm installation values. Remove the Helm values that you added as part of this guide. 
+2. Follow the [upgrade guide](/docs/operations/upgrade/) to upgrade your {{< reuse "docs/snippets/product-name.md" >}} Helm installation values. Remove the Helm values that you added as part of this guide. 
 
 3. Remove the Istio sidecar from the httpbin app. 
    1. Remove the Istio label from the httpbin namespace. 

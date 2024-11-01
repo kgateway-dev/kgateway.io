@@ -4,6 +4,8 @@ weight: 441
 description: Permanently redirect HTTP traffic to HTTPS. 
 ---
 
+Permanently redirect HTTP traffic to HTTPS. 
+
 For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} documentation](https://gateway-api.sigs.k8s.io/api-types/httproute/#filters-optional).
 
 ## Before you begin
@@ -12,7 +14,7 @@ For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md"
 
 ## Redirect HTTP traffic to HTTPS
 
-1. Create an HTTP route for the httpbin app that you set up as part of the [Get started guide](/gloo-gateway/v2/quickstart/). In the following example, all HTTP requests are redirected to HTTPS, and a 301 HTTP response code is returned to the user. 
+1. Create an HTTP route for the httpbin app that you set up as part of the [Get started guide](/docs/quickstart/). In the following example, all HTTP requests are redirected to HTTPS, and a 301 HTTP response code is returned to the user. 
    ```yaml
    kubectl apply -f- <<EOF
    apiVersion: gateway.networking.k8s.io/v1beta1
@@ -39,7 +41,7 @@ For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md"
 
    |Setting|Description|
    |--|--|
-   |`spec.parentRefs.name`|The name and namespace of the gateway resource that serves the route. In this example, you use the gateway that you installed as part of the [Get started guide](/gloo-gateway/v2/quickstart). |
+   |`spec.parentRefs.name`|The name and namespace of the gateway resource that serves the route. In this example, you use the gateway that you installed as part of the [Get started guide](/docs/quickstart). |
    |`spec.hostnames`| The hostname for which you want to apply the redirect.|
    |`spec.rules.filters.type`|The type of filter that you want to apply to incoming requests. In this example, the `RequestRedirect` is used.|
    |`spec.rules.filters.requestRedirect.scheme`|The type of redirect that you want to apply. The `https` scheme redirects all incoming traffic to HTTPS. |

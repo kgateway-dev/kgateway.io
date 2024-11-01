@@ -3,6 +3,7 @@ title: Host rewrites
 weight: 461
 description: Replace the host header value before forwarding a request to a backend service. 
 ---
+Replace the host header value before forwarding a request to a backend service. 
 
 For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} documentation](https://gateway-api.sigs.k8s.io/api-types/httproute/#filters-optional).
 
@@ -58,7 +59,7 @@ Path rewrites use the HTTP path modifier to rewrite <!--either an entire path or
 3. Send a request to the httpbin app on the `rewrite.example` domain. Verify that you get back a 200 HTTP response code and that you see the `Host: www.example.com` header in your response. 
 
    {{< callout type="info" >}}
-   The following request returns a 200 HTTP response code, because you set up an HTTPRoute for the httpbin app on the `www.example.com` domain as part of the [Getting started guide](/quickstart/). If you chose a different domain for your example, make sure that you have an HTTPRoute that can be reached under the host you want to rewrite to. 
+   The following request returns a 200 HTTP response code, because you set up an HTTPRoute for the httpbin app on the `www.example.com` domain as part of the [Getting started guide](/docs/quickstart/). If you chose a different domain for your example, make sure that you have an HTTPRoute that can be reached under the host you want to rewrite to. 
    {{< /callout >}}
    
    {{< tabs items="Cloud Provider LoadBalancer,Port-forward for local testing" >}}

@@ -26,11 +26,11 @@ The `solo.io/gloo-gateway` controller implements the {{< reuse "docs/snippets/k8
 
 When you create a Gateway resource, a default [gateway proxy template](https://github.com/solo-io/gloo/blob/main/projects/gateway2/helm/gloo-gateway/templates/gateway/proxy-deployment.yaml) is used to automatically spin up and bootstrap a gateway proxy deployment and service in your cluster. The template includes Envoy configuration that binds the gateway proxy deployment to the Gateway resource that you created. In addition, the settings in the [GatewayParameters](#gatewayparameters) and [Settings](#settings) resources are used to configure the gateway proxy. 
 
-The resulting gateway proxy is managed for you and its configuration is automatically updated based on the settings in the GatewayParameters or Settings resources. To publicly expose the gateway proxy deployment, a service of type LoadBalancer is created for you. Depending on the cloud provider that you use, the LoadBalancer service is assigned a public IP address or hostname that you can use to reach the gateway. To expose an app on the gateway, you must create an HTTPRoute resource and define the matchers and filter rules that you want to apply before forwarding the request to the app in your cluster. You can review the [Get started](/quickstart/), [traffic management](/traffic-management/), [security](/security/), and [resiliency](/resiliency/) guides to find examples for how to route and secure traffic to an app. 
+The resulting gateway proxy is managed for you and its configuration is automatically updated based on the settings in the GatewayParameters or Settings resources. To publicly expose the gateway proxy deployment, a service of type LoadBalancer is created for you. Depending on the cloud provider that you use, the LoadBalancer service is assigned a public IP address or hostname that you can use to reach the gateway. To expose an app on the gateway, you must create an HTTPRoute resource and define the matchers and filter rules that you want to apply before forwarding the request to the app in your cluster. You can review the [Get started](/docs/quickstart/), [traffic management](/docs/traffic-management/), [security](/docs/security/), and [resiliency](/docs/resiliency/) guides to find examples for how to route and secure traffic to an app. 
 
 You can change the default configuration of your gateway proxy by changing the GatewayParameters and Settings values. In most cases, you add the values via the {{< reuse "docs/snippets/product-name.md" >}} Helm chart. {{< reuse "docs/snippets/product-name.md" >}} automatically updates the GatewayParameters and Settings resources for you. But you can also update the values in these two resources directly. Keep in mind that values that you manually add to the GatewayParameters and Settings resources do not persist between upgrades. To persist these values, you must add the values to the {{< reuse "docs/snippets/product-name.md" >}} Helm chart.
 
-If you do not want to use the default gateway proxy template to bootstrap your proxies, you can choose to create a self-managed gateway. With self-managed gateways, you are responsible for defining the proxy deployment template that you want to bootstrap your proxies with. For more information, see [Self-managed gateways (BYO)](/setup/customize/selfmanaged/).
+If you do not want to use the default gateway proxy template to bootstrap your proxies, you can choose to create a self-managed gateway. With self-managed gateways, you are responsible for defining the proxy deployment template that you want to bootstrap your proxies with. For more information, see [Self-managed gateways (BYO)](/docs/setup/customize/selfmanaged/).
 
 ## GatewayParameters 
 
@@ -39,17 +39,10 @@ If you do not want to use the default gateway proxy template to bootstrap your p
 
 ## Settings
 
-Settings is a {{< reuse "docs/snippets/product-name.md" >}} custom resource that is used to set global values for {{< reuse "docs/snippets/product-name.md" >}} components, such as the gateway proxies or the {{< reuse "docs/snippets/product-name.md" >}} control plane. The Settings resource is automatically created based on the values that you set in the {{< reuse "docs/snippets/product-name.md" >}} Helm chart, but you can also manually update the Settings resource to enable or disable certain features in {{< reuse "docs/snippets/product-name.md" >}}. For example, the Settings resource determines whether [resource validation](/about/resource-validation/) is enabled in your environment. 
+Settings is a {{< reuse "docs/snippets/product-name.md" >}} custom resource that is used to set global values for {{< reuse "docs/snippets/product-name.md" >}} components, such as the gateway proxies or the {{< reuse "docs/snippets/product-name.md" >}} control plane. The Settings resource is automatically created based on the values that you set in the {{< reuse "docs/snippets/product-name.md" >}} Helm chart, but you can also manually update the Settings resource to enable or disable certain features in {{< reuse "docs/snippets/product-name.md" >}}. For example, the Settings resource determines whether [resource validation](/docs/about/resource-validation/) is enabled in your environment. 
 
 {{< callout type="info" >}}
 Note that when you manually update values in the Settings resource, these values do not persist between Helm upgrades. To ensure that your values are still present even after you upgrade to a new {{< reuse "docs/snippets/product-name.md" >}} version, add the values to your Helm chart instead.
-{{< /callout >}}
-
-{{< callout type="warning" >}}
-The Settings resource is shared between {{< reuse "docs/snippets/product-name.md" >}} proxies that are based on the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} and proxies that use the [{{< reuse "docs/snippets/product-name.md" >}} API](https://docs.solo.io/gloo-edge). However, some Settings fields can be set only for proxies that use the {{< reuse "docs/snippets/product-name.md" >}} API. If you run both types of proxies side-by-side in your cluster, follow these general steps: 
-1. Ensure that you want to apply the Settings values to all of your proxies. 
-2. Thoroughly test Settings changes for each proxy type to verify the expected behavior. 
-3. Proceed with the update by either manually changing the respective Settings fields or by setting these values in the Helm values file and upgrading your {{< reuse "docs/snippets/product-name.md" >}} installation. 
 {{< /callout >}}
 
 To view the default Settings resource, run the following command:
@@ -57,7 +50,7 @@ To view the default Settings resource, run the following command:
 kubectl get settings default -n gloo-system -o yaml
 ```
 
-When you follow the [Get started](/quickstart/) guide, the following Settings resource is created for you. To understand each setting, check out the [Settings custom resource documentation](https://docs.solo.io/gloo-edge/latest/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/settings.proto.sk/). 
+When you follow the [Get started](/docs/quickstart/) guide, the following Settings resource is created for you. To understand each setting, check out the [Settings custom resource documentation](/docs/reference/api/settings). 
 ```yaml
 apiVersion: gloo.solo.io/v1
 kind: Settings

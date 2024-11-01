@@ -18,7 +18,7 @@ Delays and aborts are independent of one another. When both values are set, your
 Faults can be configured for a route by using a RouteOption resource. Gateway-level faults are not supported.
 {{< /callout >}}
 
-For more information, see the [Fault API](https://docs.solo.io/gloo-edge/latest/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/options/faultinjection/fault.proto.sk/).
+For more information, see the [Fault API](/docs/reference/api/fault/).
 
 ## Before you begin
 

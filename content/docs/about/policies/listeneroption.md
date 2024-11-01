@@ -4,6 +4,8 @@ weight: 30
 description: You can use a ListenerOption resource to attach policies to one, multiple, or all gateway listeners. 
 ---
 
+You can use a ListenerOption resource to attach policies to one, multiple, or all gateway listeners.
+
 ## Policy attachment {#policy-attachment-listeneroption}
 
 

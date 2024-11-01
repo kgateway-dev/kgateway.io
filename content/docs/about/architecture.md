@@ -4,9 +4,11 @@ weight: 15
 description: Learn more about the components that make up k8sgateway. These components work together to provide traffic management, security, and resiliency. 
 ---
 
+Learn more about the components that make up k8sgateway. These components work together to provide traffic management, security, and resiliency for your apps.
+
 ## Component architecture
 
-The following image shows the different components that make up the {{< reuse "docs/snippets/product-name.md" >}} control and data plane. These components work together to translate Gloo and Kubernetes Gateway API custom resources into Envoy configuration. The Envoy configuration controls the behavior of the gateway proxies that serve your apps.
+The following image shows the different components that make up the {{< reuse "docs/snippets/product-name.md" >}} control and data plane. These components work together to translate gateway custom resources into Envoy configuration. The Envoy configuration controls the behavior of the gateway proxies that serve your apps.
 
 {{< reuse-image src="img/translation.svg" >}}
 
@@ -27,16 +29,16 @@ The config watcher component is part of the {{< reuse "docs/snippets/product-nam
 
 ### Secret watcher
 
-The secret watcher component is part of the {{< reuse "docs/snippets/product-name.md" >}} control plane and watches a secret store for updates to secrets. For example, you might use a Kubernetes Secret to store the AWS access key and secret key credentials for an Upstream to access an AWS Lambda. However, you can configure {{< reuse "docs/snippets/product-name.md" >}} to also watch other secret stores, such as HashiCorp Vault.
+The secret watcher component is part of the {{< reuse "docs/snippets/product-name.md" >}} control plane and watches a secret store for updates to secrets. For example, you might use a Kubernetes Secret to store the AWS access key and secret key credentials for an Upstream to access an AWS Lambda. However, you can configure {{< reuse "docs/snippets/product-name.md" >}} to also watch other secret stores.
 
 
 ### Endpoint discovery 
 
-The endpoint discovery component is part of the {{< reuse "docs/snippets/product-name.md" >}} control plane and watches service registries such as Kubernetes, Cloud Foundry, and Consul for IP addresses and hostnames that are associated with services. Each endpoint requires its own plug-in that supports the discovery functionality. For example, Kubernetes runs its own endpoint discovery goroutine. When endpoint discovery discovers a new or updated endpoint, the configuration is stored in etcd.
+The endpoint discovery component is part of the {{< reuse "docs/snippets/product-name.md" >}} control plane and watches service registries such as Kubernetes for IP addresses and hostnames that are associated with services. Each endpoint requires its own plug-in that supports the discovery functionality. For example, Kubernetes runs its own endpoint discovery goroutine. When endpoint discovery discovers a new or updated endpoint, the configuration is stored in etcd.
 
 ### Translation engine
 
-The {{< reuse "docs/snippets/product-name.md" >}} Translator receives snapshots of all the Kubernetes Gateway API, Kubernetes API, and {{< reuse "docs/snippets/product-name.md" >}} resources that you create or update. The translator starts a new translation loop for each update to translate these resources into valid Envoy configuration. The Envoy configuration is stored in an Envoy xDS snapshot.  
+The {{< reuse "docs/snippets/product-name.md" >}} translator receives snapshots of all the Kubernetes Gateway API, Kubernetes API, and {{< reuse "docs/snippets/product-name.md" >}} resources that you create or update. The translator starts a new translation loop for each update to translate these resources into valid Envoy configuration. The Envoy configuration is stored in an Envoy xDS snapshot.  
 
 The following image shows the different stages of a translation cycle. 
 
@@ -65,7 +67,7 @@ The final snapshot is passed to the xDS Server, which notifies Envoy of a succes
 
 {{< reuse "docs/snippets/discovery-about.md" >}}
 
-To enable automatic discovery of services, see [Discovery](/docs/traffic-management/destination-types/upstreams/about/#discovery). To learn more about Upstreams, see [About Upstreams](/docs/traffic-management/destination-types/upstreams/about/).
+To enable automatic discovery of services, see [Discovery](/docs/traffic-management/destination-types/upstreams/#discovery). To learn more about Upstreams, see [Upstreams](/docs/traffic-management/destination-types/upstreams/).
 
 The following image shows how the endpoint discovery component discovers Kubernetes services and Functions and automatically creates Upstream resources for them. 
 

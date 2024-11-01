@@ -36,7 +36,7 @@ To help determine the right settings for your network environment, consider your
 
 Because closing a TCP connection involves a four-way handshake, you might notice stale connections arise in an unstable network, where one side has been responding but the other side has not detected a response yet. Both sides might listen for events and consider the other nonresponsive, even though one side just missed the events.
 
-An example of this situation can occur between the {{< reuse "docs/snippets/product-name.md" >}} control plane and the Envoy gateway proxy. Envoy might listen for xDS configuration updates but not receive any. Because Envoy thinks that the connection is still alive, it does not try to reconnect to the {{< reuse "docs/snippets/product-name.md" >}} control plane. Even though {{< reuse "docs/snippets/product-name.md" >}} has a default TCP keepalive setting, you might find that you need to update the values. For an example, see [TCP keepalive on static clusters](#static-clusters).
+An example of this situation can occur between the {{< reuse "docs/snippets/product-name.md" >}} control plane and the Envoy gateway proxy. Envoy might listen for xDS configuration updates but not receive any. Because Envoy thinks that the connection is still alive, it does not try to reconnect to the {{< reuse "docs/snippets/product-name.md" >}} control plane. Even though {{< reuse "docs/snippets/product-name.md" >}} has a default TCP keepalive setting, you might find that you need to update the values. 
 
 **Load balancer connection tracking**
 
@@ -63,7 +63,7 @@ Downstream connections are between the Envoy gateway proxy and the client that s
 * The end user that sends a request.
 * The Layer 4 or Layer 7 load balancer that forwards the request from the end user to the gateway proxy.
 
-To enable TCP keepalive on downstream connections, create a [ListenerOption](/about/policies/listeneroption/) resource that selects the Gateway resource with `targetRefs`.
+To enable TCP keepalive on downstream connections, create a [ListenerOption](/docs/about/policies/listeneroption/) resource that selects the Gateway resource with `targetRefs`.
 
 The following example enables TCP keepalive probes between the client and the gateway proxy. The first probe is sent when the connection has been idle for 60 seconds (`TCP_KEEPIDLE`). After, each probe is sent every 20 seconds (`TCP_KEEPINTVL`). After no response for 2 consecutive probes (`TCP_KEEPCNT`), the connection is dropped.
 
@@ -116,8 +116,8 @@ kubectl delete listeneroption tcpkeepalive -n gloo-system
 
 Upstream connections are between the Envoy gateway proxy and your services, such as {{< reuse "docs/snippets/product-name.md" >}}upstreams, Kubernetes services, external services, OTel collectors, TAP servers, cloud functions, or other destinations.
 
-To enable TCP keepalive on upstream connections, configure the following [ConnectionConfig](https://docs.solo.io/gloo-edge/latest/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/connection.proto.sk/) settings in the
-[Upstream](https://docs.solo.io/gloo-edge/latest/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/upstream.proto.sk/) resource.
+To enable TCP keepalive on upstream connections, configure the following [ConnectionConfig](/docs/reference/api/connection/) settings in the
+[Upstream](/docs/reference/api/upstream/) resource.
 
 The following example enables TCP keepalive probes between the gateway proxy and the upstream connection. The first probe is sent when the connection has been idle for 60 seconds (`keepaliveTime`). After, a TCP keepalive probe is sent every 20 seconds (`keepaliveInterval`). After no response for 2 consecutive probes (`keepaliveProbes`), the connection is dropped.
 

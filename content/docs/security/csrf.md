@@ -68,7 +68,7 @@ Use a VirtualHostOption resource to define your CSRF rules.
      ```
    
    Example output: 
-   ```
+   ```console
    * Mark bundle as not supporting multiuse
    < HTTP/1.1 403 Forbidden
    HTTP/1.1 403 Forbidden
@@ -93,7 +93,7 @@ Use a VirtualHostOption resource to define your CSRF rules.
      ```
      
    Example output: 
-   ```
+   ```console
    HTTP/1.1 200 OK
    ...
    {
@@ -202,7 +202,7 @@ Use a RouteOption resource to define your CSRF rules.
      ```
    
    Example output: 
-   ```
+   ```console
    * Mark bundle as not supporting multiuse
    < HTTP/1.1 403 Forbidden
    HTTP/1.1 403 Forbidden
@@ -227,7 +227,7 @@ Use a RouteOption resource to define your CSRF rules.
      ```
      
    Example output: 
-   ```
+   ```console
    HTTP/1.1 200 OK
    ...
    {

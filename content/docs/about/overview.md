@@ -6,37 +6,42 @@ description: Learn more about k8sgateway, its architecture, and benefits.
 
 Learn more about k8sgateway, its architecture, and benefits. 
 
-## About {{< reuse "docs/snippets/product-name.md" >}}
+## About k8sgateway
 
-{{< reuse "docs/snippets/product-name.md" >}} is a feature-rich, fast, and flexible Kubernetes-native ingress controller and next-generation API gateway that is built on top of [Envoy proxy](https://www.envoyproxy.io/). An API Gateway is a reverse proxy that serves as a security barrier between your clients and the microservices that make up your app. In order to access a microservice, all clients must send a request to the API Gateway. The API Gateway then verifies and routes the request to the microservice.
+{{< reuse "docs/snippets/product-name.md" >}} is a feature-rich, fast, and flexible Kubernetes-native ingress controller and next-generation API gateway that is built on top of [Envoy proxy](https://www.envoyproxy.io/) and the Kubernetes Gateway API. An API Gateway is a reverse proxy that serves as a security barrier between your clients and the microservices that make up your app. In order to access a microservice, all clients must send a request to the API Gateway. The API Gateway then verifies and routes the request to the microservice.
 
-To let you set up and leverage advanced routing, traffic management, security, resiliency, and integration capabilities, you can choose to run a {{< reuse "docs/snippets/product-name.md" >}} proxy with one of the following APIs: the **Kubernetes Gateway API with custom {{< reuse "docs/snippets/product-name.md" >}} extensions** or the **Gloo Edge API**. The {{< reuse "docs/snippets/product-name.md" >}} control plane can process custom resource requests from both APIs and translate these resources into valid Envoy configuration that the Envoy proxies can pick up and apply. 
+{{< reuse "docs/snippets/product-name.md" >}} is fully conformant with the Kubernetes Gateway API and extends its functionality with custom Gateway APIs, such as RouteOption, VirtualHostOption, or Upstreams. These resources help to centrally configure advanced traffic management, security, and resiliency rules for a specific component, such as a host, route, or gateway listener.
 
-Because of that, {{< reuse "docs/snippets/product-name.md" >}} gives you the flexibility to run both Kubernetes Gateway API and Gloo Edge API Envoy proxies in your environment at the same time so that you can customize your API gateway to the needs of your app and organization. {{< reuse "docs/snippets/one-install.md" >}}
+## Extensions
 
-### K8s Gateway API
+The following image shows the extensions that {{< reuse "docs/snippets/product-name.md" >}} provides on top of the Kubernetes Gateway API to configure advanced routing, security, and resiliency capabilities.
 
-{{< reuse "docs/snippets/product-name.md" >}} is fully conformant with the Kubernetes Gateway API and extends its functionality with Solo's custom Gateway APIs, such as RouteOption, VirtualHostOption, Upstreams, RateLimitConfig, or AuthConfig. These resources help to centrally configure routing, security, and resiliency rules for a specific component, such as a host, route, or gateway listener.
-s
-The following image shows the extensions that {{< reuse "docs/snippets/product-name.md" >}} provides on top of the Kubernetes Gateway API:
+{{< reuse-image src="img/gateway-extensions.svg" width="700px" >}}
 
-
-
-The capabilities that you can leverage in your API Gateway, such as applying the following features to a host or route, depend on the {{< reuse "docs/snippets/product-name.md" >}} edition that you install:
-
-- **Open source (OSS)**: </br>
-  Set up an Envoy proxy that is based on the Kubernetes Gateway API and use Kubernetes Gateway API-native features and the following {{< reuse "docs/snippets/product-name.md" >}} extensions to configure basic routing, security, and resiliency capabilities. Note that this list provides a general overview of major features, and is not exhaustive.
   * [Access logging](/docs/security/access-logging/)
+  * [AWS ALB and NLB](/docs/setup/customize/aws-elb/)
+  * [AWS Lambda](/docs/traffic-management/destination-types/upstreams/lambda)
   * [Buffering](/docs/traffic-management/buffering/)
   * [Cross-Origin Resource Sharing (CORS)](/docs/security/cors/)
   * [Cross-Site Request Forgery (CSRF)](/docs/security/csrf/)
+  * [Delegation](/docs/traffic-management/route-delegation/)
+  * [Direct responses](/docs/traffic-management/direct-response/)
   * [Fault injection](/docs/resiliency/fault-injection/)
+  * [Gateway customization](/docs/setup/customize/)
   * [Header control](/docs/traffic-management/header-control/)
-  * [Local rate limiting](/docs/security/ratelimit/local/)
+  * [Health checks](/docs/traffic-management/health-checks/)
+  * [Integrations](/docs/integrations/)
+  * [Local rate limiting](/docs/security/local/)
   * [Proxy protocol](/docs/traffic-management/proxy-protocol/)
+  * [Redirects](/docs/traffic-management/redirect/)
+  * [Request matching](/docs/traffic-management/match/)
+  * [Resource validation](/docs/about/resource-validation/) 
   * [Retries](/docs/resiliency/retry/)
+  * [Rewrites](/docs/traffic-management/rewrite/)
+  * [Shadowing](/docs/resiliency/shadowing/)
+  * [TCP keepalive](/docs/traffic-management/tcp_keepalive/)
   * [Timeouts](/docs/resiliency/timeouts/)
-  * [Transformations](/docs/resiliency/traffic-management/transformations/)</br></br>
+  * [Transformations](/docs/traffic-management/transformations/)</br></br>
 
 
 ## Default gateway proxy setup

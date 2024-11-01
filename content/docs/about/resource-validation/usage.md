@@ -7,7 +7,7 @@ description: Try out the resource validation capability in {{< reuse "docs/snipp
 You can use the Kubernetes [dry run capability](#dry-run) to verify your resource configuration or [send requests directly to the {{< reuse "docs/snippets/product-name.md" >}} validation API](#validation-api). 
 
 {{% callout type="info" %}}
-The information in this guide assumes that you enabled strict validation, including the rejection of resources that result in a `Warning` state. To enable these settings, update your {{< reuse "docs/snippets/product-name.md" >}} installation and include `--set gateway.validation.alwaysAcceptResources=false`, `--set gateway.validation.enabled=true`, and `--set gateway.validation.allowWarnings=false`. You can also edit the Settings resource directly. For more information, see [Enable strict resource validation](/about/rersource-validation/setup/#strict-validation). 
+The information in this guide assumes that you enabled strict validation, including the rejection of resources that result in a `Warning` state. To enable these settings, update your {{< reuse "docs/snippets/product-name.md" >}} installation and include `--set gateway.validation.alwaysAcceptResources=false`, `--set gateway.validation.enabled=true`, and `--set gateway.validation.allowWarnings=false`. You can also edit the Settings resource directly. For more information, see [Enable strict resource validation](/docs/about/resource-validation/setup/#strict-validation). 
 {{% /callout %}}
 
 ## Use the dry run capability in Kubernetes {#dry-run}
@@ -36,7 +36,7 @@ EOF
    
 
 Example output:
-```
+```console
 Error from server: error when creating "STDIN": admission webhook "gloo.gloo-system.svc" denied the request: resource incompatible with current Gloo snapshot: [Validating *v1.RouteOption failed: 1 error occurred:
 * Validating *v1.RouteOption failed: validating *v1.RouteOption name:"faults"  namespace:"httpbin": 1 error occurred:
 * Route Error: ProcessingError. Reason: *faultinjection.plugin: invalid abort status code '0', must be in range of [200,600). Route Name: 
@@ -69,7 +69,7 @@ EOF
 ```
    
 Example output: 
-```
+```console
 Error from server: error when creating "STDIN": admission webhook "gloo.gloo-system.svc" denied the request: resource incompatible with current Gloo snapshot: [Validating *v1.VirtualHostOption failed: 1 error occurred:
   * Validating *v1.VirtualHostOption failed: validating *v1.VirtualHostOption name:"bad-retries"  namespace:"default": 1 error occurred:
   * VirtualHost Error: ProcessingError. Reason: invalid virtual host [vhost] while processing plugin basic_route: base interval: 1000 is > max interval: 1
@@ -126,7 +126,7 @@ The validation API currently assumes that all configuration that is sent to the 
       ```
       
       Example output: 
-      ```
+      ```console
       {"response":{"uid":"1234","allowed":false,"status":{"metadata":{},"message":"resource incompatible with current Gloo snapshot: [Validating *v1.RouteOption failed: 1 error occurred:\n\t* Validating *v1.RouteOption failed: validating *v1.RouteOption name:\"faults\"  namespace:\"httpbin\": 1 error occurred:\n\t* Route Error: ProcessingError. Reason: *faultinjection.plugin: invalid abort status code '0', must be in range of [200,600). Route Name: \n\n\n\n]","details":{"name":"faults","group":"gateway.solo.io","kind":"RouteOption","causes":[{"message":"Error Validating *v1.RouteOption failed: 1 error occurred:\n\t* Validating *v1.RouteOption failed: validating *v1.RouteOption name:\"faults\"  namespace:\"httpbin\": 1 error occurred:\n\t* Route Error: ProcessingError. Reason: *faultinjection.plugin: invalid abort status code '0', must be in range of [200,600). Route Name: \n\n\n\n"}]}}}}
       ```
 
@@ -137,7 +137,7 @@ The validation API currently assumes that all configuration that is sent to the 
       ```
 
       Example output for successful validation:
-      ```
+      ```console
       {"response":{"uid":"1234","allowed":true}}
       ```
 
@@ -177,7 +177,7 @@ The validation API currently assumes that all configuration that is sent to the 
       ```
 
       Example output:
-      ```
+      ```console
       {"response":{"uid":"1234","allowed":false,"status":{"metadata":{},"message":"resource incompatible with current Gloo snapshot: [Validating *v1.VirtualHostOption failed: 1 error occurred:\n\t* Validating *v1.VirtualHostOption failed: validating *v1.VirtualHostOption name:\"bad-retries\"  namespace:\"httpbin\": 1 error occurred:\n\t* VirtualHost Error: ProcessingError. Reason: invalid virtual host [vhost] while processing plugin basic_route: base interval: 1000 is \u003e max interval: 1\n\n\n\n]","details":{"name":"bad-retries","group":"gateway.solo.io","kind":"VirtualHostOption","causes":[{"message":"Error Validating *v1.VirtualHostOption failed: 1 error occurred:\n\t* Validating *v1.VirtualHostOption failed: validating *v1.VirtualHostOption name:\"bad-retries\"  namespace:\"httpbin\": 1 error occurred:\n\t* VirtualHost Error: ProcessingError. Reason: invalid virtual host [vhost] while processing plugin basic_route: base interval: 1000 is \u003e max interval: 1\n\n\n\n"}]}}}}%  
       ```
   
@@ -188,7 +188,7 @@ The validation API currently assumes that all configuration that is sent to the 
       ```
       
       Example output: 
-      ```
+      ```console
       {"response":{"uid":"1234","allowed":false,"status":{"metadata":{},"message":"resource incompatible with current Gloo snapshot: [1 error occurred:\n\t* could not unmarshal raw object: parsing resource from crd spec bad-retries in namespace httpbin into *v1.VirtualHostOption: bad Duration: time: missing unit in duration \"5\"\n\n]","details":{"name":"bad-retries","group":"gateway.solo.io","kind":"VirtualHostOption","causes":[{"message":"Error 1 error occurred:\n\t* could not unmarshal raw object: parsing resource from crd spec bad-retries in namespace httpbin into *v1.VirtualHostOption: bad Duration: time: missing unit in duration \"5\"\n\n"}]}}}}%  
       ```
 
@@ -199,7 +199,7 @@ The validation API currently assumes that all configuration that is sent to the 
       ```
 
       Example output:
-      ```
+      ```console
       {"response":{"uid":"1234","allowed":true}}%
       ```
    

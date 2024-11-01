@@ -4,12 +4,14 @@ weight: 80
 description: Learn how policy inheritance works in a route delegation setup. 
 ---
 
+Learn how policy inheritance works in a route delegation setup. 
+
 ## About policy inheritance
 
 {{< reuse "docs/snippets/policy-inheritance.md" >}}
 
 {{< callout type="info" >}}
-The example in this guide attaches the RouteOption policies by using the [`targetRefs` attachment setting](/about/policies/routeoption/#option-1-attach-the-policy-to-all-httproute-routes-targetrefs). You might attach RouteOption resources by using the [`extensionRef` filter in the HTTPRoute resource](/about/policies/routeoption/#option-2-attach-the-policy-to-an-individual-route-extensionref) instead. Note that attaching RouteOptions in different ways can result in conflicting policies or policy merging. To learn more about how conflicting RouteOption resources are handled, see [Conflicting policies](/about/policies/routeoption/#conflicting-policies) in the RouteOption concepts. 
+The example in this guide attaches the RouteOption policies by using the [`targetRefs` attachment setting](/docs/about/policies/routeoption/#option-1-attach-the-policy-to-all-httproute-routes-targetrefs). You might attach RouteOption resources by using the [`extensionRef` filter in the HTTPRoute resource](/docs/about/policies/routeoption/#option-2-attach-the-policy-to-an-individual-route-extensionref) instead. Note that attaching RouteOptions in different ways can result in conflicting policies or policy merging. To learn more about how conflicting RouteOption resources are handled, see [Conflicting policies](/docs/about/policies/routeoption/#conflicting-policies-and-merging-rules) in the RouteOption concepts. 
 {{< /callout >}}
 
 ## Configuration overview

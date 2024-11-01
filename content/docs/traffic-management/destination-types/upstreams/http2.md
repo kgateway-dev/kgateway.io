@@ -63,10 +63,10 @@ You can add the `spec.useHttp2` setting to an Upstream directly.
 One of the ways to enable HTTP/2, is to add the `gloo.solo.io/h2_service` annotation to the Kubernetes service and set it to `true`. If the annotation is present, {{< reuse "docs/snippets/product-name.md" >}} automatically updates the Upstream and adds the `useHttp2` value.
 
 {{% callout type="info" %}}
-To use service annotations to enable HTTP/2 for a destination, you must [enable service discovery in {{< reuse "docs/snippets/product-name.md" >}}](/traffic-management/destination-types/upstreams/about/#discovered-upstreams).
+To use service annotations to enable HTTP/2 for a destination, you must [enable service discovery in {{< reuse "docs/snippets/product-name.md" >}}](/docs/traffic-management/destination-types/upstreams/#discovered-upstreams).
 {{% /callout %}}
 
-1. Review the httpbin Upstream resource that was automatically created for the httpbin app that you deployed as part of the [Get started](/quickstart/) guide. Note that the `spec.useHttp2` option is not set. 
+1. Review the httpbin Upstream resource that was automatically created for the httpbin app that you deployed as part of the [Get started](/docs/quickstart/) guide. Note that the `spec.useHttp2` option is not set. 
    ```sh
    kubectl get upstream httpbin-httpbin-8000 -n gloo-system -o yaml
    ```
@@ -152,10 +152,10 @@ In a race condition where both the annotation and port name are set, the annotat
 You can enable HTTP/2 by setting specific port names on the service that exposes the Upstream. The name of the port must be one of the following: `grpc`, `http2`, or `h2`. 
 
 {{% callout type="info" %}}
-To use port names to enable HTTP/2 for a destination, you must [enable service discovery in {{< reuse "docs/snippets/product-name.md" >}}](/traffic-management/destination-types/upstreams/about/#discovered-upstreams).
+To use port names to enable HTTP/2 for a destination, you must [enable service discovery in {{< reuse "docs/snippets/product-name.md" >}}](/docs/traffic-management/destination-types/upstreams/#discovered-upstreams).
 {{% /callout %}}
 
-1. Review the httpbin Upstream resource that was automatically created for the httpbin app that you deployed as part of the [Get started](/quickstart/) guide. Note that the `spec.useHttp2` option is not set. 
+1. Review the httpbin Upstream resource that was automatically created for the httpbin app that you deployed as part of the [Get started](/docs/quickstart/) guide. Note that the `spec.useHttp2` option is not set. 
    ```sh
    kubectl get upstream httpbin-httpbin-8000 -n gloo-system -o yaml
    ```
