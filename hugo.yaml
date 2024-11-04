@@ -73,7 +73,7 @@ params:
     displayLogo: true
     logo:
       path: /logo.svg
-      dark: /logo.svg
+      dark: /logo-dark.svg
       link: /
       width: 56
       height: 56
@@ -84,7 +84,7 @@ params:
 
   theme:
     default: dark
-    displayToggle: false
+    displayToggle: true
 
   footer:
     enable: true
