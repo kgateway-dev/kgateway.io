@@ -81,6 +81,12 @@ To request membership in the early disclosures group, contact a {{< reuse "docs/
 4. Attend security-related {{< reuse "docs/snippets/product-name.md" >}} meetings when invited.
 5. Keep any information from the distribution list private and on a need-to-know basis. Information is only for purposes of remediating the vulnerability. If you share information beyond the scope of this policy, you must notify the distribution list, including details of what information was shared when and to whom, so the {{< reuse "docs/snippets/product-name.md" >}} team can assess how to proceed.
 
+#### Membership removal
+
+You must actively meet the membership criteria to remain part of the early disclosure distribution list. If your organization stops meeting one or more of these criteria, you can be removed from the distribution list.
+
+#### Other membership notes
+
 Membership in the [Envoy security group](https://github.com/envoyproxy/envoy/blob/main/SECURITY.md#security-reporting-process) is a separate process. Because {{< reuse "docs/snippets/product-name.md" >}} integrates closely with the Envoy project, you might also consider joining the Envoy early disclosures group. Even if not, you are still expected to abide by their embargo policy when a {{< reuse "docs/snippets/product-name.md" >}} vulnerability relates to the Envoy project.
 
 ## Updates and questions
