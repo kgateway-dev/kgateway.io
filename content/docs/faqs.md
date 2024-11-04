@@ -6,7 +6,7 @@ weight: 1000
 
 ## What is k8sgateway?
 
-{{< reuse "docs/snippets/product-name.md" >}} is an open source, cloud-native Layer 7 proxy that is based on the [Envoy](https://www.envoyproxy.io/) and [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}](https://gateway-api.sigs.k8s.io/) projects.
+{{< reuse "docs/snippets/product-name.md" >}} is an open source, cloud-native Layer 7 proxy that is based on the [Envoy](https://www.envoyproxy.io/). The {{< reuse "docs/snippets/product-name.md" >}} project implements gateway routing by using [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}](https://gateway-api.sigs.k8s.io/) resources.
 
 ## Why would I want to use k8sgateway?
 
@@ -16,7 +16,6 @@ Other use cases {{< reuse "docs/snippets/product-name.md" >}} can solve include 
 
 * Kubernetes cluster ingress with a custom {{< reuse "docs/snippets/product-name.md" >}} API as well as native support for the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}.
 * API gateway functionality for services that run outside Kubernetes
-* GraphQL endpoint for the services that {{< reuse "docs/snippets/product-name.md" >}} can discover
 
 ## What’s the difference between k8sgateway and Envoy? 
 
@@ -47,25 +46,15 @@ The {{< reuse "docs/snippets/product-name.md" >}} project supports one `n` lates
 
 The `main` branch of the `k8sgateway` Git repository is for feature work under development, and is not stable.
 
+## Where is the changelog?
+
+The changelog is part of each [GitHub release](https://github.com/k8sgateway/k8sgateway.io/releases).
+
 ## Is there enterprise software that is based on k8sgateway?
 
-Yes, Solo.io provides an enterprise product called Gloo Gateway that is based on the {{< reuse "docs/snippets/product-name.md" >}} project. As an enterprise product, Gloo Gateway includes features such as:
-
-* `n-3` version support
-* Hardened {{< reuse "docs/snippets/product-name.md" >}} images for security and compliance, such as FIPS
-* AI gateway
-* External auth for OAuth, OIDC, JWT, and more
-* Rate limiting
-* Advanced traffic management, including extra upstreams for cloud providers such as Google
-* Resiliency features such as caching and traffic tapping
-* Data loss prevention (DLP)
-* Web application firewall (WAF)
-
-For more information, see the [Solo.io product website](https://www.solo.io/products/gloo-gateway/) and [Gloo Gateway documentation](https://docs.solo.io/gateway/latest/quickstart/).
-
-{{< callout type="info" >}}
-Intersted in becoming an enterprise provider of {{< reuse "docs/snippets/product-name.md" >}}? Contact the project maintainers.
-{{< /callout >}}
+{{< cards >}}
+  {{< card link="https://www.solo.io/products/gloo-gateway/" title="Solo.io" tag= "Enterprise" image="/img/gloo-gateway-ver-light-on-dark.png" >}}
+{{< /cards >}}
 
 ## Can I use k8sgateway in a service mesh?
 
@@ -73,15 +62,13 @@ Yes, you can install {{< reuse "docs/snippets/product-name.md" >}} in a service 
 
 The {{< reuse "docs/snippets/product-name.md" >}} project is not a service mesh, but can be deployed complementary to a service mesh like Istio. Istio solves the challenges of service-to-service communication by controlling requests as they flow through the system. {{< reuse "docs/snippets/product-name.md" >}} can be deployed at the edge of the service-mesh boundary, between service meshes, or within the mesh to add the following capabilities:
 
-* OAuth flows for end-user authentication
-* GraphQL endpoints for aggregation of multiple services/APIs
 * Transformation of request/response to decouple backend APIs from front end
 * Function routing such as AWS Lambda
 * Request/response caching
 * Unified discovery services of infrastructure like Kubernetes, Consul, Vault, AWS EC2
-* Unified discovery services of functions like REST/OAS spec, gRPC reflection, SOAP/WSDL, GraphQL, WebSockets, Cloud Functions, AWS Lambda
+* Unified discovery services of functions like REST/OAS spec, gRPC reflection, SOAP/WSDL, WebSockets, Cloud Functions, AWS Lambda
 
-For an example of a {{< reuse "docs/snippets/product-name.md" >}} product that works with Istio, see the [Gloo Gateway and Istio integration guide](https://docs.solo.io/gateway/latest/integrations/istio/).
+For an example, see the [Istio integration guide](/docs/integrations/istio/).
 
 ## How do you pronounce k8sgateway?
 
