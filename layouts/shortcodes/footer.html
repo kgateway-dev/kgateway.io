@@ -3,9 +3,11 @@
     display: none
   }
 </style>
-<footer class="bg-primary-bg text-white font-primary py-25 px-12 xl:px-25 bg-[url(/hero-background.svg)] bg-center">
+<footer class="bg-primary-bg text-white font-primary py-25 px-12 xl:px-25 bg-[url(/hero-background.svg)] bg-[center_top_-27rem]">
   <div class="flex justify-between max-w-[1440px] mx-auto">
-    <img src="/logo.svg" />
+    <div>
+      {{ partial "utils/icon.html" (dict "name" "logo" ) }}
+    </div>
     <div class="flex gap-[2.5625rem] items-center">
       <a class="text-secondary-link" href="/">GitHub</a>
       <a class="text-secondary-link" href="/">Slack</a>

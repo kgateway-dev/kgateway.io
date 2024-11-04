@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-container a img {
+  height: 25px;
+  width: 165px;
+}
