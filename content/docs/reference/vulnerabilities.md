@@ -15,7 +15,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} project appreciates the effort
 
 ### 📨 Where to report
 
-To report an issue, contact a {{< reuse "docs/snippets/product-name.md" >}} maintainer.
+To report a security vulnerability, email the private Google group `k8s-gateway-vulnerability-reports@@googlegroups.com`.
 
 ### ✅ When to send a report
 
@@ -56,7 +56,7 @@ Remediation of a CVE involves introducing a fix to the affected code and releasi
 
 ## Disclosures
 
-The {{< reuse "docs/snippets/product-name.md" >}} team discloses remediated vulnerabilities publicly. Additionally, you can join an early disclosures group to help address vulnerabilities earlier in the remediation process.
+The {{< reuse "docs/snippets/product-name.md" >}} team discloses remediated vulnerabilities publicly. Additionally, you can join an early disclosure group to help address vulnerabilities earlier in the remediation process.
 
 ### Public disclosure
 
@@ -67,18 +67,18 @@ On the day for the remediation to be disclosed, the {{< reuse "docs/snippets/pro
 * Publish a release and any corresponding documentation for mitigating the vulnerability
 * Announce the remediated vulnerability in a public channel such as email or Slack
 
-### Early disclosures
+### Early disclosure
 
 You can join a distribution list to get early disclosures of security vulnerability. This way, you can take action earlier in the process to help remediate the vulnerability and mitigate its effects in your environments.
 
-To request membership in the early disclosures group, contact a {{< reuse "docs/snippets/product-name.md" >}} maintainer. In your request, indicate how you meet the following membership criteria.
+To request membership in the early disclosure group, email the private Google group `k8s-gateway-vulnerability-reports@@googlegroups.com`. In your request, indicate how you meet the following membership criteria.
 
 #### Membership criteria
 
-1. Contribute to the {{< reuse "docs/snippets/product-name.md" >}} project.
+1. Contribute significantly to the {{< reuse "docs/snippets/product-name.md" >}} project, such as by being a maintainer, release manager, or active feature developer.
 2. Use {{< reuse "docs/snippets/product-name.md" >}} in a way that justifies early disclosure of security vulnerabilities, such as redistributing {{< reuse "docs/snippets/product-name.md" >}} or providing {{< reuse "docs/snippets/product-name.md" >}} to many users outside your own organization.
 3. Monitor the email that you provide for the early disclosure distribution list.
-4. Attend security-related {{< reuse "docs/snippets/product-name.md" >}} meetings when invited.
+4. Participate in and attend meetings of the security working group.
 5. Keep any information from the distribution list private and on a need-to-know basis. Information is only for purposes of remediating the vulnerability. If you share information beyond the scope of this policy, you must notify the distribution list, including details of what information was shared when and to whom, so the {{< reuse "docs/snippets/product-name.md" >}} team can assess how to proceed.
 
 #### Membership removal
@@ -91,4 +91,4 @@ Membership in the [Envoy security group](https://github.com/envoyproxy/envoy/blo
 
 ## Updates and questions
 
-The {{< reuse "docs/snippets/product-name.md" >}} team reserves the right to change this process in its sole discretion. The {{< reuse "docs/snippets/product-name.md" >}} team’s security processes are reviewed regularly to ensure compliance with industry standards and the current security landscape. For questions or additional details, contact the {{< reuse "docs/snippets/product-name.md" >}} maintainers.
+The {{< reuse "docs/snippets/product-name.md" >}} team reserves the right to change this process. The {{< reuse "docs/snippets/product-name.md" >}} team’s security processes are reviewed regularly to ensure compliance with industry standards and the current security landscape. For questions or additional details, email the private Google group `k8s-gateway-vulnerability-reports@@googlegroups.com`.
