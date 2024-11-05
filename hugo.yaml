@@ -57,9 +57,6 @@ menu:
     - name: Why K8s Gateway
       weight: 3
       url: /
-    - name: FAQ
-      weight: 4
-      url: /faq
     - name: Documentation
       weight: 5
       url: /docs
