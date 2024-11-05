@@ -10,7 +10,7 @@ weight: 1000
 
 ## Why would I want to use k8sgateway?
 
-The {{< reuse "docs/snippets/product-name.md" >}} project was built to support the difficult challenges of monolith to microservice migration, which includes being able to connect multiple types of compute resources, such as virtual machines (VMs) and on-premises monolithic apps with cloud-native, Kuberentes-based apps.
+The {{< reuse "docs/snippets/product-name.md" >}} project was built to support the difficult challenges of monolith to microservice migration, which includes being able to connect multiple types of compute resources, such as virtual machines (VMs) and on-premises monolithic apps with cloud-native, Kubernetes-based apps.
 
 Other use cases {{< reuse "docs/snippets/product-name.md" >}} can solve include the following:
 
@@ -27,7 +27,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} includes the following capabil
 
 * A flexible control plane with extensibility in mind
 * More ergonomic, domain-specific APIs to drive Envoy configuration
-* Function-level routing beyond routing a `host:port` for clusters, but instead extending to a Swagger/OpenAPI spec endpoint, gRPC function, cloud provider function such as AWS Lambda, and more
+* Function-level routing that goes beyond routing to a `host:port` for clusters, including routing to a Swagger/OpenAPI spec endpoint, gRPC function, cloud provider function such as AWS Lambda, and more
 * Transformation of request/response via a super-fast C++ templating filter built on Inja
 * Envoy filters to call AWS Lambda directly, handling the complex security handshaking
 * Discovery of services running in a hybrid platform such as of virtual machines (VMs), containers, infrastructure as code (IaC), function as a service (FaaS), and so on
@@ -62,7 +62,7 @@ Yes, you can install {{< reuse "docs/snippets/product-name.md" >}} in a service 
 
 The {{< reuse "docs/snippets/product-name.md" >}} project is not a service mesh, but can be deployed complementary to a service mesh like Istio. Istio solves the challenges of service-to-service communication by controlling requests as they flow through the system. {{< reuse "docs/snippets/product-name.md" >}} can be deployed at the edge of the service-mesh boundary, between service meshes, or within the mesh to add the following capabilities:
 
-* Transformation of request/response to decouple backend APIs from front end
+* Transformation of request/response to decouple backend APIs from frontend
 * Function routing such as AWS Lambda
 * Request/response caching
 * Unified discovery services of infrastructure like Kubernetes, Consul, Vault, AWS EC2
