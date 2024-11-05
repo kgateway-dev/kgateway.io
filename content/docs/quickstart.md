@@ -1,5 +1,5 @@
 ---
-linkTitle: "Quickstart"
+linkTitle: "Get started"
 title: Get started with k8sgateway
 weight: 1
 ---

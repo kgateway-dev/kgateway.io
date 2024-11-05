@@ -14,35 +14,34 @@ Learn more about k8sgateway, its architecture, and benefits.
 
 ## Extensions
 
-The following image shows the extensions that {{< reuse "docs/snippets/product-name.md" >}} provides on top of the Kubernetes Gateway API to configure advanced routing, security, and resiliency capabilities.
+The {{< reuse "docs/snippets/product-name.md" >}} project provides the following extensions on top of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} to configure advanced routing, security, and resiliency capabilities.
 
-{{< reuse-image src="img/gateway-extensions.svg" width="700px" >}}
-
-  * [Access logging](/docs/security/access-logging/)
-  * [AWS ALB and NLB](/docs/setup/customize/aws-elb/)
-  * [AWS Lambda](/docs/traffic-management/destination-types/upstreams/lambda)
-  * [Buffering](/docs/traffic-management/buffering/)
-  * [Cross-Origin Resource Sharing (CORS)](/docs/security/cors/)
-  * [Cross-Site Request Forgery (CSRF)](/docs/security/csrf/)
-  * [Delegation](/docs/traffic-management/route-delegation/)
-  * [Direct responses](/docs/traffic-management/direct-response/)
-  * [Fault injection](/docs/resiliency/fault-injection/)
-  * [Gateway customization](/docs/setup/customize/)
-  * [Header control](/docs/traffic-management/header-control/)
-  * [Health checks](/docs/traffic-management/health-checks/)
-  * [Integrations](/docs/integrations/)
-  * [Local rate limiting](/docs/security/local/)
-  * [Proxy protocol](/docs/traffic-management/proxy-protocol/)
-  * [Redirects](/docs/traffic-management/redirect/)
-  * [Request matching](/docs/traffic-management/match/)
-  * [Resource validation](/docs/about/resource-validation/) 
-  * [Retries](/docs/resiliency/retry/)
-  * [Rewrites](/docs/traffic-management/rewrite/)
-  * [Shadowing](/docs/resiliency/shadowing/)
-  * [TCP keepalive](/docs/traffic-management/tcp_keepalive/)
-  * [Timeouts](/docs/resiliency/timeouts/)
-  * [Transformations](/docs/traffic-management/transformations/)</br></br>
-
+{{< cards >}}
+  {{< card link="/docs/security/access-logging/" title="Access logging" tag="Security" >}}
+  {{< card link="/docs/setup/customize/aws-elb/" title="AWS ALB and NLB" tag="Traffic" >}}
+  {{< card link="/docs/traffic-management/destination-types/upstreams/lambda" title="AWS Lambda" tag="Traffic" >}}
+  {{< card link="/docs/traffic-management/buffering/" title="Buffering" tag="Traffic" >}}
+  {{< card link="/docs/security/cors/" title="Cross-Origin Resource Sharing (CORS)" tag="Security" >}}
+  {{< card link="/docs/security/csrf/" title="Cross-Site Request Forgery (CSRF)" tag="Security" >}}
+  {{< card link="/docs/traffic-management/route-delegation/" title="Delegation" tag="Traffic" >}}
+  {{< card link="/docs/traffic-management/direct-response/" title="Direct responses" tag="Traffic" >}}
+  {{< card link="/docs/resiliency/fault-injection/" title="Fault injection" tag="Resiliency" >}}
+  {{< card link="/docs/setup/customize/" title="Gateway customization" tag="Setup" >}}
+  {{< card link="/docs/traffic-management/header-control/" title="Header control" tag="Traffic" >}}
+  {{< card link="/docs/traffic-management/health-checks/" title="Health checks" tag="Traffic" >}}
+  {{< card link="/docs/integrations/" title="Integrations" tag="Setup" >}}
+  {{< card link="/docs/security/local/" title="Local rate limiting" tag="Security" >}}
+  {{< card link="/docs/traffic-management/proxy-protocol/" title="Proxy protocol" tag="Traffic" >}}
+  {{< card link="/docs/traffic-management/redirect/" title="Redirects" tag="Traffic" >}}
+  {{< card link="/docs/traffic-management/match/" title="Request matching" tag="Traffic" >}}
+  {{< card link="/docs/about/resource-validation/" title="Resource validation" tag="Setup" >}}
+  {{< card link="/docs/resiliency/retry/" title="Retries" tag="Resiliency" >}}
+  {{< card link="/docs/traffic-management/rewrite/" title="Rewrites" tag="Traffic" >}}
+  {{< card link="/docs/resiliency/shadowing/" title="Shadowing" tag="Resiliency" >}}
+  {{< card link="/docs/traffic-management/tcp_keepalive/" title="TCP keepalive" tag="Traffic" >}}
+  {{< card link="/docs/resiliency/timeouts/" title="Timeouts" tag="Resiliency" >}}
+  {{< card link="/docs/traffic-management/transformations/" title="Transformations" tag="Traffic" >}}
+{{< /cards >}}
 
 ## Default gateway proxy setup
 
