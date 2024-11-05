@@ -8,7 +8,7 @@ Welcome to the documentation for the {{< reuse "docs/snippets/product-name.md" >
 Explore the following sections to get started: 
 
 {{< cards >}}
-  {{< card link="quickstart" title="Quickstart" >}}
+  {{< card link="quickstart" title="Get started" >}}
   {{< card link="about" title="About" >}}
   {{< card link="setup" title="Gateway setup" >}}
   {{< card link="traffic-management" title="Traffic management" >}}
