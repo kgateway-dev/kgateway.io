@@ -53,18 +53,15 @@ menu:
       weight: 1
     - name: Get Started
       weight: 2
-      url: /
+      url: /docs/quickstart/
     - name: Why K8s Gateway
       weight: 3
-      url: /
-    - name: FAQ
+      url: /docs/about/overview/
+    - name: Docs
       weight: 4
-      url: /faq
-    - name: Documentation
-      weight: 5
       url: /docs
     - name: Contact Us
-      weight: 6
+      weight: 5
       url: /contact
 
 params:
