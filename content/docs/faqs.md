@@ -16,6 +16,7 @@ Other use cases {{< reuse "docs/snippets/product-name.md" >}} can solve include 
 
 * Kubernetes cluster ingress with a custom {{< reuse "docs/snippets/product-name.md" >}} API as well as native support for the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}.
 * API gateway functionality for services that run outside Kubernetes
+* Routing, resiliency, and security capabilities for enhanced traffic management
 
 ## What’s the difference between k8sgateway and Envoy? 
 
