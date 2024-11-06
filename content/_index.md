@@ -17,29 +17,29 @@ description: ""
   </div>
 </section>
 
-<section class="py-50 px-12 xl:px-25 flex flex-col gap-[6.94rem] items-center max-w-[1440px] mx-auto">
+<section class="py-[4.375rem] md:py-50 px-4 md:px-12 xl:px-25 flex flex-col gap-[3.125rem] md:gap-[6.94rem] items-center max-w-[1440px] mx-auto">
   <h2 class="text-primary-text text-[2.5rem] leading-[2.75rem] font-semibold font-primary">
     Use cases
   </h2>
   <div class="flex gap-8 flex-wrap justify-center">
-    <div class="flex gap-8 flex-wrap">
-      <div class="flex flex-col items-center bg-card-bg py-[3.75rem] gap-[3.125rem] w-[17.875rem] h-[18.75rem]">
+    <div class="flex gap-8 flex-wrap w-full md:w-auto">
+      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] h-[7.4375rem] md:h-[18.75rem]">
         <img src="/use-case-security.svg" />
-        <h3 class="font-semibold text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">Security</h3>
+        <h3 class="font-semibold text-[1.25rem] md:text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">Security</h3>
       </div>
-      <div class="flex flex-col items-center bg-card-bg py-[3.75rem] gap-[3.125rem] w-[17.875rem] h-[18.75rem]">
+      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] h-[7.4375rem] md:h-[18.75rem]">
         <img src="/use-case-traffic.svg" />
-        <h3 class="font-semibold text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">Traffic Management</h3>
+        <h3 class="font-semibold text-[1.25rem] md:text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">Traffic Management</h3>
       </div>
     </div>
-    <div class="flex gap-8 flex-wrap">
-      <div class="flex flex-col items-center bg-card-bg py-[3.75rem] gap-[3.125rem] w-[17.875rem] h-[18.75rem]">
+    <div class="flex gap-8 flex-wrap w-full md:w-auto">
+      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] h-[7.4375rem] md:h-[18.75rem]">
         <img src="/use-case-resilience.svg" />
-        <h3 class="font-semibold text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">Resilience</h3>
+        <h3 class="font-semibold text-[1.25rem] md:text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">Resilience</h3>
       </div>
-      <div class="flex flex-col items-center bg-card-bg py-[3.75rem] gap-[3.125rem] w-[17.875rem] h-[18.75rem]">
+      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] h-[7.4375rem] md:h-[18.75rem]">
         <img src="/use-case-ai.svg" />
-        <h3 class="font-semibold text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">AI Innovation</h3>
+        <h3 class="font-semibold text-[1.25rem] md:text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">AI Innovation</h3>
       </div>
     </div>
   </div>
