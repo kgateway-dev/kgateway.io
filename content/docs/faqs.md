@@ -57,6 +57,10 @@ The changelog is part of each [GitHub release](https://github.com/k8sgateway/k8s
   {{< card link="https://www.solo.io/products/gloo-gateway/" title="Solo.io" tag= "Enterprise" image="/img/gloo-gateway-ver-light-on-dark.png" >}}
 {{< /cards >}}
 
+## Why are there so many references to Gloo in this project?
+
+The {{< reuse "docs/snippets/product-name.md" >}} project was initially created as an open source project under the `solo-io` GitHub organization and maintained as part of Solo.io's Gloo product family. To become a vendor-netural project, the project was transferred to the `{{< reuse "docs/snippets/product-name.md" >}}` organization. The maintainers are currently working on removing the Solo.io branding from this project. 
+
 ## Can I use k8sgateway in a service mesh?
 
 Yes, you can install {{< reuse "docs/snippets/product-name.md" >}} in a service mesh environment, such as Istio.
