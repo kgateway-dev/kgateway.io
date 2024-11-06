@@ -87,7 +87,7 @@ the list, first being `0` through `n-1`.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `overprovisioningFactor` | [.google.protobuf.UInt32Value](https://protobuf.dev/reference/protobuf/google.protobuf/#uint32-value) | Priority levels and localities are considered overprovisioned with this factor (in percentage). This means that we don't consider a priority level or locality unhealthy until the fraction of healthy hosts multiplied by the overprovisioning factor drops below 100. With the default value 140(1.4), Envoy doesn't consider a priority level or a locality unhealthy until their percentage of healthy hosts drops below 72%. For example: .. code-block:: json { "overprovisioning_factor": 100 } Read more at :ref:`priority levels <arch_overview_load_balancing_priority_levels>` and :ref:`localities <arch_overview_load_balancing_locality_weighted_lb>`. |
+| `overprovisioningFactor` | [.google.protobuf.UInt32Value](https://protobuf.dev/reference/protobuf/google.protobuf/#uint32-value) | Priority levels and localities are considered overprovisioned with this factor (in percentage). This means that we don't consider a priority level or locality unhealthy until the fraction of healthy hosts multiplied by the overprovisioning factor drops below 100. With the default value 140(1.4), Envoy doesn't consider a priority level or a locality unhealthy until their percentage of healthy hosts drops below 72%. For example: ```{ "overprovisioning_factor": 100 }``` Read more at priority levels and localities. |
 
 
 

@@ -510,7 +510,7 @@ Settings specific to the gloo (Envoy xDS server) controller
 
  
 Policy for how Gloo should handle invalid config
-[#next-free-field: 15]
+
 
 ```yaml
 "replaceInvalidRoutes": bool

@@ -62,8 +62,8 @@ Identifies location of where either Envoy runs or where upstream hosts run.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `region` | `string` | Region this :ref:`zone <envoy_api_field_config.core.v3.Locality.zone>` belongs to. |
-| `zone` | `string` | Defines the local service zone where Envoy is running. Though optional, it should be set if discovery service routing is used and the discovery service exposes :ref:`zone data <envoy_api_field_config.endpoint.v3.LocalityLbEndpoints.locality>`, either in this message or via :option:`--service-zone`. The meaning of zone is context dependent, e.g. `Availability Zone (AZ) <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html>`_ on AWS, `Zone <https://cloud.google.com/compute/docs/regions-zones/>`_ on GCP, etc. |
+| `region` | `string` | Region this zone belongs to. |
+| `zone` | `string` | Defines the local service zone where Envoy is running. Though optional, it should be set if discovery service routing is used and the discovery service exposes zone data, either in this message or via `--service-zone`. The meaning of zone is context dependent, e.g. `Availability Zone (AZ) <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html>`_ on AWS, `Zone <https://cloud.google.com/compute/docs/regions-zones/>`_ on GCP, etc. |
 | `subZone` | `string` | When used for locality of upstream hosts, this field further splits zone into smaller chunks of sub-zones so they can be load balanced independently. |
 
 
@@ -95,7 +95,7 @@ BuildVersion combines SemVer version of extension with free-form build informati
 
  
 Version and identification for an Envoy extension.
-[#next-free-field: 6]
+
 
 ```yaml
 "name": string
@@ -124,7 +124,7 @@ Version and identification for an Envoy extension.
 Identifies a specific Envoy instance. The node identifier is presented to the
 management server, which may use this identifier to distinguish per Envoy
 configuration for serving.
-[#next-free-field: 12]
+
 
 ```yaml
 "id": string
@@ -142,16 +142,16 @@ configuration for serving.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `id` | `string` | An opaque node identifier for the Envoy node. This also provides the local service node name. It should be set if any of the following features are used: :ref:`statsd <arch_overview_statistics>`, :ref:`CDS <config_cluster_manager_cds>`, and :ref:`HTTP tracing <arch_overview_tracing>`, either in this message or via :option:`--service-node`. |
-| `cluster` | `string` | Defines the local service cluster name where Envoy is running. Though optional, it should be set if any of the following features are used: :ref:`statsd <arch_overview_statistics>`, :ref:`health check cluster verification <envoy_api_field_config.core.v3.HealthCheck.HttpHealthCheck.service_name_matcher>`, :ref:`runtime override directory <envoy_api_msg_config.bootstrap.v3.Runtime>`, :ref:`user agent addition <envoy_api_field_extensions.filters.network.http_connection_manager.v3.HttpConnectionManager.add_user_agent>`, :ref:`HTTP global rate limiting <config_http_filters_rate_limit>`, :ref:`CDS <config_cluster_manager_cds>`, and :ref:`HTTP tracing <arch_overview_tracing>`, either in this message or via :option:`--service-cluster`. |
+| `id` | `string` | An opaque node identifier for the Envoy node. This also provides the local service node name. It should be set if any of the following features are used: statsd, CDS, and HTTP tracing, either in this message or via `--service-node`. |
+| `cluster` | `string` | Defines the local service cluster name where Envoy is running. Though optional, it should be set if any of the following features are used: statsd, health check cluster verification, runtime override directory, hTTP global rate limiting, either in this message or via `--service-cluster`. |
 | `metadata` | [.google.protobuf.Struct](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/struct) | Opaque metadata extending the node identifier. Envoy will pass this directly to the management server. |
 | `locality` | [.solo.io.envoy.config.core.v3.Locality](#locality) | Locality specifying where the Envoy instance is running. |
 | `userAgentName` | `string` | Free-form string that identifies the entity requesting config. E.g. "envoy" or "grpc". |
 | `userAgentVersion` | `string` | Free-form string that identifies the version of the entity requesting config. E.g. "1.12.2" or "abcd1234", or "SpecialEnvoyBuild". Only one of `userAgentVersion` or `userAgentBuildVersion` can be set. |
 | `userAgentBuildVersion` | [.solo.io.envoy.config.core.v3.BuildVersion](#buildversion) | Structured version of the entity requesting config. Only one of `userAgentBuildVersion` or `userAgentVersion` can be set. |
 | `extensions` | [[]solo.io.envoy.config.core.v3.Extension](#extension) | List of extensions and their versions supported by the node. |
-| `clientFeatures` | `[]string` | Client feature support list. These are well known features described in the Envoy API repository for a given major version of an API. Client features use reverse DNS naming scheme, for example `com.acme.feature`. See :ref:`the list of features <client_features>` that xDS client may support. |
-| `listeningAddresses` | [[]solo.io.envoy.config.core.v3.Address](../address.proto.sk/#address) | Known listening ports on the node as a generic hint to the management server for filtering :ref:`listeners <config_listeners>` to be returned. For example, if there is a listener bound to port 80, the list can optionally contain the SocketAddress `(0.0.0.0,80)`. The field is optional and just a hint. |
+| `clientFeatures` | `[]string` | Client feature support list. These are well known features described in the Envoy API repository for a given major version of an API. Client features use reverse DNS naming scheme, for example `com.acme.feature`. See the list of features that xDS client may support. |
+| `listeningAddresses` | [[]solo.io.envoy.config.core.v3.Address](../address.proto.sk/#address) | Known listening ports on the node as a generic hint to the management server for filtering listeners to be returned. For example, if there is a listener bound to port 80, the list can optionally contain the SocketAddress `(0.0.0.0,80)`. The field is optional and just a hint. |
 
 
 
@@ -178,7 +178,7 @@ Endpoints have a Metadata object associated and routes contain a Metadata
 object to match against. There are some well defined metadata used today for
 this purpose:
 
-* ``{"envoy.lb": {"canary": <bool> }}`` This indicates the canary status of an
+* `{"envoy.lb": {"canary": <bool> }}` This indicates the canary status of an
   endpoint and is also used during header processing
   (x-envoy-upstream-canary) and for stats purposes.
 [#next-major-version: move to type/metadata/v2]
@@ -270,7 +270,7 @@ Header name/value pair.
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
 | `key` | `string` | Header name. |
-| `value` | `string` | Header value. The same :ref:`format specifier <config_access_log_format>` as used for :ref:`HTTP access logging <config_access_log>` applies here, however unknown header values are replaced with the empty string instead of `-`. |
+| `value` | `string` | Header value. The same format specifier as used for HTTP access logging applies here, however unknown header values are replaced with the empty string instead of `-`. |
 
 
 
@@ -349,7 +349,7 @@ The message specifies the retry policy of remote data source when fetching fails
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `retryBackOff` | [.solo.io.envoy.config.core.v3.BackoffStrategy](../backoff.proto.sk/#backoffstrategy) | Specifies parameters that control :ref:`retry backoff strategy <envoy_api_msg_config.core.v3.BackoffStrategy>`. This parameter is optional, in which case the default base interval is 1000 milliseconds. The default maximum interval is 10 times the base interval. |
+| `retryBackOff` | [.solo.io.envoy.config.core.v3.BackoffStrategy](../backoff.proto.sk/#backoffstrategy) | Specifies parameters that control retry backoff strategy <envoy_api_msg_config.core.v3.BackoffStrategy>`. This parameter is optional, in which case the default base interval is 1000 milliseconds. The default maximum interval is 10 times the base interval. |
 | `numRetries` | [.google.protobuf.UInt32Value](https://protobuf.dev/reference/protobuf/google.protobuf/#uint32-value) | Specifies the allowed number of retries. This parameter is optional and defaults to 1. |
 
 
@@ -401,8 +401,8 @@ Async data source which support async data fetch.
 ### TransportSocket
 
  
-Configuration for transport socket in :ref:`listeners <config_listeners>` and
-:ref:`clusters <envoy_api_msg_config.cluster.v3.Cluster>`. If the configuration is
+Configuration for transport socket in listeners and
+clusters <envoy_api_msg_config.cluster.v3.Cluster>`. If the configuration is
 empty, a default transport socket implementation and configuration will be
 chosen based on the platform and existence of tls_context.
 
@@ -427,10 +427,10 @@ chosen based on the platform and existence of tls_context.
 Runtime derived FractionalPercent with defaults for when the numerator or denominator is not
 specified via a runtime key.
 
-.. note::
+**Note**:
 
   Parsing of the runtime key's data is implemented such that it may be represented as a
-  :ref:`FractionalPercent <envoy_api_msg_type.v3.FractionalPercent>` proto represented as JSON/YAML
+  FractionalPercent proto represented as JSON/YAML
   and may also be represented as an integer with the assumption that the value is an integral
   percentage out of 100. For instance, a runtime key lookup returning the value "42" would parse
   as a `FractionalPercent` whose numerator is 42 and denominator is HUNDRED.
@@ -469,7 +469,7 @@ Identifies a specific ControlPlane instance that Envoy is connected to.
   
 ### RoutingPriority
 
-Description: Envoy supports :ref:`upstream priority routing
+Description: Envoy supports upstream priority routing
 <arch_overview_http_routing_priority>` both at the route and the virtual
 cluster level. The current priority implementation uses different connection
 pool and circuit breaking settings for each priority level. This means that

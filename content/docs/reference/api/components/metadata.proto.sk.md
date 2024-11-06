@@ -32,11 +32,11 @@ weight: 10
 
  
 MetadataKey provides a general interface using `key` and `path` to retrieve value from
-:ref:`Metadata <envoy_api_msg_config.core.v3.Metadata>`.
+Metadata.
 
 For example, for the following Metadata:
 
-.. code-block:: yaml
+```yaml
 
    filter_metadata:
      envoy.xxx:
@@ -44,15 +44,17 @@ For example, for the following Metadata:
          foo: bar
          xyz:
            hello: envoy
+```
 
 The following MetadataKey will retrieve a string value "bar" from the Metadata.
 
-.. code-block:: yaml
+```yaml
 
    key: envoy.xxx
    path:
    - key: prop
    - key: foo
+```
 
 ```yaml
 "key": string
@@ -63,7 +65,7 @@ The following MetadataKey will retrieve a string value "bar" from the Metadata.
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
 | `key` | `string` | The key name of Metadata to retrieve the Struct from the metadata. Typically, it represents a builtin subsystem or custom extension. |
-| `path` | [[]solo.io.envoy.type.metadata.v3.MetadataKey.PathSegment](../metadata.proto.sk/#pathsegment) | The path to retrieve the Value from the Struct. It can be a prefix or a full path, e.g. ``[prop, xyz]`` for a struct or ``[prop, foo]`` for a string in the example, which depends on the particular scenario. Note: Due to that only the key type segment is supported, the path can not specify a list unless the list is the last segment. |
+| `path` | [[]solo.io.envoy.type.metadata.v3.MetadataKey.PathSegment](../metadata.proto.sk/#pathsegment) | The path to retrieve the Value from the Struct. It can be a prefix or a full path, e.g. `[prop, xyz]` for a struct or `[prop, foo]` for a string in the example, which depends on the particular scenario. Note: Due to that only the key type segment is supported, the path can not specify a list unless the list is the last segment. |
 
 
 
@@ -131,7 +133,7 @@ Represents dynamic metadata associated with the request.
 ### Route
 
  
-Represents metadata from :ref:`the route<envoy_api_field_config.route.v3.Route.metadata>`.
+Represents metadata from the route.
 
 ```yaml
 
@@ -147,7 +149,7 @@ Represents metadata from :ref:`the route<envoy_api_field_config.route.v3.Route.m
 ### Cluster
 
  
-Represents metadata from :ref:`the upstream cluster<envoy_api_field_config.cluster.v3.Cluster.metadata>`.
+Represents metadata from the upstream cluster.
 
 ```yaml
 
@@ -163,8 +165,8 @@ Represents metadata from :ref:`the upstream cluster<envoy_api_field_config.clust
 ### Host
 
  
-Represents metadata from :ref:`the upstream
-host<envoy_api_field_config.endpoint.v3.LbEndpoint.metadata>`.
+Represents metadata from the upstream
+host.
 
 ```yaml
 

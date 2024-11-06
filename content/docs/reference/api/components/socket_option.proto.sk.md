@@ -28,7 +28,7 @@ weight: 10
  
 Generic socket option message. This would be used to set socket options that
 might not exist in upstream kernels or precompiled Envoy binaries.
-[#next-free-field: 7]
+
 
 ```yaml
 "description": string
