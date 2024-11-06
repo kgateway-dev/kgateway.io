@@ -13,16 +13,18 @@ Use the following links to review the specifications for the {{< reuse "docs/sni
 ### Policy APIs
 
 {{< cards >}}
-  {{< card link="httplisteneroptions" title="HttpListenerOptions" >}}
-  {{< card link="listeneroptions" title="ListenerOptions" >}}
-  {{< card link="routeoptions" title="RouteOptions" >}}
-  {{< card link="virtualhostoptions" title="VirtualHostOptions" >}}
+  {{< card link="top-level/direct-response" title="DirectResponse" >}}
+  {{< card link="top-level/httplisteneroptions" title="HttpListenerOptions" >}}
+  {{< card link="top-level/listeneroptions" title="ListenerOptions" >}}
+  {{< card link="top-level/routeoptions" title="RouteOptions" >}}
+  {{< card link="top-level/virtualhostoptions" title="VirtualHostOptions" >}}
 {{< /cards >}}
 
 ### Other APIs
 
-* [Settings](https://docs.solo.io/gloo-edge/main/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/settings.proto.sk/)
-* [Upstream](https://docs.solo.io/gloo-edge/main/reference/api/github.com/solo-io/gloo/projects/gloo/api/v1/upstream.proto.sk/)
+* [GatewayParameters](/docs/reference/api/top-level/gatewayparameters)
+* [Settings](/docs/reference/api/top-level/settings.proto.sk)
+* [Upstream](/docs/reference/api/top-level/upstream.proto.sk)
 
 ## Kubernetes Gateway API
 
