@@ -85,7 +85,7 @@ Each Lambda Function Spec contains data necessary for {{< reuse "docs/snippets/p
 
  
 Each Lambda Function Spec contains data necessary for {{< reuse "docs/snippets/product-name.md" >}} to invoke Lambda functions
-[#next-free-field: 8]
+
 
 ```yaml
 "logicalName": string

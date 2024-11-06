@@ -32,7 +32,7 @@ copied from https://raw.githubusercontent.com/envoyproxy/envoy/bd637fc7aab5de067
 ### Gzip
 
  
-[#next-free-field: 10]
+
 
 ```yaml
 "memoryLevel": .google.protobuf.UInt32Value
