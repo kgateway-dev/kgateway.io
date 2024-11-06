@@ -52,7 +52,7 @@ weight: 10
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `matchers` | [[]matchers.core.gloo.solo.io.HeaderMatcher](../../../core/matchers/matchers.proto.sk/#headermatcher) | Response headers to match on. |
+| `matchers` | [[]matchers.core.gloo.solo.io.HeaderMatcher](../matchers.proto.sk/#headermatcher) | Response headers to match on. |
 | `responseCodeDetails` | `string` | Response code detail to match on. To see the response code details for your usecase, you can use the envoy access log %RESPONSE_CODE_DETAILS% formatter to log it. |
 | `responseTransformation` | [.transformation.options.gloo.solo.io.Transformation](../transformation.proto.sk/#transformation) | Transformation to apply on the response. |
 
@@ -74,7 +74,7 @@ weight: 10
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `matcher` | [.matchers.core.gloo.solo.io.Matcher](../../../core/matchers/matchers.proto.sk/#matcher) | Matches on the request properties. |
+| `matcher` | [.matchers.core.gloo.solo.io.Matcher](../matchers.proto.sk/#matcher) | Matches on the request properties. |
 | `clearRouteCache` | `bool` | Should we clear the route cache if a transformation was matched. |
 | `requestTransformation` | [.transformation.options.gloo.solo.io.Transformation](../transformation.proto.sk/#transformation) | Transformation to apply on the request. |
 | `responseTransformation` | [.transformation.options.gloo.solo.io.Transformation](../transformation.proto.sk/#transformation) | Transformation to apply on the response. |
@@ -167,7 +167,7 @@ User-facing API for transformation.
 | ----- | ---- | ----------- | 
 | `transformationTemplate` | [.transformation.options.gloo.solo.io.TransformationTemplate](../transformation.proto.sk/#transformationtemplate) | Apply transformation templates. Only one of `transformationTemplate`, `headerBodyTransform`, or `xsltTransformation` can be set. |
 | `headerBodyTransform` | [.transformation.options.gloo.solo.io.HeaderBodyTransform](../transformation.proto.sk/#headerbodytransform) | This type of transformation will make all the headers available in the response body. The resulting JSON body will consist of two attributes: 'headers', containing the headers, and 'body', containing the original body. Only one of `headerBodyTransform`, `transformationTemplate`, or `xsltTransformation` can be set. |
-| `xsltTransformation` | [.envoy.config.transformer.xslt.v2.XsltTransformation](../../../../external/envoy/extensions/transformers/xslt/xslt_transformer.proto.sk/#xslttransformation) | (Enterprise Only): Xslt Transformation. Only one of `xsltTransformation`, `transformationTemplate`, or `headerBodyTransform` can be set. |
+| `xsltTransformation` | [.envoy.config.transformer.xslt.v2.XsltTransformation](../xslt_transformer.proto.sk/#xslttransformation) | (Enterprise Only): Xslt Transformation. Only one of `xsltTransformation`, `transformationTemplate`, or `headerBodyTransform` can be set. |
 | `logRequestResponseInfo` | `bool` | When enabled, log request/response body and headers before and after this transformation is applied. |
 
 
