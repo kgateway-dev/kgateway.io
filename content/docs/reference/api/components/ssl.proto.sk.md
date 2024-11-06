@@ -50,14 +50,14 @@ SslConfig contains the options necessary to configure a virtual host or listener
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `secretRef` | [.core.solo.io.ResourceRef](../ref.proto.sk/#resourceref) | SecretRef contains the secret ref to a gloo tls secret or a kubernetes tls secret. gloo tls secret can contain a root ca as well if verification is needed. Only one of `secretRef`, `sslFiles`, or `sds` can be set. |
+| `secretRef` | [.core.solo.io.ResourceRef](../ref.proto.sk/#resourceref) | SecretRef contains the secret ref to a {{< reuse "docs/snippets/product-name.md" >}}tls secret or a kubernetes tls secret. {{< reuse "docs/snippets/product-name.md" >}}tls secret can contain a root ca as well if verification is needed. Only one of `secretRef`, `sslFiles`, or `sds` can be set. |
 | `sslFiles` | [.gloo.solo.io.SSLFiles](../ssl.proto.sk/#sslfiles) | SSLFiles reference paths to certificates which are local to the proxy. Only one of `sslFiles`, `secretRef`, or `sds` can be set. |
 | `sds` | [.gloo.solo.io.SDSConfig](../ssl.proto.sk/#sdsconfig) | Use secret discovery service. Only one of `sds`, `secretRef`, or `sslFiles` can be set. |
 | `sniDomains` | `[]string` | optional. the SNI domains that should be considered for TLS connections. |
 | `verifySubjectAltName` | `[]string` | Verify that the Subject Alternative Name in the peer certificate is one of the specified values. note that a root_ca must be provided if this option is used. |
 | `parameters` | [.gloo.solo.io.SslParameters](../ssl.proto.sk/#sslparameters) |  |
 | `alpnProtocols` | `[]string` | Set Application Level Protocol Negotiation If empty, defaults to ["h2", "http/1.1"]. As an advanced option you may use ["allow_empty"] to avoid defaults and set alpn to have no alpn set (ie pass empty slice). |
-| `oneWayTls` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | If the SSL config has the ca.crt (root CA) provided, Gloo uses it to perform mTLS by default. Set oneWayTls to true to disable mTLS in favor of server-only TLS (one-way TLS), even if Gloo has the root CA. If unset, defaults to false. |
+| `oneWayTls` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | If the SSL config has the ca.crt (root CA) provided, {{< reuse "docs/snippets/product-name.md" >}} uses it to perform mTLS by default. Set oneWayTls to true to disable mTLS in favor of server-only TLS (one-way TLS), even if {{< reuse "docs/snippets/product-name.md" >}} has the root CA. If unset, defaults to false. |
 | `disableTlsSessionResumption` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | If set to true, the TLS session resumption will be deactivated, note that it deactivates only the tickets based tls session resumption (not the cache). |
 | `transportSocketConnectTimeout` | [.google.protobuf.Duration](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/duration) | If present and nonzero, the amount of time to allow incoming connections to complete any transport socket negotiations. If this expires before the transport reports connection establishment, the connection is summarily closed. |
 
@@ -106,7 +106,7 @@ SslConfig contains the options necessary to configure an upstream to use TLS ori
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `secretRef` | [.core.solo.io.ResourceRef](../ref.proto.sk/#resourceref) | SecretRef contains the secret ref to a gloo tls secret or a kubernetes tls secret. gloo tls secret can contain a root ca as well if verification is needed. Only one of `secretRef`, `sslFiles`, or `sds` can be set. |
+| `secretRef` | [.core.solo.io.ResourceRef](../ref.proto.sk/#resourceref) | SecretRef contains the secret ref to a {{< reuse "docs/snippets/product-name.md" >}}tls secret or a kubernetes tls secret. {{< reuse "docs/snippets/product-name.md" >}}tls secret can contain a root ca as well if verification is needed. Only one of `secretRef`, `sslFiles`, or `sds` can be set. |
 | `sslFiles` | [.gloo.solo.io.SSLFiles](../ssl.proto.sk/#sslfiles) | SSLFiles reference paths to certificates which are local to the proxy. Only one of `sslFiles`, `secretRef`, or `sds` can be set. |
 | `sds` | [.gloo.solo.io.SDSConfig](../ssl.proto.sk/#sdsconfig) | Use secret discovery service. Only one of `sds`, `secretRef`, or `sslFiles` can be set. |
 | `sni` | `string` | optional. the SNI domains that should be considered for TLS connections. |

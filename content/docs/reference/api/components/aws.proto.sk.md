@@ -47,7 +47,7 @@ in a particular region
 | ----- | ---- | ----------- | 
 | `region` | `string` | The AWS Region where the desired Lambda Functions exist. |
 | `secretRef` | [.core.solo.io.ResourceRef](../ref.proto.sk/#resourceref) | A secret ref to an AWS Secret AWS Secrets can be created with `glooctl secret create aws ...` If the secret is created manually, it must conform to the following structure: ``` access_key: <aws access key> secret_key: <aws secret key> session_token: <(optional) aws session token> ```. |
-| `lambdaFunctions` | [[]aws.options.gloo.solo.io.LambdaFunctionSpec](../aws.proto.sk/#lambdafunctionspec) | The list of Lambda Functions contained within this region. This list will be automatically populated by Gloo if discovery is enabled for AWS Lambda Functions. |
+| `lambdaFunctions` | [[]aws.options.gloo.solo.io.LambdaFunctionSpec](../aws.proto.sk/#lambdafunctionspec) | The list of Lambda Functions contained within this region. This list will be automatically populated by {{< reuse "docs/snippets/product-name.md" >}} if discovery is enabled for AWS Lambda Functions. |
 | `roleArn` | `string` | (Optional): role_arn to use when assuming a role for a given request via STS. If set this role_arn will override the value found in AWS_ROLE_ARN This option will only be respected if STS credentials are enabled. To enable STS credential fetching see Settings.Gloo.AwsOptions in settings.proto. |
 | `awsAccountId` | `string` | (Optional): The AWS Account ID to use while calling if using resource based access. |
 | `disableRoleChaining` | `bool` | Optional override to disable role chaining;. |
@@ -60,7 +60,7 @@ in a particular region
 ### LambdaFunctionSpec
 
  
-Each Lambda Function Spec contains data necessary for Gloo to invoke Lambda functions:
+Each Lambda Function Spec contains data necessary for {{< reuse "docs/snippets/product-name.md" >}} to invoke Lambda functions:
 - name of the function
 - qualifier for the function
 
@@ -73,7 +73,7 @@ Each Lambda Function Spec contains data necessary for Gloo to invoke Lambda func
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `logicalName` | `string` | the logical name gloo should associate with this function. if left empty, it will default to lambda_function_name+qualifier. |
+| `logicalName` | `string` | the logical name {{< reuse "docs/snippets/product-name.md" >}}should associate with this function. if left empty, it will default to lambda_function_name+qualifier. |
 | `lambdaFunctionName` | `string` | The Name of the Lambda Function as it appears in the AWS Lambda Portal. |
 | `qualifier` | `string` | The Qualifier for the Lambda Function. Qualifiers act as a kind of version for Lambda Functions. See https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html for more info. |
 
@@ -84,7 +84,7 @@ Each Lambda Function Spec contains data necessary for Gloo to invoke Lambda func
 ### DestinationSpec
 
  
-Each Lambda Function Spec contains data necessary for Gloo to invoke Lambda functions
+Each Lambda Function Spec contains data necessary for {{< reuse "docs/snippets/product-name.md" >}} to invoke Lambda functions
 [#next-free-field: 8]
 
 ```yaml

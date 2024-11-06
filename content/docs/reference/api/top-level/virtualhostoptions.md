@@ -47,7 +47,7 @@ to be usable by {{< reuse "docs/snippets/product-name.md" >}}.
 ```
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `extensions` | [.gloo.solo.io.Extensions](../../extensions.proto.sk/#extensions) | Extensions will be passed along from Listeners, Gateways, VirtualServices, Routes, and Route tables to the underlying Proxy, making them useful for controllers, validation tools, etc. which interact with kubernetes yaml. Some sample use cases: * controllers, deployment pipelines, helm charts, etc. which wish to use extensions as a kind of opaque metadata. * In the future, Gloo may support gRPC-based plugins which communicate with the Gloo translator out-of-process. Opaque Extensions enables development of out-of-process plugins without requiring recompiling & redeploying Gloo's API. |
+| `extensions` | [.gloo.solo.io.Extensions](../../extensions.proto.sk/#extensions) | Extensions will be passed along from Listeners, Gateways, VirtualServices, Routes, and Route tables to the underlying Proxy, making them useful for controllers, validation tools, etc. which interact with kubernetes yaml. Some sample use cases: * controllers, deployment pipelines, helm charts, etc. which wish to use extensions as a kind of opaque metadata.  |
 | `retries` | [.retries.options.gloo.solo.io.RetryPolicy](../../retries.proto.sk/#retrypolicy) |  |
 | `stats` | [.stats.options.gloo.solo.io.Stats](../../stats.proto.sk/#stats) |  |
 | `headerManipulation` | [.headers.options.gloo.solo.io.HeaderManipulation](../../headers.proto.sk/#headermanipulation) | Append/Remove headers on Requests or Responses on all routes contained in this Virtual Host. |

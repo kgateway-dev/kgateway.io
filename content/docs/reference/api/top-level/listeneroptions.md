@@ -25,8 +25,6 @@ weight: 5
  
 Optional, feature-specific configuration that lives on gateways.
 Each ListenerOption object contains configuration for a specific feature.
-Note to developers: new Listener plugins must be added to this struct
-to be usable by {{< reuse "docs/snippets/product-name.md" >}}.
 
 ```yaml
 "accessLoggingService": .als.options.gloo.solo.io.AccessLoggingService
