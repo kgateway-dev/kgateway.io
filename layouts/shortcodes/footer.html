@@ -1,0 +1,20 @@
+<style>
+  .hextra-footer {
+    display: none
+  }
+</style>
+<footer class="bg-primary-bg text-white font-primary py-[4.375rem] md:py-25 px-12 xl:px-25 bg-[url(/hero-background.svg)] bg-[center_top_-27rem]">
+  <div class="flex flex-col md:flex-row justify-between gap-[3.125rem] md:gap-0 max-w-[1440px] mx-auto">
+    <div class="flex flex-col gap-4 items-center md:items-start">
+      {{ partial "utils/icon.html" (dict "name" "logo" ) }}
+      <span class="text-center md:text-left">
+        K8sGateway was originally created by <a class="text-secondary-link" href="https://www.solo.io/">solo.io</a>
+      </span>
+    </div>
+    <div class="flex flex-col md:flex-row gap-[2.5625rem] items-center md:max-h-[3.1875rem]">
+      <a class="text-secondary-link text-[1.125rem] leading-[1.6875rem] md:text-base" href="https://github.com/k8sgateway/k8sgateway">GitHub</a>
+      <a class="text-secondary-link" href="/">Slack</a>
+      <a class="bg-secondary-bg text-white rounded-lg p-5" href="/">Get a demo</a>
+    </div>
+  </div>
+</footer>

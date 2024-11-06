@@ -20,18 +20,16 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'card-foreground': 'hsl(210, 40%, 98%)',
-                'card-background': 'hsl(222.2, 84%, 4.9%)',
-                'primary': 'hsl(217.2, 91.2%, 59.8%)',
-                'primary-foreground': 'hsl(222.2, 47.4%, 11.2%)',
-                'secondary': 'hsl(217.2, 32.6%, 17.5%)',
-                'secondary-foreground': 'hsl(210, 40%, 98%)',
-                'muted': 'hsl(217.2, 32.6%, 17.5%)',
-                'muted-foreground': 'hsl(215, 20.2%, 65.1%)',
-                'primary-bg': '#002DC9',
-                'primary-light': '#EDEEF7',
-                'primary-dark': '#151927',
-                'label': '#5C6178'
+                'primary-bg': '#5044E9',
+                'secondary-bg': '#121212',
+                'card-bg': '#F8F8F8',
+                'primary-text': '#121212',
+                'secondary-text': '#CACACA',
+                'secondary-link': '#D4D1E9',
+            },
+            spacing: {
+                '25': '6.25rem',
+                '50': '12.5rem',
             },
             typography: {
                 DEFAULT: { css: disabledCss },
@@ -46,10 +44,7 @@ module.exports = {
                 'izzy': "url(/izzy.png)",
             },
             fontFamily: {
-                'primary': ['Outfit', 'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
-                'secondary': ['"DM Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
-                'tertiary': ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
-                'complementary': ['"DM Mono"', 'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+                'primary': ['Open Sans', 'ui-sans-serif', 'system-ui', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
             }
         },
     },

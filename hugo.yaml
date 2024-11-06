@@ -53,7 +53,7 @@ menu:
       weight: 1
     - name: Get Started
       weight: 2
-      url: /
+      url: /docs/quickstart/
     - name: Why K8s Gateway
       weight: 3
       url: /
@@ -61,12 +61,12 @@ menu:
       weight: 5
       url: /docs
     - name: Contact Us
-      weight: 6
+      weight: 5
       url: /contact
 
 params:
   navbar:
-    displayTitle: true
+    displayTitle: false
     displayLogo: true
     logo:
       path: /logo.svg
@@ -80,7 +80,7 @@ params:
     width: full
 
   theme:
-    default: system
+    default: dark
     displayToggle: true
 
   footer:

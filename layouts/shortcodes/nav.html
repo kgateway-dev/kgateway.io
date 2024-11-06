@@ -1,0 +1,107 @@
+<script>
+  document.addEventListener('scroll', function (e) {
+    console.log(e)
+    const nav = document.querySelector('.navbar');
+    console.log(window.scrollY, nav.scrollHeight)
+    if (nav.classList.contains('scrolled') && window.scrollY <= 0) {
+      nav.classList.remove('scrolled');
+    } else {
+      nav.classList.add('scrolled');
+    }
+  });
+
+  function openMobileNav() {
+    document.querySelector('.mobile-nav').classList.toggle('visible');
+    document.querySelector('.hamburger').classList.toggle('visible');
+    document.querySelector('.x').classList.toggle('visible');
+  }
+</script>
+
+<style>
+  .nav-container {
+    display: none
+  }
+
+  .navbar.scrolled {
+    background-color: white;
+    border-color: transparent;
+    transition-property: background-color, border;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+  }
+  
+  .navbar.scrolled a.link {
+    color: #121212;
+    transition: color 500ms linear;
+  }
+
+  .navbar.scrolled svg path {
+    fill: #121212;
+    transition: fill 400ms linear;
+  }
+
+  .mobile-nav {
+    left: 100%;
+    transition: left 400ms ease-out;
+  }
+
+  .mobile-nav .x {
+    display: none;
+  }
+
+  .mobile-nav .hamburger {
+    display: block
+  }
+
+  .mobile-nav.visible {
+    left: 0;
+    transition: left 400ms ease-in;
+  }
+
+  .visible.x {
+    display: block;
+  }
+
+  .visible.hamburger {
+    display: block;
+  }
+</style>
+
+<nav class="navbar py-[1.875rem] px-12 xl:px-25 fixed top-0 border-b-white border-b w-full hidden lg:block">
+  <div class="flex max-w-[1440px] mx-auto content-center items-center justify-between gap-6">
+    <div>
+      {{ partial "utils/icon.html" (dict "name" "logo" ) }}
+    </div>
+    <div class="flex flex-grow lg:flex-grow-0 items-center align-center justify-between lg:gap-[3.5625rem]">
+      <a class="link whitespace-nowrap font-primary text-secondary-link" href="/docs/quickstart/">Get Started</a>
+      <a class="link whitespace-nowrap font-primary text-secondary-link" href="/docs/about/overview/">Why K8sGateway?</a>
+      <a class="link whitespace-nowrap font-primary text-secondary-link" href="/docs/">Docs</a>
+      <a class="font-primary whitespace-nowrap bg-secondary-bg text-white rounded-lg p-5" href="/">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<nav class="absolute top-0 w-full block lg:hidden z-50">
+  <div class="py-6 pr-4 flex justify-between items-center">
+    {{ partial "utils/icon.html" (dict "name" "logo" "attributes" "height=26" ) }}
+    <button class="p-4 bg-primary-text rounded-lg flex items-center" onClick="openMobileNav()">
+      <div class="visible hamburger hidden">
+        {{ partial "utils/icon.html" (dict "name" "hamburger" ) }}
+      </div>
+      <div class="x hidden">
+        {{ partial "utils/icon.html" (dict "name" "x" "attributes" "class='w-4'") }}
+      </div>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav absolute bg-primary-text w-screen h-screen z-40">
+  <div class="absolute bottom-0 flex flex-col px-4 items-stretch w-screen">
+    <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white border-b border-[#545454] py-5" href="/docs/quickstart/">Get Started</a>
+    <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white border-b border-[#545454] py-5" href="/docs/about/overview/">Why K8sGateway?</a>
+    <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white border-b border-[#545454] py-5" href="/docs/">Docs</a>
+    <a class="font-primary whitespace-nowrap text-center text-white rounded-lg mb-10 mt-[3.125rem] p-6 bg-primary-bg font-semibold" href="/">
+      Contact Us
+    </a>
+  </div>
+</div>
