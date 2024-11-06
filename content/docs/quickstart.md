@@ -31,7 +31,7 @@ The guide includes steps to install {{< reuse "docs/snippets/product-name.md" >}
    * [`glooctl`](/operations/cli/), the {{< reuse "docs/snippets/product-name.md" >}} command line tool.
       * Linux and macOS:
         ```shell
-        curl -sL https://run.solo.io/gloo/install | sh
+        curl -sL https://run.solo.io/glooctl/install | GLOO_VERSION=v{{< reuse "docs/versions/gloo_oss_patch.md" >}} sh -
         export PATH=$HOME/.gloo/bin:$PATH
         ```
       * Windows: Notes that this script requires OpenSSL.
@@ -48,7 +48,7 @@ The guide includes steps to install {{< reuse "docs/snippets/product-name.md" >}
    * [`glooctl`](/operations/cli/), the {{< reuse "docs/snippets/product-name.md" >}} command line tool.
       * Linux and macOS:
         ```shell
-        curl -sL https://run.solo.io/gloo/install | sh
+        curl -sL https://run.solo.io/glooctl/install | GLOO_VERSION=v{{< reuse "docs/versions/gloo_oss_patch.md" >}} sh -
         export PATH=$HOME/.gloo/bin:$PATH
         ```
       * Windows: Notes that this script requires OpenSSL.
