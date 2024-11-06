@@ -4,7 +4,7 @@ weight: 10
 description: API reference
 ---
 
-Review the API specification for the custom resource definitions that you use in {{< reuse "docs/snippets/product-name.md" >}} .
+Review the API specification for the custom resource definitions that you use in {{< reuse "docs/snippets/product-name.md" >}}.
 
 ## k8sgateway API
 
