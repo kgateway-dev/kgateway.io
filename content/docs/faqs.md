@@ -57,9 +57,9 @@ The changelog is part of each [GitHub release](https://github.com/k8sgateway/k8s
   {{< card link="https://www.solo.io/products/gloo-gateway/" title="Solo.io" tag= "Enterprise" image="/img/gloo-gateway-ver-light-on-dark.png" >}}
 {{< /cards >}}
 
-## Why are there so many references to Gloo in this project?
+## Why are there some references to Gloo in this project?
 
-The {{< reuse "docs/snippets/product-name.md" >}} project was initially created as an open source project under the `solo-io` GitHub organization and maintained as part of Solo.io's Gloo product family. To become a vendor-netural project, the project was transferred to the `{{< reuse "docs/snippets/product-name.md" >}}` organization. The maintainers are currently working on removing the Solo.io branding from this project. 
+The {{< reuse "docs/snippets/product-name.md" >}} project was initially created as an open source project under the `solo-io` GitHub organization and maintained as part of Solo.io's Gloo product family. While the project is transferred to the {{< reuse "docs/snippets/product-name.md" >}} organization, some of the references have not been cleaned up yet. The maintainers are currently working on removing the Solo.io or Gloo branding from this project. Feel free to raise any issues in the GitHub repo. 
 
 ## Can I use k8sgateway in a service mesh?
 
