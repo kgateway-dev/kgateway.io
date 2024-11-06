@@ -44,8 +44,8 @@ Fine tune the settings for connections to an upstream
 | `connectTimeout` | [.google.protobuf.Duration](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/duration) | The timeout for new network connections to hosts in the cluster. |
 | `tcpKeepalive` | [.gloo.solo.io.ConnectionConfig.TcpKeepAlive](../connection.proto.sk/#tcpkeepalive) | Configure OS-level tcp keepalive checks. |
 | `perConnectionBufferLimitBytes` | [.google.protobuf.UInt32Value](https://protobuf.dev/reference/protobuf/google.protobuf/#uint32-value) | Soft limit on size of the cluster’s connections read and write buffers. If unspecified, an implementation defined default is applied (1MiB). For more info, see the [envoy docs](https://www.envoyproxy.io/docs/envoy/v1.14.1/api-v2/api/v2/cluster.proto#cluster). |
-| `commonHttpProtocolOptions` | [.protocol.options.gloo.solo.io.HttpProtocolOptions](../options/protocol/protocol.proto.sk/#httpprotocoloptions) | Additional options when handling HTTP requests upstream. These options will be applicable to both HTTP1 and HTTP2 requests. |
-| `http1ProtocolOptions` | [.protocol.options.gloo.solo.io.Http1ProtocolOptions](../options/protocol/protocol.proto.sk/#http1protocoloptions) | Additional Options when handling HTTP requests upstream. These options will be applicable only to HTTP1 requests. |
+| `commonHttpProtocolOptions` | [.protocol.options.gloo.solo.io.HttpProtocolOptions](../protocol.proto.sk/#httpprotocoloptions) | Additional options when handling HTTP requests upstream. These options will be applicable to both HTTP1 and HTTP2 requests. |
+| `http1ProtocolOptions` | [.protocol.options.gloo.solo.io.Http1ProtocolOptions](../protocol.proto.sk/#http1protocoloptions) | Additional Options when handling HTTP requests upstream. These options will be applicable only to HTTP1 requests. |
 
 
 

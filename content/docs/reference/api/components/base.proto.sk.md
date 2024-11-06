@@ -350,7 +350,7 @@ The message specifies the retry policy of remote data source when fetching fails
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
 | `retryBackOff` | [.solo.io.envoy.config.core.v3.BackoffStrategy](../backoff.proto.sk/#backoffstrategy) | Specifies parameters that control :ref:`retry backoff strategy <envoy_api_msg_config.core.v3.BackoffStrategy>`. This parameter is optional, in which case the default base interval is 1000 milliseconds. The default maximum interval is 10 times the base interval. |
-| `numRetries` | [.google.protobuf.UInt32Value](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/u-int-32-value) | Specifies the allowed number of retries. This parameter is optional and defaults to 1. |
+| `numRetries` | [.google.protobuf.UInt32Value](https://protobuf.dev/reference/protobuf/google.protobuf/#uint32-value) | Specifies the allowed number of retries. This parameter is optional and defaults to 1. |
 
 
 
