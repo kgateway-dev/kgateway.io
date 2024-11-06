@@ -96,7 +96,7 @@ Allows the user to store the binary content of a [proto descriptor set](https://
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `configMapRef` | [.core.solo.io.ResourceRef](../ref.proto.sk/#resourceref) | A reference to a ConfigMap containing the base64-encoded binary content of a proto descriptor set. The ConfigMap must be in a namespace watched by Gloo Edge. |
+| `configMapRef` | [.core.solo.io.ResourceRef](../ref.proto.sk/#resourceref) | A reference to a ConfigMap containing the base64-encoded binary content of a proto descriptor set. The ConfigMap must be in a namespace watched by {{< reuse "docs/snippets/product-name.md" >}} . |
 | `key` | `string` | The ConfigMap data key whose value contains the proto descriptor set. If the ConfigMap contains multiple key-value pairs, this field is required. If the ConfigMap contains exactly one key-value pair, this field is optional. |
 
 

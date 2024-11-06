@@ -31,8 +31,8 @@ weight: 5
  
 Upstreams represent destination for routing HTTP requests. Upstreams can be compared to
 [clusters](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/cluster/v3/cluster.proto) in Envoy terminology.
-Each upstream in Gloo has a type. Supported types include `static`, `kubernetes`, `aws`, `consul`, and more.
-Each upstream type is handled by a corresponding Gloo plugin. (plugins currently need to be compiled into Gloo)
+Each upstream in {{< reuse "docs/snippets/product-name.md" >}} has a type. Supported types include `static`, `kubernetes`, `aws`, `consul`, and more.
+Each upstream type is handled by a corresponding plugin. (plugins currently need to be compiled into Gloo)
 
 ```yaml
 "namespacedStatuses": .core.solo.io.NamespacedStatuses
@@ -69,11 +69,11 @@ Each upstream type is handled by a corresponding Gloo plugin. (plugins currently
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `namespacedStatuses` | [.core.solo.io.NamespacedStatuses](../../status.proto.sk/#namespacedstatuses) | NamespacedStatuses indicates the validation status of this resource. NamespacedStatuses is read-only by clients, and set by gloo during validation. |
+| `namespacedStatuses` | [.core.solo.io.NamespacedStatuses](../../status.proto.sk/#namespacedstatuses) | NamespacedStatuses indicates the validation status of this resource. NamespacedStatuses is read-only by clients, and set by {{< reuse "docs/snippets/product-name.md" >}} during validation. |
 | `metadata` | [.core.solo.io.Metadata](../../metadata.proto.sk/#metadata) | Metadata contains the object metadata for this resource. |
-| `discoveryMetadata` | [.gloo.solo.io.DiscoveryMetadata](#discoverymetadata) | Upstreams and their configuration can be automatically by Gloo Discovery if this upstream is created or modified by Discovery, metadata about the operation will be placed here. |
+| `discoveryMetadata` | [.gloo.solo.io.DiscoveryMetadata](#discoverymetadata) | Upstreams and their configuration can be automatically by Upstream Discovery if this upstream is created or modified by Discovery, metadata about the operation will be placed here. |
 | `sslConfig` | [.gloo.solo.io.UpstreamSslConfig](../../ssl.proto.sk/#upstreamsslconfig) | SslConfig contains the options necessary to configure envoy to originate TLS to an upstream. |
-| `circuitBreakers` | [.gloo.solo.io.CircuitBreakerConfig](../../circuit_breaker.proto.sk/#circuitbreakerconfig) | Circuit breakers for this upstream. if not set, the defaults ones from the Gloo settings will be used. if those are not set, [envoy's defaults](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/cluster/v3/circuit_breaker.proto#envoy-api-msg-cluster-circuitbreakers) will be used. |
+| `circuitBreakers` | [.gloo.solo.io.CircuitBreakerConfig](../../circuit_breaker.proto.sk/#circuitbreakerconfig) | Circuit breakers for this upstream. if not set, the default ones in {{< reuse "docs/snippets/product-name.md" >}} will be used. if those are not set, [envoy's defaults](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/cluster/v3/circuit_breaker.proto#envoy-api-msg-cluster-circuitbreakers) will be used. |
 | `loadBalancerConfig` | [.gloo.solo.io.LoadBalancerConfig](../../load_balancer.proto.sk/#loadbalancerconfig) | Settings for the load balancer that sends requests to the Upstream. The load balancing method is set to round robin by default. |
 | `healthChecks` | [[]solo.io.envoy.api.v2.core.HealthCheck](../../health_check.proto.sk/#healthcheck) |  |
 | `outlierDetection` | [.solo.io.envoy.api.v2.cluster.OutlierDetection](../../outlier_detection.proto.sk/#outlierdetection) |  |

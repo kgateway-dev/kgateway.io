@@ -43,7 +43,7 @@ Unlike upstreams created by service discovery, Static Upstreams must be created 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
 | `hosts` | [[]static.options.gloo.solo.io.Host](../static.proto.sk/#host) | A list of addresses and ports at least one must be specified. |
-| `useTls` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | Attempt to use outbound TLS If not explicitly set, Gloo will automatically set this to true for port 443. |
+| `useTls` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | Attempt to use outbound TLS If not explicitly set, {{< reuse "docs/snippets/product-name.md" >}} will automatically set this to true for port 443. |
 | `serviceSpec` | [.options.gloo.solo.io.ServiceSpec](../service_spec.proto.sk/#servicespec) | An optional Service Spec describing the service listening at this address. |
 | `autoSniRewrite` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | When set, automatically set the sni address to use to the addr field. If both this and host.sni_addr are set, host.sni_addr has priority. defaults to "true". |
 
@@ -73,7 +73,7 @@ Represents a single instance of an upstream
 | `sniAddr` | `string` | Address to use for SNI if using ssl. |
 | `loadBalancingWeight` | [.google.protobuf.UInt32Value](https://protobuf.dev/reference/protobuf/google.protobuf/#uint32-value) | The optional load balancing weight of the upstream host; at least 1. Envoy uses the load balancing weight in some of the built in load balancers. The load balancing weight for an endpoint is divided by the sum of the weights of all endpoints in the endpoint's locality to produce a percentage of traffic for the endpoint. This percentage is then further weighted by the endpoint's locality's load balancing weight from LocalityLbEndpoints. If unspecified, each host is presumed to have equal weight in a locality. |
 | `healthCheckConfig` | [.static.options.gloo.solo.io.Host.HealthCheckConfig](../static.proto.sk/#healthcheckconfig) | (Enterprise Only): Host specific health checking configuration. |
-| `metadata` | `map<string, .google.protobuf.Struct>` | Additional metadata to add to the endpoint. This metadata can be used in upstream HTTP filters or other specific Envoy configurations. The following keys are added by Gloo Edge and are ignored if set: - "envoy.transport_socket_match" - "io.solo.health_checkers.advanced_http". |
+| `metadata` | `map<string, .google.protobuf.Struct>` | Additional metadata to add to the endpoint. This metadata can be used in upstream HTTP filters or other specific Envoy configurations. The following keys are added by {{< reuse "docs/snippets/product-name.md" >}}  and are ignored if set: - "envoy.transport_socket_match" - "io.solo.health_checkers.advanced_http". |
 
 
 

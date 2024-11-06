@@ -26,9 +26,9 @@ weight: 10
 
  
 Describes APIs and application-level information for services
-Gloo routes to. ServiceSpec is contained within the UpstreamSpec for certain types
+{{< reuse "docs/snippets/product-name.md" >}} routes to. ServiceSpec is contained within the UpstreamSpec for certain types
 of upstreams, including Kubernetes, Consul, and Static.
-ServiceSpec configuration is opaque to Gloo and handled by Service Options.
+ServiceSpec configuration is opaque to {{< reuse "docs/snippets/product-name.md" >}} and handled by Service Options.
 
 ```yaml
 "rest": .rest.options.gloo.solo.io.ServiceSpec
