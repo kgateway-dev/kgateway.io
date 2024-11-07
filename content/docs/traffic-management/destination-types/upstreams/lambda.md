@@ -25,7 +25,7 @@ Create a Kubernetes secret that contains your AWS access key and secret key. {{<
 
 2. Create a Kubernetes secret that contains the AWS access key and secret key.
    ```sh
-   glooctl create secret aws \
+   {{< reuse "docs/snippets/cli-name.md" >}} create secret aws \
        --name 'aws-creds' \
        --namespace gloo-system \
        --access-key ${AWS_ACCESS_KEY_ID} \

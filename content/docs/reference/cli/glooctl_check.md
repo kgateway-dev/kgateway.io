@@ -1,18 +1,20 @@
 ---
 title: "glooctl check"
-description: "Reference for the 'glooctl check' command."
 weight: 5
 ---
+
+Reference docs for the `{{< reuse "docs/snippets/cli-name.md" >}} check` command.
+
 ## glooctl check
 
 Checks {{< reuse "docs/snippets/product-name.md" >}} resources for errors.
 
 ### Synopsis
 
-usage: glooctl check [-o FORMAT]
+usage: {{< reuse "docs/snippets/cli-name.md" >}} check [-o FORMAT]
 
 ```
-glooctl check [flags]
+{{< reuse "docs/snippets/cli-name.md" >}} check [flags]
 ```
 
 ### Options
@@ -30,7 +32,7 @@ glooctl check [flags]
 ### Options inherited from parent commands
 
 ```
-  -c, --config string              set the path to the glooctl config file (default "<home_directory>/.gloo/glooctl-config.yaml")
+  -c, --config string              set the path to the {{< reuse "docs/snippets/cli-name.md" >}} config file (default "<home_directory>/.gloo/glooctl-config.yaml")
   -i, --interactive                use interactive mode
       --kube-context string        kube context to use when interacting with kubernetes
       --kubeconfig string          kubeconfig to use, if not standard one

@@ -312,7 +312,7 @@ Review the Helm values for the open source {{< reuse "docs/snippets/product-name
 |settings.singleNamespace|bool||Enable to use install namespace as WatchNamespace and WriteNamespace|
 |settings.invalidConfigPolicy.replaceInvalidRoutes|bool|false|Rather than pausing configuration updates, in the event of an invalid Route defined on a virtual service or route table, Gloo Edge will serve the route with a predefined direct response action. This allows valid routes to be updated when other routes are invalid.|
 |settings.invalidConfigPolicy.invalidRouteResponseCode|int64|404|the response code for the direct response|
-|settings.invalidConfigPolicy.invalidRouteResponseBody|string|{{< reuse "docs/snippets/product-name.md" >}} has invalid configuration. Administrators should run `glooctl check` to find and fix config errors.|the response body for the direct response|
+|settings.invalidConfigPolicy.invalidRouteResponseBody|string|{{< reuse "docs/snippets/product-name.md" >}} has invalid configuration. Administrators should run `{{< reuse "docs/snippets/cli-name.md" >}} check` to find and fix config errors.|the response body for the direct response|
 |settings.linkerd|bool|false|Enable automatic Linkerd integration in Gloo Edge|
 |settings.disableProxyGarbageCollection|bool|false|Set this option to determine the state of an Envoy listener when the corresponding Proxy resource has no routes. If false (default), Gloo Edge will propagate the state of the Proxy to Envoy, resetting the listener to a clean slate with no routes. If true, Gloo Edge will keep serving the routes from the last applied valid configuration.|
 |settings.regexMaxProgramSize|uint32|1024|Set this field to specify the RE2 default max program size which is a rough estimate of how complex the compiled regex is to evaluate. If not specified, this defaults to 1024.|
@@ -355,7 +355,7 @@ Review the Helm values for the open source {{< reuse "docs/snippets/product-name
 |gloo.deployment.xdsPort|int|9977|port where gloo serves xDS API to Envoy.|
 |gloo.deployment.restXdsPort|uint32|9976|port where gloo serves REST xDS API to Envoy.|
 |gloo.deployment.validationPort|int|9988|port where gloo serves gRPC Proxy Validation to Gateway.|
-|gloo.deployment.proxyDebugPort|int|9966|port where gloo serves gRPC Proxy contents to glooctl.|
+|gloo.deployment.proxyDebugPort|int|9966|port where gloo serves gRPC Proxy contents to {{< reuse "docs/snippets/cli-name.md" >}}.|
 |gloo.deployment.stats.enabled|bool||Controls whether or not Envoy stats are enabled|
 |gloo.deployment.stats.routePrefixRewrite|string||The Envoy stats endpoint to which the metrics are written|
 |gloo.deployment.stats.setDatadogAnnotations|bool||Sets the default datadog annotations|

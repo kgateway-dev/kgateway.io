@@ -12,7 +12,7 @@ The guide includes steps to install {{< reuse "docs/snippets/product-name.md" >}
 
 {{< tabs items="CLI,Helm,Argo CD" >}}
 
-  {{% tab %}}The [`glooctl` CLI](/operations/cli) is an open source command line interface (CLI) tool that is built for the {{< reuse "docs/snippets/product-name.md" >}} project. It uses Helm files under the covers to quickly install {{< reuse "docs/snippets/product-name.md" >}} for you. As such, this approach is suitable for quick testing, but also adaptable for larger installations down the road.{{% /tab %}}
+  {{% tab %}}The [`{{< reuse "docs/snippets/cli-name.md" >}}` CLI](/operations/cli) is an open source command line interface (CLI) tool that is built for the {{< reuse "docs/snippets/product-name.md" >}} project. It uses Helm files under the covers to quickly install {{< reuse "docs/snippets/product-name.md" >}} for you. As such, this approach is suitable for quick testing, but also adaptable for larger installations down the road.{{% /tab %}}
   
   {{% tab %}}[Helm](https://helm.sh/) is a popular package manager for Kubernetes configuration files. This approach is flexible for adopting to your own command line, continuous delivery, or other workflows.{{% /tab %}}
   
@@ -28,7 +28,7 @@ The guide includes steps to install {{< reuse "docs/snippets/product-name.md" >}
 2. Install the following command-line tools.
    * [`kubectl`](https://kubernetes.io/docs/tasks/tools/#kubectl), the Kubernetes command line tool. Download the `kubectl` version that is within one minor version of the Kubernetes clusters you plan to use.
    * [`helm`](https://helm.sh/docs/intro/install/), the Kubernetes package manager.
-   * [`glooctl`](/operations/cli/), the {{< reuse "docs/snippets/product-name.md" >}} command line tool.
+   * [`{{< reuse "docs/snippets/cli-name.md" >}}`](/operations/cli/), the {{< reuse "docs/snippets/product-name.md" >}} command line tool.
       * Linux and macOS:
         ```shell
         curl -sL https://run.solo.io/gloo/install | sh
@@ -45,7 +45,7 @@ The guide includes steps to install {{< reuse "docs/snippets/product-name.md" >}
 2. Install the following command-line tools.
    * [`kubectl`](https://kubernetes.io/docs/tasks/tools/#kubectl), the Kubernetes command line tool. Download the `kubectl` version that is within one minor version of the Kubernetes clusters you plan to use.
    * [`helm`](https://helm.sh/docs/intro/install/), the Kubernetes package manager.
-   * [`glooctl`](/operations/cli/), the {{< reuse "docs/snippets/product-name.md" >}} command line tool.
+   * [`{{< reuse "docs/snippets/cli-name.md" >}}`](/operations/cli/), the {{< reuse "docs/snippets/product-name.md" >}} command line tool.
       * Linux and macOS:
         ```shell
         curl -sL https://run.solo.io/gloo/install | sh
@@ -112,7 +112,7 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
 
    This command creates the `gloo-system` namespace and installs the {{< reuse "docs/snippets/product-name.md" >}} control plane into it.
    ```sh
-   glooctl install gateway \
+   {{< reuse "docs/snippets/cli-name.md" >}} install gateway \
    --version {{< reuse "docs/versions/n-patch.md" >}} \
    --values - << EOF
    discovery:

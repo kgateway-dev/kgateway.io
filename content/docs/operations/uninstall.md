@@ -49,13 +49,13 @@ Did you use Argo CD to install {{< reuse "docs/snippets/product-name.md" >}}? Sk
    {{% tab %}}
    If you installed {{< reuse "docs/snippets/product-name.md" >}} in a different namespace than `gloo-system`, include the `-n <namespace>` option.
    ```shell
-   glooctl uninstall
+   {{< reuse "docs/snippets/cli-name.md" >}} uninstall
    ```
 
    {{% callout type="info" %}}
-   By default, the `gloo-system` namespace and {{< reuse "docs/snippets/product-name.md" >}} CRDs created by the `glooctl install` command are not removed. To remove the namespace and CRDs, include the `--all` option.
+   By default, the `gloo-system` namespace and {{< reuse "docs/snippets/product-name.md" >}} CRDs created by the `{{< reuse "docs/snippets/cli-name.md" >}} install` command are not removed. To remove the namespace and CRDs, include the `--all` option.
    ```shell
-   glooctl uninstall --all
+   {{< reuse "docs/snippets/cli-name.md" >}} uninstall --all
    ```
    {{% /callout %}}
    {{% /tab %}}
