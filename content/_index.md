@@ -47,6 +47,6 @@ description: ""
 
 {{< community-quotes >}}
 
-{{< integrations >}}
+{{< users >}}
 
 {{< footer >}}
