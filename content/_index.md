@@ -49,4 +49,6 @@ description: ""
 
 {{< users >}}
 
+{{< integrations >}}
+
 {{< footer >}}
