@@ -6,7 +6,7 @@ weight: 1
 
 Get started with {{< reuse "docs/snippets/product-name.md" >}}, a cloud-native Layer 7 proxy that is based on the [Envoy](https://www.envoyproxy.io/) and [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}](https://gateway-api.sigs.k8s.io/) projects.
 
-In this quickstart guide, you install {{< reuse "docs/snippets/product-name.md" >}}, set up an API gateway, deploy a sample app, and access that app through the API gateway.
+In this quickstart guide, you install {{< reuse "docs/snippets/product-name.md" >}} in a Kubernetes cluster, set up an API gateway, deploy a sample app, and access that app through the API gateway.
 
 The guide includes steps to install {{< reuse "docs/snippets/product-name.md" >}} in three ways.
 
