@@ -75,13 +75,3 @@ The {{< reuse "docs/snippets/product-name.md" >}} project is not a service mesh,
 * Unified discovery services of functions like REST/OAS spec, gRPC reflection, SOAP/WSDL, WebSockets, Cloud Functions, AWS Lambda
 
 For an example, see the [Istio integration guide](/docs/integrations/istio/).
-
-## How do you pronounce k8sgateway?
-
-We say "kates" gateway, although you might commonly hear people say, "Kubernetes gateway."
-
-In the international phonetic alphabet (IPA), this pronunciation is as follows:
-
-```
-/keɪts ˈɡeɪtˌweɪ/
-```

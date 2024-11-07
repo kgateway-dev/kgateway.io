@@ -40,16 +40,16 @@ During the upgrade, pods that run the new version of the control plane and proxi
    export NEW_VERSION={{< reuse "docs/versions/gloo_oss_patch.md" >}}
    ```
 
-## Step 2: Upgrade the `glooctl` CLI
+## Step 2: Upgrade the CLI
 
-1. Upgrade `glooctl` to the new version. Note that this command only updates the CLI binary version, and does not upgrade your {{< reuse "docs/snippets/product-name.md" >}} installation.
+1. Upgrade `{{< reuse "docs/snippets/cli-name.md" >}}` to the new version. Note that this command only updates the CLI binary version, and does not upgrade your {{< reuse "docs/snippets/product-name.md" >}} installation.
    ```shell
-   glooctl upgrade --release v${NEW_VERSION}
+   {{< reuse "docs/snippets/cli-name.md" >}} upgrade --release v${NEW_VERSION}
    ```
 
 2. Verify that the **client** version matches the version you installed.
    ```shell
-   glooctl version
+   {{< reuse "docs/snippets/cli-name.md" >}} version
    ```
 
    Example output:
@@ -75,7 +75,7 @@ During the upgrade, pods that run the new version of the control plane and proxi
       ```
    2. Check the deployed CRDs to ensure that none of them are out of date.
       ```sh
-      glooctl check-crds
+      {{< reuse "docs/snippets/cli-name.md" >}} check-crds
       ```
      
 3. Make any changes to your Helm values.

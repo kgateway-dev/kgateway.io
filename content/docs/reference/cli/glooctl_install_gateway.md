@@ -1,8 +1,10 @@
 ---
 title: "glooctl install gateway"
-description: "Reference for the 'glooctl install gateway' command."
 weight: 5
 ---
+
+Reference docs for the `{{< reuse "docs/snippets/cli-name.md" >}} install gateway` command.
+
 ## glooctl install gateway
 
 Install {{< reuse "docs/snippets/product-name.md" >}} on Kubernetes.
@@ -12,7 +14,7 @@ Install {{< reuse "docs/snippets/product-name.md" >}} on Kubernetes.
 requires kubectl to be installed
 
 ```
-glooctl install gateway [flags]
+{{< reuse "docs/snippets/cli-name.md" >}} install gateway [flags]
 ```
 
 ### Options
@@ -31,7 +33,7 @@ glooctl install gateway [flags]
 ### Options inherited from parent commands
 
 ```
-  -c, --config string              set the path to the glooctl config file (default "<home_directory>/.gloo/glooctl-config.yaml")
+  -c, --config string              set the path to the {{< reuse "docs/snippets/cli-name.md" >}} config file (default "<home_directory>/.gloo/glooctl-config.yaml")
   -i, --interactive                use interactive mode
       --kube-context string        kube context to use when interacting with kubernetes
       --kubeconfig string          kubeconfig to use, if not standard one
