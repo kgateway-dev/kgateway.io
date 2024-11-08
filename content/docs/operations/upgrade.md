@@ -60,7 +60,7 @@ During the upgrade, pods that run the new version of the control plane and proxi
    },
    ```
 
-## Step 3: Upgrade k8sgateway
+## Step 3: Upgrade K8sGateway
 
 1. Update the {{< reuse "docs/snippets/product-name.md" >}} Helm repositories.
    ```sh

@@ -1,22 +1,21 @@
 ---
 title: Custom resources
 weight: 30
-description: Learn how the k8sgateway and Kubernetes Gateway API custom resources interact. 
 ---
 
-Learn how the k8sgateway and Kubernetes Gateway API custom resources interact. 
+Learn how the {{< reuse "docs/snippets/product-name.md" >}} and {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} custom resources interact. 
 
 ## Custom resource overview
 
-The following image illustrates how the {{< reuse "docs/snippets/product-name.md" >}} custom resources interact with the Kubernetes Gateway API custom resources to provide advanced routing, traffic management, security, resiliency, and integration capabilities. To learn more about each custom resource, see [Kubernetes Gateway API resources](#k8s) and [{{< reuse "docs/snippets/product-name.md" >}} resources](#gloo-gateway).
+The following image illustrates how the {{< reuse "docs/snippets/product-name.md" >}} custom resources interact with the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} custom resources to provide advanced routing, traffic management, security, resiliency, and integration capabilities. To learn more about each custom resource, see [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} resources](#k8s) and [{{< reuse "docs/snippets/product-name.md" >}} resources](#gloo-gateway).
 
 {{< reuse-image src="img/gg-crs.svg" >}}
 
 ## Kubernetes Gateway API resources {#k8s}
 
-Review the Kubernetes Gateway API resources that you use to set up gateway proxies and configure routing for your apps. 
+Review the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} resources that you use to set up gateway proxies and configure routing for your apps. 
 
-For more information, see the [Kubernetes Gateway API introduction](https://gateway-api.sigs.k8s.io/#introduction). 
+For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} introduction](https://gateway-api.sigs.k8s.io/#introduction). 
 
 ### Gateway and GatewayClass
 
@@ -26,11 +25,11 @@ To spin up a Gateway and manage its lifecycle, a gateway controller is used. The
 
 ### HTTPRoute
 
-To configure routing, the Kubernetes Gateway API provides several routing resources, such as an HTTPRoute, TLSRoute, or GRPCRoute. These routes attach to a Gateway resource and define how incoming traffic is matched and forwarded to a backing destination. The most commonly used route resource is the [HTTPRoute](https://gateway-api.sigs.k8s.io/api-types/httproute/) that configures traffic routing for HTTP and HTTPS traffic. 
+To configure routing, the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} provides several routing resources, such as an HTTPRoute, TLSRoute, or GRPCRoute. These routes attach to a Gateway resource and define how incoming traffic is matched and forwarded to a backing destination. The most commonly used route resource is the [HTTPRoute](https://gateway-api.sigs.k8s.io/api-types/httproute/) that configures traffic routing for HTTP and HTTPS traffic. 
 
-While the Kubernetes Gateway API provides the functionality for basic request matching, redirects, rewrites, and header manipulation, it is missing more complex traffic management, resiliency, and security features, such as transformations, fault injection, access logging, or route delegation. 
+While the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} provides the functionality for basic request matching, redirects, rewrites, and header manipulation, it is missing more complex traffic management, resiliency, and security features, such as transformations, fault injection, access logging, or route delegation. 
 
-You can extend the Kubernetes Gateway API features by leveraging the [{{< reuse "docs/snippets/product-name.md" >}} policy custom resources](#policies). Policies allow you to apply intelligent traffic management, resiliency, and security standards to individual routes or all the routes that the Gateway serves.
+You can extend the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} features by leveraging the [{{< reuse "docs/snippets/product-name.md" >}} policy custom resources](#policies). Policies allow you to apply intelligent traffic management, resiliency, and security standards to individual routes or all the routes that the Gateway serves.
 
 ### Kubernetes Services
 
@@ -46,7 +45,7 @@ A [ReferenceGrant](https://gateway-api.sigs.k8s.io/api-types/referencegrant/) al
 {{< reuse "docs/snippets/product-name.md" >}} custom resources do not follow the same cross-namespace restrictions as the resources in the Kubernetes Gateway API. For example, access between a RouteOption resource in `namespace1` and an Upstream resource in `namespace2` is allowed by default and does not require a ReferenceGrant. However, if you need to reference a {{< reuse "docs/snippets/product-name.md" >}} resource from a Kubernetes Gateway API resource, you must create a ReferenceGrant. 
 {{% /callout %}}
 
-## k8sgateway resources {#gloo-gateway}
+## K8sGateway resources {#gloo-gateway}
 
 Review the {{< reuse "docs/snippets/product-name.md" >}} resources that you use to bootstrap, configure, and customize your gateway proxy, and the policies that you can leverage to add additional traffic management, resiliency, and security capabilities to your gateway and routes. 
 
@@ -59,7 +58,7 @@ To learn more about the default gateway setup and how these resource interact wi
 
 ### Policies
 
-While the Kubernetes Gateway API allows you to do simple routing, such as to match, redirect, or rewrite requests, you might want additional capabilities in your API gateway, such as fault injection, access logging, CORS, or CSRF. [Policies](/docs/about/policies/overview/) allow you to apply intelligent traffic management, resiliency, and security standards to individual routes or all the routes that the gateway serves. 
+While the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} allows you to do simple routing, such as to match, redirect, or rewrite requests, you might want additional capabilities in your API gateway, such as fault injection, access logging, CORS, or CSRF. [Policies](/docs/about/policies/overview/) allow you to apply intelligent traffic management, resiliency, and security standards to individual routes or all the routes that the gateway serves. 
 
 {{< reuse "docs/snippets/product-name.md" >}} uses the following custom resources to attach policies to routes and gateway listeners: 
 

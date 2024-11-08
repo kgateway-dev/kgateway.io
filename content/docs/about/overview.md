@@ -1,12 +1,11 @@
 ---
 title: Overview
 weight: 10
-description: Learn more about k8sgateway, its architecture, and benefits. 
 ---
 
-Learn more about k8sgateway, its architecture, and benefits. 
+Learn more about K8sGateway, its architecture, and benefits. 
 
-## About k8sgateway
+## About K8sGateway
 
 {{< reuse "docs/snippets/product-name.md" >}} is a feature-rich, fast, and flexible Kubernetes-native ingress controller and next-generation API gateway that is built on top of [Envoy proxy](https://www.envoyproxy.io/) and the Kubernetes Gateway API. An API Gateway is a reverse proxy that serves as a security barrier between your clients and the microservices that make up your app. In order to access a microservice, all clients must send a request to the API Gateway. The API Gateway then verifies and routes the request to the microservice.
 
