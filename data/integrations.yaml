@@ -9,5 +9,5 @@
 - logoPath: integrations/azure.svg
 - logoPath: integrations/argo.svg
 - logoPath: integrations/istio.svg
-- logoPath: integrations/cert-manager.svg
+- logoPath: integrations/cert-manager.png
 - logoPath: integrations/external-dns.png
