@@ -4,7 +4,7 @@ weight: 50
 description: Review Open Source Attribution and Licenses. 
 ---
 
-## Third-party open source software in connection with k8sgateway
+## Third-party open source software in connection with K8sGateway
 
 Name|Version|License
 ---|---|---
@@ -91,7 +91,7 @@ Name|Version|License
 [envoyproxy/protoc-gen-validate](https://github.com/envoyproxy/protoc-gen-validate)|latest|Apache License 2.0
 [paulvollmer/2gobytes](https://github.com/paulvollmer/2gobytes)|latest|MIT License
 
-## Free Software under GNU General Public License, and Mozilla Public License Software utilized by k8sgateway
+## Free Software under GNU General Public License, and Mozilla Public License Software utilized by K8sGateway
 
 |Name|Version|License|
 ---|---|---

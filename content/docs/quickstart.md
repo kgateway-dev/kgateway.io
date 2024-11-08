@@ -1,6 +1,6 @@
 ---
 linkTitle: "Get started"
-title: Get started with k8sgateway
+title: Get started with K8sGateway
 weight: 1
 ---
 
@@ -87,7 +87,7 @@ The guide includes steps to install {{< reuse "docs/snippets/product-name.md" >}
 {{% /tab %}}
 {{< /tabs >}}
 
-## Install k8sgateway
+## Install K8sGateway
 
 Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in your Kubernetes cluster.
 

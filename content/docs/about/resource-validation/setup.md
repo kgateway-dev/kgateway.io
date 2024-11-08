@@ -1,7 +1,6 @@
 ---
 title: Enable resource validation
 weight: 15
-description: Enable or disable resource validation in k8sgateway and view the current alidating admission webhook configuration.
 ---
 
 Enable or disable resource validation in {{< reuse "docs/snippets/product-name.md" >}} and view the current alidating admission webhook configuration.

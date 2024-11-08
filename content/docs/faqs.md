@@ -4,11 +4,11 @@ title: Frequently asked questions
 weight: 1000
 ---
 
-## What is k8sgateway?
+## What is K8sGateway?
 
 {{< reuse "docs/snippets/product-name.md" >}} is an open source, cloud-native Layer 7 proxy that is based on the [Envoy](https://www.envoyproxy.io/). The {{< reuse "docs/snippets/product-name.md" >}} project implements gateway routing by using [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}](https://gateway-api.sigs.k8s.io/) resources.
 
-## Why would I want to use k8sgateway?
+## Why would I want to use K8sGateway?
 
 The {{< reuse "docs/snippets/product-name.md" >}} project was built to support the difficult challenges of monolith to microservice migration, which includes being able to connect multiple types of compute resources, such as virtual machines (VMs) and on-premises monolithic apps with cloud-native, Kubernetes-based apps.
 
@@ -18,7 +18,7 @@ Other use cases {{< reuse "docs/snippets/product-name.md" >}} can solve include 
 * API gateway functionality for services that run outside Kubernetes
 * Routing, resiliency, and security capabilities for enhanced traffic management
 
-## What’s the difference between k8sgateway and Envoy? 
+## What’s the difference between K8sGateway and Envoy? 
 
 The Envoy proxy is a data-plane component with powerful routing, observability, and resilience capabilities. However, Envoy can be difficult to operationalize and complex to configure. 
 
@@ -33,7 +33,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} includes the following capabil
 * Envoy filters to call AWS Lambda directly, handling the complex security handshaking
 * Discovery of services running in a hybrid platform such as of virtual machines (VMs), containers, infrastructure as code (IaC), function as a service (FaaS), and so on
 
-## What license is k8sgateway under?
+## What license is K8sGateway under?
 
 The {{< reuse "docs/snippets/product-name.md" >}} project uses [Apache License 2.0](http://www.apache.org/licenses/).
 
@@ -51,7 +51,7 @@ The `main` branch of the `k8sgateway` Git repository is for feature work under d
 
 The changelog is part of each [GitHub release](https://github.com/k8sgateway/k8sgateway.io/releases).
 
-## Is there enterprise software that is based on k8sgateway?
+## Is there enterprise software that is based on K8sGateway?
 
 {{< cards >}}
   {{< card link="https://www.solo.io/products/gloo-gateway/" title="Solo.io" tag= "Enterprise" image="/img/gloo-gateway-ver-light-on-dark.png" >}}
@@ -61,7 +61,7 @@ The changelog is part of each [GitHub release](https://github.com/k8sgateway/k8s
 
 The {{< reuse "docs/snippets/product-name.md" >}} project was initially created as an open source project under the `solo-io` GitHub organization and maintained as part of Solo.io's Gloo product family. While the open source project is transferred to the {{< reuse "docs/snippets/product-name.md" >}} organization, some of the references have not been cleaned up yet. Such references might include resource names, Helm chart values, image repositories, or other hardcoded elements. The maintainers are currently working on removing Solo.io and Gloo branding from this project. If you notice any issues, feel free to contact the {{< reuse "docs/snippets/product-name.md" >}} team on Slack or open an issue in the {{< reuse "docs/snippets/product-name.md" >}} GitHub repo. 
 
-## Can I use k8sgateway in a service mesh?
+## Can I use K8sGateway in a service mesh?
 
 Yes, you can install {{< reuse "docs/snippets/product-name.md" >}} in a service mesh environment, such as Istio.
 

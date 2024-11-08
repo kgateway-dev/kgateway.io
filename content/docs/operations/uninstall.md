@@ -6,7 +6,7 @@ description: Uninstall {{< reuse "docs/snippets/product-name.md" >}} and related
 
 If you no longer need your {{< reuse "docs/snippets/product-name.md" >}} environment, you can uninstall the control plane and all gateway proxies. You can also optionally remove related components such as Prometheus and sample apps.
 
-## Uninstall k8sgateway
+## Uninstall K8sGateway
 
 Remove the {{< reuse "docs/snippets/product-name.md" >}} control plane and gateway proxies.
 

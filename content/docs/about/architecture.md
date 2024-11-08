@@ -1,10 +1,9 @@
 ---
 title: Architecture
 weight: 15
-description: Learn more about the components that make up k8sgateway. These components work together to provide traffic management, security, and resiliency. 
 ---
 
-Learn more about the components that make up k8sgateway. These components work together to provide traffic management, security, and resiliency for your apps.
+Learn more about the components that make up {{< reuse "docs/snippets/product-name.md" >}}. These components work together to provide traffic management, security, and resiliency for your apps.
 
 ## Component architecture
 
@@ -42,7 +41,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} translator receives snapshots 
 
 The following image shows the different stages of a translation cycle. 
 
-{{< reuse-image src="img/translation-loop.svg" caption="k8sgateway translation cycle" >}}
+{{< reuse-image src="img/translation-loop.svg" caption="K8sGateway translation cycle" >}}
 
 1. The translation cycle starts by defining [Envoy clusters](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/cluster/v3/cluster.proto) from all configured Upstream and Kubernetes service resources. Clusters in this context are groups of similar hosts. Each Upstream has a type that determines how the Upstream is processed. Correctly configured Upstreams and Kubernetes services are converted into Envoy clusters that match their type, including information like cluster metadata.
 

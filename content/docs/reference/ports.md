@@ -12,7 +12,7 @@ This list of ports reflects the default values that are included in an unmodifie
 {{% /callout %}}
 
 
-## k8sgateway 
+## K8sGateway 
 
 {{< reuse "docs/snippets/product-name.md" >}} open source software is the free, open source version of {{< reuse "docs/snippets/product-name.md" >}}. The installation process uses a Helm chart to create the necessary custom resource definitions (CRDs), deployments, services, pods, etc. The services and pods listen on specific ports to enable communication between the components that make up {{< reuse "docs/snippets/product-name.md" >}} and outside sources that will consume Upstream resources through {{< reuse "docs/snippets/product-name.md" >}}.
 
