@@ -17,33 +17,27 @@ To contribute new documentation to {{< reuse "docs/snippets/product-name.md" >}}
 
 The best documentation starts by knowing the intended readers, their knowledge, and what you expect them to do with the information. Otherwise, you cannot determine the appropriate scope and depth of information to provide, its ideal structure, or the necessary supporting information. The following examples show this principle in action:
 
-The reader needs to perform a specific task: Tell them how to recognize when the task is necessary and provide the task itself as a list of numbered steps, don’t simply describe the task in general terms.
+- The reader needs to perform a specific task: Provide the set of steps that are required to accomplish the task. 
 
-The reader must understand a concept before they can perform a task: Before the task, tell them about the prerequisite information and provide a link to it.
+- The reader must understand a concept before they can perform a task: Before the task, tell them about the prerequisite information and provide a link to it.
 
-The reader needs to make a decision: Provide the conceptual information necessary to know when to make the decision, the available options, and when to choose one option instead of the other.
+- The reader needs to make a decision: Provide the conceptual information necessary to know when to make the decision, the available options, and when to choose one option instead of the other.
 
-The reader is an administrator but not a SWE: Provide a script, not a link to a code sample in a developer’s guide.
+- The reader needs to understand complex feature relationships: Provide a diagram showing the relationships, rather than writing multiple pages of content that is tedious to read and understand.
 
-The reader needs to extend the features of the product: Provide an example of how to extend the feature, using a simplified scenario for illustration purposes.
+After you identified your audience and the information that they need, select a suitable [content type](#content-type). 
 
-The reader needs to understand complex feature relationships: Provide a diagram showing the relationships, rather than writing multiple pages of content that is tedious to read and understand.
-
-The most important thing to avoid is the common mistake of simply giving readers all the information you have, because you are unsure about what information they need.
-
-If you need help identifying the audience for you content, we are happy to help and answer all your questions during the Docs Working Group biweekly meetings.
 
 ## Content types
-When you understand the audience and the intended use for the information you provide, you can choose the content type that best addresses their needs. To make it easy for you to choose, the following table shows the supported content types, their intended audiences, and the goals each type strives to achieve:
+When you understand the audience and the intended use for the content that you want to add, you can choose the content type that best addresses the needs of the audience. The following table shows the supported content types, their intended audiences, and the goals each type strives to achieve:
 
 |Content type |	Goals | Audiences |
 | -- | -- | -- |
-|Concepts | Explain some significant aspect of Istio. For example, a concept page describes the configuration model of a feature and explains its functionality. Concept pages don't include sequences of steps. Instead, provide links to corresponding tasks.	| Readers that want to understand how features work with only basic knowledge of the project. | 
-| Reference pages| Provide exhaustive and detailed technical information. Common examples include API parameters, command-line options, configuration settings, and advanced procedures. Reference content is generated from the Istio code base and tested for accuracy. | Readers with advanced and deep technical knowledge of the project that needs specific bits of information to complete advanced tasks. |
-| Tasks	| Shows how to achieve a single goal using Istio features. Tasks contain procedures written as a sequence of steps. Tasks provide minimal explanation of the features, but include links to the concepts that provide the related background and knowledge. Tasks must include automated tests since they are tested and maintained for technical accuracy.	| Readers that want to use Istio features. |
-| Setup pages | Focus on the installation steps needed to complete an Istio deployment. Setup pages must include automated tests since they are tested and maintained for technical accuracy. |	New and existing Istio users that want to complete a deployment. |
-| FAQs | Provide quick answers to common questions. Answers don't introduce any concepts. Instead, they provide practical advice or insights. Answers must link to tasks, concepts, or examples in the documentation for readers to learn more.	| Readers with specific questions who are looking for brief answers and resources to learn more. |
-| Operation guides	| Focus on practical solutions that address specific problems encountered while running Istio in a real-world setting. |	Service mesh operators that want to fix problems or implement solutions for running Istio deployments. |
+|Concepts | Concepts explain key principles of {{< reuse "docs/snippets/product-name.md" >}}, its functionality, features, and underlying technologies. For example, you might want to describe the external authentication flow in {{< reuse "docs/snippets/product-name.md" >}} and how the components interact with each other. Concepts do not include sequences of steps. Instead, links might be provided to corresponding guides that explain how to set up and use the feature that you described in your concept. | New useres or users that are unfamiliar with the project and the feature it provides. |
+| Guides | Guides provide the steps or procedure to accomplish a certain task. For example, you might want to write a guide for how to set up external authentication in {{< reuse "docs/snippets/product-name.md" >}}. Guides give only minimal information about how the feature works, but can include links to related concepts. | Users that want to try out {{< reuse "docs/snippets/product-name.md" >}}. | 
+| Setup pages | Setup pages focus on steps for how to install, configure, and set up {{< reuse "docs/snippets/product-name.md" >}}. | New or existing uses who want to install {{< reuse "docs/snippets/product-name.md" >}}. 
+| Reference pages| Reference pages provide detailed information about certain {{< reuse "docs/snippets/product-name.md" >}} components, its CLI, Helm values, and API. Most reference content is automatically generated from the code. | Users with advanced and deep technical knowledge of the project. | 
+| FAQs | FAQs provide quick answers to common questions. Answers can link to existing guides, concepts, or other content types for readers to learn more. | Readers with specific questions who are looking for brief answers and resources to learn more. |
 
 
 ## File names and title 
@@ -65,7 +59,7 @@ weight: 20
 
 ## Hugo shortcodes
 
-As mentioned earlier, the documentation in the {{< reuse "docs/snippets/product-name.md" >}} project is built by using the static site generator Hugo. Hugo uses reusable templates, commonly referred to as shortcodes, to display, style, and render site elements, such as tables, videos, or cards and to manage the content for these elements more easily. Supported shortcodes can be found [here](https://github.com/k8sgateway/k8sgateway.io/tree/main/layouts/shortcodes) as well as [here](https://github.com/imfing/hextra/tree/main/exampleSite/content/docs/guide/shortcodes). 
+As mentioned earlier, the documentation in the {{< reuse "docs/snippets/product-name.md" >}} project is built by using the static site generator Hugo. Hugo uses reusable templates, commonly referred to as shortcodes, to display, style, and render site elements, such as tables, videos, or cards and to manage the content for these elements more easily. Supported shortcodes can be found in the [{{< reuse "docs/snippets/product-name.md" >}} project repo](https://github.com/k8sgateway/k8sgateway.io/tree/main/layouts/shortcodes) as well as the [Hextra Hugo theme](https://github.com/imfing/hextra/tree/main/exampleSite/content/docs/guide/shortcodes). 
 
 Review common shortcodes that you find throughout the documentation: 
 
@@ -98,9 +92,36 @@ To support different screen sizes, make sure to use images of type `.svg` only.
 
 Use the cards shortcode to display a card in the documentation that links to a specific topic within or outside the documentation. You can read more about this shortcode [here](https://imfing.github.io/hextra/docs/guide/shortcodes/cards/). 
 
+Example card: 
+
+{{< cards >}}
+{{< card link="/quickstart" title="Get started" >}}
+{{< /cards >}}
+
+Shortcode syntax
+```markdown
+{{</* cards */>}}
+{{</* card link="/quickstart" title="Get started" */>}}
+{{</* /cards */>}}
+```
+
+
 ### callout
 
 A box that displays important information to the user. You can read more about this shortcode [here](https://imfing.github.io/hextra/docs/guide/shortcodes/callout/).
+
+Example callout: 
+
+{{< callout type="info" >}}
+This is a sample callout of type info. 
+{{< /callout >}}
+
+Shortcode syntax: 
+```markdown
+{{</* callout type="info" */>}}
+This is a sample callout of type info. 
+{{</* /callout */>}}
+```
 
 
 ## Create a PR in GitHub
