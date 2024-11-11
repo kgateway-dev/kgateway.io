@@ -62,4 +62,4 @@ Avoid making promises or giving hints about the future releases and features. If
 
 | ✅ | ❌ | 
 | -- | -- |
-| <`omit this information, do not mention`> | We plan to deliver a new routing feature in the next release. | 
+| `<omit this information, do not mention>` | We plan to deliver a new routing feature in the next release. | 
