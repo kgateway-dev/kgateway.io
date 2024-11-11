@@ -56,13 +56,7 @@ menu:
       url: /docs/quickstart/
     - name: Why K8s Gateway
       weight: 3
-      url: /
-    - name: Documentation
-      weight: 5
-      url: /docs
-    - name: Contact Us
-      weight: 5
-      url: /contact
+      url: /docs/about/overview/
 
 params:
   description: K8sGateway is a feature-rich, fast, and flexible API gateway that is built on top of Envoy proxy and the Kubernetes Gateway API. It excels in function-level routing, supports legacy apps, microservices and serverless, offers robust discovery capabilities, integrates seamlessly with open-source projects, and is designed to support hybrid applications with various technologies, architectures, protocols, and clouds.
@@ -75,13 +69,13 @@ params:
       link: /
       width: 56
       height: 56
-    width: full
+    width: wide
 
   page:
-    width: full
+    width: wide
 
   theme:
-    default: dark
+    default: light
     displayToggle: true
 
   footer:
