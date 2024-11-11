@@ -54,7 +54,7 @@ Avoid "I" and "we" in your content contribution. Instead, phrase sentences in th
 | ✅ | ❌ | 
 | -- | -- |
 | In this topic, set up traffic shadowing.| In this topic, we will set up a traffic shadowing. | 
-| With {{< reuse "docs/snippets/product-name.md" >}}, you can advanced traffic routing. | We offer advanced traffic routing.| 
+| With {{< reuse "docs/snippets/product-name.md" >}}, you can set up advanced traffic routing. | We offer advanced traffic routing.| 
 
 ## Future statements
 
