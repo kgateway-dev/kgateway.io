@@ -45,7 +45,7 @@ Make sure to use active voice where the subject of the sentence performs the act
 | ✅ | ❌ | 
 | -- | -- |
 | You can enhance the security of your gateway with CORS policies. | Security of your gateway can be enhanced with CORS policies. | 
-| The YAML file configures the CSRF policy. | The CSRF policy is configured in the YAML file. | 
+| During an update, the management plane cannot update Envoy filters. | During an update, there are Envoy filters that it can't update | 
 
 ## "I" and "we"
 
