@@ -6,7 +6,7 @@ weight: 1000
 
 ## What is K8sGateway?
 
-{{< reuse "docs/snippets/product-name.md" >}} is an open source, cloud-native Layer 7 proxy that is based on the [Envoy](https://www.envoyproxy.io/). The {{< reuse "docs/snippets/product-name.md" >}} project implements gateway routing by using [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}](https://gateway-api.sigs.k8s.io/) resources.
+{{< reuse "docs/snippets/product-name.md" >}} is an open source, cloud-native Layer 7 proxy that is based on [Envoy](https://www.envoyproxy.io/). The {{< reuse "docs/snippets/product-name.md" >}} project implements gateway routing by using [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}](https://gateway-api.sigs.k8s.io/) resources.
 
 ## Why would I want to use K8sGateway?
 
