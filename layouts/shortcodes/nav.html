@@ -1,4 +1,7 @@
 <script>
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
   document.addEventListener('scroll', function (e) {
     const nav = document.querySelector('.navbar');
     console.log(window.scrollY, nav.scrollHeight)
@@ -43,6 +46,8 @@
   .mobile-nav {
     left: 100%;
     transition: left 400ms ease-out;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
   }
 
   .mobile-nav .x {
@@ -95,11 +100,11 @@
   </div>
 </nav>
 
-<div class="mobile-nav absolute bg-primary-text w-screen h-screen z-40">
-  <div class="absolute bottom-0 flex flex-col px-4 items-stretch w-screen">
+<div class="mobile-nav absolute bg-primary-text w-screen z-40">
+  <div class="h-full flex flex-col px-4 items-stretch justify-end w-screen">
     <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white border-b border-[#545454] py-5" href="/docs/quickstart/">Get Started</a>
     <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white border-b border-[#545454] py-5" href="/docs/about/overview/">Why K8sGateway?</a>
-    <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white border-b border-[#545454] py-5" href="/docs/">Docs</a>
+    <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white py-5" href="/docs/">Docs</a>
     <!-- <a class="font-primary whitespace-nowrap text-center text-white rounded-lg mb-10 mt-[3.125rem] p-6 bg-primary-bg font-semibold" href="/">
       Contact Us
     </a> -->
