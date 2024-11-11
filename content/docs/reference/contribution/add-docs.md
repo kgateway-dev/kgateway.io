@@ -9,7 +9,7 @@ To contribute new documentation to {{< reuse "docs/snippets/product-name.md" >}}
 - Choose the type of content you wish to contribute.
 - Decide on a name, location, and other front matter for your content
 - Write your contribution following the {{< reuse "docs/snippets/product-name.md" >}} contribution guidelines.
-- Submit your contribution to the {{< reuse "docs/snippets/product-name.md" >}} GitHub repository.
+- Submit your contribution as a PR to the `k8sgateway/k8sgateway.io` GitHub repository.
 - Follow the review process until your contribution is merged.
 
 
