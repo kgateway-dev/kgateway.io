@@ -13,22 +13,22 @@ To contribute new documentation to {{< reuse "docs/snippets/product-name.md" >}}
 - Follow the review process until your contribution is merged.
 
 
-## Audience and intended use
+## Audience and intended use {#audience}
 
-The best documentation starts by knowing the intended readers, their knowledge, and what you expect them to do with the information. Otherwise, you cannot determine the appropriate scope and depth of information to provide, its ideal structure, or the necessary supporting information. The following examples show this principle in action:
+The best documentation starts by knowing the intended users, their knowledge, and what you expect them to do with the information. Otherwise, you cannot determine the appropriate scope and depth of information to provide, its ideal structure, or the necessary supporting information. The following examples show this principle in action:
 
-- The reader needs to perform a specific task: Provide the set of steps that are required to accomplish the task. 
+- The user needs to perform a specific task: Provide the set of steps that are required to accomplish the task. 
 
-- The reader must understand a concept before they can perform a task: Before the task, tell them about the prerequisite information and provide a link to it.
+- The user must understand a concept before they can perform a task: Before the task, tell them about the prerequisite information or provide a link to it.
 
-- The reader needs to make a decision: Provide the conceptual information necessary to know when to make the decision, the available options, and when to choose one option instead of the other.
+- The user needs to make a decision: Provide the conceptual information necessary to know when to make the decision, the available options, and when to choose one option instead of the other.
 
-- The reader needs to understand complex feature relationships: Provide a diagram showing the relationships, rather than writing multiple pages of content that is tedious to read and understand.
+- The user needs to understand complex feature relationships: Provide a diagram showing the relationships, rather than writing multiple pages of content that is tedious to read and understand.
 
 After you identified your audience and the information that they need, select a suitable [content type](#content-type). 
 
 
-## Content types
+## Content types {#content-types}
 When you understand the audience and the intended use for the content that you want to add, you can choose the content type that best addresses the needs of the audience. The following table shows the supported content types, their intended audiences, and the goals each type strives to achieve:
 
 |Content type |	Goals | Audiences |
@@ -37,20 +37,21 @@ When you understand the audience and the intended use for the content that you w
 | Guides | Guides provide the steps or procedure to accomplish a certain task. For example, you might want to write a guide for how to set up external authentication in {{< reuse "docs/snippets/product-name.md" >}}. Guides give only minimal information about how the feature works, but can include links to related concepts. | Users that want to try out {{< reuse "docs/snippets/product-name.md" >}}. | 
 | Setup pages | Setup pages focus on steps for how to install, configure, and set up {{< reuse "docs/snippets/product-name.md" >}}. | New or existing uses who want to install {{< reuse "docs/snippets/product-name.md" >}}. 
 | Reference pages| Reference pages provide detailed information about certain {{< reuse "docs/snippets/product-name.md" >}} components, its CLI, Helm values, and API. Most reference content is automatically generated from the code. | Users with advanced and deep technical knowledge of the project. | 
-| FAQs | FAQs provide quick answers to common questions about the {{< reuse "docs/snippets/product-name.md" >}} project. Generally, the FAQs are not very technical in nature. Answers can link to existing guides, concepts, or other content types for readers to learn more. | Readers with specific questions who are looking for brief answers and resources to learn more. |
+| FAQs | FAQs provide quick answers to common questions about the {{< reuse "docs/snippets/product-name.md" >}} project. Generally, the FAQs are not very technical in nature. Answers can link to existing guides, concepts, or other content types for users to learn more. | users with specific questions who are looking for brief answers and resources to learn more. |
 | Troubleshooting | Troubleshooting topics provide either general debugging guides or error-specific help. For general debugging, share a process that helps users find, analyze, and resolve the cause of an error. For error-specific topics, provide details on what is happening with example messages, why it's happening, and how to fix the issue. | Users who encounter an error and need to debug. |
 
 
-## File names and title 
+## File names {#file-names}
 
 All documentation in the {{< reuse "docs/snippets/product-name.md" >}} project is written in markdown and built by using the static site generator Hugo. In Hugo, the name of the file or folder becomes part of the link to your page. Becaues, of that, it is important to carefully choose the name for the file or folder that you want to add. If the file name consists of multiple words, separate them by hyphens. For example, to add a topic about external authentication, your file name might be `ext-auth.md`. All file names must be lowercase. Keep file and folder names as short as possible to ensure easy cross-linking between topics. 
 
-Pick a title for your topic that has the keywords you want search engines to find. If you want to add a folder or "twistie" to the docs that has multipe sub-topics, create the folder with at least one `_index.md` file. This file has the title of your twistie and can be used to provide general overview information about the section that you want to add. 
 
+## Front matter {#front-matter}
 
-## Front matter
+Each file must start with a front matter that includes the title and weight of the file. Pick a title for your topic that has the keywords you want search engines to find. The weight configures the placement of the page in relation to other pages in the same directory, and therefore determines the order in which files are displayed in the left-hand navigation. 
 
-Each file must start with a front matter that includes the title and weight of the file. In the following example, the topic shows up as `External authentication` in the left-hand navigation. The weight configures the order of the page relative to the other pages in the directory, and therefore determines the order in which files are displayed in the left-hand navigation. 
+In the following example, the topic shows up as `External authentication` in the left-hand navigation. 
+
 ```
 ---
 title: External authentication
@@ -58,7 +59,18 @@ weight: 20
 ---
 ```
 
-## Hugo shortcodes
+If you want to add a folder or "twistie" to the left-hand navigation of the docs that has multipe sub-topics, the folder must have at least one `_index.md` file. This file has the title of your twistie and can be used to provide general overview information about the section that you want to add. Note that you must add additional pages to your folder for the twistie to show up in the left-hand navigation. If your folder contains only an `_index.md` file, it shows up as a regular page. The following example shows a sample folder structure: 
+
+```
+|-- security
+|----- _index.md  // provides conceptional security information
+|----- access-logging.md // guide for how to set up access logging
+|----- cors.md // guide for how to set up CORS
+|----- csrf.md // guide for how to set up CSRF
+```
+
+
+## Hugo shortcodes {#shortcodes}
 
 As mentioned earlier, the documentation in the {{< reuse "docs/snippets/product-name.md" >}} project is built by using the static site generator Hugo. Hugo uses reusable templates, commonly referred to as shortcodes, to display, style, and render site elements, such as tables, videos, or cards and to manage the content for these elements more easily. Supported shortcodes can be found in the [{{< reuse "docs/snippets/product-name.md" >}} project repo](https://github.com/k8sgateway/k8sgateway.io/tree/main/layouts/shortcodes) as well as the [Hextra Hugo theme](https://github.com/imfing/hextra/tree/main/exampleSite/content/docs/guide/shortcodes). 
 
@@ -127,7 +139,7 @@ This is a sample callout of type info.
 ```
 
 
-## Create a PR in GitHub
+## Create a PR in GitHub {#pr}
 
 The {{< reuse "docs/snippets/product-name.md" >}} documentation follows the standard GitHub collaboration flow for pull requests (PRs). This well-established collaboration model helps open source projects manage the following types of contributions:
 
@@ -143,6 +155,6 @@ The contribution guidelines assume you can complete the following tasks:
 - Add commits to that branch.
 - Open a PR to share your contribution.
 
-## Review
+## Review {#review}
 
 The documentation maintainers of the {{< reuse "docs/snippets/product-name.md" >}} project will review your pull request to ensure the PR follows the documentation contribution guidelines. Once reviewed and approved by the maintainers, your PR is merged into the documentation codebase and your changes will show up on the documentation site. 
