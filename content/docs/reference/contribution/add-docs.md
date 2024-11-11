@@ -76,7 +76,9 @@ The content of `product-name.md` is as follows:
 ```
 K8sGateway
 ```
-
+The resulting content in the web page will be rendered as:
+```markdown
+The guide includes steps to install K8sGateway in three ways.
 ### reuse-image
 Similar to the reuse shortcode, the reuse-image shortcode is used to display images in the documentation. Images are stored in the `assets/img` folder.
 
