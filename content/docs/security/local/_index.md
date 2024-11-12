@@ -1,6 +1,7 @@
 ---
 title: Local rate limiting
 weight: 10
+next: /docs/security/local/http
 ---
 
 Local rate limiting is a coarse-grained rate limiting capability that is primarily used as a first line of defense mechanism to limit the number of requests that are forwarded to your rate limit servers. 

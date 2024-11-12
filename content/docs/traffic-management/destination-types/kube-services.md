@@ -1,6 +1,7 @@
 ---
 title: Kubernetes services
 weight: 10
+next: /docs/traffic-management/destination-types/upstreams
 ---
 
 Route traffic to a Kubernetes service.

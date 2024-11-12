@@ -1,6 +1,7 @@
 ---
 title: Contribution guidelines
 weight: 50
+prev: /docs/reference/helm
 ---
 
 The {{< reuse "docs/snippets/product-name.md" >}} project welcomes your contribution.

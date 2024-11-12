@@ -1,6 +1,7 @@
 ---
 title: Upstreams
 weight: 20
+prev: /docs/traffic-management/destination-types/kube-services
 ---
 
 

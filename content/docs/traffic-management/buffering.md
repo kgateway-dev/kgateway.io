@@ -2,6 +2,8 @@
 linkTitle: "Buffering"
 title: Buffering
 weight: 70
+next: /docs/traffic-management/header-control
+prev: /docs/traffic-management/route-delegation
 ---
 
 Fine-tune connection speeds for read and write operations. 
