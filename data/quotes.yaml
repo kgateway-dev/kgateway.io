@@ -1,4 +1,9 @@
 - quote: |
+    As one of the world's fastest-growing digital banks, Trust Bank has greatly benefited from integrating Solo's Gloo Mesh* into our Kubernetes architecture. This has not only been an enabler of our rapid growth, but has also unlocked significant improvements in both resiliency and operational excellence—critical pillars for any regulated enterprise.
+  name: Scott Gordon Maclure
+  role: Head of Cloud Platform - Trust Bank
+
+- quote: |
     We needed an API gateway that would allow us to be innovative, provide K8s native configuration for developers to deploy easily, and speed to handle our 60 million requests per day. Gloo* checked all those boxes and the support provided by the Solo team was exceptional for any questions we had, no matter how small.
   name: ParkMobile
 
