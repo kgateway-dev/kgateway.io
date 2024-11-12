@@ -1,6 +1,8 @@
 ---
 title: Resource validation
 weight: 40
+prev: /docs/about/policies
+next: /docs/about/resource-validation/setup
 ---
 
 Prevent invalid gateway configuration from being applied to your Kubernetes cluster by using the {{< reuse "docs/snippets/product-name.md" >}} validating admission webhook.

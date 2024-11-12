@@ -1,6 +1,7 @@
 ---
 title: Default gateway proxy setup
 weight: 10
+next: /docs/setup/customize
 ---
 
 Learn about the different {{< reuse "docs/snippets/product-name.md" >}} and Kubernetes resources that make up your gateway proxy deployment.

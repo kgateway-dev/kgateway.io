@@ -1,6 +1,7 @@
 ---
 title: Customize gateway proxies
 weight: 10
+next: /docs/setup/customize/aws-elb
 ---
 
 The configuration that is used to spin up a gateway proxy is stored in several custom resources, including GatewayParameters, Settings, and a gateway proxy template. By default, {{< reuse "docs/snippets/product-name.md" >}} creates these resources for you during the installation so that you can spin up gateway proxies with the [default proxy configuration](/docs/setup/default/). You have the following options to change the default configuration for your gateway proxies: 

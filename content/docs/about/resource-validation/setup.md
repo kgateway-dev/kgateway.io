@@ -1,6 +1,7 @@
 ---
 title: Enable resource validation
 weight: 15
+prev: /docs/about/resource-validation
 ---
 
 Enable or disable resource validation in {{< reuse "docs/snippets/product-name.md" >}} and view the current alidating admission webhook configuration.

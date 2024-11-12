@@ -2,6 +2,7 @@
 title: RouteOption
 weight: 10
 description: Use a RouteOption resource to attach policies to one, multiple, or all routes in an HTTPRoute resource. 
+prev: /docs/about/policies
 ---
 
 Use a RouteOption resource to attach policies to one, multiple, or all routes in an HTTPRoute resource. 

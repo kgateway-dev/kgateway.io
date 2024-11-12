@@ -2,6 +2,7 @@
 linkTitle: "Get started"
 title: Get started with K8sGateway
 weight: 1
+next: /docs/about
 ---
 
 Get started with {{< reuse "docs/snippets/product-name.md" >}}, a cloud-native Layer 7 proxy that is based on the [Envoy](https://www.envoyproxy.io/) and [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}](https://gateway-api.sigs.k8s.io/) projects.
