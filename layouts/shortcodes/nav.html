@@ -38,7 +38,12 @@
     transition: color 500ms linear;
   }
 
-  .navbar.scrolled svg path {
+  .navbar.scrolled a.link svg {
+    fill: #121212;
+    transition: fill 500ms linear;
+  }
+
+  .navbar.scrolled #logo path {
     fill: #5044E9;
     transition: fill 400ms linear;
   }
@@ -75,9 +80,14 @@
 <nav class="navbar py-[1.875rem] px-12 xl:px-25 fixed top-0 border-b-white border-b w-full hidden lg:block">
   <div class="flex max-w-[1440px] mx-auto content-center items-center justify-between gap-6">
     <div class="flex items-center gap-8">
-      {{ partial "utils/icon.html" (dict "name" "logo" ) }}
-      <a class="link whitespace-nowrap font-primary text-secondary-link" href="https://github.com/k8sgateway/k8sgateway">GitHub</a>
-      <a class="link whitespace-nowrap font-primary text-secondary-link" href="https://cloud-native.slack.com/archives/C080D3PJMS4">Slack</a>
+      {{ partial "utils/icon.html" (dict "name" "logo" "attributes" "id='logo'" ) }}
+      <a class="link flex items-center gap-2 whitespace-nowrap font-primary text-secondary-link" href="https://github.com/k8sgateway/k8sgateway">
+        {{ partial "utils/icon.html" (dict "name" "github" "attributes" "class='fill-secondary-link h-6 w-6'") }} GitHub
+      </a>
+      <a class="link flex items-center whitespace-nowrap font-primary text-secondary-link" href="https://cloud-native.slack.com/archives/C080D3PJMS4">
+        {{ partial "utils/icon.html" (dict "name" "slack" "attributes" "class='fill-secondary-link w-10 h-10'") }}
+        Slack
+      </a>
     </div>
     <div class="flex flex-grow lg:flex-grow-0 items-center align-center justify-between lg:gap-[3.5625rem]">
       <a class="link whitespace-nowrap font-primary text-secondary-link" href="/docs/quickstart/">Get Started</a>
