@@ -8,7 +8,7 @@ prev: /docs/reference
 
 ## What is K8sGateway?
 
-{{< reuse "docs/snippets/product-name.md" >}} is an open source, cloud-native Layer 7 proxy that is based on the [Envoy](https://www.envoyproxy.io/). The {{< reuse "docs/snippets/product-name.md" >}} project implements gateway routing by using [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}](https://gateway-api.sigs.k8s.io/) resources.
+{{< reuse "docs/snippets/product-name.md" >}} is an open source, cloud-native Layer 7 proxy that is based on [Envoy](https://www.envoyproxy.io/). The {{< reuse "docs/snippets/product-name.md" >}} project implements gateway routing by using [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}](https://gateway-api.sigs.k8s.io/) resources.
 
 ## Why would I want to use K8sGateway?
 
@@ -51,12 +51,12 @@ The `main` branch of the `k8sgateway` Git repository is for feature work under d
 
 ## Where is the changelog?
 
-The changelog is part of each [GitHub release](https://github.com/k8sgateway/k8sgateway.io/releases).
+The changelog is part of each [GitHub release](https://github.com/k8sgateway/k8sgateway/releases).
 
 ## Is there enterprise software that is based on K8sGateway?
 
 {{< cards >}}
-  {{< card link="https://www.solo.io/products/gloo-gateway/" title="Solo.io" tag= "Enterprise" image="/img/gloo-gateway-ver-light-on-dark.png" >}}
+  {{< card link="https://www.solo.io/products/gloo-gateway/" title="Solo.io" tag= "Enterprise" image="/img/gloo-gateway-ver-light-on-dark.png" icon="external-link">}}
 {{< /cards >}}
 
 ## Why are there some references to Gloo in this project?

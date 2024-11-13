@@ -11,5 +11,6 @@ Learn about {{< reuse "docs/snippets/product-name.md" >}} architecture, features
   {{< card link="architecture" title="Architecture" >}}
   {{< card link="deployment-patterns" title="Deployment patterns" >}}
   {{< card link="custom-resources" title="Custom resources" >}}
+  {{< card link="policies" title="Policies" >}}
   {{< card link="resource-validation" title="Resource validation" >}}
 {{< /cards >}}
