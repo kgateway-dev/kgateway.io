@@ -8,13 +8,28 @@
   name: ParkMobile
 
 - quote: |
-    Gloo Gateway* has provided a robust, secure and scalable solution which seamlessly integrates into our K8s workloads.  With over 2 billion requests per month, it gives us the architecture and advanced features to meet both our B2B, B2C and internal customers.
-  name: Anonymous
+    Ingenico's transition to cloud-native architecture and Kubernetes environment demanded a reliable and scalable API gateway solution. They chose Gloo Gateway* as their API gateway to power their new payment systems.
+  name: Ingenico
 
 - quote: |
-    Gloo Gateway* has been a very scalable and configurable solution for our high volume, high availability B2B and B2C traffic.  It’s advanced routing and security capabilities have met the needs of some of our most critical workloads for both K8s-based and serverless.
-  name: Anonymous
+    Following the acquisition of another business, Vonage seized the opportunity to modernize their infrastructure, moving from bare metal installations to a cloud environment. Gloo Gateway* streamlined the process for their varying systems, regions, and domains.
+  name: Vonage
 
 - quote: |
-    Gloo Gateway* has provided a very powerful solution for our high availability and high volume workloads.  In addition, the responsiveness of the solo.io team has been outstanding and really helped to ensure a successful implementation.
-  name: Anonymous
+    Powered by Gloo Gateway* and Gloo Mesh*, Solo.io helped Domino’s UK transition from a monolithic system to a microservices-based architecture. Learn about our 18-month journey to transform the way they operate.
+  name: Domino’s Pizza
+
+- quote: |
+    ParkMobile partnered with Sol.io because we were looking for the most innovative and flexible solution on the market to power our growing platform. With over 16 million users of our application and a complex ecosystem of integrations, ParkMobile relies on Gloo Gateway* and the supporting product suite for best-in-class API gateway and hybrid application communications that also adds in the power of monitoring and security to ensure peak performance of the platform at all times.
+  name: Matt Ball
+  role: CTO, ParkMobile
+
+- quote: |
+    With Gloo*, we gave access to a single, cloud native gateway that serves APIs spanning from legacy servers to modern, serverless and Kubernetes-based services. Gloo’s* robust technology, coupled with the collaborative Solo.io team, allows us to deploy these capabilities across regions and cloud providers, while integrating with our authentication mechanism to deliver business requirements for advanced usage plans and with our CI/CD pipelines to enable Vonage’s autonomous team.
+  name: Sagi Dudai
+  role: CTO, Vonaga
+
+- quote: |
+    Gloo* checked all the boxes. API Gateway, advanced traffic routing, strong security controls, multi-cloud support and self-service for developers.
+  name: Frédéric Médery
+  role: AWS Solutions Architect, AWS
