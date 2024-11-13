@@ -150,7 +150,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} documentation follows the stan
 
 The contribution guidelines assume you can complete the following tasks:
 
-- Fork the [{{< reuse "docs/snippets/product-name.md" >}} repository](https://github.com/k8sgateway/k8sgateway.io/).
+- Fork the [{{< reuse "docs/snippets/product-name.md" >}} docs repository](https://github.com/k8sgateway/k8sgateway.io/).
 - Create a branch for your changes.
 - Add commits to that branch.
 - Open a PR to share your contribution.

@@ -1,7 +1,8 @@
 ---
 title: Open Source Attribution
 weight: 50
-description: Review Open Source Attribution and Licenses. 
+description: Review Open Source Attribution and Licenses.
+prev: /docs/reference/contribution
 ---
 
 ## Third-party open source software in connection with K8sGateway

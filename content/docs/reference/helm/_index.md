@@ -1,7 +1,7 @@
 ---
 title: Helm value reference
 weight: 10
-next: /docs/reference/contribution
+next: /docs/reference/dev-contribution
 prev: /docs/reference/cli
 ---
 
