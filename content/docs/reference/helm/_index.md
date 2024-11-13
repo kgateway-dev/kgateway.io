@@ -1,6 +1,8 @@
 ---
 title: Helm value reference
 weight: 10
+next: /docs/reference/contribution
+prev: /docs/reference/cli
 ---
 
 Review the Helm values for the open source {{< reuse "docs/snippets/product-name.md" >}} Helm chart.

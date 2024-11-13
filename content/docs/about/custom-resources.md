@@ -1,6 +1,7 @@
 ---
 title: Custom resources
 weight: 30
+next: /docs/about/policies
 ---
 
 Learn how the {{< reuse "docs/snippets/product-name.md" >}} and {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} custom resources interact. 

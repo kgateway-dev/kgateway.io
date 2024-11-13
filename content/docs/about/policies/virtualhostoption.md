@@ -1,7 +1,8 @@
 ---
 title: VirtualHostOption
 weight: 40
-description: Use a VirtualHostOption resource to attach policies to the hosts on one, multiple, or all gateway listeners. 
+description: Use a VirtualHostOption resource to attach policies to the hosts on one, multiple, or all gateway listeners.
+next: /docs/about/resource-validation 
 ---
 
 Use a VirtualHostOption resource to attach policies to the hosts on one, multiple, or all gateway listeners. 

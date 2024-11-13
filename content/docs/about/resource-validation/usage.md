@@ -2,6 +2,7 @@
 title: Test resources
 weight: 20
 description: Try out the resource validation capability in {{< reuse "docs/snippets/product-name.md" >}} to check configuration before you apply it to your cluster.
+
 ---
 
 You can use the Kubernetes [dry run capability](#dry-run) to verify your resource configuration or [send requests directly to the {{< reuse "docs/snippets/product-name.md" >}} validation API](#validation-api). 

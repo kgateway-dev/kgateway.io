@@ -1,6 +1,8 @@
 ---
 title: TCP keepalive
 weight: 100
+next: /docs/traffic-management/proxy-protocol
+prev: /docs/traffic-management/health-checks
 ---
 
 Enable TCP keepalive on downstream and upstream connections.

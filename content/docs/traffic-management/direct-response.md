@@ -1,6 +1,8 @@
 ---
 title: Direct responses
 weight: 20
+prev: /docs/traffic-management/destination-types
+next: /docs/traffic-management/match
 ---
 
 Directly respond to incoming requests without forwarding them to services by returning a pre-defined body and HTTP status to the client.

@@ -1,6 +1,7 @@
 ---
 title: Proxy protocol
 weight: 110
+next: /docs/traffic-management/transformations
 ---
 
 Preserve connection information such as the client IP address and port for traffic that goes through your gateway listener.

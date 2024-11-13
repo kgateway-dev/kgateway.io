@@ -1,6 +1,7 @@
 ---
 title: Self-managed gateways (BYO)
 weight: 30
+prev: /docs/setup/customize/aws-elb
 ---
 
 Follow the [Get started guide](/docs/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}. You do not need to create a Gateway resource, because you create a self-managed Gateway as part of this guide. 

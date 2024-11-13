@@ -1,6 +1,8 @@
 ---
 title: Policies
 weight: 30
+prev: /docs/about/custom-resources
+next: /docs/about/policies/routeoption
 ---
 
 Learn more about the custom resources that you can use to apply policies in {{< reuse "docs/snippets/product-name.md" >}}. 

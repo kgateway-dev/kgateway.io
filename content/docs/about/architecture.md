@@ -1,6 +1,7 @@
 ---
 title: Architecture
 weight: 15
+
 ---
 
 Learn more about the components that make up {{< reuse "docs/snippets/product-name.md" >}}. These components work together to provide traffic management, security, and resiliency for your apps.

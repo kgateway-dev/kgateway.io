@@ -17,7 +17,7 @@ description: ""
   </div>
 </section>
 
-<section class="py-[4.375rem] md:py-50 px-4 md:px-12 xl:px-25 flex flex-col gap-[3.125rem] md:gap-[6.94rem] items-center max-w-[1440px] mx-auto">
+<section id="use-cases" class="py-[4.375rem] md:py-50 px-4 md:px-12 xl:px-25 flex flex-col gap-[3.125rem] md:gap-[6.94rem] items-center max-w-[1440px] mx-auto">
   <h2 class="text-primary-text text-[2.5rem] leading-[2.75rem] font-semibold font-primary">
     Use cases
   </h2>
