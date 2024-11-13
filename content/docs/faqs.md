@@ -49,7 +49,7 @@ The `main` branch of the `k8sgateway` Git repository is for feature work under d
 
 ## Where is the changelog?
 
-The changelog is part of each [GitHub release](https://github.com/k8sgateway/k8sgateway.io/releases).
+The changelog is part of each [GitHub release](https://github.com/k8sgateway/k8sgateway/releases).
 
 ## Is there enterprise software that is based on K8sGateway?
 

@@ -5,8 +5,6 @@ title: Welcome
 
 Welcome to the documentation for the {{< reuse "docs/snippets/product-name.md" >}} open source project! 
 
-Explore the following sections to get started: 
-
 {{< cards >}}
   {{< card link="quickstart" title="Get started" >}}
   {{< card link="about" title="About" >}}
@@ -18,4 +16,5 @@ Explore the following sections to get started:
   {{< card link="observability" title="Observability" >}}
   {{< card link="operations" title="Operations" >}}
   {{< card link="reference" title="Reference" >}}
+  {{< card link="faqs" title="FAQs" >}}
 {{< /cards >}}
