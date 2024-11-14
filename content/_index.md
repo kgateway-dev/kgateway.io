@@ -12,7 +12,7 @@ description: ""
       K8sGateway:<br />an Envoy-powered,<br />Kubernetes-native,<br />API Gateway.
     </h1>
     <p class="lg:w-[31.11344rem] text-xl">
-      K8sGateway is a feature-rich, fast, and flexible API gateway that is built on top of Envoy proxy and the Kubernetes Gateway API. It excels in function-level routing, supports legacy apps, microservices and serverless, offers robust discovery capabilities, integrates seamlessly with open-source projects, and is designed to support hybrid applications with various technologies, architectures, protocols, and clouds.
+      K8sGateway is the most mature and widely deployed Envoy-based gateway in the market today. Built on open source and open standards, K8sGateway integrates Kubernetes Gateway API with a federated control plane that scales from lightweight microgateway deployments between services, to massively parallel centralized gateways handling billions of API calls, to advanced AI gateway use cases for safety, security, and governance when integrating applications with third-party LLMs. K8sGateway brings omni-directional API connectivity to any cloud and any environment.
     </p>
   </div>
 </section>
