@@ -35,24 +35,24 @@ description: ""
   </h2>
   <div class="flex gap-8 flex-wrap justify-center">
     <div class="flex gap-8 flex-wrap w-full md:w-auto">
-      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] h-[7.4375rem] md:h-[25rem]">
+      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] min-h-[7.4375rem] md:min-h-[25rem]">
         <img src="/use-case-security.svg" />
         <h3 class="font-semibold text-[1.25rem] md:text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">Security</h3>
         <p class="text-primary-text font-primary text-center">Apply network encryption, invoke external authentication, or filter requests with a Web Application Firewall.</p>
       </div>
-      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] h-[7.4375rem] md:h-[25rem]">
+      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] min-h-[7.4375rem] md:min-h-[25rem]">
         <img src="/use-case-traffic.svg" />
         <h3 class="font-semibold text-[1.25rem] md:text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">Traffic Management</h3>
         <p class="text-primary-text font-primary text-center">Manipulate incoming traffic and route requests to services in your cluster.</p>
       </div>
     </div>
     <div class="flex gap-8 flex-wrap w-full md:w-auto">
-      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] h-[7.4375rem] md:h-[25rem]">
+      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] min-h-[7.4375rem] md:min-h-[25rem]">
         <img src="/use-case-resilience.svg" />
         <h3 class="font-semibold text-[1.25rem] md:text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">Resilience</h3>
         <p class="text-primary-text font-primary text-center">Simulate failures, disruptions, and adverse conditions to test that your gateway and apps continue to function.</p>
       </div>
-      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] h-[7.4375rem] md:h-[25rem]">
+      <div class="flex md:flex-col items-center bg-card-bg px-4 py-[3.75rem] gap-[1.6875rem] md:gap-[3.125rem] w-full md:w-[17.875rem] min-h-[7.4375rem] md:min-h-[25rem]">
         <img src="/use-case-ai.svg" />
         <h3 class="font-semibold text-[1.25rem] md:text-[1.5625rem] leading-[1.71875rem] text-primary-text font-primary">AI Innovation</h3>
         <p class="text-primary-text font-primary text-center">Protect applications, models, and data from inappropriate access.</p>
