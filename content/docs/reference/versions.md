@@ -10,7 +10,7 @@ Review the following information about supported release versions for {{< reuse 
 
 | {{< reuse "docs/snippets/product-name.md" >}} | Kubernetes | Envoy | Helm | Istio`†`|
 |--------------|------------|-------|------|---------|
-| 1.18.x | 1.25 - 1.29 | v3 xDS API | >= 3.12 | 1.16 - 1.22 |
+| 1.18.x | 1.25 - 1.31 | v3 xDS API | >= 3.12 | 1.16 - 1.22 |
 
 ## Image variants
 

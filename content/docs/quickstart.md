@@ -94,20 +94,25 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
 
 {{< tabs items="CLI,Helm,Argo CD" >}}
 {{% tab %}}
-1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}. 
-   
+1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} version 1.2.0. 
    ```sh
-   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.0.0/standard-install.yaml
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/standard-install.yaml
    ```
-   
    Example output: 
-   
-   ```txt
+   ```console
    customresourcedefinition.apiextensions.k8s.io/gatewayclasses.gateway.networking.k8s.io created
    customresourcedefinition.apiextensions.k8s.io/gateways.gateway.networking.k8s.io created
    customresourcedefinition.apiextensions.k8s.io/httproutes.gateway.networking.k8s.io created
    customresourcedefinition.apiextensions.k8s.io/referencegrants.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/grpcroutes.gateway.networking.k8s.io created
    ```
+   
+   {{< callout type="info" >}}
+   If you want to use TCPRoutes to set up a TCP listener on your Gateway, you must install the TCPRoute CRD, which is part of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} experimental channel. Use the following command to install the CRDs. 
+   ```sh
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/experimental-install.yaml 
+   ```
+   {{< /callout >}}
 
 2. Install {{< reuse "docs/snippets/product-name.md" >}}.
 
@@ -146,17 +151,25 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
    ```
 {{% /tab %}}
 {{% tab %}}
-1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}. 
+1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} version 1.2.0. 
    ```sh
-   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.0.0/standard-install.yaml
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/standard-install.yaml
    ```
    Example output: 
-   ```txt
+   ```console
    customresourcedefinition.apiextensions.k8s.io/gatewayclasses.gateway.networking.k8s.io created
    customresourcedefinition.apiextensions.k8s.io/gateways.gateway.networking.k8s.io created
    customresourcedefinition.apiextensions.k8s.io/httproutes.gateway.networking.k8s.io created
    customresourcedefinition.apiextensions.k8s.io/referencegrants.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/grpcroutes.gateway.networking.k8s.io created
    ```
+   
+   {{< callout type="info" >}}
+   If you want to use TCPRoutes to set up a TCP listener on your Gateway, you must install the TCPRoute CRD, which is part of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} experimental channel. Use the following command to install the CRDs. 
+   ```sh
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/experimental-install.yaml 
+   ```
+   {{< /callout >}}
 
 2. Add the Helm repository for {{< reuse "docs/snippets/product-name.md" >}} Open Source. 
    ```sh
@@ -209,20 +222,25 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
    ```
 {{% /tab %}}
 {{% tab %}}
-1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}. 
-   
+1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} version 1.2.0. 
    ```sh
-   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.0.0/standard-install.yaml
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/standard-install.yaml
    ```
-   
    Example output: 
-   
-   ```txt
+   ```console
    customresourcedefinition.apiextensions.k8s.io/gatewayclasses.gateway.networking.k8s.io created
    customresourcedefinition.apiextensions.k8s.io/gateways.gateway.networking.k8s.io created
    customresourcedefinition.apiextensions.k8s.io/httproutes.gateway.networking.k8s.io created
    customresourcedefinition.apiextensions.k8s.io/referencegrants.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/grpcroutes.gateway.networking.k8s.io created
    ```
+   
+   {{< callout type="info" >}}
+   If you want to use TCPRoutes to set up a TCP listener on your Gateway, you must install the TCPRoute CRD, which is part of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} experimental channel. Use the following command to install the CRDs. 
+   ```sh
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/experimental-install.yaml 
+   ```
+   {{< /callout >}}
    
 2. Port-forward the Argo CD server on port 9999.
    
@@ -465,10 +483,10 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
 ## Next steps
 
 Now that you have {{< reuse "docs/snippets/product-name.md" >}} set up and running, check out the following guides to expand your API gateway capabilities.
-- Learn more about [{{< reuse "docs/snippets/product-name.md" >}}, its features and benefits](/about/overview). 
-- Add routing capabilities to your httpbin route by using the [Traffic management]({/traffic-management) guides. 
-- Explore ways to make your routes more resilient by using the [Resiliency](/resiliency) guides. 
-- Secure your routes with external authentication and rate limiting policies by using the [Security](/security) guides. 
+- Learn more about [{{< reuse "docs/snippets/product-name.md" >}}, its features and benefits](/docs/about/overview). 
+- Add routing capabilities to your httpbin route by using the [Traffic management](/docs/traffic-management) guides. 
+- Explore ways to make your routes more resilient by using the [Resiliency](/docs/resiliency) guides. 
+- Secure your routes with external authentication and rate limiting policies by using the [Security](/docs/security) guides. 
 
 {{< callout type="warning" >}}
 {{< reuse "docs/snippets/one-install.md" >}}
@@ -480,10 +498,10 @@ Now that you have {{< reuse "docs/snippets/product-name.md" >}} set up and runni
 
 {{< tabs items="CLI,Helm,Argo CD" >}}
 
-  {{% tab %}}Follow the [Uninstall guide](/operations/uninstall).{{% /tab %}}
+  {{% tab %}}Follow the [Uninstall guide](/docs/operations/uninstall).{{% /tab %}}
   
-  {{% tab %}}Follow the [Uninstall guide](/operations/uninstall).{{% /tab %}}
+  {{% tab %}}Follow the [Uninstall guide](/docs/operations/uninstall).{{% /tab %}}
   
-  {{% tab %}}Follow the [Uninstall with Argo CD guide](/operations/uninstall#argocd).{{% /tab %}}
+  {{% tab %}}Follow the [Uninstall with Argo CD guide](/docs/operations/uninstall#argocd).{{% /tab %}}
 
 {{< /tabs >}}

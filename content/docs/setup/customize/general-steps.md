@@ -8,7 +8,8 @@ The configuration that is used to spin up a gateway proxy is stored in several c
 
 | Option | Description | 
 | -- | -- | 
-| Change GatewayParameters and Settings | Adjust settings on the gateway proxy, such as additional labels, security contexts, annotations, and more, by using the GatewayParameters and Settings resources. {{< reuse "docs/snippets/product-name.md" >}} continues to manage the gateway for you. The values that you set in the GatewayParameters and Settings resources are automatically translated and applied to the gateway proxies.  |
+| Create your own GatewayParameters resource (recommended) | To adjust the settings on the gateway proxy, you can create your own GatewayParameters resource. This approach allows you to spin up gateway proxies with different configurations. Keep in mind that you must maintain the GatewayParameters resources that you created manually. The values in these resources are not automatically updated during upgrades.  | 
+| Change default GatewayParameters and Settings | You can change the values for the default GatewayParameters and Settings resources by updating the values in the {{< reuse "docs/snippets/product-name.md" >}} Helm chart. Do not update the values in these resources directly as the values do not persist between upgrades. The values that you set in your Helm chart are automatically applied to the default GatewayParameters and Settings resources, and rolled out to the gateway proxies.  |
 | Create self-managed gateways with custom proxy templates | If you want to change the [default gateway proxy template](/docs/setup/default/#gateway-proxy-template) and provide your own Envoy configuration to bootstrap the proxy with, you must create a self-managed gateway. For more information, see [Self-managed gateways (BYO)](/docs/setup/customize/selfmanaged). | 
 
 ## Customize the gateway proxy 
