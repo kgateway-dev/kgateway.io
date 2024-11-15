@@ -62,6 +62,26 @@ During the upgrade, pods that run the new version of the control plane and proxi
 
 ## Step 3: Upgrade K8sGateway
 
+1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} version 1.2.0. 
+   ```sh
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/standard-install.yaml
+   ```
+   Example output: 
+   ```
+   customresourcedefinition.apiextensions.k8s.io/gatewayclasses.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/gateways.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/httproutes.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/referencegrants.gateway.networking.k8s.io created
+   customresourcedefinition.apiextensions.k8s.io/grpcroutes.gateway.networking.k8s.io created
+   ```
+   
+   {{< callout type="info" >}}
+   If you want to use TCPRoutes to set up a TCP listener on your Gateway, you must install the TCPRoute CRD, which is part of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} experimental channel. Use the following command to install the CRDs. 
+   ```sh
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/experimental-install.yaml 
+   ```
+   {{< /callout >}}
+
 1. Update the {{< reuse "docs/snippets/product-name.md" >}} Helm repositories.
    ```sh
    helm repo update
