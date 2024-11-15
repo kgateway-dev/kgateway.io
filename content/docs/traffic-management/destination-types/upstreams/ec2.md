@@ -3,7 +3,7 @@ title: AWS EC2
 weight: 30
 ---
 
- Route traffic directly to an AWS EC2 instance. 
+Route traffic directly to an AWS EC2 instance. 
 
 ## Before you begin 
 
