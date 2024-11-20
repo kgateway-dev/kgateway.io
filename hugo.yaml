@@ -5,7 +5,7 @@ title: "Kubernetes Gateway"
 
 services:
   googleAnalytics:
-    ID: ""
+    ID: "G-9P21XPDJPX"
 
 outputs:
   home: [HTML]
