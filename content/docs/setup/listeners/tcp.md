@@ -93,6 +93,28 @@ Create a TCP listener so that the gateway can route TCP traffic. In the followin
    kubectl get gateway tcp-gateway -n gloo-system -o yaml
    ```
 
+   Example output:
+
+   ```console
+   status:
+     addresses:
+     - type: IPAddress
+       value: ${INGRESS_GW_ADDRESS}
+     conditions:
+     - lastTransitionTime: "2024-11-20T16:01:25Z"
+       message: ""
+       observedGeneration: 2
+       reason: Accepted
+       status: "True"
+       type: Accepted
+     - lastTransitionTime: "2024-11-20T16:01:25Z"
+       message: ""
+       observedGeneration: 2
+       reason: Programmed
+       status: "True"
+       type: Programmed
+   ```
+
 3. Create a TCPRoute resource for the TCP echo app that is served by the gateway that you created.
    
    ```yaml
@@ -156,8 +178,7 @@ Create a TCP listener so that the gateway can route TCP traffic. In the followin
    Example output:
 
    ```console
-   Connected to 172.xx.xxx.xx.
-   Escape character is '^]'.
+   Connection to ${INGRESS_GW_ADDRESS} port 8000 [tcp/irdmi] succeeded!
    ```
 
 7. Enter any string to verify that the TCP echo service "echoes," returning the same string back.
