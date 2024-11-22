@@ -97,26 +97,22 @@ Create a TCP listener so that the gateway can route TCP traffic. In the followin
 
    ```console
    status:
-     parents:
-     - conditions:
-       - lastTransitionTime: "2024-11-21T16:22:52Z"
-         message: ""
-         observedGeneration: 1
-         reason: Accepted
-         status: "True"
-         type: Accepted
-       - lastTransitionTime: "2024-11-21T16:22:52Z"
-         message: ""
-         observedGeneration: 1
-         reason: ResolvedRefs
-         status: "True"
-         type: ResolvedRefs
-       controllerName: solo.io/gloo-gateway
-       parentRef:
-         group: gateway.networking.k8s.io
-         kind: Gateway
-         name: tcp-gateway
-         sectionName: tcp
+     addresses:
+     - type: IPAddress
+       value: ${INGRESS_GW_ADDRESS}
+     conditions:
+     - lastTransitionTime: "2024-11-20T16:01:25Z"
+       message: ""
+       observedGeneration: 2
+       reason: Accepted
+       status: "True"
+       type: Accepted
+     - lastTransitionTime: "2024-11-20T16:01:25Z"
+       message: ""
+       observedGeneration: 2
+       reason: Programmed
+       status: "True"
+       type: Programmed
    ```
 
 3. Create a TCPRoute resource for the TCP echo app that is served by the gateway that you created.
@@ -146,6 +142,32 @@ Create a TCP listener so that the gateway can route TCP traffic. In the followin
    
    ```sh
    kubectl get tcproute/tcp-route-echo -n gloo-system -o yaml
+   ```
+
+   Example output:
+   
+   ```console
+   status:
+     parents:
+     - conditions:
+       - lastTransitionTime: "2024-11-21T16:22:52Z"
+         message: ""
+         observedGeneration: 1
+         reason: Accepted
+         status: "True"
+         type: Accepted
+       - lastTransitionTime: "2024-11-21T16:22:52Z"
+         message: ""
+         observedGeneration: 1
+         reason: ResolvedRefs
+         status: "True"
+         type: ResolvedRefs
+       controllerName: solo.io/gloo-gateway
+       parentRef:
+         group: gateway.networking.k8s.io
+         kind: Gateway
+         name: tcp-gateway
+         sectionName: tcp
    ```
 
 5. Get the external address of the gateway and save it in an environment variable.
