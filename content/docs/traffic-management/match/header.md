@@ -17,7 +17,7 @@ For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md"
 1. Create an HTTPRoute resource. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-match

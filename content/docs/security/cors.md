@@ -145,7 +145,7 @@ This example uses the Petstore app to demonstrate CORS policies. You cannot use 
 2. Create an HTTPRoute resource for the Petstore app that applies the RouteOption resources that you created. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: petstore-cors

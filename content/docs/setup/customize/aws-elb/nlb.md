@@ -209,7 +209,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
 1. Create an HTTPRoute resource and associate it with the gateway that you created. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-elb
@@ -249,7 +249,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
 1. Create an HTTPRoute resource and associate it with the gateway that you created. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-elb

@@ -32,7 +32,7 @@ Path rewrites use the HTTP path modifier to rewrite <!--either an entire path or
 2. Create an HTTPRoute resource for the httpbin app that references the RouteOption resource that you created. In this example, all incoming requests on the `rewrite.example` domain are rewritten to the `www.example.com` host as defined in the referenced RouteOption resource.
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-rewrite

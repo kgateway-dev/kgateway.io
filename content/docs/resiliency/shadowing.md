@@ -95,7 +95,7 @@ To enable traffic shadowing, you must set up an [Upstream](/docs/traffic-managem
 6. Create an HTTPRoute resource for the httpbin app that you want to shadow traffic for and reference the RouteOption resource that you created. Note that shadowing requires you to route traffic to the httpbin Upstream and not to the httpbin service directly. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-shadow
@@ -124,7 +124,7 @@ To enable traffic shadowing, you must set up an [Upstream](/docs/traffic-managem
 7. Create a reference grant to allow the HTTPRoute resource to access Upstream resources in the `gloo-system` namespace. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: ReferenceGrant
    metadata:
      name: shadow-rg

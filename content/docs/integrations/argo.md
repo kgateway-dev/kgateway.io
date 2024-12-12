@@ -167,7 +167,7 @@ description: Use {{< reuse "docs/snippets/product-name.md" >}} with Argo Rollout
    ```yaml
    kubectl apply -f- <<EOF
    kind: HTTPRoute
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    metadata:
      name: argo-rollouts-http-route
      namespace: default

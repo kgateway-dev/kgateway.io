@@ -33,7 +33,7 @@ Path rewrites use the HTTP path modifier to rewrite <!--either an entire path or
 2. Create an HTTPRoute resource for the httpbin app that references the RouteOption resource that you created. In this example, all incoming requests that match the `/headers` path on the `rewrite.example` domain are rewritten according to the rules that are defined in the RouteOption resource.
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-rewrite
@@ -115,7 +115,7 @@ Path rewrites use the HTTP path modifier to rewrite <!--either an entire path or
 2. Create an HTTPRoute resource for the httpbin app that references the RouteOption resource that you created. In this example, all incoming requests along the `/headers` path on the `rewrite.example` domain are evaluated against the regex pattern that you defined in the RouteOption resource.  
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-rewrite
