@@ -56,7 +56,7 @@ spec:
 To apply the policies to a particular route, you use the `ExtensionRef` filter on the desired HTTPRoute route. In the following example, the RouteOption policy is applied to the `/anything/path1` route. However, it is not applied to the `/anything/path2` path.   
 
 ```yaml {hl_lines=[17,18,19,20,21,22]}
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: httpbin-rewrite
@@ -93,7 +93,7 @@ spec:
 You can also add multiple `ExtensionRef` filters to the same route as shown in the following example. 
 
 ```yaml {hl_lines=[17,18,19,20,21,22,23,24,25,26,27]}
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: httpbin-rewrite

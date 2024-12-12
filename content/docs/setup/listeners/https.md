@@ -68,7 +68,7 @@ weight: 20
 3. Create an HTTP route for the httpbin app and add it to the HTTPS gateway that you created. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-https

@@ -13,7 +13,7 @@ Most guides in this documentation route traffic to a Kubernetes service directly
 {{< /callout >}}
 
 ```yaml {linenos=table,hl_lines=[13,14,15],linenostart=1,filename="k8s-service-httproute.yaml"}
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: static-upstream

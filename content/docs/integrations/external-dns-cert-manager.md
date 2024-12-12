@@ -18,7 +18,7 @@ You can later use Cert Manager to create TLS certificates for this hostname so t
 1. Create an HTTP route resource to expose httpbin on your domain. Replace `<my-domain.com>` with your domain. Note that you must own the domain to enable ExternalDNS to create DNS records on your behalf. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin

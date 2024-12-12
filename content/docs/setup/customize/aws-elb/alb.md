@@ -104,7 +104,7 @@ Keep in mind the following considerations when working with an ALB:
 5. Create an HTTPRoute resource to open up a port on the gateway proxy. This step is required for AWS ELB health checks to pass. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-alb

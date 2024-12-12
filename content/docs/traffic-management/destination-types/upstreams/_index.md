@@ -92,7 +92,7 @@ Do not specify a port in the `spec.backendRefs.port` field when referencing your
 {{< /callout >}}
 
 ```yaml {linenos=table,hl_lines=[13,14,15,16],linenostart=1,filename="upstream-httproute.yaml"}
-apiVersion: gateway.networking.k8s.io/v1beta1
+apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: static-upstream

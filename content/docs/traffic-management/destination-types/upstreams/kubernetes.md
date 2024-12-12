@@ -41,7 +41,7 @@ Upstreams of type `kube` are automatically created when service discovery is ena
 3. Create an HTTPRoute resource that references the Upstream that you created. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: kube-upstream

@@ -120,7 +120,7 @@ Use a RouteOption resource to add request headers for incoming requests to a spe
 2. Create an HTTPRoute resource for the httpbin app that references the RouteOption resource that you created. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-headers
@@ -322,7 +322,7 @@ Add headers from a Kubernetes secret for requests to a specific route.
 3. Create an HTTPRoute resource for the httpbin app that references the RouteOption resource that you created. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-headers
@@ -568,7 +568,7 @@ Remove specific headers from requests to a specific route.
 3. Create the HTTPRoute resource for the httpbin app that removes the `User-Agent` header when requests are sent to the `headers.example` domain. 
    ```yaml
    kubectl apply -f- <<EOF
-   apiVersion: gateway.networking.k8s.io/v1beta1
+   apiVersion: gateway.networking.k8s.io/v1
    kind: HTTPRoute
    metadata:
      name: httpbin-headers
