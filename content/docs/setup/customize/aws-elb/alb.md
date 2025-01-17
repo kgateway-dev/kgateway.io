@@ -8,7 +8,7 @@ In this guide you explore how to expose the {{< reuse "docs/snippets/product-nam
 {{< callout type="warning" >}}
 Keep in mind the following considerations when working with an ALB: 
 * The AWS Load Balancer Controller only supports creation of an ALB through an Ingress Controller and not through the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}. Because of this, you must create the ALB separately and later connect it to the service that exposes your gateway proxy.
-* {{< reuse "docs/snippets/product-name.md" >}} does not open any proxy ports until at least one HTTPRoute resource is created that references the gateway. However, AWS ELB health checks are automatically created and run after you create the gateway. Because of this, registered targets might appear unhealthy until an HTTPRoute resource is created. 
+* {{< reuse "docs/snippets/product-name-caps.md" >}} does not open any proxy ports until at least one HTTPRoute resource is created that references the gateway. However, AWS ELB health checks are automatically created and run after you create the gateway. Because of this, registered targets might appear unhealthy until an HTTPRoute resource is created. 
 {{< /callout >}}
 
 ## Before you begin
@@ -98,7 +98,7 @@ Keep in mind the following considerations when working with an ALB:
    3. On the **Resource map** tab, verify that the load balancer points to targets in your cluster. 
 
    {{< callout type="info" >}}
-   {{< reuse "docs/snippets/product-name.md" >}} does not open any proxy ports until at least one HTTPRoute is associated with the gateway. The AWS ELB health checks are automatically created when you create the Gateway resource and might report that the gateway proxy is unhealthy. Continue with this guide to create an HTTPRoute resource to open up a port in the ALB.
+   {{< reuse "docs/snippets/product-name-caps.md" >}} does not open any proxy ports until at least one HTTPRoute is associated with the gateway. The AWS ELB health checks are automatically created when you create the Gateway resource and might report that the gateway proxy is unhealthy. Continue with this guide to create an HTTPRoute resource to open up a port in the ALB.
    {{< /callout >}}
  
 5. Create an HTTPRoute resource to open up a port on the gateway proxy. This step is required for AWS ELB health checks to pass. 

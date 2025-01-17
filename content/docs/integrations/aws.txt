@@ -4,7 +4,7 @@ weight: 5
 description:
 ---
 
-{{< reuse "docs/snippets/product-name.md" >}} can act as both a secure edge router and as a developer-friendly Kubernetes ingress/egress (north-south traffic) gateway. You can get many benefits by pairing {{< reuse "docs/snippets/product-name.md" >}} with one of AWS Elastic Load Balancers (ELB), including better cross availability zone failover and deeper integration with AWS services like AWS Certificate Manager, AWS CLI & CloudFormation, and Route 53 (DNS).
+{{< reuse "docs/snippets/product-name-caps.md" >}} can act as both a secure edge router and as a developer-friendly Kubernetes ingress/egress (north-south traffic) gateway. You can get many benefits by pairing {{< reuse "docs/snippets/product-name.md" >}} with one of AWS Elastic Load Balancers (ELB), including better cross availability zone failover and deeper integration with AWS services like AWS Certificate Manager, AWS CLI & CloudFormation, and Route 53 (DNS).
 
 AWS provides these three types of Elastic Load Balancers (ELB):
 

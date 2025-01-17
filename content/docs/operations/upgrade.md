@@ -60,7 +60,7 @@ During the upgrade, pods that run the new version of the control plane and proxi
    },
    ```
 
-## Step 3: Upgrade K8sGateway
+## Step 3: Upgrade kgateway
 
 1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} version 1.2.0. 
    ```sh

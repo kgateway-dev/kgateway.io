@@ -10,7 +10,7 @@ In this guide you explore how to expose the {{< reuse "docs/snippets/product-nam
 
 {{< callout type="warning" >}}
 Keep in mind the following considerations when working with an NLB: 
-* {{< reuse "docs/snippets/product-name.md" >}} does not open any proxy ports until at least one HTTPRoute resource is created that references the gateway. However, AWS ELB health checks are automatically created and run after you create the gateway. Because of that, registered targets might appear unhealthy until an HTTPRoute resource is created. 
+* {{< reuse "docs/snippets/product-name-caps.md" >}} does not open any proxy ports until at least one HTTPRoute resource is created that references the gateway. However, AWS ELB health checks are automatically created and run after you create the gateway. Because of that, registered targets might appear unhealthy until an HTTPRoute resource is created. 
 * An AWS NLB has an idle timeout of 350 seconds that you cannot change. This limitation can increase the number of reset TCP connections. 
 {{< /callout >}}
 
@@ -102,7 +102,7 @@ Follow these steps to create a simple NLB that accepts HTTP traffic on port 80 a
    3. On the **Resource map** tab, verify that the load balancer points to targets in your cluster. 
 
    {{< callout type="info" >}}
-   {{< reuse "docs/snippets/product-name.md" >}} does not open any proxy ports until at least one HTTPRoute is associated with the gateway. The AWS ELB health checks are automatically created when you create the Gateway resource and might report that the gateway proxy  is unhealthy. Continue with this guide to create an HTTPRoute resource and send traffic through the NLB.
+   {{< reuse "docs/snippets/product-name-caps.md" >}} does not open any proxy ports until at least one HTTPRoute is associated with the gateway. The AWS ELB health checks are automatically created when you create the Gateway resource and might report that the gateway proxy  is unhealthy. Continue with this guide to create an HTTPRoute resource and send traffic through the NLB.
    {{< /callout >}}
 
 6. Continue with [Step 3: Test traffic to the NLB](#test-traffic). 
@@ -193,7 +193,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
    3. On the **Resource map** tab, and verify that the load balancer points to targets in your cluster. 
 
    {{< callout type="info" >}}
-   {{< reuse "docs/snippets/product-name.md" >}} does not open any proxy ports until at least one HTTPRoute is associated with the gateway. The AWS ELB health checks are automatically created when you create the Gateway resource and might report that the gateway proxy is unhealthy. Continue with this guide to create an HTTPRoute resource and send traffic through the NLB.
+   {{< reuse "docs/snippets/product-name-caps.md" >}} does not open any proxy ports until at least one HTTPRoute is associated with the gateway. The AWS ELB health checks are automatically created when you create the Gateway resource and might report that the gateway proxy is unhealthy. Continue with this guide to create an HTTPRoute resource and send traffic through the NLB.
    {{< /callout >}}
 
 7. Continue with [Step 3: Test traffic to the NLB](#test-traffic). 

@@ -12,7 +12,7 @@ While the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} allows you to do
 
 ## Policy CRDs
 
-{{< reuse "docs/snippets/product-name.md" >}} uses the following custom resources to attach policies to routes and gateway listeners. 
+{{< reuse "docs/snippets/product-name-caps.md" >}} uses the following custom resources to attach policies to routes and gateway listeners. 
 
 {{< cards >}}
   {{< card link="../../traffic-management/direct-response" title="Direct response" subtitle="Directly respond to incoming requests with a custom HTTP response code and body." >}}

@@ -43,10 +43,10 @@ If traffic matches the conditions that are defined in the HTTPRoute, the Gateway
 A [ReferenceGrant](https://gateway-api.sigs.k8s.io/api-types/referencegrant/) allows a Kubernetes Gateway API resource, such as an HTTPRoute, to reference resources that exist in other namespaces. For example, if you create an HTTPRoute resource in `namespace1`, but the Kubernetes Service or Upstream that you want to route to is in `namespace2`, you must create a ReferenceGrant to allow communication between these resources.
 
 {{% callout type="info" %}}
-{{< reuse "docs/snippets/product-name.md" >}} custom resources do not follow the same cross-namespace restrictions as the resources in the Kubernetes Gateway API. For example, access between a RouteOption resource in `namespace1` and an Upstream resource in `namespace2` is allowed by default and does not require a ReferenceGrant. However, if you need to reference a {{< reuse "docs/snippets/product-name.md" >}} resource from a Kubernetes Gateway API resource, you must create a ReferenceGrant. 
+{{< reuse "docs/snippets/product-name-caps.md" >}} custom resources do not follow the same cross-namespace restrictions as the resources in the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}. For example, access between a RouteOption resource in `namespace1` and an Upstream resource in `namespace2` is allowed by default and does not require a ReferenceGrant. However, if you need to reference a {{< reuse "docs/snippets/product-name.md" >}} resource from a {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} resource, you must create a ReferenceGrant. 
 {{% /callout %}}
 
-## K8sGateway resources {#gloo-gateway}
+## Kgateway resources {#gloo-gateway}
 
 Review the {{< reuse "docs/snippets/product-name.md" >}} resources that you use to bootstrap, configure, and customize your gateway proxy, and the policies that you can leverage to add additional traffic management, resiliency, and security capabilities to your gateway and routes. 
 
@@ -61,7 +61,7 @@ To learn more about the default gateway setup and how these resource interact wi
 
 While the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} allows you to do simple routing, such as to match, redirect, or rewrite requests, you might want additional capabilities in your API gateway, such as fault injection, access logging, CORS, or CSRF. [Policies](/docs/about/policies/overview/) allow you to apply intelligent traffic management, resiliency, and security standards to individual routes or all the routes that the gateway serves. 
 
-{{< reuse "docs/snippets/product-name.md" >}} uses the following custom resources to attach policies to routes and gateway listeners: 
+{{< reuse "docs/snippets/product-name-caps.md" >}} uses the following custom resources to attach policies to routes and gateway listeners: 
 
 * [**DirectResponse**](/docs/traffic-management/direct-response/): Directly respond to incoming requests with a custom HTTP response code and body.
 * [**ListenerOption**](/docs/about/policies/listeneroption/): Attach policies to one, multiple, or all gateway listeners.

@@ -5,7 +5,7 @@ weight: 5
 
 Use built-in tools to troubleshoot issues in your {{< reuse "docs/snippets/product-name.md" >}} setup.
 
-{{< reuse "docs/snippets/product-name.md" >}} is based on [Envoy proxy](https://www.envoyproxy.io). If you experience issues in your environment, such as policies that are not applied or traffic that is not routed correctly, in a lot of cases, these errors can be observed at the proxy. In this guide you learn how to use the {{< reuse "docs/snippets/product-name.md" >}} and Envoy debugging tools to troubleshoot misconfigurations on the gateway.  
+{{< reuse "docs/snippets/product-name-caps.md" >}} is based on [Envoy proxy](https://www.envoyproxy.io). If you experience issues in your environment, such as policies that are not applied or traffic that is not routed correctly, in a lot of cases, these errors can be observed at the proxy. In this guide you learn how to use the {{< reuse "docs/snippets/product-name.md" >}} and Envoy debugging tools to troubleshoot misconfigurations on the gateway.  
 
 ## Before you begin
 
