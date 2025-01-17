@@ -42,7 +42,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} translator receives snapshots 
 
 The following image shows the different stages of a translation cycle. 
 
-{{< reuse-image src="img/translation-loop.svg" caption="{{< reuse "docs/snippets/product-name-caps.md" >}} translation cycle" >}}
+{{< reuse-image src="img/translation-loop.svg" caption="Kgateway translation cycle" >}}
 
 1. The translation cycle starts by defining [Envoy clusters](https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/cluster/v3/cluster.proto) from all configured Upstream and Kubernetes service resources. Clusters in this context are groups of similar hosts. Each Upstream has a type that determines how the Upstream is processed. Correctly configured Upstreams and Kubernetes services are converted into Envoy clusters that match their type, including information like cluster metadata.
 
