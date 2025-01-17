@@ -9,7 +9,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} project welcomes your document
 {{< card title="Add documentation" link="add-docs" >}}
 {{< card title="Preview and build locally " link="preview" >}}
 {{< card title="Style guide" link="styleguide" >}}
-{{< card title="GitHub repo" link="https://github.com/k8sgateway/k8sgateway.io" icon="external-link" >}}
+{{< card title="GitHub repo" link="https://github.com/kgateway-dev//k8sgateway.io" icon="external-link" >}}
 {{< /cards >}}
 
 
