@@ -1,7 +1,7 @@
 baseURL: "/"
 enableRobotsTXT: true
 canonifyURLs: true
-title: "Kubernetes Gateway"
+title: "kgateway"
 
 services:
   googleAnalytics:
@@ -54,7 +54,7 @@ menu:
     - name: Get Started
       weight: 2
       url: /docs/quickstart/
-    - name: Why K8s Gateway
+    - name: Why kgateway
       weight: 3
       url: /docs/about/overview/
 
