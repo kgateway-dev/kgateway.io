@@ -23,7 +23,7 @@ description: ""
       About kgateway
     </h2>
     <div class="flex gap-8 flex-wrap justify-center text-xl">
-      <p class="max-w-4xl mx-auto">Kgateway was launched in 2018 as <b>Gloo</b>. Since then, the project has steadily evolved to become the most trusted and feature-rich API gateway for Kubernetes, processing billions of API requests for many of the world's biggest companies.</p>
+      <p class="text-primary-text max-w-4xl mx-auto">Kgateway was launched in 2018 as <b>Gloo</b>. Since then, the project has steadily evolved to become the most trusted and feature-rich API gateway for Kubernetes, processing billions of API requests for many of the world's biggest companies.</p>
     </div>
   </div>
 </section>
