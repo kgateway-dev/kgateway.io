@@ -4,7 +4,6 @@
 
   document.addEventListener('scroll', function (e) {
     const nav = document.querySelector('.navbar');
-    console.log(window.scrollY, nav.scrollHeight)
     if (nav.classList.contains('scrolled') && window.scrollY <= 0) {
       nav.classList.remove('scrolled');
     } else {
