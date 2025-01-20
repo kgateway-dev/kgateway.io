@@ -20,10 +20,10 @@ description: ""
 <section id="about" class="font-primary py-[4.375rem] md:py-50 px-4 md:px-12 xl:px-25 bg-card-bg">
  <div class="flex flex-col gap-[3.125rem] md:gap-[6.94rem] items-center">
   <h2 class="text-primary-text text-[2.5rem] leading-[2.75rem] font-semibold font-primary">
-      About K8sGateway
+      About kgateway
     </h2>
     <div class="flex gap-8 flex-wrap justify-center text-xl">
-      <p class="max-w-4xl mx-auto">K8sGateway was launched in 2018 as <b>Gloo</b>. Since then, the project has steadily evolved to become the most trusted and feature-rich API gateway for Kubernetes, processing billions of API requests for many of the world's biggest companies.</p>
+      <p class="max-w-4xl mx-auto">Kgateway was launched in 2018 as <b>Gloo</b>. Since then, the project has steadily evolved to become the most trusted and feature-rich API gateway for Kubernetes, processing billions of API requests for many of the world's biggest companies.</p>
     </div>
   </div>
 </section>
