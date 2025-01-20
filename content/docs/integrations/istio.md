@@ -1,7 +1,7 @@
 ---
 title: Istio service mesh
 weight: 530
-description: Use your k8sgateway proxy as the ingress gateway to control and secure traffic that enters your service mesh. 
+description: Use your kgateway proxy as the ingress gateway to control and secure traffic that enters your service mesh. 
 ---
 
 Use your {{< reuse "docs/snippets/product-name.md" >}} proxy as the ingress gateway to control and secure traffic that enters your service mesh.

@@ -91,7 +91,7 @@ For ArgoCD installations, use the following steps to clean up your environment.
 
 2. Open the [Argo CD UI](https://localhost:9999/applications).
 
-3. Log in with the `admin` username and `k8sgateway` password.
+3. Log in with the `admin` username and `kgateway` password.
 4. Find the application that you want to delete and click **x**. 
 5. Select **Foreground** and click **Ok**. 
 6. Verify that the pods were removed from the `gloo-system` namespace. 
@@ -113,7 +113,7 @@ For ArgoCD installations, use the following steps to clean up your environment.
    
 2. Log in to the Argo CD UI. 
    ```sh
-   argocd login localhost:9999 --username admin --password k8sgateway --insecure
+   argocd login localhost:9999 --username admin --password kgateway --insecure
    ```
    
 3. Delete the application.

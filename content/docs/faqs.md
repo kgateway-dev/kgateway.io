@@ -47,7 +47,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} project organizes issues into 
 
 The {{< reuse "docs/snippets/product-name.md" >}} project supports one `n` latest version.
 
-The `main` branch of the `k8sgateway` Git repository is for feature work under development, and is not stable.
+The `main` branch of the `kgateway-dev/kgateway` Git repository is for feature work under development, and is not stable.
 
 ## Where is the changelog?
 
