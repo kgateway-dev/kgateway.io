@@ -26,7 +26,7 @@ During the upgrade, pods that run the new version of the control plane and proxi
 ## Step 1: Prepare to upgrade
 
 1. **Minor version upgrades**: Before you upgrade to a new minor version, first upgrade your _current_ minor version to the latest patch.
-   1. Find the latest patch of your minor version by checking the [release changelog](https://github.com/k8sgateway/k8sgateway/releases).
+   1. Find the latest patch of your minor version by checking the [release changelog](https://github.com/kgateway-dev/kgateway/releases).
    2. Follow this upgrade guide to upgrade to the latest patch for your current minor version.
    3. Then, you can repeat the steps in this guide to upgrade to the latest patch of the next minor version.
 
@@ -60,7 +60,7 @@ During the upgrade, pods that run the new version of the control plane and proxi
    },
    ```
 
-## Step 3: Upgrade K8sGateway
+## Step 3: Upgrade kgateway
 
 1. Install the custom resources of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} version 1.2.0. 
    ```sh

@@ -1,6 +1,6 @@
 ---
 linkTitle: "Get started"
-title: Get started with K8sGateway
+title: Get started with kgateway
 weight: 1
 next: /docs/about
 ---
@@ -75,10 +75,10 @@ The guide includes steps to install {{< reuse "docs/snippets/product-name.md" >}
    kubectl -n argocd rollout status deploy/argocd-repo-server
    kubectl -n argocd rollout status deploy/argocd-server   
    ```
-4. Update the default Argo CD password for the admin user to `k8sgateway`.
+4. Update the default Argo CD password for the admin user to `kgateway`.
    ```shell
    # bcrypt(password)=$2a$10$g3bspLL4iTNQHxJpmPS0A.MtyOiVvdRk1Ds5whv.qSdnKUmqYVyxa
-   # password: k8sgateway
+   # password: kgateway
    kubectl -n argocd patch secret argocd-secret \
      -p '{"stringData": {
        "admin.password": "$2a$10$g3bspLL4iTNQHxJpmPS0A.MtyOiVvdRk1Ds5whv.qSdnKUmqYVyxa",
@@ -88,7 +88,7 @@ The guide includes steps to install {{< reuse "docs/snippets/product-name.md" >}
 {{% /tab %}}
 {{< /tabs >}}
 
-## Install K8sGateway
+## Install kgateway
 
 Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in your Kubernetes cluster.
 
@@ -250,7 +250,7 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
 
 3. Open the [Argo CD UI](https://localhost:9999/).
 
-4. Log in with the `admin` username and `k8sgateway` password.
+4. Log in with the `admin` username and `kgateway` password.
    
    {{< reuse-image src="img/argocd-welcome.png" >}}
 
@@ -261,7 +261,7 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
    apiVersion: argoproj.io/v1alpha1
    kind: Application
    metadata:
-     name: k8sgateway-oss-helm
+     name: kgateway-oss-helm
      namespace: argocd
    spec:
      destination:

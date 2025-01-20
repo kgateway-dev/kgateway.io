@@ -1,7 +1,7 @@
 ---
 title: Istio service mesh
 weight: 530
-description: Use your k8sgateway proxy as the ingress gateway to control and secure traffic that enters your service mesh. 
+description: Use your kgateway proxy as the ingress gateway to control and secure traffic that enters your service mesh. 
 ---
 
 Use your {{< reuse "docs/snippets/product-name.md" >}} proxy as the ingress gateway to control and secure traffic that enters your service mesh.
@@ -22,7 +22,7 @@ The open source project Istio is the leading service mesh implementation that of
 
 ### About the Istio integration
 
-{{< reuse "docs/snippets/product-name.md" >}} comes with an Istio integration that allows you to configure your gateway proxy with an Istio sidecar. The Istio sidecar uses mutual TLS (mTLS) to prove its identity and to secure the connection between your gateway and the services in your Istio service mesh. In addition, you can control and secure the traffic that enters the mesh by applying all the advanced routing, traffic management, security, and resiliency capabilities that {{< reuse "docs/snippets/product-name.md" >}} offers.  
+{{< reuse "docs/snippets/product-name-caps.md" >}} comes with an Istio integration that allows you to configure your gateway proxy with an Istio sidecar. The Istio sidecar uses mutual TLS (mTLS) to prove its identity and to secure the connection between your gateway and the services in your Istio service mesh. In addition, you can control and secure the traffic that enters the mesh by applying all the advanced routing, traffic management, security, and resiliency capabilities that {{< reuse "docs/snippets/product-name.md" >}} offers.  
 
 ## Before you begin
 

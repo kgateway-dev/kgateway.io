@@ -8,7 +8,7 @@ Review the following information about supported release versions for {{< reuse 
 
 ## Supported versions
 
-| {{< reuse "docs/snippets/product-name.md" >}} | Kubernetes | Envoy | Helm | Istio`†`|
+| {{< reuse "docs/snippets/product-name-caps.md" >}} | Kubernetes | Envoy | Helm | Istio`†`|
 |--------------|------------|-------|------|---------|
 | 1.18.x | 1.25 - 1.31 | v3 xDS API | >= 3.12 | 1.16 - 1.22 |
 
@@ -19,7 +19,7 @@ For some {{< reuse "docs/snippets/product-name.md" >}} component images, the fol
 * **Standard**: The default image variant provided by {{< reuse "docs/snippets/product-name.md" >}}. The standard variant does not require a tag on the image. 
 * **Distroless**: An image tagged with `-distroless` is a slimmed-down distribution with the minimum set of binary dependencies to run the image, for enhanced performance and security. Distroless images do not contain package managers, shells, or any other programs that are generally found in a standard Linux distribution. The use of distroless variants is a standard practice adopted by various open source projects and proprietary applications.
 
-{{< reuse "docs/snippets/product-name.md" >}} supports image variants for the following component images:
+{{< reuse "docs/snippets/product-name-caps.md" >}} supports image variants for the following component images:
 - `access-logger`
 - `certgen`
 - `discovery`

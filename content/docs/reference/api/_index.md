@@ -6,7 +6,7 @@ description: API reference
 
 Review the API specification for the custom resource definitions that you use in {{< reuse "docs/snippets/product-name.md" >}}.
 
-## K8sGateway API
+## Kgateway API
 
 Use the following links to review the specifications for the {{< reuse "docs/snippets/product-name.md" >}} API: 
 

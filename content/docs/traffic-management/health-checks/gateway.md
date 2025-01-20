@@ -6,7 +6,7 @@ weight: 10
 Enable a health check plugin on your gateway proxy to respond with common HTTP codes.
 
 ## About
-{{< reuse "docs/snippets/product-name.md" >}} includes an HTTP health checking plug-in that you can enable for a gateway proxy listener. This plug-in responds to health check requests directly with either a `200 OK` or `503 Service Unavailable` message, depending on the current draining state of Envoy.
+{{< reuse "docs/snippets/product-name-caps.md" >}} includes an HTTP health checking plug-in that you can enable for a gateway proxy listener. This plug-in responds to health check requests directly with either a `200 OK` or `503 Service Unavailable` message, depending on the current draining state of Envoy.
 
 ## Before you begin
 
