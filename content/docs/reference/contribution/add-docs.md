@@ -9,7 +9,7 @@ To contribute new documentation to {{< reuse "docs/snippets/product-name.md" >}}
 - Choose the type of content you wish to contribute.
 - Decide on a name, location, and other front matter for your content
 - Write your contribution following the {{< reuse "docs/snippets/product-name.md" >}} contribution guidelines.
-- Submit your contribution as a PR to the `kgateway-dev/kgateway.io` GitHub repository.
+- Submit your contribution as a PR to the `kgateway-dev/kgateway.dev` GitHub repository.
 - Follow the review process until your contribution is merged.
 
 
@@ -72,7 +72,7 @@ If you want to add a folder or "twistie" to the left-hand navigation of the docs
 
 ## Hugo shortcodes {#shortcodes}
 
-As mentioned earlier, the documentation in the {{< reuse "docs/snippets/product-name.md" >}} project is built by using the static site generator Hugo. Hugo uses reusable templates, commonly referred to as shortcodes, to display, style, and render site elements, such as tables, videos, or cards and to manage the content for these elements more easily. Supported shortcodes can be found in the [{{< reuse "docs/snippets/product-name.md" >}} project repo](https://github.com/kgateway-dev/kgateway.io/tree/main/layouts/shortcodes) as well as the [Hextra Hugo theme](https://github.com/imfing/hextra/tree/main/exampleSite/content/docs/guide/shortcodes). 
+As mentioned earlier, the documentation in the {{< reuse "docs/snippets/product-name.md" >}} project is built by using the static site generator Hugo. Hugo uses reusable templates, commonly referred to as shortcodes, to display, style, and render site elements, such as tables, videos, or cards and to manage the content for these elements more easily. Supported shortcodes can be found in the [{{< reuse "docs/snippets/product-name.md" >}} project repo](https://github.com/kgateway-dev/kgateway.dev/tree/main/layouts/shortcodes) as well as the [Hextra Hugo theme](https://github.com/imfing/hextra/tree/main/exampleSite/content/docs/guide/shortcodes). 
 
 Review common shortcodes that you find throughout the documentation: 
 
@@ -150,7 +150,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} documentation follows the stan
 
 The contribution guidelines assume you can complete the following tasks:
 
-- Fork the [{{< reuse "docs/snippets/product-name.md" >}} docs repository](https://github.com/kgateway-dev/kgateway.io/).
+- Fork the [{{< reuse "docs/snippets/product-name.md" >}} docs repository](https://github.com/kgateway-dev/kgateway.dev/).
 - Create a branch for your changes.
 - Add commits to that branch.
 - Open a PR to share your contribution.
