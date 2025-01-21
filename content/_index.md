@@ -1,15 +1,15 @@
 ---
-title: Kubernetes Gateway
+title: kgateway
 toc: false
 description: ""
 ---
 
 {{< nav >}}
 
-<section class="bg-primary-bg text-white font-primary pb-[4.375rem] lg:pb-50 px-4 lg:px-12 xl:px-25 bg-[url(/hero-background.svg)] bg-center bg-no-repeat pt-[9.875rem] lg:pt-[19.4375rem] bg-[length:61.85319rem_60.14119rem] lg:bg-auto">
+<section class="bg-primary-bg text-white font-primary pb-[4.375rem] lg:pb-50 px-4 lg:px-12 xl:px-25 pt-[9.875rem] lg:pt-[19.4375rem] bg-[length:61.85319rem_60.14119rem] lg:bg-auto">
   <div class="mx-auto max-w-[1440px] flex flex-col lg:flex-row justify-between gap-[4.375rem] lg:gap-0">
     <h1 class="text-[2.1875rem] lg:text-[4.0625rem] font-semibold leading-[2.40625rem] lg:leading-[4.46875rem] lg:w-[44.34994rem]">
-      Kgateway:<br />an Envoy-powered,<br />Kubernetes-native,<br />API Gateway.
+      kgateway:<br />an Envoy-powered,<br />Kubernetes-native,<br />API Gateway.
     </h1>
     <p class="lg:w-[31.11344rem] text-xl">
       Kgateway is the most mature and widely deployed Envoy-based gateway in the market today. Built on open source and open standards, kgateway integrates Kubernetes Gateway API with a federated control plane that scales from lightweight microgateway deployments between services, to massively parallel centralized gateways handling billions of API calls, to advanced AI gateway use cases for safety, security, and governance when integrating applications with third-party LLMs. Kgateway brings omni-directional API connectivity to any cloud and any environment.
