@@ -12,7 +12,7 @@ description: ""
       Kgateway:<br />an Envoy-powered,<br />Kubernetes-native,<br />API Gateway.
     </h1>
     <p class="lg:w-[31.11344rem] text-xl">
-      Kgateway is the most mature and widely deployed Envoy-based gateway in the market today. Built on open source and open standards, kgateway integrates Kubernetes Gateway API with a federated control plane that scales from lightweight microgateway deployments between services, to massively parallel centralized gateways handling billions of API calls, to advanced AI gateway use cases for safety, security, and governance when integrating applications with third-party LLMs. Kgateway brings omni-directional API connectivity to any cloud and any environment.
+      Kgateway is the most mature and widely deployed Envoy-based gateway in the market today. Built on open source and open standards, kgateway integrates Kubernetes Gateway API with a control plane that scales from lightweight microgateway deployments between services, to massively parallel centralized gateways handling billions of API calls, to advanced AI gateway use cases for safety, security, and governance when integrating applications with third-party LLMs. Kgateway brings omni-directional API connectivity to any cloud and any environment.
     </p>
   </div>
 </section>
