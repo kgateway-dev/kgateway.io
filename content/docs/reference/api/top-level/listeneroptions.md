@@ -10,7 +10,7 @@ weight: 5
 **Package**: `gloo.solo.io` 
 **Types**:
 
-
+ 
 - [ListenerOptions](#listeneroptions)
 - [ConnectionBalanceConfig](#connectionbalanceconfig)
 - [ExactBalance](#exactbalance)
