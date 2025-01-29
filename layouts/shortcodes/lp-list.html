@@ -16,19 +16,21 @@
   }
 </style>
 
-<section class="px-6 sm:px-[6.25rem] py-[4.375rem] md:py-24 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16 mx-auto">
-  {{ range $.Page.Pages }}
-    <a href="{{ .RelPermalink }}" class="card bg-primary-bg min-h-[15.625rem] rounded-[.625rem] flex flex-col items-start justify-start max-w-[24.5rem] p-6 gap-4">
-      <h3 class="font-primary text-4xl text-white font-bold">
-        {{ .LinkTitle }}
-      </h3>
-      <div class="font-primary text-xl text-white font-semibold">
-        {{ .PublishDate | time.Format ":date_medium" }}
-      </div>
-      <p class="font-primary text-white">
-        {{ .Description }}
-      </p>
-    </a>
-  {{ end }}
+<section class="px-10 xl:px-20 2xl:px-50 py-[4.375rem] md:py-24">
+  <div class="grid auto-rows-auto grid-flow-row gap-x-8 gap-y-16 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-items-center">
+    {{ range $.Page.Pages }}
+      <a href="{{ .RelPermalink }}" class="card bg-primary-bg min-h-[15.625rem] rounded-[.625rem] flex flex-col items-start justify-start w-[24.5rem] p-6 gap-4">
+        <h3 class="font-primary text-2xl text-white font-bold">
+          {{ .LinkTitle }}
+        </h3>
+        <div class="font-primary text-xl text-white font-semibold">
+          {{ .PublishDate | time.Format ":date_medium" }}
+        </div>
+        <p class="font-primary text-white">
+          {{ .Params.Author }}
+        </p>
+      </a>
+    {{ end }}
+  </div>
 </section>
 
