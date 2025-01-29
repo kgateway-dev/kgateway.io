@@ -4,8 +4,6 @@ toc: false
 description: ""
 ---
 
-{{< nav >}}
-
 <section class="bg-primary-bg text-white font-primary pb-[4.375rem] lg:pb-50 px-4 lg:px-12 xl:px-25 bg-[url(/hero-background.svg)] bg-center bg-no-repeat pt-[9.875rem] lg:pt-[19.4375rem] bg-[length:61.85319rem_60.14119rem] lg:bg-auto">
   <div class="mx-auto max-w-[1440px] flex flex-col lg:flex-row justify-between gap-[4.375rem] lg:gap-0">
     <h1 class="text-[2.1875rem] lg:text-[4.0625rem] font-semibold leading-[2.40625rem] lg:leading-[4.46875rem] lg:w-[44.34994rem]">
@@ -74,5 +72,3 @@ description: ""
 {{< users >}}
 
 {{< integrations >}}
-
-{{< footer >}}
