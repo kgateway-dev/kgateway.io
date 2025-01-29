@@ -92,9 +92,9 @@ Represents global settings for all the Gloo components.
 | `gloo` | [.gloo.solo.io.GlooOptions](#gloooptions) | Options for configuring `gloo`, the core Gloo controller, which serves dynamic configuration to Envoy. |
 | `gateway` | [.gloo.solo.io.GatewayOptions](#gatewayoptions) | Options for configuring `gateway`, the Gateway Gloo controller, which enables the VirtualService/Gateway API in Gloo. |
 | `kubernetes` | [.gloo.solo.io.Settings.KubernetesConfiguration](#kubernetesconfiguration) | Options to configure Gloo's integration with [Kubernetes](https://www.kubernetes.io/). |
-| `extensions` | [.gloo.solo.io.Extensions](../../extensions.proto.sk/#extensions) | Extensions will be passed along from Listeners, Gateways, VirtualServices, Routes, and Route tables to the underlying Proxy, making them useful for controllers, validation tools, etc. which interact with kubernetes yaml. Some sample use cases: * controllers, deployment pipelines, helm charts, etc. which wish to use extensions as a kind of opaque metadata. * In the future, Gloo may support gRPC-based plugins which communicate with the Gloo translator out-of-process. Opaque Extensions enables development of out-of-process plugins without requiring recompiling & redeploying Gloo's API. |
-| `metadata` | [.core.solo.io.Metadata](../../metadata.proto.sk/#metadata) | Metadata contains the object metadata for this resource. |
-| `namespacedStatuses` | [.core.solo.io.NamespacedStatuses](../../status.proto.sk/#namespacedstatuses) | NamespacedStatuses indicates the validation status of this resource. NamespacedStatuses is read-only by clients, and set by gloo during validation. |
+| `extensions` | [.gloo.solo.io.Extensions](../../components/extensions.proto.sk/#extensions) | Extensions will be passed along from Listeners, Gateways, VirtualServices, Routes, and Route tables to the underlying Proxy, making them useful for controllers, validation tools, etc. which interact with kubernetes yaml. Some sample use cases: * controllers, deployment pipelines, helm charts, etc. which wish to use extensions as a kind of opaque metadata. * In the future, Gloo may support gRPC-based plugins which communicate with the Gloo translator out-of-process. Opaque Extensions enables development of out-of-process plugins without requiring recompiling & redeploying Gloo's API. |
+| `metadata` | [.core.solo.io.Metadata](../../components/metadata.proto.sk/#metadata) | Metadata contains the object metadata for this resource. |
+| `namespacedStatuses` | [.core.solo.io.NamespacedStatuses](../../components/status.proto.sk/#namespacedstatuses) | NamespacedStatuses indicates the validation status of this resource. NamespacedStatuses is read-only by clients, and set by gloo during validation. |
 | `upstreamOptions` | [.gloo.solo.io.UpstreamOptions](#upstreamoptions) | Default configuration to use for upstreams, when not provided by specific upstream When these properties are defined on an upstream, this configuration will be ignored. |
 | `watchNamespaceSelectors` | [[]gloo.solo.io.LabelSelector](#labelselector) | A list of Kubernetes selectors that specify the set of namespaces to restrict the namespaces that Gloo controllers take into consideration when watching for resources. Elements in the list are disjunctive (OR semantics), i.e. a namespace will be included if it matches any selector. The following example selects any namespace that matches either below: 1. The namespace has both of these labels: `env: prod` and `region: us-east1` 2. The namespace has label `app` equal to `cassandra` or `spark`. ```yaml watchNamespaceSelectors: - matchLabels: env: prod region: us-east1 - matchExpressions: - key: app operator: In values: - cassandra - spark ``` However, if the match conditions are part of the same same list item, the namespace must match all conditions. ```yaml watchNamespaceSelectors: - matchLabels: env: prod region: us-east1 matchExpressions: - key: app operator: In values: - cassandra - spark ``` Refer to the [Kubernetes selector docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors) for additional detail on selector semantics. |
 
@@ -113,7 +113,7 @@ Represents global settings for all the Gloo components.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `sources` | [[]gloo.solo.io.Settings.SecretOptions.Source](../../settings.proto.sk/#source) | Required. List of configured secret sources. These clients will be sorted and initialized in a stable order kubernetes > directory > vault. |
+| `sources` | [[]gloo.solo.io.Settings.SecretOptions.Source](../../components/settings.proto.sk/#source) | Required. List of configured secret sources. These clients will be sorted and initialized in a stable order kubernetes > directory > vault. |
 
 
 
@@ -132,7 +132,7 @@ Represents global settings for all the Gloo components.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `kubernetes` | [.gloo.solo.io.Settings.KubernetesSecrets](../../settings.proto.sk/#kubernetessecrets) |  Only one of `kubernetes`, `vault`, or `directory` can be set. |
+| `kubernetes` | [.gloo.solo.io.Settings.KubernetesSecrets](../../components/settings.proto.sk/#kubernetessecrets) |  Only one of `kubernetes`, `vault`, or `directory` can be set. |
 | `directory` | [.gloo.solo.io.Settings.Directory](#directory) |  Only one of `directory`, `kubernetes`, or `vault` can be set. |
 
 
@@ -221,9 +221,9 @@ This option determines the root of the directory tree used to this end.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `fdsMode` | [.gloo.solo.io.Settings.DiscoveryOptions.FdsMode](../../settings.proto.sk/#fdsmode) |  |
-| `udsOptions` | [.gloo.solo.io.Settings.DiscoveryOptions.UdsOptions](../../settings.proto.sk/#udsoptions) |  |
-| `fdsOptions` | [.gloo.solo.io.Settings.DiscoveryOptions.FdsOptions](../../settings.proto.sk/#fdsoptions) |  |
+| `fdsMode` | [.gloo.solo.io.Settings.DiscoveryOptions.FdsMode](../../components/settings.proto.sk/#fdsmode) |  |
+| `udsOptions` | [.gloo.solo.io.Settings.DiscoveryOptions.UdsOptions](../../components/settings.proto.sk/#udsoptions) |  |
+| `fdsOptions` | [.gloo.solo.io.Settings.DiscoveryOptions.FdsOptions](../../components/settings.proto.sk/#fdsoptions) |  |
 
 
 
@@ -377,7 +377,7 @@ Ref: https://github.com/kubernetes/apimachinery/blob/f7615f37d717297aca511014784
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
 | `matchLabels` | `map<string, string>` | matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed. +optional. |
-| `matchExpressions` | [[]gloo.solo.io.LabelSelectorRequirement](../../settings.proto.sk/#labelselectorrequirement) | matchExpressions is a list of label selector requirements. The requirements are ANDed. +optional. |
+| `matchExpressions` | [[]gloo.solo.io.LabelSelectorRequirement](../../components/settings.proto.sk/#labelselectorrequirement) | matchExpressions is a list of label selector requirements. The requirements are ANDed. +optional. |
 
 
 
@@ -422,7 +422,7 @@ When these properties are defined on a specific upstream, this configuration wil
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `sslParameters` | [.gloo.solo.io.SslParameters](../../ssl.proto.sk/#sslparameters) | Default ssl parameter configuration to use for upstreams. |
+| `sslParameters` | [.gloo.solo.io.SslParameters](../../components/ssl.proto.sk/#sslparameters) | Default ssl parameter configuration to use for upstreams. |
 | `globalAnnotations` | `map<string, string>` | Annotations to apply to all upstreams. |
 
 
@@ -460,11 +460,11 @@ Settings specific to the gloo (Envoy xDS server) controller
 | ----- | ---- | ----------- | 
 | `xdsBindAddr` | `string` | Where the `gloo` xDS server should bind. Defaults to `0.0.0.0:9977`. |
 | `validationBindAddr` | `string` | Where the `gloo` validation server should bind. Defaults to `0.0.0.0:9988`. |
-| `circuitBreakers` | [.gloo.solo.io.CircuitBreakerConfig](../../circuit_breaker.proto.sk/#circuitbreakerconfig) | Default circuit breaker configuration to use for upstream requests, when not provided by specific upstream. |
+| `circuitBreakers` | [.gloo.solo.io.CircuitBreakerConfig](../../components/circuit_breaker.proto.sk/#circuitbreakerconfig) | Default circuit breaker configuration to use for upstream requests, when not provided by specific upstream. |
 | `endpointsWarmingTimeout` | [.google.protobuf.Duration](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/duration) | Timeout to get initial snapshot of resources. If set to zero, Gloo will not wait for initial snapshot - if nonzero and gloo could not fetch it's initial snapshot before the timeout reached, gloo will panic. If unset, Gloo defaults to 5 minutes. |
 | `awsOptions` | [.gloo.solo.io.GlooOptions.AWSOptions](#awsoptions) |  |
 | `invalidConfigPolicy` | [.gloo.solo.io.GlooOptions.InvalidConfigPolicy](#invalidconfigpolicy) | set these options to fine-tune the way Gloo handles invalid user configuration. |
-| `disableKubernetesDestinations` | `bool` | Enable or disable Gloo Edge to scan Kubernetes services in the cluster and create in-memory Upstream resources to represent them. These resources enable Gloo Edge to route requests to a Kubernetes service. Note that if you have a large number of services in your cluster and you do not restrict the namespaces that Gloo Edge watches, the API snapshot increases which can have a negative impact on the Gloo Edge translation time. In addition, load balancing is done in `kube-proxy` which can have further performance impacts. Using Gloo Upstreams as a routing destination bypasses `kube-proxy` as the request is routed to the pod directly. Alternatively, you can use [`Kubernetes`](../../upstream.proto.sk/) Upstream resources as a routing destination to forward requests to the pod directly.  |
+| `disableKubernetesDestinations` | `bool` | Enable or disable Gloo Edge to scan Kubernetes services in the cluster and create in-memory Upstream resources to represent them. These resources enable Gloo Edge to route requests to a Kubernetes service. Note that if you have a large number of services in your cluster and you do not restrict the namespaces that Gloo Edge watches, the API snapshot increases which can have a negative impact on the Gloo Edge translation time. In addition, load balancing is done in `kube-proxy` which can have further performance impacts. Using Gloo Upstreams as a routing destination bypasses `kube-proxy` as the request is routed to the pod directly. Alternatively, you can use [`Kubernetes`](../../components/upstream.proto.sk/) Upstream resources as a routing destination to forward requests to the pod directly.  |
 | `disableGrpcWeb` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | Default policy for grpc-web. set to true if you do not wish grpc-web to be automatically enabled. set to false if you wish grpc-web enabled unless disabled on the listener level. If not specified, defaults to `false`. |
 | `disableProxyGarbageCollection` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | Set this option to determine the state of the envoy configuration when a virtual service is deleted, resulting in a proxy with no configured routes. set to true if you wish to keep envoy serving the routes from the latest valid configuration. set to false if you wish to reset the envoy configuration to a clean slate with no routes. If not specified, defaults to `false`. |
 | `regexMaxProgramSize` | [.google.protobuf.UInt32Value](https://protobuf.dev/reference/protobuf/google.protobuf/#uint32-value) | Set this option to specify the default max program size for regexes. If not specified, defaults to 100. |
@@ -497,7 +497,7 @@ Settings specific to the gloo (Envoy xDS server) controller
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
 | `enableCredentialsDiscovey` | `bool` | Enable credential discovery via IAM; when this is set, there's no need provide a secret on the upstream when running on AWS environment. Note: This should **ONLY** be enabled when running in an AWS environment, as the AWS code blocks the envoy main thread. This should be negligible when running inside AWS. Only one of `enableCredentialsDiscovey` or `serviceAccountCredentials` can be set. |
-| `serviceAccountCredentials` | [.envoy.config.filter.http.aws_lambda.v2.AWSLambdaConfig.ServiceAccountCredentials](../../filter.proto.sk/#serviceaccountcredentials) | Use projected service account token, and role arn to create temporary credentials with which to authenticate lambda requests. This functionality is meant to work along side EKS service account to IAM binding functionality as outlined here: https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html If the following environment values are not present in the gateway-proxy, this option cannot be used. 1. AWS_WEB_IDENTITY_TOKEN_FILE 2. AWS_ROLE_ARN The role which will be assumed by the credentials will be the one specified by AWS_ROLE_ARN, however, this can also be overwritten in the AWS Upstream spec via the role_arn field If they are not specified envoy will NACK the config update, which will show up in the logs when running OS Gloo. When running Gloo enterprise it will be reflected in the prometheus stat: "glooe.solo.io/xds/nack" In order to specify the aws sts endpoint, both the cluster and uri must be set. This is due to an envoy limitation which cannot infer the host or path from the cluster, and therefore must be explicitly specified via the uri. Only one of `serviceAccountCredentials` or `enableCredentialsDiscovey` can be set. |
+| `serviceAccountCredentials` | [.envoy.config.filter.http.aws_lambda.v2.AWSLambdaConfig.ServiceAccountCredentials](../../components/filter.proto.sk/#serviceaccountcredentials) | Use projected service account token, and role arn to create temporary credentials with which to authenticate lambda requests. This functionality is meant to work along side EKS service account to IAM binding functionality as outlined here: https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html If the following environment values are not present in the gateway-proxy, this option cannot be used. 1. AWS_WEB_IDENTITY_TOKEN_FILE 2. AWS_ROLE_ARN The role which will be assumed by the credentials will be the one specified by AWS_ROLE_ARN, however, this can also be overwritten in the AWS Upstream spec via the role_arn field If they are not specified envoy will NACK the config update, which will show up in the logs when running OS Gloo. When running Gloo enterprise it will be reflected in the prometheus stat: "glooe.solo.io/xds/nack" In order to specify the aws sts endpoint, both the cluster and uri must be set. This is due to an envoy limitation which cannot infer the host or path from the cluster, and therefore must be explicitly specified via the uri. Only one of `serviceAccountCredentials` or `enableCredentialsDiscovey` can be set. |
 | `propagateOriginalRouting` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | Send downstream path and method as `x-envoy-original-path` and `x-envoy-original-method` headers on the request to AWS lambda. Defaults to false. |
 | `credentialRefreshDelay` | [.google.protobuf.Duration](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/duration) | Sets cadence for refreshing credentials for Service Account. Does nothing if Service account is not set. Does not affect the default filewatch for service account only augments it. Defaults to not refreshing on time period. Suggested is 15 minutes. |
 | `fallbackToFirstFunction` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | Sets the unsafe behavior where a route can specify a lambda upstream but not set the function to target. It will use the first function which if discovery is enabled the first function is the first function name alphabetically from the last discovery run. This means that the lambda being pointed to could change. Defaults to false. |
@@ -658,7 +658,7 @@ options for configuring admission control / validation
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
 | `rejectBreakingChanges` | [.google.protobuf.BoolValue](https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/bool-value) | Schema definition updates can be considered safe, dangerous, or breaking. If this field is set to true, then breaking schema updates will be rejected. Defaults to false. |
-| `processingRules` | [[]gloo.solo.io.GraphqlOptions.SchemaChangeValidationOptions.ProcessingRule](../../settings.proto.sk/#processingrule) | We use [GraphQL Inspector](https://www.graphql-inspector.com/docs/essentials/diff) to detect breaking changes to GraphQL schemas. This field allows for passing [processing rules](https://www.graphql-inspector.com/docs/essentials/diff#rules) to GraphQL Inspector to customize how various change types are handled. |
+| `processingRules` | [[]gloo.solo.io.GraphqlOptions.SchemaChangeValidationOptions.ProcessingRule](../../components/settings.proto.sk/#processingrule) | We use [GraphQL Inspector](https://www.graphql-inspector.com/docs/essentials/diff) to detect breaking changes to GraphQL schemas. This field allows for passing [processing rules](https://www.graphql-inspector.com/docs/essentials/diff#rules) to GraphQL Inspector to customize how various change types are handled. |
 
 
 

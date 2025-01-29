@@ -10,7 +10,7 @@ weight: 5
 **Package**: `gloo.solo.io` 
 **Types**:
 
-
+ 
 - [ListenerOptions](#listeneroptions)
 - [ConnectionBalanceConfig](#connectionbalanceconfig)
 - [ExactBalance](#exactbalance)
@@ -39,13 +39,13 @@ Each ListenerOption object contains configuration for a specific feature.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- | 
-| `accessLoggingService` | [.als.options.gloo.solo.io.AccessLoggingService](../../als.proto.sk/#accessloggingservice) | Configuration for access logging in a filter like the HttpConnectionManager. |
-| `extensions` | [.gloo.solo.io.Extensions](../../extensions.proto.sk/#extensions) | Extensions will be passed along from Listeners, Gateways, VirtualServices, Routes, and Route tables to the underlying Proxy, making them useful for controllers, validation tools, etc. which interact with kubernetes yaml. Some sample use cases: * controllers, deployment pipelines, helm charts, etc. which wish to use extensions as a kind of opaque metadata. * In the future, {{< reuse "docs/snippets/product-name.md" >}} may support gRPC-based plugins which communicate with the {{< reuse "docs/snippets/product-name.md" >}} translator out-of-process. Opaque Extensions enables development of out-of-process plugins without requiring recompiling & redeploying the {{< reuse "docs/snippets/product-name.md" >}} API. |
+| `accessLoggingService` | [.als.options.gloo.solo.io.AccessLoggingService](../../components/als.proto.sk/#accessloggingservice) | Configuration for access logging in a filter like the HttpConnectionManager. |
+| `extensions` | [.gloo.solo.io.Extensions](../../components/extensions.proto.sk/#extensions) | Extensions will be passed along from Listeners, Gateways, VirtualServices, Routes, and Route tables to the underlying Proxy, making them useful for controllers, validation tools, etc. which interact with kubernetes yaml. Some sample use cases: * controllers, deployment pipelines, helm charts, etc. which wish to use extensions as a kind of opaque metadata. * In the future, {{< reuse "docs/snippets/product-name.md" >}} may support gRPC-based plugins which communicate with the {{< reuse "docs/snippets/product-name.md" >}} translator out-of-process. Opaque Extensions enables development of out-of-process plugins without requiring recompiling & redeploying the {{< reuse "docs/snippets/product-name.md" >}} API. |
 | `perConnectionBufferLimitBytes` | [.google.protobuf.UInt32Value](https://protobuf.dev/reference/java/api-docs/com/google/protobuf/UInt32Value.html) | Soft limit on size of the listener's new connection read and write buffers. If unspecified, defaults to 1MiB For more info, check out the [Envoy docs](https://www.envoyproxy.io/docs/envoy/v1.14.1/api-v2/api/v2/listener.proto). |
-| `socketOptions` | [[]solo.io.envoy.api.v2.core.SocketOption](../../socket_option.proto.sk/#socketoption) | Additional socket options that may not be present in Envoy source code or precompiled binaries. |
-| `proxyProtocol` | [.proxy_protocol.options.gloo.solo.io.ProxyProtocol](../../proxy_protocol.proto.sk/#proxyprotocol) | Enable ProxyProtocol support for this listener. |
-| `connectionBalanceConfig` | [.gloo.solo.io.ConnectionBalanceConfig](../../listener_options.proto.sk/#connectionbalanceconfig) | Configuration for listener connection balancing. |
-| `listenerAccessLoggingService` | [.als.options.gloo.solo.io.AccessLoggingService](../../als.proto.sk/#accessloggingservice) | If enabled this sets up an early access logging service for the listener. Added initially to support listener level logging for HTTP listeners. For more info see https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/listener/v3/listener.proto#envoy-v3-api-field-config-listener-v3-listener-access-log. |
+| `socketOptions` | [[]solo.io.envoy.api.v2.core.SocketOption](../../components/socket_option.proto.sk/#socketoption) | Additional socket options that may not be present in Envoy source code or precompiled binaries. |
+| `proxyProtocol` | [.proxy_protocol.options.gloo.solo.io.ProxyProtocol](../../components/proxy_protocol.proto.sk/#proxyprotocol) | Enable ProxyProtocol support for this listener. |
+| `connectionBalanceConfig` | [.gloo.solo.io.ConnectionBalanceConfig](#connectionbalanceconfig) | Configuration for listener connection balancing. |
+| `listenerAccessLoggingService` | [.als.options.gloo.solo.io.AccessLoggingService](../../components/als.proto.sk/#accessloggingservice) | If enabled this sets up an early access logging service for the listener. Added initially to support listener level logging for HTTP listeners. For more info see https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/listener/v3/listener.proto#envoy-v3-api-field-config-listener-v3-listener-access-log. |
 
 
 
