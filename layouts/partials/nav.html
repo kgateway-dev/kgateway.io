@@ -79,7 +79,7 @@
 <nav class="navbar py-[1.875rem] px-12 xl:px-25 fixed top-0 border-b-white border-b w-full hidden lg:block z-20">
   <div class="flex max-w-[1440px] mx-auto content-center items-center justify-between gap-6">
     <div class="flex items-center gap-8">
-      {{ partial "utils/icon.html" (dict "name" "logo" "attributes" "id='logo'" ) }}
+      <a href="/">{{ partial "utils/icon.html" (dict "name" "logo" "attributes" "id='logo'" ) }}</a>
       <a class="link flex items-center gap-2 whitespace-nowrap font-primary text-secondary-link" href="https://github.com/kgateway-dev/kgateway">
         {{ partial "utils/icon.html" (dict "name" "github" "attributes" "class='fill-secondary-link h-6 w-6'") }} GitHub
       </a>
@@ -89,6 +89,7 @@
       </a>
     </div>
     <div class="flex flex-grow lg:flex-grow-0 items-center align-center justify-between lg:gap-[3.5625rem]">
+      <a class="link whitespace-nowrap font-primary text-secondary-link" href="/blog">Blog</a>
       <a class="link whitespace-nowrap font-primary text-secondary-link" href="/docs/quickstart/">Get Started</a>
       <a class="link whitespace-nowrap font-primary text-secondary-link" href="/docs/about/overview/">Why kgateway?</a>
       <a class="link whitespace-nowrap font-primary text-secondary-link" href="/docs/">Docs</a>
@@ -113,6 +114,7 @@
 
 <div class="mobile-nav absolute bg-primary-text w-screen z-40">
   <div class="h-full flex flex-col px-4 items-stretch justify-end w-screen">
+    <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white border-b border-[#545454] py-5" href="/blog">Blog</a>
     <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white border-b border-[#545454] py-5" href="/docs/quickstart/">Get Started</a>
     <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white border-b border-[#545454] py-5" href="/docs/about/overview/">Why kgateway?</a>
     <a class="whitespace-nowrap font-primary text-[1.5625rem] text-white py-5" href="/docs/">Docs</a>
