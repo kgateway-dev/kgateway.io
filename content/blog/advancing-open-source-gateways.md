@@ -1,5 +1,5 @@
 ---
-title: "Advancing Open Source Gateways with the CNCF and kgateway."
+title: "Advancing Open Source Gateways with the CNCF and kgateway"
 toc: false
 publishDate: 2025-01-28T00:00:00-00:00
 author: Lin Sun
@@ -30,11 +30,10 @@ Working closely with the maintainer community, we established governance for the
 ### Development focus
 
 In addition to renaming the project, recruiting maintainers, and establishing governance, we’ve been focused on:
-Vendor Neutrality:
 
-1. Developing buildable, vendor-neutral artifacts, set to launch in the coming weeks.
-2. Improved Development Velocity: Establishing robust pipeline checks for PRs, including linting, Kubernetes Gateway API conformance tests, and end-to-end testing.
-3. Extensibility: Ensuring the project remains highly extendable, aligning with core design principles of kgateway and Envoy.
+1. **Vendor Neutrality:** Developing buildable, vendor-neutral artifacts, set to launch in the coming weeks.
+2. **Improved Development Velocity:** Establishing robust pipeline checks for PRs, including linting, Kubernetes Gateway API conformance tests, and end-to-end testing.
+3. **Extensibility:** Ensuring the project remains highly extendable, aligning with core design principles of kgateway and Envoy.
 
 A shout-out to our core maintainers and contributors for laying this solid foundation for innovation.
 
