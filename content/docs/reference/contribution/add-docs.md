@@ -9,9 +9,12 @@ To contribute new documentation to {{< reuse "docs/snippets/product-name.md" >}}
 - Choose the type of content you wish to contribute.
 - Decide on a name, location, and other front matter for your content
 - Write your contribution following the {{< reuse "docs/snippets/product-name.md" >}} contribution guidelines.
-- Submit your contribution as a PR to the `kgateway-dev/kgateway.dev` GitHub repository.
+- Submit your contribution as a PR from your fork to the `kgateway-dev/kgateway.dev` GitHub repository.
 - Follow the review process until your contribution is merged.
 
+{{< callout type="info" >}}
+Looking to contribute code to {{< reuse "docs/snippets/product-name.md" >}}? See the [contributing guide in the Community repo](https://github.com/kgateway-dev/community/blob/main/CONTRIBUTING.md).
+{{< /callout >}}
 
 ## Audience and intended use {#audience}
 
