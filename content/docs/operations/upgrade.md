@@ -1,7 +1,7 @@
 ---
 title: Upgrade
-weight: 710
-description: Upgrade the `gloo` control plane and any {{< reuse "docs/snippets/product-name.md" >}} proxies that run in your cluster. 
+weight: 20
+description: Upgrade the control plane and any {{< reuse "docs/snippets/product-name.md" >}} proxies that run in your cluster. 
 ---
 
 You can use this guide to upgrade the version of your {{< reuse "docs/snippets/product-name.md" >}} components, or to apply changes to the components’ configuration settings.
