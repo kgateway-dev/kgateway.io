@@ -1,6 +1,6 @@
 ---
 title: Uninstall
-weight: 720
+weight: 50
 description: Uninstall {{< reuse "docs/snippets/product-name.md" >}} and related components.
 ---
 

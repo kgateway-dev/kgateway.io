@@ -1,6 +1,6 @@
 ---
 title: Debug your setup
-weight: 5
+weight: 15
 ---
 
 Use built-in tools to troubleshoot issues in your {{< reuse "docs/snippets/product-name.md" >}} setup.
