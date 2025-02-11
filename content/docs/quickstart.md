@@ -9,7 +9,7 @@ Get started with {{< reuse "docs/snippets/product-name.md" >}}, a cloud-native L
 
 ## Before you begin
 
-These quick steps assume that you have `kubectl` and `helm` installed. For full installation instructions, see [Install {{< reuse "docs/snippets/product-name.md" >}}](/docs/operations/install).
+These quick start steps assume that you have `kubectl` and `helm` installed. For full installation instructions, see [Install {{< reuse "docs/snippets/product-name.md" >}}](/docs/operations/install).
 
 ## Install kgateway
 
