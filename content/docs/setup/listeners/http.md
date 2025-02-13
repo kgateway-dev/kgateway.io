@@ -5,7 +5,7 @@ weight: 10
 
 
 {{< callout type="info" >}}
-If you followed the [Get started guide](/docs/quickstart/), you already have a gateway named `http` in the `gloo-system` namespace of your cluster. This gateway can be used as the main ingress for the apps in your cluster. HTTPRoutes can refer to this gateway independent of the namespace they are in. To create more gateways, use the instructions in this guide. 
+If you followed the [Get started guide](/docs/quickstart/), you already have a gateway named `http` in the `{{< reuse "docs/snippets/ns-system.md" >}}` namespace of your cluster. This gateway can be used as the main ingress for the apps in your cluster. HTTPRoutes can refer to this gateway independent of the namespace they are in. To create more gateways, use the instructions in this guide. 
 {{< /callout >}}
 
 1. Create a gateway resource with an HTTP listener. 
@@ -15,11 +15,11 @@ If you followed the [Get started guide](/docs/quickstart/), you already have a g
    kind: Gateway
    metadata:
      name: my-http-gateway
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      labels:
        example: httpbin-mydomain
    spec:
-     gatewayClassName: gloo-gateway
+     gatewayClassName: kgateway
      listeners:
      - protocol: HTTP
        port: 8080
@@ -38,7 +38,7 @@ If you followed the [Get started guide](/docs/quickstart/), you already have a g
 
 2. Check the status of the gateway to make sure that your configuration is accepted and no conflicts exist in your cluster. 
    ```sh
-   kubectl get gateway my-http-gateway -n gloo-system -o yaml
+   kubectl get gateway my-http-gateway -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml
    ```
 
 3. Create an HTTPRoute resource for the httpbin app that is served by the gateway that you created.
@@ -54,7 +54,7 @@ If you followed the [Get started guide](/docs/quickstart/), you already have a g
    spec:
      parentRefs:
        - name: my-http-gateway
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      rules:
        - backendRefs:
            - name: httpbin
@@ -71,13 +71,13 @@ If you followed the [Get started guide](/docs/quickstart/), you already have a g
    {{< tabs items="Cloud Provider LoadBalancer,Port-forward for local testing" >}}
    {{% tab %}}
    ```sh
-   export INGRESS_GW_ADDRESS=$(kubectl get svc -n gloo-system gloo-proxy-my-http-gateway -o jsonpath="{.status.loadBalancer.ingress[0]['hostname','ip']}")
+   export INGRESS_GW_ADDRESS=$(kubectl get svc -n {{< reuse "docs/snippets/ns-system.md" >}} gloo-proxy-my-http-gateway -o jsonpath="{.status.loadBalancer.ingress[0]['hostname','ip']}")
    echo $INGRESS_GW_ADDRESS   
    ```
    {{% /tab %}}
    {{% tab %}}
    ```sh
-   kubectl port-forward deployment/gloo-proxy-my-http-gateway -n gloo-system 8080:8080
+   kubectl port-forward deployment/gloo-proxy-my-http-gateway -n {{< reuse "docs/snippets/ns-system.md" >}} 8080:8080
    ```
    {{% /tab %}}
    {{< /tabs >}}
