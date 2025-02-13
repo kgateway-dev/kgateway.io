@@ -48,5 +48,5 @@ That's it! Now you're ready to try out {{< reuse "docs/snippets/product-name.md"
 
 ## Next steps
 
-- [Install a sample app such as httpbin](/docs/operations/install/#deploy-app).
+- [Install a sample app such as httpbin](/docs/operations/sample-app/).
 - [Set up a listener for your API gateway](/docs/setup/listeners/).
