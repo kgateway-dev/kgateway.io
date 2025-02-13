@@ -10,6 +10,38 @@ The httpbin app lets you test your API gateway by sending requests to it and rec
 
 Set up {{< reuse "docs/snippets/product-name.md" >}} by following the [Quick start](/docs/quickstart/) or [Installation](/docs/operations/install/) guides.
 
+## Deploy a sample app {#deploy-app}
+
+The following configuration file creates the httpbin app. To review the source file, see [the kgateway project](https://github.com/kgateway-dev/kgateway/blob/main/examples/httpbin.yaml).
+
+1. Create the httpbin app.
+
+   ```shell
+   kubectl apply -f https://raw.githubusercontent.com/kgateway-dev/kgateway/refs/heads/main/examples/httpbin.yaml
+   ```
+
+   Example output:
+   
+   ```txt
+   namespace/httpbin created
+   serviceaccount/httpbin created
+   service/httpbin created
+   deployment.apps/httpbin created
+   ```
+
+2. Verify that the httpbin app is running.
+   
+   ```sh
+   kubectl -n httpbin get pods
+   ```
+
+   Example output: 
+   
+   ```txt
+   NAME                      READY   STATUS    RESTARTS   AGE
+   httpbin-d57c95548-nz98t   3/3     Running   0          18s
+   ```
+
 ## Set up an API gateway {#api-gateway}
 
 Create an API gateway with an HTTP listener by using the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}.
@@ -63,39 +95,7 @@ Create an API gateway with an HTTP listener by using the {{< reuse "docs/snippet
 
    {{< callout type="info" >}}
    Using Kind and getting a `CrashLoopBackOff` error with a `Failed to create temporary file` message in the logs? You might have a multi-arch platform issue on macOS. In your Docker Desktop settings, uncheck **Use Rosetta**, restart Docker, re-create your Kind cluster, and try again.
-   {{< /callout >}}   
-
-## Deploy a sample app {#deploy-app}
-
-The following configuration file creates the httpbin app. To review the source file, see [the kgateway project](https://github.com/kgateway-dev/kgateway/blob/main/examples/httpbin.yaml).
-
-1. Create the httpbin app.
-
-   ```shell
-   kubectl apply -f https://raw.githubusercontent.com/kgateway-dev/kgateway/refs/heads/main/examples/httpbin.yaml
-   ```
-
-   Example output:
-   
-   ```txt
-   namespace/httpbin created
-   serviceaccount/httpbin created
-   service/httpbin created
-   deployment.apps/httpbin created
-   ```
-
-2. Verify that the httpbin app is running.
-   
-   ```sh
-   kubectl -n httpbin get pods
-   ```
-
-   Example output: 
-   
-   ```txt
-   NAME                      READY   STATUS    RESTARTS   AGE
-   httpbin-d57c95548-nz98t   3/3     Running   0          18s
-   ```
+   {{< /callout >}}
 
 ## Expose the app on the gateway {#expose-app}
 
