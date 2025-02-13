@@ -8,72 +8,160 @@ The httpbin app lets you test your API gateway by sending requests to it and rec
 
 ## Before you begin
 
-- Set up {{< reuse "docs/snippets/product-name.md" >}} by following the [Quick start](/docs/quickstart/) or [Installation](/docs/operations/install/) guides.
+Set up {{< reuse "docs/snippets/product-name.md" >}} by following the [Quick start](/docs/quickstart/) or [Installation](/docs/operations/install/) guides.
+
+## Set up an API gateway {#api-gateway}
+
+Create an API gateway with an HTTP listener by using the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}.
+
+1. Create a gateway resource and configure an HTTP listener. The following gateway can serve HTTP resources from all namespaces.  
+   
+   ```yaml
+   kubectl apply -f- <<EOF
+   kind: Gateway
+   apiVersion: gateway.networking.k8s.io/v1
+   metadata:
+     name: http
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
+   spec:
+     gatewayClassName: kgateway
+     listeners:
+     - protocol: HTTP
+       port: 8080
+       name: http
+       allowedRoutes:
+         namespaces:
+           from: All
+   EOF
+   ```
+
+2. Verify that the gateway is created successfully. You can also review the external address that is assigned to the gateway. Note that depending on your environment it might take a few minutes for the load balancer service to be assigned an external address. If you are using a local Kind cluster without a load balancer such as `metallb`, you might not have an external address.
+   
+   ```sh
+   kubectl get gateway http -n {{< reuse "docs/snippets/ns-system.md" >}}
+   ```
+
+   Example output: 
+   
+   ```txt
+   NAME   CLASS      ADDRESS                                  PROGRAMMED   AGE
+   http   kgateway   1234567890.us-east-2.elb.amazonaws.com   True         93s
+   ```
+
+3. Verify that the gateway proxy pod is running.
+
+   ```sh
+   kubectl get po -n {{< reuse "docs/snippets/ns-system.md" >}} -l gateway.networking.k8s.io/gateway-name=http
+   ```
+
+   Example output:
+   
+   ```txt
+   NAME                             READY   STATUS    RESTARTS   AGE
+   gloo-proxy-http-7dd94b74-k26j6   3/3     Running   0          18s
+   ```
+
+   {{< callout type="info" >}}
+   Using Kind and getting a `CrashLoopBackOff` error with a `Failed to create temporary file` message in the logs? You might have a multi-arch platform issue on macOS. In your Docker Desktop settings, uncheck **Use Rosetta**, restart Docker, re-create your Kind cluster, and try again.
+   {{< /callout >}}   
 
 ## Deploy a sample app {#deploy-app}
 
-The following configuration file creates the httpbin app, as well as the gateway resources that you need to expose the app. To review the source file, see [the kgateway project](https://github.com/kgateway-dev/kgateway/blob/main/examples/httpbin.yaml).
+The following configuration file creates the httpbin app. To review the source file, see [the kgateway project](https://github.com/kgateway-dev/kgateway/blob/main/examples/httpbin.yaml).
 
-```shell
-kubectl apply -f https://raw.githubusercontent.com/kgateway-dev/kgateway/refs/heads/main/examples/httpbin.yaml
-```
+1. Create the httpbin app.
 
-Example output:
-
-```txt
-namespace/httpbin created
-serviceaccount/httpbin created
-service/httpbin created
-deployment.apps/httpbin created
-gateway.gateway.networking.k8s.io/http created
-httproute.gateway.networking.k8s.io/httpbin created
-```
-
-## Verify your sample app {#verify-app}
-
-1. Verify that the httpbin app is running.
-
-   ```sh
-   kubectl get pods -n httpbin
+   ```shell
+   kubectl apply -f https://raw.githubusercontent.com/kgateway-dev/kgateway/refs/heads/main/examples/httpbin.yaml
    ```
 
    Example output:
-
+   
    ```txt
-   NAME                             READY   STATUS     RESTARTS    AGE
-   gloo-proxy-http-7dd94b74-m8rb5   1/1     Running    0           13s
-   httpbin-5cf4b9b48f-w2gqd         2/2     Running    0           13s
+   namespace/httpbin created
+   serviceaccount/httpbin created
+   service/httpbin created
+   deployment.apps/httpbin created
    ```
 
-2. Review the Gateway resource with an HTTP listener that was created. Note the following features:
-   
-   * The gateway is created in the same `httpbin` namespace as your app. You might also create your gateways in the `kgateway-system` namespace, just to keep all your gateway resources in one place.
-   * The gateway can serve HTTP resources from all namespaces.
-   * Depending on your load balancer setup, you can review the external address that is assigned to the gateway. It might take a few minutes for the address to be assigned. 
+2. Verify that the httpbin app is running.
    
    ```sh
-   kubectl get gateway http -n httpbin
+   kubectl -n httpbin get pods
    ```
+
+   Example output: 
    
-   Example output:
-
    ```txt
-   NAME   CLASS          ADDRESS                                                                  PROGRAMMED   AGE
-   http   httpbin   a3a6c06e2f4154185bf3f8af46abf22e-139567718.us-east-2.elb.amazonaws.com   True         93s
+   NAME                      READY   STATUS    RESTARTS   AGE
+   httpbin-d57c95548-nz98t   3/3     Running   0          18s
    ```
 
-3. Review the HTTPRoute resource that was created on the gateway.
+## Expose the app on the gateway {#expose-app}
 
+Now that you have an app and a gateway, you can create a route to access the app.
+
+1. Create an HTTPRoute resource to expose the httpbin app on the gateway. The following example exposes the app on the `wwww.example.com` domain. 
+   
+   ```yaml
+   kubectl apply -f- <<EOF
+   apiVersion: gateway.networking.k8s.io/v1
+   kind: HTTPRoute
+   metadata:
+     name: httpbin
+     namespace: httpbin
+     labels:
+       example: httpbin-route
+   spec:
+     parentRefs:
+       - name: http
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
+     hostnames:
+       - "www.example.com"
+     rules:
+       - backendRefs:
+           - name: httpbin
+             port: 8000
+   EOF
+   ```
+
+   |Setting|Description|
+   |--|--|
+   |`spec.parentRefs`|The name and namespace of the gateway resource that serves the route. In this example, you use the HTTP gateway that you created earlier.  |
+   |`spec.hostnames`|A list of hostnames that the route is exposed on. In the example, the route is exposed on `www.example.com`. |
+   |`spec.rules.backendRefs`| The Kubernetes service that serves the incoming request. In this example, requests to `www.example.com` are forwarded to the httpbin app on port 9000. Note that you must create the HTTP route in the same namespace as the service that serves that route. To create the HTTP route resource in a different namespace, you must create a ReferenceGrant resource to allow the HTTP route to forward requests to a service in a different namespace. For more information, see the [Kubernetes API Gateway documentation](https://gateway-api.sigs.k8s.io/api-types/referencegrant/). |
+
+2. Verify that the HTTPRoute is applied successfully. 
+   
    ```sh
    kubectl get -n httpbin httproute/httpbin -o yaml
    ```
 
-   | Field | Description |
-   | ----- | ----------- |
-   |`spec.parentRefs`|The name and namespace of the gateway resource that serves the route. In this example, you use the HTTP gateway that you created earlier.  |
-   |`spec.hostnames`|A list of hostnames that the route is exposed on. The example uses `www.example.com` as the hostname. |
-   |`spec.rules.backendRefs`| The Kubernetes service that serves the incoming request. In this example, requests to `www.example.com` are forwarded to the httpbin app on port 9000. Note that you must create the HTTP route in the same namespace as the service that serves that route. To create the HTTP route resource in a different namespace, you must create a ReferenceGrant resource to allow the HTTP route to forward requests to a service in a different namespace. For more information, see the [Kubernetes API Gateway documentation](https://gateway-api.sigs.k8s.io/api-types/referencegrant/). |
-   | `status` | The status of the HTTPRoute resource. Check for `Accepted` and `ResolvedRefs` messages. The `parentRef` refers to the Gateway that that HTTPRoute is exposed on. |
+   Example output: Note the status of the HTTPRoute resource. Check for `Accepted` and `ResolvedRefs` messages. The `parentRef` refers to the Gateway that that HTTPRoute is exposed on.
+
+   ```yaml
+   status:
+     parents:
+     - conditions:
+       - lastTransitionTime: "2025-02-13T18:41:06Z"
+         message: ""
+         observedGeneration: 1
+         reason: Accepted
+         status: "True"
+         type: Accepted
+       - lastTransitionTime: "2025-02-13T18:41:06Z"
+         message: ""
+         observedGeneration: 1
+         reason: ResolvedRefs
+         status: "True"
+         type: ResolvedRefs
+       controllerName: kgateway.dev/kgateway
+       parentRef:
+         group: gateway.networking.k8s.io
+         kind: Gateway
+         name: http
+         namespace: kgateway-system
+   ```
 
 ## Send a request {#send-request}
 
@@ -124,13 +212,37 @@ Now that your httpbin app is running and you verified that the gateway resources
    
    ```txt
    HTTP/1.1 200 OK
-   server: envoy
-   date: Wed, 17 Jan 2024 17:32:21 GMT
-   content-type: application/json
-   content-length: 211
-   access-control-allow-origin: *
    access-control-allow-credentials: true
-   x-envoy-upstream-service-time: 2
+   access-control-allow-origin: *
+   content-type: application/json; encoding=utf-8
+   date: Thu, 13 Feb 2025 18:49:32 GMT
+   content-length: 330
+   x-envoy-upstream-service-time: 4
+   server: envoy
+   ```
+   ```json
+   {
+     "headers": {
+       "Accept": [
+         "*/*"
+       ],
+       "Host": [
+         "www.example.com"
+       ],
+       "User-Agent": [
+         "curl/8.7.1"
+       ],
+       "X-Envoy-Expected-Rq-Timeout-Ms": [
+         "15000"
+       ],
+       "X-Forwarded-Proto": [
+         "http"
+       ],
+       "X-Request-Id": [
+         "26be0bcd-d941-48f4-ac3b-d5ac288ac46f"
+       ]
+     }
+   }
    ```
 {{% /tab %}}
 {{< /tabs >}}
@@ -147,6 +259,23 @@ Now that you have {{< reuse "docs/snippets/product-name.md" >}} set up and runni
 
 {{< reuse "docs/snippets/cleanup.md" >}}
 
-```sh
-kubectl delete -f https://raw.githubusercontent.com/kgateway-dev/kgateway/refs/heads/main/examples/httpbin.yaml
-```
+
+1. Delete the httpbin app.
+
+   ```sh
+   kubectl delete -f https://raw.githubusercontent.com/kgateway-dev/kgateway/refs/heads/main/examples/httpbin.yaml
+   ```
+
+2. Delete the HTTPRoute.
+
+   ```sh
+   kubectl delete httproute httpbin -n httpbin
+   ```
+
+3. Delete the gateway.
+
+   ```sh
+   kubectl delete gateway http -n {{< reuse "docs/snippets/ns-system.md" >}}
+   ```
+
+

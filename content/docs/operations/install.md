@@ -82,34 +82,38 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
    {{< callout type="info" >}}
    If you want to use TCPRoutes to set up a TCP listener on your Gateway, you must install the TCPRoute CRD, which is part of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} experimental channel. Use the following command to install the CRDs. 
    ```sh
-   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/experimental-install.yaml 
+   kubectl apply --kustomize "https://github.com/kubernetes-sigs/gateway-api/config/crd/experimental?ref=v1.2.1"
    ```
    {{< /callout >}}
 
-2. Add the Helm repository for {{< reuse "docs/snippets/product-name.md" >}}. 
+2. Optional: Pull and inspect the {{< reuse "docs/snippets/product-name.md" >}} Helm chart values before installation. You might want to update the Helm chart values files to customize the installation. For example, you might change the namespace, update the resource limits and requests, or enable extensions such as for AI.
+   
    ```sh
-   helm repo add kgateway oci://ghcr.io/kgateway-dev/charts/kgateway
-   helm repo update
+   helm pull oci://ghcr.io/kgateway-dev/charts/kgateway --version v{{< reuse "docs/versions/n-patch.md" >}}
+   tar -xvf kgateway-v{{< reuse "docs/versions/n-patch.md" >}}.tgz
+   cat kgateway/values.yaml
    ```
       
 3. Install {{< reuse "docs/snippets/product-name.md" >}}. This command creates the {{< reuse "docs/snippets/ns-system.md" >}} namespace and installs the {{< reuse "docs/snippets/product-name.md" >}} control plane into it.
+   
    ```sh
-   helm install -n {{< reuse "docs/snippets/ns-system.md" >}} kgateway kgateway/kgateway \
+   helm install -n {{< reuse "docs/snippets/ns-system.md" >}} kgateway oci://ghcr.io/kgateway-dev/charts/kgateway \
    --create-namespace \
-   --version {{< reuse "docs/versions/n-patch.md" >}} \
+   --version v{{< reuse "docs/versions/n-patch.md" >}}
    ```
    
    Example output: 
    ```txt
    NAME: kgateway
-   LAST DEPLOYED: Thu Apr 18 11:50:39 2024
+   LAST DEPLOYED: Thu Feb 13 14:03:51 2025
    NAMESPACE: {{< reuse "docs/snippets/ns-system.md" >}}
    STATUS: deployed
-   REVISION: 2
+   REVISION: 1
    TEST SUITE: None
    ```
 
 4. Verify that the {{< reuse "docs/snippets/product-name.md" >}} control plane is up and running. 
+   
    ```sh
    kubectl get pods -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
@@ -142,7 +146,7 @@ Install the open source {{< reuse "docs/snippets/product-name.md" >}} project in
    {{< callout type="info" >}}
    If you want to use TCPRoutes to set up a TCP listener on your Gateway, you must install the TCPRoute CRD, which is part of the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} experimental channel. Use the following command to install the CRDs. 
    ```sh
-   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.2.0/experimental-install.yaml 
+   kubectl apply --kustomize "https://github.com/kubernetes-sigs/gateway-api/config/crd/experimental?ref=v1.2.1"
    ```
    {{< /callout >}}
    
