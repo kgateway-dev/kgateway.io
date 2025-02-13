@@ -44,9 +44,17 @@ These quick start steps assume that you have `kubectl` and `helm` installed. For
    kgateway-5495d98459-46dpk   1/1     Running   0          19s
    ```
 
-That's it! Now you're ready to try out {{< reuse "docs/snippets/product-name.md" >}}.
+Good job! You now have {{< reuse "docs/snippets/product-name.md" >}} running in your cluster.
 
 ## Next steps
 
+Ready to try out more features? Check out the following guides:
+
 - [Install a sample app such as httpbin](/docs/operations/sample-app/).
 - [Set up a listener for your API gateway](/docs/setup/listeners/).
+
+No longer need {{< reuse "docs/snippets/product-name.md" >}}? Uninstall with the following command:
+
+```sh
+helm uninstall kgateway -n kgateway-system
+```
