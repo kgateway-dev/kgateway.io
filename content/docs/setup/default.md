@@ -16,12 +16,18 @@ When you install {{< reuse "docs/snippets/product-name.md" >}}, a default Gatewa
 apiVersion: gateway.networking.k8s.io/v1
 kind: GatewayClass
 metadata:
-  name: gloo-gateway
+  name: kgateway
 spec:
-  controllerName: solo.io/gloo-gateway
+  controllerName: kgateway.dev/kgateway
+  description: KGateway Controller
+  parametersRef:
+    group: gateway.kgateway.dev
+    kind: GatewayParameters
+    name: kgateway
+    namespace: kgateway-system
 ```
 
-The `solo.io/gloo-gateway` controller implements the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} and provides an abstraction of the gateway's underlying infrastructure. The controller watches the resources in your cluster. When a Gateway resource is created that references this GatewayClass, the controller spins up an Envoy-based gateway proxy by using the configuration that is defined in the GatewayParameters resource. The controller also translates other resources, such as HTTPRoute, RouteOption, VirtualHostOption, and more, into valid Envoy configuration, and applies the configuration to the gateway proxies it manages. 
+The `kgateway.dev/kgateway` controller implements the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} and provides an abstraction of the gateway's underlying infrastructure. The controller watches the resources in your cluster. When a Gateway resource is created that references this GatewayClass, the controller spins up an Envoy-based gateway proxy by using the configuration that is defined in the GatewayParameters resource. The controller also translates other resources, such as HTTPRoute, RouteOption, VirtualHostOption, and more, into valid Envoy configuration, and applies the configuration to the gateway proxies it manages.
 
 ## Gateway proxy template
 
