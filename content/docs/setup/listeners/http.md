@@ -3,10 +3,9 @@ title: HTTP listeners
 weight: 10
 ---
 
+Create an HTTP listener on your API gateway. Then, your API gateway listens for HTTP traffic on the specified port and hostname that you configure. This gateway can be used as the main ingress for the apps in your cluster. You can also create multiple gateways to listen for traffic on different ports and hostnames. 
 
-{{< callout type="info" >}}
-If you followed the [Get started guide](/docs/quickstart/), you already have a gateway named `http` in the `{{< reuse "docs/snippets/ns-system.md" >}}` namespace of your cluster. This gateway can be used as the main ingress for the apps in your cluster. HTTPRoutes can refer to this gateway independent of the namespace they are in. To create more gateways, use the instructions in this guide. 
-{{< /callout >}}
+Next, you set up an HTTPRoute resource to route requests through the gateway to backing services in your cluster. HTTPRoutes can refer to any gateway independent of the namespace they are in.
 
 1. Create a gateway resource with an HTTP listener. 
    ```yaml

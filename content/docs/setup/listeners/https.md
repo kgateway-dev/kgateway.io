@@ -3,9 +3,15 @@ title: HTTPS listeners
 weight: 20
 ---
 
-1. Follow the [Get started guide](/docs/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app.
+Create an HTTPS listener on your API gateway. Then, your API gateway listens for secured HTTPS traffic on the specified port and hostname that you configure. 
 
-2. Make sure that you have the OpenSSL version of `openssl`, not LibreSSL. The `openssl` version must be at least 1.1.
+## Before you begin
+
+1. Set up {{< reuse "docs/snippets/product-name.md" >}} by following the [Quick start](/docs/quickstart/) or [Installation](/docs/operations/install/) guides.
+
+2. [Deploy the httpbin sample app](/docs/operations/sample-app/).
+
+3. Make sure that you have the OpenSSL version of `openssl`, not LibreSSL. The `openssl` version must be at least 1.1.
    1. Check the `openssl` version that is installed. If you see LibreSSL in the output, continue to the next step.
       ```sh
       openssl version
