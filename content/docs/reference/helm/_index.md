@@ -1562,7 +1562,7 @@ Review the Helm values for the open source {{< reuse "docs/snippets/product-name
 |global.image.variant|string||Specifies the variant of the control plane and data plane containers to deploy. Can take the values 'standard', 'fips', 'distroless', 'fips-distroless'. Defaults to standard. (The 'fips' and 'fips-distroless' variants are an Enterprise-only feature)|
 |global.image.fips|bool||[Deprecated] Use 'variant=fips' instead. If true, deploys a version of the control plane and data plane containers that is built with FIPS-compliant crypto libraries. (Enterprise-only feature)|
 |global.extensions|interface|||
-|global.glooRbac.create|bool|true|create rbac rules for the gloo-system service account|
+|global.glooRbac.create|bool|true|create rbac rules for the {{< reuse "docs/snippets/ns-system.md" >}} service account|
 |global.glooRbac.namespaced|bool|false|use Roles instead of ClusterRoles|
 |global.glooRbac.nameSuffix|string||When nameSuffix is nonempty, append '-$nameSuffix' to the names of Gloo Edge RBAC resources; e.g. when nameSuffix is 'foo', the role 'gloo-resource-reader' will become 'gloo-resource-reader-foo'|
 |global.glooStats.enabled|bool|true|Controls whether or not Envoy stats are enabled|

@@ -42,7 +42,7 @@ When Envoy is used as an HTTP proxy, additional HTTP information is available fo
    kind: ListenerOption
    metadata:
      name: access-logs
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      targetRefs:
      - group: gateway.networking.k8s.io
@@ -100,7 +100,7 @@ When Envoy is used as an HTTP proxy, additional HTTP information is available fo
    
 3. Get the logs for the gateway pod and verify that you see an entry for each request that you sent to the httpbin app. 
    ```sh
-   kubectl -n gloo-system logs deployments/gloo-proxy-http | tail -1 | jq --sort-keys
+   kubectl -n {{< reuse "docs/snippets/ns-system.md" >}} logs deployments/gloo-proxy-http | tail -1 | jq --sort-keys
    ```
    
    Example output: 
@@ -131,5 +131,5 @@ When Envoy is used as an HTTP proxy, additional HTTP information is available fo
 {{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
-kubectl delete listeneroption access-logs -n gloo-system
+kubectl delete listeneroption access-logs -n {{< reuse "docs/snippets/ns-system.md" >}}
 ```

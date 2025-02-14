@@ -86,7 +86,7 @@ The following steps show how to deploy the AWS Load Balancer Controller in your 
    kind: GatewayParameters
    metadata:
      name: gwparams
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      kube:
        service:
@@ -105,11 +105,11 @@ The following steps show how to deploy the AWS Load Balancer Controller in your 
    apiVersion: gateway.networking.k8s.io/v1
    metadata:
      name: http-aws
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      annotations:
        gateway.gloo.solo.io/gateway-parameters-name: "gwparams"
    spec:
-     gatewayClassName: gloo-gateway
+     gatewayClassName: kgateway
      listeners:
      - protocol: HTTP
        port: 80

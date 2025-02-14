@@ -27,7 +27,7 @@ Create a Kubernetes secret that contains your AWS access key and secret key. {{<
    ```sh
    {{< reuse "docs/snippets/cli-name.md" >}} create secret aws \
        --name 'aws-creds' \
-       --namespace gloo-system \
+       --namespace {{< reuse "docs/snippets/ns-system.md" >}} \
        --access-key ${AWS_ACCESS_KEY_ID} \
        --secret-key ${AWS_SECRET_ACCESS_KEY} \
        --session-token ${AWS_SESSION_TOKEN}
@@ -69,13 +69,13 @@ Create {{< reuse "docs/snippets/product-name.md" >}} `Upstream` and `HTTPRoute` 
    kind: Upstream
    metadata:
      name: lambda
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      aws:
        region: <region>
        secretRef:
          name: aws-creds
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
        lambdaFunctions:
        - lambdaFunctionName: echo
          logicalName: echo
@@ -91,11 +91,11 @@ Create {{< reuse "docs/snippets/product-name.md" >}} `Upstream` and `HTTPRoute` 
    kind: HTTPRoute
    metadata:
      name: lambda
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      parentRefs:
        - name: http
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      rules:
      - matches:
        - path:
@@ -103,7 +103,7 @@ Create {{< reuse "docs/snippets/product-name.md" >}} `Upstream` and `HTTPRoute` 
            value: /echo
        backendRefs:
        - name: lambda
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
          group: gloo.solo.io
          kind: Upstream
          filters:
@@ -145,14 +145,14 @@ At this point, {{< reuse "docs/snippets/product-name.md" >}} is routing directly
 1. Delete the `lambda` HTTPRoute and `lambda` Upstream.
    
    ```sh
-   kubectl delete HTTPRoute lambda -n gloo-system
-   kubectl delete Upstream lambda -n gloo-system
+   kubectl delete HTTPRoute lambda -n {{< reuse "docs/snippets/ns-system.md" >}}
+   kubectl delete Upstream lambda -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
 
 2. Delete the `aws-creds` secret.
    
    ```sh
-   kubectl delete secret aws-creds -n gloo-system
+   kubectl delete secret aws-creds -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
 
 3. Use the AWS Lambda console to delete the `echo` test function.

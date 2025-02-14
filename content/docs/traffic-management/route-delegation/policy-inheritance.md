@@ -60,7 +60,7 @@ Set up a parent, child, grandchild route delegation example and explore how poli
    kind: HTTPRoute
    metadata:
     name: parent
-    namespace: gloo-system
+    namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
     parentRefs:
     - name: http
@@ -95,7 +95,7 @@ Set up a parent, child, grandchild route delegation example and explore how poli
    kind: RouteOption
    metadata:
     name: parent-remove-header
-    namespace: gloo-system
+    namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
     targetRefs:
     - group: gateway.networking.k8s.io
@@ -162,7 +162,7 @@ Set up a parent, child, grandchild route delegation example and explore how poli
    spec:
      parentRefs:
      - name: parent
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
        group: gateway.networking.k8s.io
        kind: HTTPRoute
      rules:
@@ -331,13 +331,13 @@ Verify that the policies are correctly inherited along the delegation chain.
 {{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
-kubectl delete httproute parent -n gloo-system
+kubectl delete httproute parent -n {{< reuse "docs/snippets/ns-system.md" >}}
 kubectl delete httproute child-team1 -n team1
 kubectl delete httproute child-team2 -n team2
 kubectl delete httproute grandchild -n team2
-kubectl delete routeoption parent-remove-header -n gloo-system
+kubectl delete routeoption parent-remove-header -n {{< reuse "docs/snippets/ns-system.md" >}}
 kubectl delete routeoption child-team1-fault -n team1
 kubectl delete routeoption child-team2-rewrite -n team2
-kubectl delete -n team1 -f https://raw.githubusercontent.com/solo-io/gloo-mesh-use-cases/main/policy-demo/httpbin.yaml
-kubectl delete -n team2 -f https://raw.githubusercontent.com/solo-io/gloo-mesh-use-cases/main/policy-demo/httpbin.yaml
+kubectl delete -n team1 -f https://raw.githubusercontent.com/kgateway-dev/kgateway.dev/main/assets/docs/examples/httpbin.yaml
+kubectl delete -n team2 -f https://raw.githubusercontent.com/kgateway-dev/kgateway.dev/main/assets/docs/examples/httpbin.yaml
 kubectl delete namespaces team1 team2

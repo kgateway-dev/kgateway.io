@@ -22,7 +22,7 @@ apiVersion: gateway.solo.io/v1
 kind: VirtualHostOption
 metadata:
   name: csrf
-  namespace: gloo-system
+  namespace: {{< reuse "docs/snippets/ns-system.md" >}}
 spec:
   options:
     csrf:
@@ -36,7 +36,7 @@ spec:
   - group: gateway.networking.k8s.io
     kind: Gateway
     name: http
-    namespace: gloo-system
+    namespace: {{< reuse "docs/snippets/ns-system.md" >}}
 ```
 
 ### Option 2: Attach the policy to a specific listener (`targetRefs.sectionName`)
@@ -51,7 +51,7 @@ apiVersion: gateway.networking.k8s.io/v1
 metadata:
   name: http
 spec:
-  gatewayClassName: gloo-gateway
+  gatewayClassName: kgateway
   listeners:
   - name: http
     protocol: HTTP
@@ -84,7 +84,7 @@ apiVersion: gateway.solo.io/v1
 kind: VirtualHostOption
 metadata:
   name: csrf
-  namespace: gloo-system
+  namespace: {{< reuse "docs/snippets/ns-system.md" >}}
 spec:
   options:
     csrf:
@@ -98,7 +98,7 @@ spec:
   - group: gateway.networking.k8s.io
     kind: Gateway
     name: http
-    namespace: gloo-system
+    namespace: {{< reuse "docs/snippets/ns-system.md" >}}
     sectionName: https
 ```
 

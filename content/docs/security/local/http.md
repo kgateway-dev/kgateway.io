@@ -19,7 +19,7 @@ To learn more about what local rate limiting is and the differences between loca
    kind: HttpListenerOption
    metadata:
      name: local-ratelimit
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      targetRefs: 
      - group: gateway.networking.k8s.io
@@ -88,7 +88,7 @@ To learn more about what local rate limiting is and the differences between loca
    kind: HttpListenerOption
    metadata:
      name: local-ratelimit
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec: 
      targetRefs: 
      - group: gateway.networking.k8s.io
@@ -170,5 +170,5 @@ To learn more about what local rate limiting is and the differences between loca
 {{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
-kubectl delete httplisteneroption local-ratelimit -n gloo-system
+kubectl delete httplisteneroption local-ratelimit -n {{< reuse "docs/snippets/ns-system.md" >}}
 ```

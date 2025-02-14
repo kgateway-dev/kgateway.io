@@ -55,7 +55,7 @@ apiVersion: gloo.solo.io/v1
 kind: Upstream
 metadata:
   name: my-upstream
-  namespace: gloo-system
+  namespace: {{< reuse "docs/snippets/ns-system.md" >}}
 spec:
   kube:
     ...
@@ -125,7 +125,7 @@ To try out an active health check and outlier detection policy, you can follow t
      - group: gateway.networking.k8s.io
        kind: Gateway
        name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      rules:
      - backendRefs:
        - group: gloo.solo.io
@@ -137,7 +137,7 @@ To try out an active health check and outlier detection policy, you can follow t
 3. Check the endpoint in the Envoy service directory.
    1. Port-forward the `gloo-gateway-http` deployment on port 19000.
       ```shell
-      kubectl port-forward deploy/gloo-proxy-http -n gloo-system 19000 &
+      kubectl port-forward deploy/gloo-proxy-http -n {{< reuse "docs/snippets/ns-system.md" >}} 19000 &
       ```
    2. Send an `HTTP GET` request to the `/clusters` endpoint.
       ```sh
@@ -151,7 +151,7 @@ To try out an active health check and outlier detection policy, you can follow t
 4. You can also check the Envoy logs for health check failures and ejection events. 
    1. Get the logs for the `gloo-gateway-http` deployment.
       ```shell
-      kubectl logs -f deploy/gloo-proxy-http -n gloo-system > gateway-proxy.log
+      kubectl logs -f deploy/gloo-proxy-http -n {{< reuse "docs/snippets/ns-system.md" >}} > gateway-proxy.log
       ```
    2. In the output `gateway-proxy.log` file, search for events such as `health_check_failure_event` or `ejection` as shown in the following example log lines.
       ```json

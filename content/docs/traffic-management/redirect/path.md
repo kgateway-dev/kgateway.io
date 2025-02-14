@@ -31,7 +31,7 @@ Path redirects use the HTTP path modifier to replace either an entire path or pa
    spec:
      parentRefs:
        - name: http
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - path.redirect.example
      rules:
@@ -133,7 +133,7 @@ Path redirects use the HTTP path modifier to replace either an entire path or pa
    spec:
      parentRefs:
        - name: http
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - path.redirect.example
      rules:

@@ -3,9 +3,15 @@ title: HTTPS listeners
 weight: 20
 ---
 
-1. Follow the [Get started guide](/docs/quickstart/) to install {{< reuse "docs/snippets/product-name.md" >}}, set up a gateway resource, and deploy the httpbin sample app.
+Create an HTTPS listener on your API gateway. Then, your API gateway listens for secured HTTPS traffic on the specified port and hostname that you configure. 
 
-2. Make sure that you have the OpenSSL version of `openssl`, not LibreSSL. The `openssl` version must be at least 1.1.
+## Before you begin
+
+1. Set up {{< reuse "docs/snippets/product-name.md" >}} by following the [Quick start](/docs/quickstart/) or [Installation](/docs/operations/install/) guides.
+
+2. [Deploy the httpbin sample app](/docs/operations/sample-app/).
+
+3. Make sure that you have the OpenSSL version of `openssl`, not LibreSSL. The `openssl` version must be at least 1.1.
    1. Check the `openssl` version that is installed. If you see LibreSSL in the output, continue to the next step.
       ```sh
       openssl version
@@ -32,11 +38,11 @@ weight: 20
    kind: Gateway
    metadata:
      name: https
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      labels:
        gateway: https
    spec:
-     gatewayClassName: gloo-gateway
+     gatewayClassName: kgateway
      listeners:
        - name: https
          port: 443
@@ -62,7 +68,7 @@ weight: 20
 
 2. Verify that the status of the gateway shows `ACCEPTED`. 
    ```sh
-   kubectl get gateway/https -n gloo-system -o yaml
+   kubectl get gateway/https -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml
    ```
 
 3. Create an HTTP route for the httpbin app and add it to the HTTPS gateway that you created. 
@@ -79,7 +85,7 @@ weight: 20
    spec:
      parentRefs:
        - name: https
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      rules:
        - backendRefs:
            - name: httpbin
@@ -96,13 +102,13 @@ weight: 20
    {{< tabs items="Cloud Provider LoadBalancer,Port-forward for local testing" >}}
    {{% tab %}}
    ```sh
-   export INGRESS_GW_ADDRESS=$(kubectl get svc -n gloo-system gloo-proxy-https -o jsonpath="{.status.loadBalancer.ingress[0]['hostname','ip']}")
+   export INGRESS_GW_ADDRESS=$(kubectl get svc -n {{< reuse "docs/snippets/ns-system.md" >}} gloo-proxy-https -o jsonpath="{.status.loadBalancer.ingress[0]['hostname','ip']}")
    echo $INGRESS_GW_ADDRESS   
    ```
    {{% /tab %}}
    {{% tab %}}
    ```sh
-   kubectl port-forward svc/gloo-proxy-https -n gloo-system 8443:443
+   kubectl port-forward svc/gloo-proxy-https -n {{< reuse "docs/snippets/ns-system.md" >}} 8443:443
    ```
    {{% /tab %}}
    {{< /tabs >}}

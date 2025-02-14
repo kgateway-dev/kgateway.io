@@ -22,7 +22,7 @@ apiVersion: gateway.solo.io/v1
 kind: ListenerOption
 metadata:
   name: access-logs
-  namespace: gloo-system
+  namespace: {{< reuse "docs/snippets/ns-system.md" >}}
 spec:
   targetRefs:
   - group: gateway.networking.k8s.io
@@ -48,7 +48,7 @@ apiVersion: gateway.networking.k8s.io/v1
 metadata:
   name: http
 spec:
-  gatewayClassName: gloo-gateway
+  gatewayClassName: kgateway
   listeners:
   - name: http
     protocol: HTTP
@@ -78,7 +78,7 @@ apiVersion: gateway.solo.io/v1
 kind: ListenerOption
 metadata:
   name: access-logs
-  namespace: gloo-system
+  namespace: {{< reuse "docs/snippets/ns-system.md" >}}
 spec:
   targetRefs:
   - group: gateway.networking.k8s.io

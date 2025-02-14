@@ -35,12 +35,12 @@ Use a VirtualHostOption resource to define your CSRF rules.
 
 1. Create a VirtualHostOption resource to define your CSRF rules. 
    ```yaml
-   kubectl apply -n gloo-system -f- <<EOF
+   kubectl apply -n {{< reuse "docs/snippets/ns-system.md" >}} -f- <<EOF
    apiVersion: gateway.solo.io/v1
    kind: VirtualHostOption
    metadata:
      name: csrf
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      options:
        csrf:
@@ -54,7 +54,7 @@ Use a VirtualHostOption resource to define your CSRF rules.
      - group: gateway.networking.k8s.io
        kind: Gateway
        name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    EOF
    ```
 
@@ -136,7 +136,7 @@ Use a VirtualHostOption resource to define your CSRF rules.
 
 4. Optional: Remove the resources that you created. 
    ```sh
-   kubectl delete virtualhostoption csrf -n gloo-system
+   kubectl delete virtualhostoption csrf -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
    
 
@@ -176,7 +176,7 @@ Use a RouteOption resource to define your CSRF rules.
    spec:
      parentRefs:
      - name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - csrf.example
      rules:
@@ -282,7 +282,7 @@ Use a RouteOption resource to define your CSRF rules.
 
 1. Port-forward the gateway proxy. 
    ```sh
-   kubectl port-forward -n gloo-system deploy/gloo-proxy-http 19000
+   kubectl port-forward -n {{< reuse "docs/snippets/ns-system.md" >}} deploy/gloo-proxy-http 19000
    ```
 
 2. Open the [`/stats`](http://localhost:19000/stats) endpoint. 

@@ -41,7 +41,7 @@ Follow these steps to create a simple NLB that accepts HTTP traffic on port 80 a
    kind: GatewayParameters
    metadata:
      name: custom-gw-params
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      kube: 
        service:
@@ -65,11 +65,11 @@ Follow these steps to create a simple NLB that accepts HTTP traffic on port 80 a
    apiVersion: gateway.networking.k8s.io/v1
    metadata:
      name: aws-cloud
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      annotations:
        gateway.gloo.solo.io/gateway-parameters-name: "custom-gw-params"
    spec:
-     gatewayClassName: gloo-gateway
+     gatewayClassName: kgateway
      listeners:
      - protocol: HTTP
        port: 80
@@ -82,12 +82,12 @@ Follow these steps to create a simple NLB that accepts HTTP traffic on port 80 a
    
 3. Verify that your gateway is created. 
    ```sh
-   kubectl get gateway aws-cloud -n gloo-system
+   kubectl get gateway aws-cloud -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
    
 4. Verify that the gateway service is exposed with an AWS NLB and assigned an AWS hostname. 
    ```sh
-   kubectl get services gloo-proxy-aws-cloud -n gloo-system
+   kubectl get services gloo-proxy-aws-cloud -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
    
    Example output: 
@@ -121,7 +121,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
    kind: GatewayParameters
    metadata:
      name: custom-gw-params
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      kube: 
        service:
@@ -148,13 +148,13 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
    kind: Gateway
    metadata:
      name: aws-cloud
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      labels:
        gateway: aws-cloud
      annotations:
        gateway.gloo.solo.io/gateway-parameters-name: "custom-gw-params"
    spec:
-     gatewayClassName: gloo-gateway
+     gatewayClassName: kgateway
      listeners:
        - name: https
          port: 443
@@ -173,12 +173,12 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
    
 4. Verify that your gateway is created. 
    ```sh
-   kubectl get gateway aws-cloud -n gloo-system
+   kubectl get gateway aws-cloud -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
    
 5. Verify that the gateway service is exposed with an AWS NLB and assigned an AWS hostname.  
    ```sh
-   kubectl get services gloo-proxy-aws-cloud -n gloo-system
+   kubectl get services gloo-proxy-aws-cloud -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
    
    Example output: 
@@ -219,7 +219,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
    spec:
      parentRefs:
        - name: aws-cloud
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - "www.nlb.com"
      rules:
@@ -231,7 +231,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
 
 2. Get the AWS hostname of the NLB. 
    ```sh
-   export INGRESS_GW_ADDRESS=$(kubectl get svc -n gloo-system gloo-proxy-aws-cloud -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+   export INGRESS_GW_ADDRESS=$(kubectl get svc -n {{< reuse "docs/snippets/ns-system.md" >}} gloo-proxy-aws-cloud -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
    echo $INGRESS_GW_ADDRESS
    ```
 
@@ -259,7 +259,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
    spec:
      parentRefs:
        - name: aws-cloud
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - "https.example.com"
      rules:
@@ -271,7 +271,7 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
 
 2. Get the IP address that is associated with the NLB's AWS hostname. 
    ```sh
-   export INGRESS_GW_HOSTNAME=$(kubectl get svc -n gloo-system gloo-proxy-aws-cloud -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+   export INGRESS_GW_HOSTNAME=$(kubectl get svc -n {{< reuse "docs/snippets/ns-system.md" >}} gloo-proxy-aws-cloud -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
    echo $INGRESS_GW_HOSTNAME
    export INGRESS_GW_ADDRESS=$(dig +short ${INGRESS_GW_HOSTNAME} | head -1)
    echo $INGRESS_GW_ADDRESS
@@ -327,8 +327,8 @@ Pass through HTTPS requests from the AWS NLB to your gateway proxy, and terminat
 {{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
-kubectl delete gatewayparameters custom-gw-params -n gloo-system
-kubectl delete gateway aws-cloud -n gloo-system
-kubectl delete httproute httpbin-elb -n gloo-system
-kubectl delete secret tls -n gloo-system
+kubectl delete gatewayparameters custom-gw-params -n {{< reuse "docs/snippets/ns-system.md" >}}
+kubectl delete gateway aws-cloud -n {{< reuse "docs/snippets/ns-system.md" >}}
+kubectl delete httproute httpbin-elb -n {{< reuse "docs/snippets/ns-system.md" >}}
+kubectl delete secret tls -n {{< reuse "docs/snippets/ns-system.md" >}}
 ```

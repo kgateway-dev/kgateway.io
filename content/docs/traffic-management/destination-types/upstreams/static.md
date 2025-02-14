@@ -58,7 +58,7 @@ You simply add the list of static hosts or DNS names to your Upstream resource a
    spec:
      parentRefs:
      - name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - static.example
      rules:

@@ -18,7 +18,7 @@ The example in this guide uses the GatewayParameters resource to change settings
 
 1. Optional: Review the default configuration for your gateway proxies. This configuration can help you identify the settings that you want to change or add. 
    ```sh
-   kubectl get gatewayparameters gloo-gateway -n gloo-system -o yaml
+   kubectl get gatewayparameters kgateway -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml
    ```
 
 2. Create a GatewayParameters resource to add any custom settings to the gateway. The following example makes the following changes: 
@@ -37,7 +37,7 @@ The example in this guide uses the GatewayParameters resource to change settings
    kind: GatewayParameters
    metadata:
      name: custom-gw-params
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      kube: 
        service:
@@ -60,11 +60,11 @@ The example in this guide uses the GatewayParameters resource to change settings
    apiVersion: gateway.networking.k8s.io/v1
    metadata:
      name: custom
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      annotations:
        gateway.gloo.solo.io/gateway-parameters-name: "custom-gw-params"
    spec:
-     gatewayClassName: gloo-gateway
+     gatewayClassName: kgateway
      listeners:
      - protocol: HTTP
        port: 80
@@ -77,11 +77,11 @@ The example in this guide uses the GatewayParameters resource to change settings
 
 4. Verify that a pod is created for your gateway proxy and that it has the pod settings that you defined in the GatewayParameters resource. 
    ```sh
-   kubectl get pods -l app.kubernetes.io/name=gloo-proxy-custom -n gloo-system -o yaml
+   kubectl get pods -l app.kubernetes.io/name=gloo-proxy-custom -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml
    ```
    
    {{< callout type="info" >}}
-   If the pod does not come up, try running `kubectl get events -n gloo-system` to see if the Kubernetes API server logged any failures. If no events are logged, ensure that the `gloo-gateway` GatewayClass is present in your cluster and that the Gateway resource shows an `Accepted` status. 
+   If the pod does not come up, try running `kubectl get events -n {{< reuse "docs/snippets/ns-system.md" >}}` to see if the Kubernetes API server logged any failures. If no events are logged, ensure that the `kgateway` GatewayClass is present in your cluster and that the Gateway resource shows an `Accepted` status. 
    {{< /callout >}}
    
    Example output:
@@ -113,7 +113,7 @@ The example in this guide uses the GatewayParameters resource to change settings
 
 5. Get the details of the service that exposes the gateway proxy. Verify that the service is of type NodePort and that the extra label was added to the service. 
    ```sh
-   kubectl get service gloo-proxy-custom -n gloo-system -o yaml
+   kubectl get service gloo-proxy-custom -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml
    ```
    
    Example output: 
@@ -130,9 +130,9 @@ The example in this guide uses the GatewayParameters resource to change settings
        gateway: custom
        gateway.networking.k8s.io/gateway-name: custom
        gloo: kube-gateway
-       helm.sh/chart: gloo-gateway-0.0.1-alpha1
+       helm.sh/chart: kgateway-0.0.1-alpha1
      name: gloo-proxy-custom
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      ownerReferences:
      - apiVersion: gateway.networking.k8s.io/v1
        controller: true
@@ -162,8 +162,8 @@ The example in this guide uses the GatewayParameters resource to change settings
 {{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
-kubectl delete gateway custom -n gloo-system
-kubectl delete gatewayparameters custom-gw-params -n gloo-system
+kubectl delete gateway custom -n {{< reuse "docs/snippets/ns-system.md" >}}
+kubectl delete gatewayparameters custom-gw-params -n {{< reuse "docs/snippets/ns-system.md" >}}
 ```
    
    

@@ -34,7 +34,7 @@ To enable traffic shadowing, you must set up an [Upstream](/docs/traffic-managem
 
 2. Deploy the httpbin shadow app. 
    ```sh
-   kubectl -n shadow apply -f https://raw.githubusercontent.com/solo-io/gloo-mesh-use-cases/main/policy-demo/httpbin.yaml
+   kubectl -n shadow apply -f https://raw.githubusercontent.com/kgateway-dev/kgateway.dev/main/assets/docs/examples/httpbin.yaml
    ```
 
 3. Verify that the httpbin shadow app is running.
@@ -49,7 +49,7 @@ To enable traffic shadowing, you must set up an [Upstream](/docs/traffic-managem
    kind: Upstream
    metadata:
      name: shadow
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      kube:
        serviceName: httpbin
@@ -65,7 +65,7 @@ To enable traffic shadowing, you must set up an [Upstream](/docs/traffic-managem
    kind: Upstream
    metadata:
      name: httpbin
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      kube:
        serviceName: httpbin
@@ -87,7 +87,7 @@ To enable traffic shadowing, you must set up an [Upstream](/docs/traffic-managem
        shadowing:
           upstream:
             name: shadow
-            namespace: gloo-system
+            namespace: {{< reuse "docs/snippets/ns-system.md" >}}
           percentage: 100
    EOF
    ```
@@ -103,7 +103,7 @@ To enable traffic shadowing, you must set up an [Upstream](/docs/traffic-managem
    spec:
      parentRefs:
      - name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - shadowing.example
      rules:
@@ -117,18 +117,18 @@ To enable traffic shadowing, you must set up an [Upstream](/docs/traffic-managem
            - name: httpbin
              kind: Upstream
              group: gloo.solo.io
-             namespace: gloo-system
+             namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    EOF
    ```
 
-7. Create a reference grant to allow the HTTPRoute resource to access Upstream resources in the `gloo-system` namespace. 
+7. Create a reference grant to allow the HTTPRoute resource to access Upstream resources in the `{{< reuse "docs/snippets/ns-system.md" >}}` namespace. 
    ```yaml
    kubectl apply -f- <<EOF
    apiVersion: gateway.networking.k8s.io/v1
    kind: ReferenceGrant
    metadata:
      name: shadow-rg
-     namespace: gloo-system   
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}   
    spec:
      from:
        - group: gateway.networking.k8s.io
@@ -210,10 +210,10 @@ To enable traffic shadowing, you must set up an [Upstream](/docs/traffic-managem
 ```sh
 kubectl delete httproutes httpbin-shadow -n httpbin 
 kubectl delete routeoption shadowing -n httpbin
-kubectl delete upstream shadow -n gloo-system
-kubectl delete upstream httpbin -n gloo-system 
-kubectl delete referencegrant shadow-rg -n gloo-system
-kubectl delete -f https://raw.githubusercontent.com/solo-io/gloo-mesh-use-cases/main/policy-demo/httpbin.yaml -n shadow
+kubectl delete upstream shadow -n {{< reuse "docs/snippets/ns-system.md" >}}
+kubectl delete upstream httpbin -n {{< reuse "docs/snippets/ns-system.md" >}} 
+kubectl delete referencegrant shadow-rg -n {{< reuse "docs/snippets/ns-system.md" >}}
+kubectl delete -f https://raw.githubusercontent.com/kgateway-dev/kgateway.dev/main/assets/docs/examples/httpbin.yaml -n shadow
 kubectl delete ns shadow
 ```
 

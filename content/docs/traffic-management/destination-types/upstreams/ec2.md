@@ -103,7 +103,7 @@ The following example shows how to use a user's AWS access key ID and secret key
    metadata:
      annotations:
      name: my-ec2-upstream
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      awsEc2:
        filters:
@@ -131,7 +131,7 @@ The following example shows how to use a user's AWS access key ID and secret key
    kind: HTTPRoute
    metadata:
      name: ec2-route
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      hostnames:
      - ec2.example
@@ -139,7 +139,7 @@ The following example shows how to use a user's AWS access key ID and secret key
      - group: gateway.networking.k8s.io
        kind: Gateway
        name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      rules:
      - backendRefs:
        - group: gloo.solo.io
@@ -186,8 +186,8 @@ The following example shows how to use a user's AWS access key ID and secret key
 
 1. Remove the Upstream and HTTProute.
    ```sh
-   kubectl delete httproute ec2-route -n gloo-system
-   kubectl delete upstream ec2 -n gloo-system
+   kubectl delete httproute ec2-route -n {{< reuse "docs/snippets/ns-system.md" >}}
+   kubectl delete upstream ec2 -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
 
 2. Delete the AWS role or revoke permissions for your user.  

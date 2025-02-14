@@ -38,7 +38,7 @@ EOF
 
 Example output:
 ```console
-Error from server: error when creating "STDIN": admission webhook "gloo.gloo-system.svc" denied the request: resource incompatible with current Gloo snapshot: [Validating *v1.RouteOption failed: 1 error occurred:
+Error from server: error when creating "STDIN": admission webhook "gloo.{{< reuse "docs/snippets/ns-system.md" >}}.svc" denied the request: resource incompatible with current Gloo snapshot: [Validating *v1.RouteOption failed: 1 error occurred:
 * Validating *v1.RouteOption failed: validating *v1.RouteOption name:"faults"  namespace:"httpbin": 1 error occurred:
 * Route Error: ProcessingError. Reason: *faultinjection.plugin: invalid abort status code '0', must be in range of [200,600). Route Name: 
 ```
@@ -71,7 +71,7 @@ EOF
    
 Example output: 
 ```console
-Error from server: error when creating "STDIN": admission webhook "gloo.gloo-system.svc" denied the request: resource incompatible with current Gloo snapshot: [Validating *v1.VirtualHostOption failed: 1 error occurred:
+Error from server: error when creating "STDIN": admission webhook "gloo.{{< reuse "docs/snippets/ns-system.md" >}}.svc" denied the request: resource incompatible with current Gloo snapshot: [Validating *v1.VirtualHostOption failed: 1 error occurred:
   * Validating *v1.VirtualHostOption failed: validating *v1.VirtualHostOption name:"bad-retries"  namespace:"default": 1 error occurred:
   * VirtualHost Error: ProcessingError. Reason: invalid virtual host [vhost] while processing plugin basic_route: base interval: 1000 is > max interval: 1
 ```
@@ -95,7 +95,7 @@ The validation API currently assumes that all configuration that is sent to the 
 
 1. Port-forward the gloo service on port 8443. 
    ```sh
-   kubectl -n gloo-system port-forward service/gloo 8443:443
+   kubectl -n {{< reuse "docs/snippets/ns-system.md" >}} port-forward service/gloo 8443:443
    ```
 
 2. Send a request with your resource configuration to the {{< reuse "docs/snippets/product-name.md" >}} validation API. The following example shows successful and unsuccessful resource configuration validation for the RouteOption and VirtualHostOption resources.
@@ -226,7 +226,7 @@ The {{< reuse "docs/snippets/product-name.md" >}} validation API is implemented 
       "resource": ""
     },
     "name": "vs-dry-run",
-    "namespace": "gloo-system",
+    "namespace": "{{< reuse "docs/snippets/ns-system.md" >}}",
     "operation": "CREATE",
     "userInfo": {
       "username": "system:serviceaccount:kube-system:my-serviceaccount",

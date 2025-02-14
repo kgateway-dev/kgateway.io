@@ -63,7 +63,7 @@ The following rules are applied during schema validation:
      - direct-response.com
      parentRefs:
      - name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      rules:
      - matches:
        - path:
