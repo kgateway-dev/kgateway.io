@@ -9,7 +9,7 @@ Use built-in tools to troubleshoot issues in your {{< reuse "docs/snippets/produ
 
 ## Debug your gateway setup
 
-1. Make sure that the {{< reuse "docs/snippets/product-name.md" >}} control plane and gateway proxies are running.
+1. Make sure that the {{< reuse "docs/snippets/product-name.md" >}} control plane and gateway proxies are running. For any pod that is not running, describe the pod for more details.
    
    ```shell
    kubectl get pods -n {{< reuse "docs/snippets/ns-system.md" >}}
@@ -25,18 +25,14 @@ Use built-in tools to troubleshoot issues in your {{< reuse "docs/snippets/produ
 	* invalid virtual host [http~bookinfo_example] while processing plugin enterprise_warning: Could not load configuration for the following Enterprise features: [jwt]
    ```
    -->
-2. Get the details for any failed resource. For example to get the details of an HTTPRoute, you can use the following command. 
+
+2. Check the HTTPRoutes for the status of the route and any attached policies.
+   
    ```sh
    kubectl get httproute <name> -n <namespace>
    ```
-   
-3. If the resources seem to be ok, you can check the configuration that is applied on your gateway. Configuration might be missing on the gateway or might be applied to the wrong route. For example, if you apply multiple policies to the same route by using the `targetRefs` section, only the oldest policy is applied. The newer policy configuration might be ignored and not applied to the gateway. 
-   
-   ```sh
-   kubectl describe pod -n {{< reuse "docs/snippets/ns-system.md" >}} <gateway-proxy-pod-name>
-   ```
 
-4. If the proxy resource seems to be ok, you can access the debugging interface of your gateway proxy on your localhost. 
+3. Access the debugging interface of your gateway proxy on your localhost. Configuration might be missing on the gateway or might be applied to the wrong route. For example, if you apply multiple policies to the same route by using the `targetRefs` section, only the oldest policy is applied. The newer policy configuration might be ignored and not applied to the gateway.
    
    ```sh
    kubectl port-forward deploy/gloo-proxy-http -n {{< reuse "docs/snippets/ns-system.md" >}} 19000 &  
@@ -52,7 +48,7 @@ Use built-in tools to troubleshoot issues in your {{< reuse "docs/snippets/produ
    | logging | Review the log level that is set for each component. |  
    | stats/prometheus | View metrics that Envoy emitted and sent to the built-in Prometheus instance. |
 
-6. Review the logs for each component. Each component logs the sync loops that it runs, such as syncing with various environment signals like the Kubernetes API. You can fetch the latest logs for all the components with the following command. 
+4. Review the logs for each component. Each component logs the sync loops that it runs, such as syncing with various environment signals like the Kubernetes API. You can fetch the latest logs for all the components with the following command. 
    
    ```bash
    # kgateway control plane
@@ -85,7 +81,7 @@ Make sure to use the version of `{{< reuse "docs/snippets/cli-name.md" >}}` that
 
 6. Review the logs for each component. Each component logs the sync loops that it runs, such as syncing with various environment signals like the Kubernetes API. You can fetch the latest logs for all the components with the following command. 
    ```bash
-   glooctl debug logs
+   {{< reuse "docs/snippets/cli-name.md" >}} debug logs
    # save the logs to a file
    {{< reuse "docs/snippets/cli-name.md" >}} debug logs -f gloo.log
    # only print errors

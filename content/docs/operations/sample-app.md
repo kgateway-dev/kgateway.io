@@ -46,7 +46,7 @@ The following configuration file creates the httpbin app. To review the source f
 
 Create an API gateway with an HTTP listener by using the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}.
 
-1. Create a gateway resource and configure an HTTP listener. The following gateway can serve HTTP resources from all namespaces.  
+1. Create a Gateway resource and configure an HTTP listener. The following Gateway can serve HTTPRoute resources from all namespaces.  
    
    ```yaml
    kubectl apply -f- <<EOF
@@ -67,7 +67,7 @@ Create an API gateway with an HTTP listener by using the {{< reuse "docs/snippet
    EOF
    ```
 
-2. Verify that the gateway is created successfully. You can also review the external address that is assigned to the gateway. Note that depending on your environment it might take a few minutes for the load balancer service to be assigned an external address. If you are using a local Kind cluster without a load balancer such as `metallb`, you might not have an external address.
+2. Verify that the Gateway is created successfully. You can also review the external address that is assigned to the Gateway. Note that depending on your environment it might take a few minutes for the load balancer service to be assigned an external address. If you are using a local Kind cluster without a load balancer such as `metallb`, you might not have an external address.
    
    ```sh
    kubectl get gateway http -n {{< reuse "docs/snippets/ns-system.md" >}}
@@ -99,9 +99,9 @@ Create an API gateway with an HTTP listener by using the {{< reuse "docs/snippet
 
 ## Expose the app on the gateway {#expose-app}
 
-Now that you have an app and a gateway, you can create a route to access the app.
+Now that you have an app and a gateway proxy, you can create a route to access the app.
 
-1. Create an HTTPRoute resource to expose the httpbin app on the gateway. The following example exposes the app on the `wwww.example.com` domain. 
+1. Create an HTTPRoute resource to expose the httpbin app on the Gateway. The following example exposes the app on the `wwww.example.com` domain. 
    
    ```yaml
    kubectl apply -f- <<EOF
@@ -127,9 +127,9 @@ Now that you have an app and a gateway, you can create a route to access the app
 
    |Setting|Description|
    |--|--|
-   |`spec.parentRefs`|The name and namespace of the gateway resource that serves the route. In this example, you use the HTTP gateway that you created earlier.  |
+   |`spec.parentRefs`|The name and namespace of the Gateway resource that serves the route. In this example, you use the `http` Gateway that you created earlier.  |
    |`spec.hostnames`|A list of hostnames that the route is exposed on. In the example, the route is exposed on `www.example.com`. |
-   |`spec.rules.backendRefs`| The Kubernetes service that serves the incoming request. In this example, requests to `www.example.com` are forwarded to the httpbin app on port 9000. Note that you must create the HTTP route in the same namespace as the service that serves that route. To create the HTTP route resource in a different namespace, you must create a ReferenceGrant resource to allow the HTTP route to forward requests to a service in a different namespace. For more information, see the [Kubernetes API Gateway documentation](https://gateway-api.sigs.k8s.io/api-types/referencegrant/). |
+   |`spec.rules.backendRefs`| The Kubernetes service that serves the incoming request. In this example, requests to `www.example.com` are forwarded to the httpbin app on port 9000. Note that you must create the HTTPRoute in the same namespace as the service that serves that route. To create the HTTPRoute resource in a different namespace, you must create a ReferenceGrant resource to allow the HTTPRoute to forward requests to a service in a different namespace. For more information, see the [Kubernetes API Gateway documentation](https://gateway-api.sigs.k8s.io/api-types/referencegrant/). |
 
 2. Verify that the HTTPRoute is applied successfully. 
    
@@ -165,11 +165,11 @@ Now that you have an app and a gateway, you can create a route to access the app
 
 ## Send a request {#send-request}
 
-Now that your httpbin app is running and you verified that the gateway resources are created, you can send a request to the app. The steps vary depending on your load balancer setup.
+Now that your httpbin app is running and exposed on the gateway proxy, you can send a request to the app. The steps vary depending on your load balancer setup.
 
 {{< tabs items="Cloud Provider LoadBalancer,Port-forward for local testing" >}}
 {{% tab %}}
-1. Get the external address of the gateway and save it in an environment variable.
+1. Get the external address of the gateway proxy and save it in an environment variable.
    
    ```sh
    export INGRESS_GW_ADDRESS=$(kubectl get svc -n kgateway-system gloo-proxy-http -o=jsonpath="{.status.loadBalancer.ingress[0]['hostname','ip']}")
@@ -272,10 +272,8 @@ Now that you have {{< reuse "docs/snippets/product-name.md" >}} set up and runni
    kubectl delete httproute httpbin -n httpbin
    ```
 
-3. Delete the gateway.
+3. Delete the Gateway.
 
    ```sh
    kubectl delete gateway http -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
-
-
