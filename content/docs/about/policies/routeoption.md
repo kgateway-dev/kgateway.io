@@ -22,7 +22,7 @@ apiVersion: gateway.solo.io/v1
 kind: RouteOption
 metadata:
   name: parent-remove-header
-  namespace: gloo-system
+  namespace: {{< reuse "docs/snippets/ns-system.md" >}}
 spec:
   targetRefs:
   - group: gateway.networking.k8s.io
@@ -64,7 +64,7 @@ metadata:
 spec:
   parentRefs:
   - name: http
-    namespace: gloo-system
+    namespace: {{< reuse "docs/snippets/ns-system.md" >}}
   hostnames:
     - rewrite.example
   rules:
@@ -101,7 +101,7 @@ metadata:
 spec:
   parentRefs:
   - name: http
-    namespace: gloo-system
+    namespace: {{< reuse "docs/snippets/ns-system.md" >}}
   hostnames:
     - rewrite.example
   rules:

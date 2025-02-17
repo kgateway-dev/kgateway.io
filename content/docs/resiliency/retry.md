@@ -51,7 +51,7 @@ Use a RouteOption resource to specify retries for a specific route.
    spec:
      parentRefs:
      - name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - retry.example
      rules:

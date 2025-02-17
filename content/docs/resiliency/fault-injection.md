@@ -56,7 +56,7 @@ Use a RouteOption resource to abort all incoming requests to a specific route.
    spec:
      parentRefs:
      - name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - faults.example
      rules:
@@ -144,7 +144,7 @@ Use a RouteOption resource to deny incoming requests to a specific route.
    spec:
      parentRefs:
      - name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - faults.example
      rules:

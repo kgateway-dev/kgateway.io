@@ -17,7 +17,7 @@ You can add the `spec.useHttp2` setting to an Upstream directly.
 
 1. Edit the Upstream that was created for the httpbin app. 
    ```sh
-   kubectl edit upstream httpbin-httpbin-8000 -n gloo-system
+   kubectl edit upstream httpbin-httpbin-8000 -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
    
 2. Add the `spec.useHttp2` setting as shown in the following example. 
@@ -35,7 +35,7 @@ You can add the `spec.useHttp2` setting to an Upstream directly.
      labels:
        discovered_by: kubernetesplugin
      name: httpbin-httpbin-8000
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      resourceVersion: "4421071"
      uid: a73b1b82-2910-497a-9f82-ff513ebe911d
    spec:
@@ -54,7 +54,7 @@ You can add the `spec.useHttp2` setting to an Upstream directly.
 
 3. Optional: Remove the `useHttp2` setting from your Upstream by editing the Upstream and removing the setting. 
    ```sh
-   kubectl edit upstream httpbin-httpbin-8000 -n gloo-system
+   kubectl edit upstream httpbin-httpbin-8000 -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
    
 
@@ -68,7 +68,7 @@ To use service annotations to enable HTTP/2 for a destination, you must [enable 
 
 1. Review the httpbin Upstream resource that was automatically created for the httpbin app that you deployed as part of the [Get started](/docs/quickstart/) guide. Note that the `spec.useHttp2` option is not set. 
    ```sh
-   kubectl get upstream httpbin-httpbin-8000 -n gloo-system -o yaml
+   kubectl get upstream httpbin-httpbin-8000 -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml
    ```
 
 2. Add the `gloo.solo.io/h2_service=true` annotation to the httpbin service. 
@@ -78,7 +78,7 @@ To use service annotations to enable HTTP/2 for a destination, you must [enable 
 
 3. Review the httpbin Upstream again and verify that you now see the `useHttp2: true` setting on your Upstream. 
    ```sh
-   kubectl get upstream httpbin-httpbin-8000 -n gloo-system -o yaml
+   kubectl get upstream httpbin-httpbin-8000 -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml
    ```
    
    Example output: 
@@ -95,7 +95,7 @@ To use service annotations to enable HTTP/2 for a destination, you must [enable 
      labels:
        discovered_by: kubernetesplugin
      name: httpbin-httpbin-8000
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      resourceVersion: "4421071"
      uid: a73b1b82-2910-497a-9f82-ff513ebe911d
    spec:
@@ -119,7 +119,7 @@ To use service annotations to enable HTTP/2 for a destination, you must [enable 
 
 5. Review the Upstream resource again and verify that the `useHttp2` setting was updated to `false`.
    ```sh
-   kubectl get upstream httpbin-httpbin-8000 -n gloo-system -o yaml 
+   kubectl get upstream httpbin-httpbin-8000 -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml 
    ```
    
    Example output: 
@@ -157,7 +157,7 @@ To use port names to enable HTTP/2 for a destination, you must [enable service d
 
 1. Review the httpbin Upstream resource that was automatically created for the httpbin app that you deployed as part of the [Get started](/docs/quickstart/) guide. Note that the `spec.useHttp2` option is not set. 
    ```sh
-   kubectl get upstream httpbin-httpbin-8000 -n gloo-system -o yaml
+   kubectl get upstream httpbin-httpbin-8000 -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml
    ```
 
 2. Review the ports that are defined on the httpbin service. 
@@ -216,7 +216,7 @@ To use port names to enable HTTP/2 for a destination, you must [enable service d
 
 4. Review the Upstream for the httpbin app and verify that the `useHttp2` setting was added. 
    ```sh
-   kubectl get upstream httpbin-httpbin-8000 -n gloo-system -o yaml
+   kubectl get upstream httpbin-httpbin-8000 -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml
    ```
    
    Example output: 
