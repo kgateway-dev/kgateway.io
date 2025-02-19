@@ -1,5 +1,5 @@
 ---
-title: Kubernetes Gateway
+title: Blogs
 toc: false
 description: ""
 ---
