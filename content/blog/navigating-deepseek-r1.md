@@ -1,5 +1,5 @@
 ---
-title: "Navigating DeepSeek R1, Security Concerns, and Guardrails"
+title: Navigating DeepSeek R1, Security Concerns, and Guardrails
 toc: false
 publishDate: 2025-01-29T00:00:00-00:00
 author: Christian Posta
