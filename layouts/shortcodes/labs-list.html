@@ -3,11 +3,23 @@
 <script>
   filterSelection("All")
   function filterSelection(tag) {
-    document.querySelectorAll("[class^='tag']").forEach(
+    document.querySelectorAll("button[class^='tag']").forEach(
+      function (v) {
+        const className = v.getAttribute("class");
+        if (className.startsWith("tag-" + tag)) {
+          if (!className.endsWith("selected")) {
+            v.setAttribute("class", className + " selected");
+          }
+        } else {
+          v.setAttribute("class", className.replace(/ selected$/, ""));
+        }
+      }
+    );
+    document.querySelectorAll("a[class^='tag']").forEach(
       function (v) {
         const className = v.getAttribute("class");
         if (tag === "All" || className.includes("tag-" + tag)) {
-          v.setAttribute("class", className.replace(/ hidden$/, ''));
+          v.setAttribute("class", className.replace(/ hidden$/, ""));
         } else if (!className.endsWith("hidden")) {
           v.setAttribute("class", className + " hidden");
         }
@@ -47,14 +59,14 @@
     {{ if $tags }}
       <div class="flex gap-8 justify-center items-center flex-wrap sm:flex-nowrap">
           <button
-            class="flex py-2.5 px-5 justify-center items-center rounded-[0.25rem] bg-[#DDDFED] text-[#9DA1BD] font-complementary text-base leading-[1.2rem] tracking-[-0.05rem] selected [&.selected]:text-white [&.selected]:bg-primary-bg"
+            class="tag-All flex py-2.5 px-5 justify-center items-center rounded-[0.25rem] bg-[#DDDFED] text-[#9DA1BD] font-complementary text-base leading-[1.2rem] tracking-[-0.05rem] [&.selected]:text-white [&.selected]:bg-primary-bg selected"
             onClick="filterSelection('All')"
           >
             All
           </button>
         {{ range $tags }}
           <button
-            class="flex py-2.5 px-5 justify-center items-center rounded-[0.25rem] bg-[#DDDFED] text-[#9DA1BD] font-complementary text-base leading-[1.2rem]tracking-[-0.05rem] [&.selected]:text-white [&.selected]:bg-primary-bg"
+            class='tag-{{ replace .tag " " "" }} flex py-2.5 px-5 justify-center items-center rounded-[0.25rem] bg-[#DDDFED] text-[#9DA1BD] font-complementary text-base leading-[1.2rem]tracking-[-0.05rem] [&.selected]:text-white [&.selected]:bg-primary-bg'
             onclick="filterSelection({{ .tag }})"
           >
             {{ .name }}
