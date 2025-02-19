@@ -1,5 +1,5 @@
 ---
-title: "Advancing Open Source Gateways with the CNCF and kgateway"
+title: Advancing Open Source Gateways with the CNCF and kgateway
 toc: false
 publishDate: 2025-01-28T00:00:00-00:00
 author: Lin Sun

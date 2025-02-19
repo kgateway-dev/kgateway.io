@@ -1,5 +1,5 @@
 ---
-title: Kubernetes Gateway
+title: kgateway
 toc: false
 description: ""
 ---
