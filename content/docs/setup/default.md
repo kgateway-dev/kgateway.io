@@ -19,6 +19,12 @@ metadata:
   name: kgateway
 spec:
   controllerName: kgateway.dev/kgateway
+  description: KGateway Controller
+  parametersRef:
+    group: gateway.kgateway.dev
+    kind: GatewayParameters
+    name: kgateway
+    namespace: {{< reuse "docs/snippets/ns-system.md" >}}
 ```
 
 The `kgateway.dev/kgateway` controller implements the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} and provides an abstraction of the gateway's underlying infrastructure. The controller watches the resources in your cluster. When a Gateway resource is created that references this GatewayClass, the controller spins up an Envoy-based gateway proxy by using the configuration that is defined in the GatewayParameters resource. The controller also translates other resources, such as HTTPRoute, RouteOption, VirtualHostOption, and more, into valid Envoy configuration, and applies the configuration to the gateway proxies it manages. 
