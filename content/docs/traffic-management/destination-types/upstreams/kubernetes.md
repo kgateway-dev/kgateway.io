@@ -29,7 +29,7 @@ Upstreams of type `kube` are automatically created when service discovery is ena
    kind: Upstream
    metadata:
      name: petstore
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      kube:
        serviceName: petstore
@@ -45,11 +45,11 @@ Upstreams of type `kube` are automatically created when service discovery is ena
    kind: HTTPRoute
    metadata:
      name: kube-upstream
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      parentRefs:
      - name: http
-       namespace: gloo-system
+       namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - kube.example
      rules:
@@ -89,8 +89,8 @@ Upstreams of type `kube` are automatically created when service discovery is ena
 {{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
-kubectl delete httproute kube-upstream -n gloo-system
-kubectl delete upstream petstore -n gloo-system
+kubectl delete httproute kube-upstream -n {{< reuse "docs/snippets/ns-system.md" >}}
+kubectl delete upstream petstore -n {{< reuse "docs/snippets/ns-system.md" >}}
 kubectl delete -f https://raw.githubusercontent.com/solo-io/gloo/v1.16.x/example/petstore/petstore.yaml
 ```
    

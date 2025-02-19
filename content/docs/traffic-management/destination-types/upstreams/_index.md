@@ -60,8 +60,8 @@ To enable service discovery:
 
 1. Get the current values for your Helm chart. 
    ```sh
-   helm get values gloo-gateway -n gloo-system -o yaml > gloo-gateway.yaml
-   open gloo-gateway.yaml
+   helm get values kgateway -n {{< reuse "docs/snippets/ns-system.md" >}} -o yaml > kgateway.yaml
+   open kgateway.yaml
    ```
 
 2. In your Helm values file, enable service discovery. 
@@ -73,14 +73,14 @@ To enable service discovery:
 
 3. Upgrade your {{< reuse "docs/snippets/product-name.md" >}} installation to enable service discovery. 
    ```sh
-   helm upgrade -n gloo-system gloo-gateway gloo/gloo\
-   --values gloo-gateway.yaml \
+   helm upgrade -n {{< reuse "docs/snippets/ns-system.md" >}} kgateway kgateway/kgateway\
+   --values kgateway.yaml \
    --version {{< reuse "docs/versions/n-patch.md" >}} 
    ```
    
 4. Review the Upstream resources that are automatically created for the Kubernetes services that you have in your cluster. 
    ```sh
-   kubectl get upstreams -n gloo-system
+   kubectl get upstreams -n {{< reuse "docs/snippets/ns-system.md" >}}
    ```
 
 ## Routing
@@ -100,7 +100,7 @@ metadata:
 spec:
   parentRefs:
   - name: http
-    namespace: gloo-system
+    namespace: {{< reuse "docs/snippets/ns-system.md" >}}
   hostnames:
     - static.example
   rules:

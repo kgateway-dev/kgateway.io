@@ -8,7 +8,7 @@ Learn how the {{< reuse "docs/snippets/product-name.md" >}} and {{< reuse "docs/
 
 ## Custom resource overview
 
-The following image illustrates how the {{< reuse "docs/snippets/product-name.md" >}} custom resources interact with the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} custom resources to provide advanced routing, traffic management, security, resiliency, and integration capabilities. To learn more about each custom resource, see [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} resources](#k8s) and [{{< reuse "docs/snippets/product-name.md" >}} resources](#gloo-gateway).
+The following image illustrates how the {{< reuse "docs/snippets/product-name.md" >}} custom resources interact with the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} custom resources to provide advanced routing, traffic management, security, resiliency, and integration capabilities. To learn more about each custom resource, see [{{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} resources](#k8s) and [{{< reuse "docs/snippets/product-name.md" >}} resources](#kgateway).
 
 {{< reuse-image src="img/gg-crs.svg" >}}
 
@@ -46,7 +46,7 @@ A [ReferenceGrant](https://gateway-api.sigs.k8s.io/api-types/referencegrant/) al
 {{< reuse "docs/snippets/product-name-caps.md" >}} custom resources do not follow the same cross-namespace restrictions as the resources in the {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}}. For example, access between a RouteOption resource in `namespace1` and an Upstream resource in `namespace2` is allowed by default and does not require a ReferenceGrant. However, if you need to reference a {{< reuse "docs/snippets/product-name.md" >}} resource from a {{< reuse "docs/snippets/k8s-gateway-api-name.md" >}} resource, you must create a ReferenceGrant. 
 {{% /callout %}}
 
-## Kgateway resources {#gloo-gateway}
+## Kgateway resources {#kgateway}
 
 Review the {{< reuse "docs/snippets/product-name.md" >}} resources that you use to bootstrap, configure, and customize your gateway proxy, and the policies that you can leverage to add additional traffic management, resiliency, and security capabilities to your gateway and routes. 
 

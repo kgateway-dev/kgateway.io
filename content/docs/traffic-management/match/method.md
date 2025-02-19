@@ -24,7 +24,7 @@ For more information, see the [{{< reuse "docs/snippets/k8s-gateway-api-name.md"
    spec:
      parentRefs:
        - name: http
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - match.example
      rules:

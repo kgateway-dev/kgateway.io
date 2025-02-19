@@ -22,7 +22,7 @@ These quick start steps assume that you have `kubectl` and `helm` installed. For
 2. Deploy the Kubernetes Gateway API CRDs.
 
    ```sh
-   kubectl apply --kustomize "https://github.com/kubernetes-sigs/gateway-api/config/crd/experimental?ref=v1.2.1"
+   kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v{{< reuse "docs/versions/k8s-gw-version.md" >}}/standard-install.yaml
    ```
 
 3. Install {{< reuse "docs/snippets/product-name.md" >}} by using Helm.
@@ -44,9 +44,17 @@ These quick start steps assume that you have `kubectl` and `helm` installed. For
    kgateway-5495d98459-46dpk   1/1     Running   0          19s
    ```
 
-That's it! Now you're ready to try out {{< reuse "docs/snippets/product-name.md" >}}.
+Good job! You now have the {{< reuse "docs/snippets/product-name.md" >}} control plane running in your cluster.
 
 ## Next steps
 
-- [Install a sample app such as httpbin](/docs/operations/install/#deploy-app).
-- [Set up a listener for your API gateway](/docs/setup/listeners/).
+Ready to try out more features? Check out the following guides:
+
+- [Install a sample app such as httpbin](/docs/operations/sample-app/). This guide includes setting up an API gateway, configuring abasic HTTP listener on the API gateway, and routing traffic to httpbin by using an HTTPRoute resource.
+- [Set up an API gateway with a listener](/docs/setup/listeners/) so that you can start routing traffic to your apps.
+
+No longer need {{< reuse "docs/snippets/product-name.md" >}}? Uninstall with the following command:
+
+```sh
+helm uninstall kgateway -n kgateway-system
+```

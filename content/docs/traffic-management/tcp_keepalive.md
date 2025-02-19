@@ -75,7 +75,7 @@ apiVersion: gateway.solo.io/v1
 kind: ListenerOption
 metadata:
   name: tcpkeepalive
-  namespace: gloo-system
+  namespace: {{< reuse "docs/snippets/ns-system.md" >}}
 spec:
   targetRefs:
   - group: gateway.networking.k8s.io
@@ -111,7 +111,7 @@ EOF
 {{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
-kubectl delete listeneroption tcpkeepalive -n gloo-system
+kubectl delete listeneroption tcpkeepalive -n {{< reuse "docs/snippets/ns-system.md" >}}
 ```
 
 ## TCP keepalive on upstream connections {#upstream}

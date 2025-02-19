@@ -24,13 +24,13 @@ Keep in mind the following considerations when working with an ALB:
 
 1. Create a Gateway resource with an HTTP listener. 
    ```yaml
-   kubectl apply -n gloo-system -f- <<EOF
+   kubectl apply -n {{< reuse "docs/snippets/ns-system.md" >}} -f- <<EOF
    kind: Gateway
    apiVersion: gateway.networking.k8s.io/v1
    metadata:
      name: alb
    spec:
-     gatewayClassName: gloo-gateway
+     gatewayClassName: kgateway
      listeners:
      - protocol: HTTP
        port: 8080
@@ -48,7 +48,7 @@ Keep in mind the following considerations when working with an ALB:
    kind: HttpListenerOption
    metadata:
      name: alb-healthcheck
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
    spec:
      targetRefs:
      - group: gateway.networking.k8s.io
@@ -66,7 +66,7 @@ Keep in mind the following considerations when working with an ALB:
    apiVersion: networking.k8s.io/v1
    kind: Ingress
    metadata:
-     namespace: gloo-system
+     namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      name: alb
      annotations:
        alb.ingress.kubernetes.io/scheme: internet-facing
@@ -114,7 +114,7 @@ Keep in mind the following considerations when working with an ALB:
    spec:
      parentRefs:
        - name: alb
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
        - "albtest.com"
      rules:
@@ -152,8 +152,8 @@ Keep in mind the following considerations when working with an ALB:
 {{< reuse "docs/snippets/cleanup.md" >}}
 
 ```sh
-kubectl delete ingress alb -n gloo-system
+kubectl delete ingress alb -n {{< reuse "docs/snippets/ns-system.md" >}}
 kubectl delete httproute httpbin-alb -n httpbin
-kubectl delete gateway alb -n gloo-system 
-kubectl delete httplisteneroption alb-healthcheck -n gloo-system 
+kubectl delete gateway alb -n {{< reuse "docs/snippets/ns-system.md" >}} 
+kubectl delete httplisteneroption alb-healthcheck -n {{< reuse "docs/snippets/ns-system.md" >}} 
 ```

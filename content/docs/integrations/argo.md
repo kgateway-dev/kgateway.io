@@ -174,7 +174,7 @@ description: Use {{< reuse "docs/snippets/product-name.md" >}} with Argo Rollout
    spec:
      parentRefs:
        - name: http
-         namespace: gloo-system
+         namespace: {{< reuse "docs/snippets/ns-system.md" >}}
      hostnames:
      - "demo.example.com"
      rules:
@@ -197,7 +197,7 @@ description: Use {{< reuse "docs/snippets/product-name.md" >}} with Argo Rollout
    {{% tab  %}}
    1. Get the external address of the gateway and save it in an environment variable.
       ```sh
-      export INGRESS_GW_ADDRESS=$(kubectl get svc -n gloo-system gloo-proxy-http -o jsonpath="{.status.loadBalancer.ingress[0]['hostname','ip']}")
+      export INGRESS_GW_ADDRESS=$(kubectl get svc -n {{< reuse "docs/snippets/ns-system.md" >}} gloo-proxy-http -o jsonpath="{.status.loadBalancer.ingress[0]['hostname','ip']}")
       echo $INGRESS_GW_ADDRESS
       ```
    
@@ -215,7 +215,7 @@ description: Use {{< reuse "docs/snippets/product-name.md" >}} with Argo Rollout
    {{% tab  %}}
    3. Port-forward the `gloo-proxy-http` pod on port 8080. 
       ```sh
-      kubectl port-forward deployment/gloo-proxy-http -n gloo-system 8080:8080
+      kubectl port-forward deployment/gloo-proxy-http -n {{< reuse "docs/snippets/ns-system.md" >}} 8080:8080
       ```
    
    4. Send a request to the `rollouts-demo` app and verify that you see the `ver: 1.0` response from the stable service.
