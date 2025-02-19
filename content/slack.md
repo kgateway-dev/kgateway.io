@@ -13,7 +13,7 @@ description: ""
   </div>
 </section>
 
-<section class="text-primary-text flex flex-col items-center p-25 text-xl">
+<section class="text-primary-text flex flex-col items-center p-8 md:p-25 text-xl">
   <ul class="list-disc">
     <li>Visit <a class="text-primary-bg" href="https://slack.cncf.io/">https://slack.cncf.io/</a> and create your Slack account.</li>
     <li>Join us in the <a class="text-primary-bg" href="https://cloud-native.slack.com/archives/C080D3PJMS4">#kgateway</a> channel.</li>
